@@ -4,17 +4,18 @@ using UnityEngine;
 
 public class PokemonAttaker : Pokemon {
     private CharacterController player;
+    private Material mat;
 
     protected override void Init()
     {
-        base.Init();
         player = FindObjectOfType<CharacterController>();
+        mat = GetComponent<MeshRenderer>().material;
     }
 
     protected override bool SeesPlayer()
     {
         bool isClose = Mathf.Abs(Vector3.Distance(transform.position, player.transform.position)) < 3;
-        Srenderer.color = isClose ? Color.red : Color.white;
+        mat.color = isClose ? Color.red : Color.blue;
         return isClose;
     }
 

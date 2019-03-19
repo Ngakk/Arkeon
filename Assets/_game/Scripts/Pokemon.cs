@@ -28,11 +28,6 @@ public class Pokemon : PokemonBase {
         else
             GoToPlayer();
         transform.Translate(newDirection * Time.deltaTime * speed, Space.World);
-
-        if (newDirection.x > 0)
-            Srenderer.flipX = true;
-        else if (newDirection.x < 0)
-            Srenderer.flipX = false;
     }
 
     protected virtual void GoToPlayer()

@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class CharacterController : MonoBehaviour {
 
+    [SerializeField]
     private float speed = 2.5f;
     private bool direction; // true = left
     [SerializeField]
     private Camera Mcamera;
-    SpriteRenderer srenderer;
-
-	// Use this for initialization
-	void Start () {
-        srenderer = GetComponent<SpriteRenderer>();
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -24,11 +19,6 @@ public class CharacterController : MonoBehaviour {
 
         transform.Translate(horizontalAxis * deltaSpeed, 0, verticalAxis * deltaSpeed, Space.World);
         Mcamera.transform.Translate(horizontalAxis * deltaSpeed, 0, verticalAxis * deltaSpeed, Space.World);
-
-        if (horizontalAxis > 0)
-            srenderer.flipX = true;
-        else if (horizontalAxis < 0)
-            srenderer.flipX = false;
 	}
 
     void OnCollisionEnter(Collision col)
