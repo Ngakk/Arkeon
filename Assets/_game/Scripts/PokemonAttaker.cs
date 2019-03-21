@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PokemonAttaker : Pokemon {
-    private CharacterController player;
+    private MyCharacter player;
     private Material mat;
 
     protected override void Init()
     {
-        player = FindObjectOfType<CharacterController>();
+        player = FindObjectOfType<MyCharacter>();
         mat = GetComponent<MeshRenderer>().material;
     }
 
