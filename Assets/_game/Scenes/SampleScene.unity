@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 23492455}
   - component: {fileID: 23492456}
   m_Layer: 5
-  m_Name: Touch Button (3)
+  m_Name: touch05
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -142,7 +142,7 @@ RectTransform:
   m_Children:
   - {fileID: 1294583271}
   m_Father: {fileID: 374946301}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -231,7 +231,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 4
       _valueRange: 1
       _valueContribution: 0
       _invert: 0
@@ -241,7 +241,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 4
       _valueRange: 2
       _valueContribution: 0
       _invert: 0
@@ -287,8 +287,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _applyRangeCalibration: 1
-  _touchRegion: {fileID: 0}
-  _useTouchRegionOnly: 1
+  _touchRegion: {fileID: 351848602}
+  _useTouchRegionOnly: 0
   _moveToTouchPosition: 0
   _returnOnRelease: 1
   _followTouchPosition: 0
@@ -309,7 +309,18 @@ MonoBehaviour:
       Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 534669906}
+        m_MethodName: AddToStack
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 5
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonUp:
@@ -397,7 +408,7 @@ GameObject:
   - component: {fileID: 170451620}
   - component: {fileID: 170451621}
   m_Layer: 5
-  m_Name: Touch Button
+  m_Name: touch01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -438,7 +449,7 @@ MonoBehaviour:
   _interactable: 1
   _visible: 1
   _hideWhenIdle: 0
-  _allowedMouseButtons: 1
+  _allowedMouseButtons: -1
   _transitionType: 1
   _transitionColorTint:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
@@ -505,7 +516,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 0
       _valueRange: 1
       _valueContribution: 0
       _invert: 0
@@ -515,7 +526,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 0
       _valueRange: 2
       _valueContribution: 0
       _invert: 0
@@ -561,8 +572,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _applyRangeCalibration: 1
-  _touchRegion: {fileID: 0}
-  _useTouchRegionOnly: 1
+  _touchRegion: {fileID: 351848602}
+  _useTouchRegionOnly: 0
   _moveToTouchPosition: 0
   _returnOnRelease: 1
   _followTouchPosition: 0
@@ -584,15 +595,15 @@ MonoBehaviour:
   _onButtonDown:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 534669906}
+        m_MethodName: AddToStack
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: 1
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
@@ -719,7 +730,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 0.05490196}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -773,11 +784,11 @@ RectTransform:
   - {fileID: 170451620}
   - {fileID: 861371779}
   - {fileID: 1359855615}
-  - {fileID: 23492455}
   - {fileID: 1611662121}
+  - {fileID: 23492455}
   - {fileID: 1010314347}
-  - {fileID: 1731693659}
   - {fileID: 1600810997}
+  - {fileID: 1731693659}
   - {fileID: 616957807}
   - {fileID: 351848601}
   m_Father: {fileID: 1256030479}
@@ -785,7 +796,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -145}
+  m_AnchoredPosition: {x: 0, y: -149}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &374946302
@@ -811,7 +822,7 @@ MonoBehaviour:
   _createCustomControllerSettings:
     _createCustomController: 1
     _customControllerSourceId: 0
-    _assignToPlayerId: 0
+    _assignToPlayerId: 9999999
     _destroyCustomController: 1
   _disableMouseInputWhenEnabled: 0
   _useCustomController: 1
@@ -826,6 +837,7 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
+  - component: {fileID: 534669906}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -897,6 +909,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &534669906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce988a98a5588de4fb34709412acdd2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchbuttons: []
 --- !u!1 &616957806
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,7 +933,7 @@ GameObject:
   - component: {fileID: 616957807}
   - component: {fileID: 616957808}
   m_Layer: 5
-  m_Name: Touch Button (8)
+  m_Name: touch09
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1016,7 +1041,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 8
       _valueRange: 1
       _valueContribution: 0
       _invert: 0
@@ -1026,7 +1051,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 8
       _valueRange: 2
       _valueContribution: 0
       _invert: 0
@@ -1072,8 +1097,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _applyRangeCalibration: 1
-  _touchRegion: {fileID: 0}
-  _useTouchRegionOnly: 1
+  _touchRegion: {fileID: 351848602}
+  _useTouchRegionOnly: 0
   _moveToTouchPosition: 0
   _returnOnRelease: 1
   _followTouchPosition: 0
@@ -1094,7 +1119,18 @@ MonoBehaviour:
       Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 534669906}
+        m_MethodName: AddToStack
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 9
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonUp:
@@ -1132,7 +1168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10efa70eea88e69459c632aac286892d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rewiredInputManager: {fileID: 0}
+  rewiredInputManager: {fileID: 1837384141}
   useAllRewiredGamePlayers: 1
   useRewiredSystemPlayer: 1
   rewiredPlayerIds: 00000000
@@ -1194,7 +1230,7 @@ GameObject:
   - component: {fileID: 861371779}
   - component: {fileID: 861371780}
   m_Layer: 5
-  m_Name: Touch Button (1)
+  m_Name: touch02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1302,7 +1338,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 1
       _valueRange: 1
       _valueContribution: 0
       _invert: 0
@@ -1312,7 +1348,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 1
       _valueRange: 2
       _valueContribution: 0
       _invert: 0
@@ -1358,8 +1394,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _applyRangeCalibration: 1
-  _touchRegion: {fileID: 0}
-  _useTouchRegionOnly: 1
+  _touchRegion: {fileID: 351848602}
+  _useTouchRegionOnly: 0
   _moveToTouchPosition: 0
   _returnOnRelease: 1
   _followTouchPosition: 0
@@ -1380,7 +1416,18 @@ MonoBehaviour:
       Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 534669906}
+        m_MethodName: AddToStack
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 2
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonUp:
@@ -1399,7 +1446,7 @@ GameObject:
   - component: {fileID: 1010314347}
   - component: {fileID: 1010314348}
   m_Layer: 5
-  m_Name: Touch Button (5)
+  m_Name: touch06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1507,7 +1554,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 5
       _valueRange: 1
       _valueContribution: 0
       _invert: 0
@@ -1517,7 +1564,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 5
       _valueRange: 2
       _valueContribution: 0
       _invert: 0
@@ -1563,8 +1610,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _applyRangeCalibration: 1
-  _touchRegion: {fileID: 0}
-  _useTouchRegionOnly: 1
+  _touchRegion: {fileID: 351848602}
+  _useTouchRegionOnly: 0
   _moveToTouchPosition: 0
   _returnOnRelease: 1
   _followTouchPosition: 0
@@ -1585,7 +1632,18 @@ MonoBehaviour:
       Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 534669906}
+        m_MethodName: AddToStack
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 6
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonUp:
@@ -1999,7 +2057,7 @@ GameObject:
   - component: {fileID: 1359855615}
   - component: {fileID: 1359855616}
   m_Layer: 5
-  m_Name: Touch Button (2)
+  m_Name: touch03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2107,7 +2165,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 2
       _valueRange: 1
       _valueContribution: 0
       _invert: 0
@@ -2117,7 +2175,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 2
       _valueRange: 2
       _valueContribution: 0
       _invert: 0
@@ -2163,8 +2221,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _applyRangeCalibration: 1
-  _touchRegion: {fileID: 0}
-  _useTouchRegionOnly: 1
+  _touchRegion: {fileID: 351848602}
+  _useTouchRegionOnly: 0
   _moveToTouchPosition: 0
   _returnOnRelease: 1
   _followTouchPosition: 0
@@ -2185,7 +2243,18 @@ MonoBehaviour:
       Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 534669906}
+        m_MethodName: AddToStack
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 3
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonUp:
@@ -2278,7 +2347,7 @@ GameObject:
   - component: {fileID: 1600810997}
   - component: {fileID: 1600810998}
   m_Layer: 5
-  m_Name: Touch Button (7)
+  m_Name: touch07
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2297,7 +2366,7 @@ RectTransform:
   m_Children:
   - {fileID: 2020689870}
   m_Father: {fileID: 374946301}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2386,7 +2455,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 6
       _valueRange: 1
       _valueContribution: 0
       _invert: 0
@@ -2396,7 +2465,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 6
       _valueRange: 2
       _valueContribution: 0
       _invert: 0
@@ -2442,8 +2511,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _applyRangeCalibration: 1
-  _touchRegion: {fileID: 0}
-  _useTouchRegionOnly: 1
+  _touchRegion: {fileID: 351848602}
+  _useTouchRegionOnly: 0
   _moveToTouchPosition: 0
   _returnOnRelease: 1
   _followTouchPosition: 0
@@ -2464,7 +2533,18 @@ MonoBehaviour:
       Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 534669906}
+        m_MethodName: AddToStack
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 7
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonUp:
@@ -2483,7 +2563,7 @@ GameObject:
   - component: {fileID: 1611662121}
   - component: {fileID: 1611662122}
   m_Layer: 5
-  m_Name: Touch Button (4)
+  m_Name: touch04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2502,7 +2582,7 @@ RectTransform:
   m_Children:
   - {fileID: 1260010905}
   m_Father: {fileID: 374946301}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2591,7 +2671,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 3
       _valueRange: 1
       _valueContribution: 0
       _invert: 0
@@ -2601,7 +2681,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 3
       _valueRange: 2
       _valueContribution: 0
       _invert: 0
@@ -2647,8 +2727,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _applyRangeCalibration: 1
-  _touchRegion: {fileID: 0}
-  _useTouchRegionOnly: 1
+  _touchRegion: {fileID: 351848602}
+  _useTouchRegionOnly: 0
   _moveToTouchPosition: 0
   _returnOnRelease: 1
   _followTouchPosition: 0
@@ -2669,7 +2749,18 @@ MonoBehaviour:
       Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 534669906}
+        m_MethodName: AddToStack
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 4
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonUp:
@@ -2688,7 +2779,7 @@ GameObject:
   - component: {fileID: 1731693659}
   - component: {fileID: 1731693660}
   m_Layer: 5
-  m_Name: Touch Button (6)
+  m_Name: touch08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2707,7 +2798,7 @@ RectTransform:
   m_Children:
   - {fileID: 1067302767}
   m_Father: {fileID: 374946301}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2796,7 +2887,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 7
       _valueRange: 1
       _valueContribution: 0
       _invert: 0
@@ -2806,7 +2897,7 @@ MonoBehaviour:
         _selectorType: 2
         _elementName: 
         _elementIndex: 0
-        _elementId: -1
+        _elementId: 7
       _valueRange: 2
       _valueContribution: 0
       _invert: 0
@@ -2852,8 +2943,8 @@ MonoBehaviour:
         m_PostInfinity: 2
         m_RotationOrder: 4
       _applyRangeCalibration: 1
-  _touchRegion: {fileID: 0}
-  _useTouchRegionOnly: 1
+  _touchRegion: {fileID: 351848602}
+  _useTouchRegionOnly: 0
   _moveToTouchPosition: 0
   _returnOnRelease: 1
   _followTouchPosition: 0
@@ -2874,7 +2965,18 @@ MonoBehaviour:
       Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonDown:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 534669906}
+        m_MethodName: AddToStack
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 8
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   _onButtonUp:
@@ -3120,10 +3222,82 @@ MonoBehaviour:
     - _name: CustomController0
       _descriptiveName: CustomController0
       _id: 0
-      _elementIdentifiers: []
+      _elementIdentifiers:
+      - _id: 0
+        _name: Button0
+        _positiveName: 
+        _negativeName: 
+        _elementType: 1
+        _compoundElementType: 0
+      - _id: 1
+        _name: Button1
+        _positiveName: 
+        _negativeName: 
+        _elementType: 1
+        _compoundElementType: 0
+      - _id: 2
+        _name: Button2
+        _positiveName: 
+        _negativeName: 
+        _elementType: 1
+        _compoundElementType: 0
+      - _id: 3
+        _name: Button3
+        _positiveName: 
+        _negativeName: 
+        _elementType: 1
+        _compoundElementType: 0
+      - _id: 4
+        _name: Button4
+        _positiveName: 
+        _negativeName: 
+        _elementType: 1
+        _compoundElementType: 0
+      - _id: 5
+        _name: Button5
+        _positiveName: 
+        _negativeName: 
+        _elementType: 1
+        _compoundElementType: 0
+      - _id: 6
+        _name: Button6
+        _positiveName: 
+        _negativeName: 
+        _elementType: 1
+        _compoundElementType: 0
+      - _id: 7
+        _name: Button7
+        _positiveName: 
+        _negativeName: 
+        _elementType: 1
+        _compoundElementType: 0
+      - _id: 8
+        _name: Button8
+        _positiveName: 
+        _negativeName: 
+        _elementType: 1
+        _compoundElementType: 0
       _axes: []
-      _buttons: []
-      _elementIdentifierIdCounter: 0
+      _buttons:
+      - elementIdentifierId: 0
+        name: Button0
+      - elementIdentifierId: 1
+        name: Button1
+      - elementIdentifierId: 2
+        name: Button2
+      - elementIdentifierId: 3
+        name: Button3
+      - elementIdentifierId: 4
+        name: Button4
+      - elementIdentifierId: 5
+        name: Button5
+      - elementIdentifierId: 6
+        name: Button6
+      - elementIdentifierId: 7
+        name: Button7
+      - elementIdentifierId: 8
+        name: Button8
+      _elementIdentifierIdCounter: 9
     playerIdCounter: 2
     actionIdCounter: 0
     actionCategoryIdCounter: 1
