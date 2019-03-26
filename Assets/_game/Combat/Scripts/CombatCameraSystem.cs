@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
+using UnityEngine.Timeline;
 
 namespace Mangos
 {
@@ -15,16 +17,20 @@ namespace Mangos
 
     public class CombatCameraSystem : MonoBehaviour
     {
-        public GameObject mainCam;
+        public CameraPositions CameraPositions;
+        public List<TimelineAsset> timelines;
         public GameObject combatPos;
-        public GameObject playerSetsPos;
+        public GameObject playerPos;
         public GameObject invocationPos1;
         public GameObject invocationPos2;
         public GameObject invocationPos3;
 
+        public CinemachineVirtualCamera[] CM_VCameras;
+        public GameObject currentObjective;
+
         void Start()
         {
-
+            CameraPositions = CameraPositions.COMBAT;
         }
         
         void Update()
