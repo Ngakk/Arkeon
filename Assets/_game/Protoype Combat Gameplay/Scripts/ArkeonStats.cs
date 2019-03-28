@@ -8,6 +8,4 @@ public class ArkeonStats : ScriptableObject
     public int MaxHP;
     public int Atk;
     public int Def;
-    
-    public List<>
 }

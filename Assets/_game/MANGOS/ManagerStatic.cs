@@ -32,5 +32,7 @@ namespace Mangos
         public static ManagerAudio audioManager;
         public static ManagerGameState gameStateManager;
         public static ManagerUI uiManager;
-	}
+        public static ArkeonAttackEffectList arkeonAttackEffectList;
+
+    }
 }

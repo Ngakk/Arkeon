@@ -1,39 +1,84 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArkeonAttack : MonoBehaviour
+namespace Mangos
 {
-    /// <summary>
-    /// What to do before the hit. Examples are incrementing stats
-    /// </summary>
-    public void PreHit()
+    public enum ArkeonTypes : int
     {
-
+        LIGHT,
+        DARK,
+        NATURE
     }
 
-    /// <summary>
-    /// What to do when attack hits.
-    /// </summary>
-    public void OnHit()
+    public class ArkeonAttackStats
     {
-        
+        public string Name;
+        public string Description;
+        public int Power;
+        public int Cost;
+        public int Accuaracy;
+        public ArkeonTypes Type;
+        public bool IsPhysical;
     }
 
-    public void PostHit()
+    public class ArkeonAttackEffect
     {
+        /// <summary>
+        /// Que hacer antes del golpe.
+        /// </summary>
+        public virtual void PreHit()
+        {
 
+        }
+
+        /// <summary>
+        /// Que hacer en el momento del golpe.
+        /// </summary>
+        public virtual void OnHit()
+        {
+
+        }
+
+        /// <summary>
+        /// Que hacer despues de el golpe. Por ejemplo, un debuff.
+        /// </summary>
+        public virtual void PostHit()
+        {
+
+        }
     }
 
-    /// <summary>
-    /// Regresa el daño que se va hacer usando el ... TODO
-    /// </summary>
-    /// <param name="_atk"></param>
-    /// <param name="_pwr"></param>
-    /// <param name="_def"></param>
-    /// <returns></returns>
-    private int CalculateDamage(int _atk, int _pwr, int _def)
+    public static class ArkeonBattleUtility
     {
-        return (int)Mathf.Round((_atk * _pwr) / _def);
+        /// <summary>
+        /// Regresa el daño que se va hacer usando el los stats del los arkeons atacante y defensor.
+        /// </summary>
+        /// <param name="_atk"></param>
+        /// <param name="_pwr"></param>
+        /// <param name="_def"></param>
+        /// <returns></returns>
+        private static int CalculateDamage(int _atk, int _pwr, int _def)
+        {
+            return (int)Mathf.Round((_atk * _pwr) / _def);
+        }
+    }
+
+
+    [CreateAssetMenu]
+    public class ArkeonAttack : ScriptableObject
+    {
+        //ArkeonAttackStats Stats;
+
+        public string Name;
+        public string Description;
+        public int Power;
+        public int Cost;
+        public int Accuaracy;
+        public ArkeonTypes Type;
+        public bool IsPhysical;
+
+        public int AttackEffectId = 0;
     }
 }
