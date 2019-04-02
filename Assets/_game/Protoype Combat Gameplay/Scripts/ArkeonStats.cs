@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ArkeonStats : ScriptableObject
+namespace Mangos
 {
-    public int HP;
-    public int MaxHP;
-    public int Atk;
-    public int Def;
+    [CreateAssetMenu]
+    public class ArkeonStats : ScriptableObject
+    {
+        public int HP;
+        public int MaxHP;
+        public int Atk;
+        public int Def;
+    }
 }

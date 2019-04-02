@@ -9,13 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47d68bfc1cd8f947be1db6d8dd6f3b8, type: 3}
-  m_Name: New Arkeon Attack
+  m_Script: {fileID: 11500000, guid: aa05fc4278b34a644aaaff1bfab0e975, type: 3}
+  m_Name: Small Mana Pot
   m_EditorClassIdentifier: 
-  Name: 
-  Description: 
-  Power: 0
-  Cost: 0
-  Accuaracy: 0
-  Type: 0
-  IsPhysical: 0
+  Name: Small Mana Pot
+  Description: Imbues you with a bit of magical power
+  Value: 5
+  AffectsHealth: 0
+  AffectMana: 1
