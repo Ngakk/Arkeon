@@ -24,12 +24,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f3cfca88-17c9-4398-85af-1430495b9150" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Arkeon/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Arkeon/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Arkeon/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.Arkeon/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkeon/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkeon/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkeon/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_game/Scenes/Equipos.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_game/Scenes/Equipos.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/_game/Scripts/Equipos/TeamManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_game/Scripts/Equipos/TeamManager.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,21 +40,35 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/_game/Scripts/Equipos/TeamManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="51" column="40" lean-forward="true" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+            <state relative-caret-position="-50">
+              <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
               <folding>
-                <marker date="1553629989755" expanded="true" signature="6:78" ph="..." />
-                <marker date="1553629989755" expanded="true" signature="120:1955" ph="{...}" />
-                <marker date="1553629989755" expanded="true" signature="343:432" ph="/* Pokemon que siempre esta con el jugador ... */" />
-                <marker date="1553629989755" expanded="true" signature="689:876" ph="{...}" />
-                <marker date="1553629989755" expanded="true" signature="934:1586" ph="{...}" />
-                <marker date="1553629989755" expanded="true" signature="986:1580" ph="{...}" />
-                <marker date="1553629989755" expanded="true" signature="1324:1570" ph="{...}" />
-                <marker date="1553629989755" expanded="true" signature="1420:1556" ph="{...}" />
-                <marker date="1553629989755" expanded="true" signature="1635:1953" ph="{...}" />
-                <marker date="1553629989755" expanded="true" signature="1675:1731" ph="{...}" />
-                <marker date="1553629989755" expanded="true" signature="1780:1842" ph="{...}" />
-                <marker date="1553629989755" expanded="true" signature="1888:1947" ph="{...}" />
+                <marker date="1554237643941" expanded="true" signature="6:92" ph="..." />
+                <marker date="1554237643941" expanded="true" signature="111:1955" ph="{...}" />
+                <marker date="1554237643941" expanded="true" signature="158:1953" ph="{...}" />
+                <marker date="1554237643941" expanded="true" signature="494:587" ph="/* Pokemon que siempre esta con el jugador ... */" />
+                <marker date="1554237643941" expanded="true" signature="867:1098" ph="{...}" />
+                <marker date="1554237643941" expanded="true" signature="1164:1947" ph="{...}" />
+                <marker date="1554237643941" expanded="true" signature="1224:1937" ph="{...}" />
+                <marker date="1554237643941" expanded="true" signature="1586:1923" ph="{...}" />
+                <marker date="1554237643941" expanded="true" signature="1664:1905" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/_game/Scripts/Equipos/Teams.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="374">
+              <caret line="29" column="75" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
+              <folding>
+                <marker date="1553805358220" expanded="false" signature="6:93" ph="..." />
+                <marker date="1553805358220" expanded="true" signature="129:743" ph="{...}" />
+                <marker date="1553805358220" expanded="true" signature="305:326" ph="{...}" />
+                <marker date="1553805358220" expanded="true" signature="384:405" ph="{...}" />
+                <marker date="1553805358220" expanded="true" signature="435:741" ph="{...}" />
+                <marker date="1553805358220" expanded="true" signature="498:735" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -69,10 +81,12 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/_game/Scripts/Equipos/TeamManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/_game/Scripts/Equipos/Teams.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Assets/_game/Scripts/Equipos/Teams.cs" />
         <option value="$PROJECT_DIR$/Assets/_game/Scripts/Equipos/TeamManager.cs" />
       </list>
     </option>
@@ -85,17 +99,56 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="UnityExplorer" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
+      <pane id="SolutionExplorer">
+        <option name="show-all-files" value="false" />
+      </pane>
+      <pane id="UnityExplorer">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="_game" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="_game" type="1045f7f1:UnityExplorerNode" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+            </path>
+            <path>
+              <item name="Project" type="e068e287:UnityExplorerRootNode" />
+              <item name="Assets" type="48f920db:UnityExplorerNode$AssetsRoot" />
+              <item name="_game" type="1045f7f1:UnityExplorerNode" />
+              <item name="Scripts" type="1045f7f1:UnityExplorerNode" />
+              <item name="Equipos" type="1045f7f1:UnityExplorerNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+        <option name="show-hidden-items" value="false" />
+        <option name="show-project-names" value="true" />
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="do_not_show_solution_notification" value="true" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="SolutionBuilderGeneralOptionsPageId" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -134,12 +187,15 @@
       <option name="presentableId" value="Default" />
       <updated>1553196873417</updated>
       <workItem from="1553196923177" duration="3891000" />
-      <workItem from="1553628471238" duration="2074000" />
+      <workItem from="1553628471238" duration="3667000" />
+      <workItem from="1553802921105" duration="3145000" />
+      <workItem from="1554233945448" duration="588000" />
+      <workItem from="1554235021011" duration="2881000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="5965000" />
+    <option name="totallyTimeSpent" value="14172000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -154,7 +210,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.24966443" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1442953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -233,21 +289,33 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Assets/_game/Scripts/Equipos/TeamManager.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="51" column="40" lean-forward="true" selection-start-line="51" selection-start-column="40" selection-end-line="51" selection-end-column="40" />
+        <state relative-caret-position="-50">
+          <caret line="19" column="50" lean-forward="true" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
           <folding>
-            <marker date="1553629989755" expanded="true" signature="6:78" ph="..." />
-            <marker date="1553629989755" expanded="true" signature="120:1955" ph="{...}" />
-            <marker date="1553629989755" expanded="true" signature="343:432" ph="/* Pokemon que siempre esta con el jugador ... */" />
-            <marker date="1553629989755" expanded="true" signature="689:876" ph="{...}" />
-            <marker date="1553629989755" expanded="true" signature="934:1586" ph="{...}" />
-            <marker date="1553629989755" expanded="true" signature="986:1580" ph="{...}" />
-            <marker date="1553629989755" expanded="true" signature="1324:1570" ph="{...}" />
-            <marker date="1553629989755" expanded="true" signature="1420:1556" ph="{...}" />
-            <marker date="1553629989755" expanded="true" signature="1635:1953" ph="{...}" />
-            <marker date="1553629989755" expanded="true" signature="1675:1731" ph="{...}" />
-            <marker date="1553629989755" expanded="true" signature="1780:1842" ph="{...}" />
-            <marker date="1553629989755" expanded="true" signature="1888:1947" ph="{...}" />
+            <marker date="1554237643941" expanded="true" signature="6:92" ph="..." />
+            <marker date="1554237643941" expanded="true" signature="111:1955" ph="{...}" />
+            <marker date="1554237643941" expanded="true" signature="158:1953" ph="{...}" />
+            <marker date="1554237643941" expanded="true" signature="494:587" ph="/* Pokemon que siempre esta con el jugador ... */" />
+            <marker date="1554237643941" expanded="true" signature="867:1098" ph="{...}" />
+            <marker date="1554237643941" expanded="true" signature="1164:1947" ph="{...}" />
+            <marker date="1554237643941" expanded="true" signature="1224:1937" ph="{...}" />
+            <marker date="1554237643941" expanded="true" signature="1586:1923" ph="{...}" />
+            <marker date="1554237643941" expanded="true" signature="1664:1905" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/_game/Scripts/Equipos/Teams.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="29" column="75" selection-start-line="29" selection-start-column="75" selection-end-line="29" selection-end-column="75" />
+          <folding>
+            <marker date="1553805358220" expanded="false" signature="6:93" ph="..." />
+            <marker date="1553805358220" expanded="true" signature="129:743" ph="{...}" />
+            <marker date="1553805358220" expanded="true" signature="305:326" ph="{...}" />
+            <marker date="1553805358220" expanded="true" signature="384:405" ph="{...}" />
+            <marker date="1553805358220" expanded="true" signature="435:741" ph="{...}" />
+            <marker date="1553805358220" expanded="true" signature="498:735" ph="{...}" />
           </folding>
         </state>
       </provider>
