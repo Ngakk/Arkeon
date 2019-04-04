@@ -11,5 +11,6 @@ namespace Mangos
         public int MaxHP;
         public int Atk;
         public int Def;
+        public int Cost;
     }
 }

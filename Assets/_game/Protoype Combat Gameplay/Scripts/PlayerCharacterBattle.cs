@@ -6,7 +6,7 @@ namespace Mangos
 {
     public class PlayerCharacterBattle : MonoBehaviour
     {
-        public int HP, MP;
+        public int HP = 20, MP;
         public List<CombatItem> Inventory = new List<CombatItem>();
         public List<ArkeonSpirit> ArkeonTeam = new List<ArkeonSpirit>();
     }

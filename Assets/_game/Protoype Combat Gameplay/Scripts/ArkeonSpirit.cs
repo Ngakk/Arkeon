@@ -4,8 +4,10 @@ using UnityEngine;
 
 namespace Mangos
 {
-    public class ArkeonSpirit : MonoBehaviour
+    [CreateAssetMenu]
+    public class ArkeonSpirit : ScriptableObject
     {
+        public GameObject ModelPrefab; //Only for prototyping
         public ArkeonStats Stats;
         public List<ArkeonAttack> Attacks = new List<ArkeonAttack>();
     }
