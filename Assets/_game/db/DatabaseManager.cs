@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -8,7 +9,7 @@ using UnityEngine.UI;
 public class DatabaseManager : MonoBehaviour
 {
     MonsterBase currMonster;
-    List<MonsterBase> allMonsters;
+    public Monster allMonsters;
     int MonsterIndex;
 
     public Text Number;
@@ -33,22 +34,40 @@ public class DatabaseManager : MonoBehaviour
         //Cargo el archivo Items.json desde Resources
         string filePath = "pokes.json".Replace(".json", "");
         TextAsset ArchivoTarget = Resources.Load<TextAsset>(filePath);
-        string elJson = ArchivoTarget.text;
+        string elJson = "{\"Monsters\":" + ArchivoTarget.text + "}";
+        Debug.Log(elJson);
 
-        allMonsters = JsonUtility.FromJson<List<MonsterBase>>(elJson);
+        allMonsters = new Monster();
+        allMonsters.Monsters = new List<MonsterBase>();
 
-        if (allMonsters.Count < 1) return;
+        allMonsters = JsonUtility.FromJson<Monster>(elJson);
 
-        MonsterIndex = 0;
-        currMonster = allMonsters[MonsterIndex];
+        Debug.Log(allMonsters.ToString());
 
-        SetOnScreen(currMonster);
+        if (allMonsters == null)
+        {
+            Debug.LogError("All monsters is null");
+            return;
+        }
+
+        if (allMonsters.Monsters == null)
+        {
+            Debug.LogError("All monsters . monsters is null");
+            return;
+        }
+
+        if (allMonsters.Monsters.Count < 1) return;
+
+        //MonsterIndex = 0;
+        //currMonster = allMonsters.Monsters[MonsterIndex];
+
+        //SetOnScreen(currMonster);
     }
 
     void SetOnScreen(MonsterBase m)
     {
         Number.text += m.number.ToString();
         Name.text = m.name;
-        //Types.text = string.Join(",", m.types.ToArray());
+        Types.text = string.Join(",", Array.ConvertAll(m.types.ToArray(), i => i.ToString()));
     }
 }
