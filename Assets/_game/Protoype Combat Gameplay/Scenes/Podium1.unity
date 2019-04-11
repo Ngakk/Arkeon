@@ -154,7 +154,6 @@ GameObject:
   - component: {fileID: 14231019}
   - component: {fileID: 14231022}
   - component: {fileID: 14231021}
-  - component: {fileID: 14231020}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -176,19 +175,6 @@ Transform:
   m_Father: {fileID: 8903917}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &14231020
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14231018}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &14231021
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -403,7 +389,6 @@ GameObject:
   - component: {fileID: 342217147}
   - component: {fileID: 342217150}
   - component: {fileID: 342217149}
-  - component: {fileID: 342217148}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -425,19 +410,6 @@ Transform:
   m_Father: {fileID: 1660140865}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &342217148
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 342217146}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &342217149
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -518,6 +490,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2ed42742092e3ed498ae5a92c922da9f, type: 2}
   ArkeonTeam:
   - {fileID: 11400000, guid: bd4c251c544337848a23761bc0ea4a86, type: 2}
+  - {fileID: 11400000, guid: 53eb81a19ec8b7a4ab73706e8af1aec7, type: 2}
+  - {fileID: 11400000, guid: 0f2a4b121d582884e92b19ed7eaef198, type: 2}
 --- !u!4 &374512275
 Transform:
   m_ObjectHideFlags: 0
@@ -658,6 +632,7 @@ MonoBehaviour:
   EnemyCharacter: {fileID: 0}
   arenaPointReference: {fileID: 1037719916}
   IsSingleEnemy: 1
+  state: 0
 --- !u!4 &510002922
 Transform:
   m_ObjectHideFlags: 0
@@ -714,7 +689,6 @@ GameObject:
   - component: {fileID: 662879249}
   - component: {fileID: 662879252}
   - component: {fileID: 662879251}
-  - component: {fileID: 662879250}
   m_Layer: 0
   m_Name: AllyCenterFloor
   m_TagString: Untagged
@@ -736,20 +710,6 @@ Transform:
   m_Father: {fileID: 956160359}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &662879250
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 662879248}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &662879251
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1054,7 +1014,6 @@ GameObject:
   - component: {fileID: 1168025477}
   - component: {fileID: 1168025480}
   - component: {fileID: 1168025479}
-  - component: {fileID: 1168025478}
   m_Layer: 0
   m_Name: AllyRightFloor
   m_TagString: Untagged
@@ -1076,20 +1035,6 @@ Transform:
   m_Father: {fileID: 1744371151}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1168025478
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1168025476}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1168025479
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1228,7 +1173,6 @@ GameObject:
   - component: {fileID: 1300703407}
   - component: {fileID: 1300703410}
   - component: {fileID: 1300703409}
-  - component: {fileID: 1300703408}
   m_Layer: 0
   m_Name: AllyLeftFloor
   m_TagString: Untagged
@@ -1250,20 +1194,6 @@ Transform:
   m_Father: {fileID: 1924336321}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1300703408
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1300703406}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1300703409
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1351,7 +1281,6 @@ GameObject:
   - component: {fileID: 1329666127}
   - component: {fileID: 1329666130}
   - component: {fileID: 1329666129}
-  - component: {fileID: 1329666128}
   m_Layer: 0
   m_Name: AllyLeftFloor
   m_TagString: Untagged
@@ -1373,20 +1302,6 @@ Transform:
   m_Father: {fileID: 1307119290}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1329666128
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1329666126}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1329666129
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1443,7 +1358,6 @@ GameObject:
   - component: {fileID: 1346133718}
   - component: {fileID: 1346133721}
   - component: {fileID: 1346133720}
-  - component: {fileID: 1346133719}
   m_Layer: 0
   m_Name: AllyRightFloor
   m_TagString: Untagged
@@ -1465,20 +1379,6 @@ Transform:
   m_Father: {fileID: 529327282}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1346133719
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1346133717}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1346133720
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1565,7 +1465,6 @@ GameObject:
   - component: {fileID: 1566706159}
   - component: {fileID: 1566706162}
   - component: {fileID: 1566706161}
-  - component: {fileID: 1566706160}
   m_Layer: 0
   m_Name: AllyRightFloor
   m_TagString: Untagged
@@ -1587,20 +1486,6 @@ Transform:
   m_Father: {fileID: 227919941}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &1566706160
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1566706158}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &1566706161
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1965,7 +1850,7 @@ PrefabInstance:
     - target: {fileID: 3759170950674461054, guid: dd7abe167426f9d41830ca9826954f55,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7416138705741902585, guid: dd7abe167426f9d41830ca9826954f55,
         type: 3}
@@ -2293,7 +2178,6 @@ GameObject:
   - component: {fileID: 2022663587}
   - component: {fileID: 2022663590}
   - component: {fileID: 2022663589}
-  - component: {fileID: 2022663588}
   m_Layer: 0
   m_Name: AllyRightFloor
   m_TagString: Untagged
@@ -2315,20 +2199,6 @@ Transform:
   m_Father: {fileID: 1840880538}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &2022663588
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2022663586}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &2022663589
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2385,7 +2255,6 @@ GameObject:
   - component: {fileID: 2029598369}
   - component: {fileID: 2029598372}
   - component: {fileID: 2029598371}
-  - component: {fileID: 2029598370}
   m_Layer: 0
   m_Name: AllyCenterFloor
   m_TagString: Untagged
@@ -2407,20 +2276,6 @@ Transform:
   m_Father: {fileID: 821953112}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &2029598370
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2029598368}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!23 &2029598371
 MeshRenderer:
   m_ObjectHideFlags: 0

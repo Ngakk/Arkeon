@@ -11,6 +11,8 @@ namespace Mangos
         public PlayerCharacterBattle EnemyCharacter;
         public ArenaPointReference arenaPointReference;
         public bool IsSingleEnemy = true;
+        [HideInInspector]
+        public State state = State.WAITING;
 
         private List<int> allyArkeonsOut = new List<int> ();
         private List<int> enemyArkeonsOut = new List<int> ();
@@ -27,6 +29,16 @@ namespace Mangos
             {
                 InvokeArkeonRequest(true, 0);
             }
+
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                InvokeArkeonRequest(true, 1);
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                InvokeArkeonRequest(true, 2);
+            }
         }
 
         /// <summary>
@@ -38,7 +50,8 @@ namespace Mangos
             //Checa si se puede
             PlayerCharacterBattle summoner = _ally ? Player : EnemyCharacter;
 
-            if((_ally && allyArkeonsOut.Count >= 3 && !allyArkeonsOut.Contains(_id)) || (!_ally && enemyArkeonsOut.Count >= 3 && !enemyArkeonsOut.Contains(_id)))
+            //Checa si el invocador ya tiene lleno los espacios de invocacion
+            if((_ally && (allyArkeonsOut.Count >= 3 || allyArkeonsOut.Contains(_id))) || (!_ally && (enemyArkeonsOut.Count >= 3 || enemyArkeonsOut.Contains(_id))))
             {
                 Debug.Log("Ya estan llenos todos los espacios de invocación");
                 return;
@@ -47,9 +60,18 @@ namespace Mangos
             if(summoner.ArkeonTeam.Count > _id)
             {
                 if (summoner.ArkeonTeam[_id].Stats.HP > 0 && summoner.ArkeonTeam[_id].Stats.Cost <= summoner.MP)
+                {
+                    /*Debug.Log("Can summon: ");
+                    Debug.Log("Ally arkeons out are: " + allyArkeonsOut.Count);
+                    Debug.Log("Arkeon team count: " + summoner.ArkeonTeam.Count);
+                    Debug.Log("Arkeon to summon's hp: " + summoner.ArkeonTeam[_id].Stats.HP);
+                    Debug.Log("Summoner MP vs Arkeon Cost: " + summoner.MP + " vs " + summoner.ArkeonTeam[_id].Stats.Cost);*/
+
                     InvokeArkeon(_ally, _id);
+                    
+                }
                 else
-                    Debug.Log("No se puede invocar ese arkeon");
+                { Debug.Log("No se puede invocar ese arkeon"); }
             }
             else
             {
@@ -59,9 +81,10 @@ namespace Mangos
 
         private void InvokeArkeon(bool _ally, int _id)
         {
+            state = State.SUMMONING;
             GameObject _spawned = SpawnArkeon(_ally, _id);
             _spawned.GetComponent<Animator>().SetTrigger("Show");
-            allyArkeonsOut.Add(_id);
+            allyArkeonsOut.Add(_id); 
         }
 
         public void ArkeonAttackRequest(int _arkeonId, int _attackId)
@@ -99,12 +122,17 @@ namespace Mangos
         {
             PlayerCharacterBattle summoner = _ally ? Player : EnemyCharacter;
             Transform point = arenaPointReference.GetInvokePoint(true, allyArkeonsOut.Count);
-            allyArkeonsOut.Add(_id);
 
             GameObject go = Instantiate(summoner.ArkeonTeam[_id].ModelPrefab, point.position, Quaternion.identity);
             go.transform.LookAt(go.transform.position + (_ally ? Vector3.forward : Vector3.back));
 
             return go;
+        }
+
+        public enum State
+        {
+            WAITING,
+            SUMMONING
         }
     }
 }
