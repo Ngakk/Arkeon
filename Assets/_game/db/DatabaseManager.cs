@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using Newtonsoft.Json;
 
 public class DatabaseManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class DatabaseManager : MonoBehaviour
     public Monster allMonsters;
     int MonsterIndex;
 
+    #region public variables
     public Text Number;
     public InputField Name;
     public InputField Types;
@@ -25,12 +27,16 @@ public class DatabaseManager : MonoBehaviour
     public InputField SpAtk;
     public InputField SpDef;
     public InputField Speed;
-    public Text HP;
+    public InputField HP;
+    #endregion
 
 
     // Start is called before the first frame update
     void Start()
     {
+        MaleRatio.minValue = 0; MaleRatio.maxValue = 100;
+        Learnset.characterLimit = 0;
+
         //Cargo el archivo Items.json desde Resources
         string filePath = "pokes.json".Replace(".json", "");
         TextAsset ArchivoTarget = Resources.Load<TextAsset>(filePath);
@@ -40,7 +46,9 @@ public class DatabaseManager : MonoBehaviour
         allMonsters = new Monster();
         allMonsters.Monsters = new List<MonsterBase>();
 
-        allMonsters = JsonUtility.FromJson<Monster>(elJson);
+        allMonsters = JsonConvert.DeserializeObject<Monster>(elJson);
+        //allMonsters = JsonUtility.FromJson<Monster>(elJson);
+
 
         Debug.Log(allMonsters.ToString());
 
@@ -58,16 +66,77 @@ public class DatabaseManager : MonoBehaviour
 
         if (allMonsters.Monsters.Count < 1) return;
 
-        //MonsterIndex = 0;
-        //currMonster = allMonsters.Monsters[MonsterIndex];
+        MonsterIndex = 0;
+        currMonster = allMonsters.Monsters[MonsterIndex];
 
-        //SetOnScreen(currMonster);
+        SetOnScreen(currMonster);
     }
 
     void SetOnScreen(MonsterBase m)
     {
-        Number.text += m.number.ToString();
+        Number.text = "Number: " + m.number.ToString();
         Name.text = m.name;
         Types.text = string.Join(",", Array.ConvertAll(m.types.ToArray(), i => i.ToString()));
+        CatchRate.text = m.catchRate.ToString();
+        ExpRate.text = m.experienceRate.ToString();
+        EVYield.text = string.Join(",", Array.ConvertAll(m.evYield.ToArray(), i => i.ToString()));
+        Learnset.text = string.Join(",", Array.ConvertAll(m.learnSet.ToArray(), i => i.ToString()));
+        MaleRatio.value = m.maleRatio;
+        Atk.text = m.baseStats.atk.ToString();
+        Def.text = m.baseStats.def.ToString();
+        SpAtk.text = m.baseStats.spAtk.ToString();
+        SpDef.text = m.baseStats.spDef.ToString();
+        Speed.text = m.baseStats.speed.ToString();
+        HP.text = m.baseStats.hp.ToString();
+    }
+
+    public void NextPoke()
+    {
+        if (MonsterIndex < allMonsters.Monsters.Count - 1)
+        {
+            currMonster = allMonsters.Monsters[++MonsterIndex];
+            SetOnScreen(currMonster);
+        }
+    }
+
+    MonsterBase ScreenToObj()
+    {
+        MonsterBase p = new MonsterBase
+        {
+            number = currMonster.number,
+            name = Name.text,
+            types = Types.text.Split(',').Select(int.Parse).ToList(),
+            baseStats = new BaseStats()
+            {
+                hp = int.Parse(HP.text),
+                atk = int.Parse(Atk.text),
+                def = int.Parse(Def.text),
+                spAtk = int.Parse(SpAtk.text),
+                spDef = int.Parse(SpDef.text),
+                speed = int.Parse(Speed.text)
+            },
+            catchRate = int.Parse(CatchRate.text),
+            experienceRate = int.Parse(ExpRate.text),
+            learnSet = Learnset.text.Split(',').Select(int.Parse).ToList(),
+            evYield = EVYield.text.Split(',').Select(int.Parse).ToList(),
+            maleRatio = (int)MaleRatio.value
+        };
+
+        return p;
+    }
+
+    public void UpdateCurrentPoke()
+    {
+        currMonster = ScreenToObj();
+        allMonsters.Monsters[MonsterIndex] = currMonster;
+    }
+
+    public void  PrevPoke()
+    {
+        if (MonsterIndex > 0)
+        {
+            currMonster = allMonsters.Monsters[--MonsterIndex];
+            SetOnScreen(currMonster);
+        }
     }
 }
