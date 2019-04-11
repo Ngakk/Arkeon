@@ -192,7 +192,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1755590921}
-        m_MethodName: MostrarLuz
+        m_MethodName: MostrarTierra
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -296,7 +296,7 @@ PrefabInstance:
     - target: {fileID: 7787703048194465048, guid: b49c8c1f67cfd9541befff86d51d2c64,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7787703048194465048, guid: b49c8c1f67cfd9541befff86d51d2c64,
         type: 3}
@@ -395,7 +395,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1755590921}
-        m_MethodName: MostrarLuz
+        m_MethodName: MostrarOscuro
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -499,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 1219116378019757958, guid: 5450a42df91d9744885988c3e1408adc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1219116378019757958, guid: 5450a42df91d9744885988c3e1408adc,
         type: 3}
@@ -620,10 +620,35 @@ MonoBehaviour:
   LibroTierra: []
   PokeTierra: 3
   Familiar: {fileID: 0}
+  EquipoCombate: []
   cam: {fileID: 0}
   mascara:
     serializedVersion: 2
     m_Bits: 512
+--- !u!1 &1024478769 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6324028992611106476, guid: b49c8c1f67cfd9541befff86d51d2c64,
+    type: 3}
+  m_PrefabInstance: {fileID: 317248353}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1024478770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1024478769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adbd1f960b3fb44697109990c3d37bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nombre: 
+  vidaMax: 0
+  vida: 0
+  nivel: 0
+  tipo: 2
+  LosAtaques: []
 --- !u!1 &1202534974
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,6 +728,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202534974}
   m_CullTransparentMesh: 0
+--- !u!1 &1205524744 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4301825533182143699, guid: 5450a42df91d9744885988c3e1408adc,
+    type: 3}
+  m_PrefabInstance: {fileID: 740834806}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1205524745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205524744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adbd1f960b3fb44697109990c3d37bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nombre: 
+  vidaMax: 0
+  vida: 0
+  nivel: 0
+  tipo: 0
+  LosAtaques:
+  - nombre: 
+    cantidadUsos: 0
+    "da\xF1o": 0
 --- !u!1 &1292958526
 GameObject:
   m_ObjectHideFlags: 0
@@ -978,7 +1030,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &1394102835
 GameObject:
@@ -1044,8 +1096,32 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1517985668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 582923102411183868, guid: bfb44b35ec3ab514095759e9c8a02c14,
+    type: 3}
+  m_PrefabInstance: {fileID: 1815653687}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1517985669
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1517985668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adbd1f960b3fb44697109990c3d37bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nombre: 
+  vidaMax: 0
+  vida: 0
+  nivel: 0
+  tipo: 2
+  LosAtaques: []
 --- !u!1 &1578491066
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,7 +1150,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1615940078
 GameObject:
@@ -1104,7 +1180,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1755590920
 GameObject:
@@ -1219,7 +1295,7 @@ RectTransform:
   - {fileID: 612886034}
   - {fileID: 241501744}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1254,7 +1330,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1815653687
 PrefabInstance:
@@ -1311,7 +1387,7 @@ PrefabInstance:
     - target: {fileID: 2175847685167895056, guid: bfb44b35ec3ab514095759e9c8a02c14,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2175847685167895056, guid: bfb44b35ec3ab514095759e9c8a02c14,
         type: 3}
@@ -1499,6 +1575,7 @@ GameObject:
   - component: {fileID: 4459968855156299166}
   - component: {fileID: 6203131842128646049}
   - component: {fileID: 3244410762435464089}
+  - component: {fileID: 447248888796362283}
   - component: {fileID: 3381480670564330270}
   m_Layer: 9
   m_Name: Cube (1)
@@ -1507,6 +1584,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &447248888796362283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 447248888796362282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adbd1f960b3fb44697109990c3d37bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nombre: 
+  vidaMax: 0
+  vida: 0
+  nivel: 0
+  tipo: 1
+  LosAtaques: []
 --- !u!33 &649034920054133792
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -1577,6 +1672,7 @@ GameObject:
   - component: {fileID: 3802483830155527883}
   - component: {fileID: 9023517581313296033}
   - component: {fileID: 4959725440286087582}
+  - component: {fileID: 2278028116295865759}
   - component: {fileID: 740943396501495522}
   m_Layer: 9
   m_Name: Cylinder (1)
@@ -1585,6 +1681,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &2278028116295865759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2278028116295865758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adbd1f960b3fb44697109990c3d37bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nombre: 
+  vidaMax: 0
+  vida: 0
+  nivel: 0
+  tipo: 1
+  LosAtaques: []
 --- !u!23 &3244410762435464089
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1647,7 +1761,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &3802483830155527883
 Transform:
@@ -1661,7 +1775,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4133303931248443442
 GameObject:
@@ -1674,6 +1788,7 @@ GameObject:
   - component: {fileID: 3420675844573856990}
   - component: {fileID: 649034920054133792}
   - component: {fileID: 1640028101419483868}
+  - component: {fileID: 4133303931248443443}
   - component: {fileID: 4426592209871828288}
   m_Layer: 9
   m_Name: Sphere (1)
@@ -1682,6 +1797,24 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4133303931248443443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4133303931248443442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4adbd1f960b3fb44697109990c3d37bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Nombre: 
+  vidaMax: 0
+  vida: 0
+  nivel: 0
+  tipo: 1
+  LosAtaques: []
 --- !u!135 &4426592209871828288
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1707,7 +1840,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &4959725440286087582
 MeshRenderer:

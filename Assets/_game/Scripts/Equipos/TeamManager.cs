@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pokemon;
 
 namespace Equipos
 {
@@ -52,11 +53,36 @@ namespace Equipos
                 // Si el rayo colisiona con el objeto con el layer indicado
                 if (Physics.Raycast(rayo, out hit, Mathf.Infinity, mascara))
                 {
-                    if (LibroLuz.Count < LibroLuz.Capacity)
+                    Poke elPoke = hit.collider.gameObject.GetComponent<Poke>();
+                    
+                    if (elPoke.tipo == Poke.Tipos.Luz)
                     {
-                        LibroLuz.Add(hit.collider.gameObject);
-                        EquipoCombate.Add(hit.collider.gameObject);
-                        hit.collider.gameObject.SetActive(false);
+                        if (LibroLuz.Count < LibroLuz.Capacity)
+                        {
+                            LibroLuz.Add(hit.collider.gameObject);
+                            EquipoCombate.Add(hit.collider.gameObject);
+                            hit.collider.gameObject.SetActive(false);
+                        }
+                    }
+                    
+                    if (elPoke.tipo == Poke.Tipos.Oscuridad)
+                    {
+                        if (LibroOscuridad.Count < LibroOscuridad.Capacity)
+                        {
+                            LibroOscuridad.Add(hit.collider.gameObject);
+                            EquipoCombate.Add(hit.collider.gameObject);
+                            hit.collider.gameObject.SetActive(false);
+                        }
+                    }
+                    
+                    if (elPoke.tipo == Poke.Tipos.Tierra)
+                    {
+                        if (LibroTierra.Count < LibroTierra.Capacity)
+                        {
+                            LibroTierra.Add(hit.collider.gameObject);
+                            EquipoCombate.Add(hit.collider.gameObject);
+                            hit.collider.gameObject.SetActive(false);
+                        }
                     }
                 }
             }

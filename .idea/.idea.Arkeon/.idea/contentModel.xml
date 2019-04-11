@@ -19,10 +19,12 @@
             <e p="ManagerUI.cs" t="Include" />
           </e>
           <e p="Scripts" t="Include">
+            <e p="Ataques.cs" t="Include" />
             <e p="Equipos" t="Include">
               <e p="TeamManager.cs" t="Include" />
               <e p="Teams.cs" t="Include" />
             </e>
+            <e p="Poke.cs" t="Include" />
           </e>
         </e>
         <e p="Rewired" t="Include">
