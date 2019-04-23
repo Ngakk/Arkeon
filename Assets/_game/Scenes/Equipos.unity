@@ -530,6 +530,7 @@ GameObject:
   - component: {fileID: 867413925}
   - component: {fileID: 867413924}
   - component: {fileID: 867413927}
+  - component: {fileID: 867413928}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -608,7 +609,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867413923}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5da69d47ba7960c4097d252d844abf6e, type: 3}
   m_Name: 
@@ -625,6 +626,23 @@ MonoBehaviour:
   mascara:
     serializedVersion: 2
     m_Bits: 512
+--- !u!114 &867413928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867413923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f82d01daa52f05d498a0c0bfedcdfa54, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 0}
+  mascara:
+    serializedVersion: 2
+    m_Bits: 512
+  PokeSeleccionado: {fileID: 0}
 --- !u!1 &1024478769 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6324028992611106476, guid: b49c8c1f67cfd9541befff86d51d2c64,
@@ -1134,7 +1152,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos3
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1164,7 +1182,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos2
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1314,7 +1332,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos1
   m_TagString: Untagged
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1

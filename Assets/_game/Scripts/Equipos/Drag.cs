@@ -12,6 +12,8 @@ public class Drag : MonoBehaviour
 
     public GameObject PokeSeleccionado;
 
+    float Distance;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,23 +23,27 @@ public class Drag : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            if (Seleccionado == false)
+            RaycastHit hit;
+
+            // Linea invisible que se lanzara en la posicion donde tocamos la pantalla
+            Ray rayo = cam.ScreenPointToRay(Input.mousePosition);
+
+            // Si el rayo colisiona con el objeto con el layer indicado
+            if (Physics.Raycast(rayo, out hit, Mathf.Infinity, mascara))
             {
-                RaycastHit hit;
-
-                // Linea invisible que se lanzara en la posicion donde tocamos la pantalla
-                Ray rayo = cam.ScreenPointToRay(Input.mousePosition);
-
-                // Si el rayo colisiona con el objeto con el layer indicado
-                if (Physics.Raycast(rayo, out hit, Mathf.Infinity, mascara))
+                if (Seleccionado == false)
                 {
-                    Seleccionado = true;
-                    /*Vector3 tmp = hit.transform.position;
-                    hit.collider.transform.position = new Vector3(hit.point.x, hit.point.y, tmp.z);*/
                     PokeSeleccionado = hit.collider.gameObject;
                 }
+
+                Seleccionado = true;
+
+                Vector3 tmp = hit.transform.position;
+
+                PokeSeleccionado.transform.position = new Vector3(hit.point.x, hit.point.y, tmp.z);
+
             }
         }
 
@@ -45,12 +51,13 @@ public class Drag : MonoBehaviour
         {
             Vector3 tmp = PokeSeleccionado.transform.position;
 
-            PokeSeleccionado.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, tmp.z);
+            //PokeSeleccionado.transform.position = new Vector3(, , tmp.z);
         }
         
         if(Input.GetKeyUp(KeyCode.Mouse0))
         {
             Seleccionado = false;
+            PokeSeleccionado = null;
         }
 
     }
