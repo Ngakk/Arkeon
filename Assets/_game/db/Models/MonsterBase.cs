@@ -24,8 +24,3 @@ public class MonsterBase
     public List<int> evYield { get; set; }
     public int maleRatio { get; set; }
 }
-
-public class Monster
-{
-    public List<MonsterBase> Monsters { get; set; }
-}

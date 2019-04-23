@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
-using Newtonsoft.Json;
 
 public class DatabaseManager : MonoBehaviour
 {
     MonsterBase currMonster;
-    public Monster allMonsters;
+    public List<MonsterBase> allMonsters;
     int MonsterIndex;
 
     #region public variables
@@ -28,6 +27,7 @@ public class DatabaseManager : MonoBehaviour
     public InputField SpDef;
     public InputField Speed;
     public InputField HP;
+    public Text MaleRatioLabel;
     #endregion
 
 
@@ -40,14 +40,12 @@ public class DatabaseManager : MonoBehaviour
         //Cargo el archivo Items.json desde Resources
         string filePath = "pokes.json".Replace(".json", "");
         TextAsset ArchivoTarget = Resources.Load<TextAsset>(filePath);
-        string elJson = "{\"Monsters\":" + ArchivoTarget.text + "}";
+        string elJson = ArchivoTarget.text;
         Debug.Log(elJson);
 
-        allMonsters = new Monster();
-        allMonsters.Monsters = new List<MonsterBase>();
+        allMonsters = new List<MonsterBase>();
 
-        allMonsters = JsonConvert.DeserializeObject<Monster>(elJson);
-        //allMonsters = JsonUtility.FromJson<Monster>(elJson);
+        allMonsters = JsonConvert.DeserializeObject<List<MonsterBase>>(elJson);
 
 
         Debug.Log(allMonsters.ToString());
@@ -58,16 +56,10 @@ public class DatabaseManager : MonoBehaviour
             return;
         }
 
-        if (allMonsters.Monsters == null)
-        {
-            Debug.LogError("All monsters . monsters is null");
-            return;
-        }
-
-        if (allMonsters.Monsters.Count < 1) return;
+        if (allMonsters.Count < 1) return;
 
         MonsterIndex = 0;
-        currMonster = allMonsters.Monsters[MonsterIndex];
+        currMonster = allMonsters[MonsterIndex];
 
         SetOnScreen(currMonster);
     }
@@ -88,22 +80,23 @@ public class DatabaseManager : MonoBehaviour
         SpDef.text = m.baseStats.spDef.ToString();
         Speed.text = m.baseStats.speed.ToString();
         HP.text = m.baseStats.hp.ToString();
+        MaleRatioLabel.text = m.maleRatio.ToString();
     }
 
     public void NextPoke()
     {
-        if (MonsterIndex < allMonsters.Monsters.Count - 1)
+        if (MonsterIndex < allMonsters.Count - 1)
         {
-            currMonster = allMonsters.Monsters[++MonsterIndex];
+            currMonster = allMonsters[++MonsterIndex];
             SetOnScreen(currMonster);
         }
     }
 
-    MonsterBase ScreenToObj()
+    MonsterBase ScreenToObj(int newNumber = -1)
     {
         MonsterBase p = new MonsterBase
         {
-            number = currMonster.number,
+            number = newNumber > 0 ? newNumber : currMonster.number,
             name = Name.text,
             types = Types.text.Split(',').Select(int.Parse).ToList(),
             baseStats = new BaseStats()
@@ -128,14 +121,37 @@ public class DatabaseManager : MonoBehaviour
     public void UpdateCurrentPoke()
     {
         currMonster = ScreenToObj();
-        allMonsters.Monsters[MonsterIndex] = currMonster;
+        allMonsters[MonsterIndex] = currMonster;
+        Save();
     }
 
-    public void  PrevPoke()
+    public void UpdateMaleRatio()
+    {
+        float val = MaleRatio.value;
+        MaleRatioLabel.text = ((int)val).ToString();
+    }
+
+    public void SaveNewPoke()
+    {
+        MonsterIndex = allMonsters.Count+1;
+        MonsterBase newMonster = ScreenToObj(MonsterIndex);
+        Number.text = "Number: " + newMonster.number.ToString();
+        allMonsters.Add(newMonster);
+
+        Save();
+    }
+
+    private void Save()
+    {
+        string json = JsonConvert.SerializeObject(allMonsters);
+        File.WriteAllText("Assets/Resources/pokes.json", json);
+    }
+
+    public void PrevPoke()
     {
         if (MonsterIndex > 0)
         {
-            currMonster = allMonsters.Monsters[--MonsterIndex];
+            currMonster = allMonsters[--MonsterIndex];
             SetOnScreen(currMonster);
         }
     }
