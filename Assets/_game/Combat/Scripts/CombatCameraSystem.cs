@@ -7,6 +7,14 @@ using UnityEngine.Playables;
 
 namespace Mangos
 {
+    /// <summary> Este es el manager de la cámara en escena de combate
+    /// Playable Directors
+    /// [0] Vista completa del escenario. Escena básica de combate.
+    /// [1] Vista al jugador y sus invocaciones.
+    /// [2] Transición de escena desde la vista de Combate a Jugador.
+    /// [3] Transición de escene desde la vista de Jugador a Combate.
+    /// [4] Vista al enemigo y sus invocaciones.
+    /// </summary>
 
     public class CombatCameraSystem : MonoBehaviour
     {
@@ -22,22 +30,54 @@ namespace Mangos
 
         void Start()
         {
+            //Empieza con la cámara viendo al personaje en tercera persona y el enemigo de frente
             playableDirectors[0].Play();
-            Debug.Log(playableDirectors[3].duration);
         }
 
         public void CombatView()
         {
-            playableDirectors[1].Stop();
+            //Método para mover la vista del Jugador a la cámara de combate
+            for(int i = 0; i < playableDirectors.Count; i++)
+                playableDirectors[i].Stop();
             playableDirectors[3].Play();
             StartCoroutine("FinishCombatViewFromPlayer");
         }
 
         public void ChangeViewToPlayerInv()
         {
-            playableDirectors[0].Stop();
+            //Método para mover la vista de Combate a la cámara del Jugador
+            for (int i = 0; i < playableDirectors.Count; i++)
+                playableDirectors[i].Stop();
             playableDirectors[2].Play();
             StartCoroutine("FinishPlayerViewFromCombat");
+        }
+
+        public void ChangeViewToEnemyInv()
+        {
+            //Método para mover la vista de Combate a la cámara del Enemigo
+            for (int i = 0; i < playableDirectors.Count; i++)
+                playableDirectors[i].Stop();
+            playableDirectors[4].Play();
+            //StartCoroutine("FinishEnemyViewFromCombat");
+        }
+
+        public void ChangeViewToCombatFromEnemy()
+        {
+            //Método para mover la vista del Jugador a la cámara de combate
+            for (int i = 0; i < playableDirectors.Count; i++)
+                playableDirectors[i].Stop();
+            playableDirectors[0].Play();
+            //StartCoroutine("FinishCombatViewFromPlayer");
+        }
+
+        //Debajo de esta sección, son métodos para redirigir el focus de las cámaras.
+
+        public void FocusEnemy()
+        {
+            for (int i = 0; i < CM_VCameras.Length; i++)
+            {
+                CM_VCameras[i].LookAt = enemy.transform;
+            }
         }
 
         public void FocusPlayer()
@@ -80,6 +120,8 @@ namespace Mangos
             }
         }
 
+        //Coroutines para hacer las transiciones de cámaras
+
         IEnumerator FinishCombatViewFromPlayer()
         {
             yield return new WaitForSeconds((float)playableDirectors[3].duration);
@@ -92,6 +134,28 @@ namespace Mangos
         }
 
         IEnumerator FinishPlayerViewFromCombat()
+        {
+            yield return new WaitForSeconds((float)playableDirectors[2].duration);
+            playableDirectors[2].Stop();
+
+            if (playableDirectors[2].state != PlayState.Playing)
+            {
+                playableDirectors[1].Play();
+            }
+        }
+
+        IEnumerator FinishCombatViewFromEnemy()
+        {
+            yield return new WaitForSeconds((float)playableDirectors[3].duration);
+            playableDirectors[3].Stop();
+
+            if (playableDirectors[3].state != PlayState.Playing)
+            {
+                playableDirectors[0].Play();
+            }
+        }
+
+        IEnumerator FinishEnemyViewFromCombat()
         {
             yield return new WaitForSeconds((float)playableDirectors[2].duration);
             playableDirectors[2].Stop();
