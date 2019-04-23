@@ -72,7 +72,7 @@ MonoBehaviour:
   m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
   m_Rotation: {x: 0, y: 0, z: 0, w: 1}
   m_ApplyOffsets: 0
---- !u!114 &114863227536630506
+--- !u!114 &114175010617339588
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -85,7 +85,7 @@ MonoBehaviour:
   m_Name: CinemachineShot
   m_EditorClassIdentifier: 
   VirtualCamera:
-    exposedName: 45c8b7b11e6588349a464273f205a32f
+    exposedName: 5492ff956e0b4614585afce97a61d9ae
     defaultValue: {fileID: 0}
 --- !u!114 &114928669564485476
 MonoBehaviour:
@@ -137,18 +137,18 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
         weightedMode: 0
         inWeight: 0
         outWeight: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
     m_Version: 1
   - m_Start: 0
     m_ClipIn: 0
-    m_Asset: {fileID: 114863227536630506}
+    m_Asset: {fileID: 114175010617339588}
     m_Duration: 3
     m_TimeScale: 1
     m_ParentTrack: {fileID: 114937353291819616}
@@ -257,7 +257,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: CM vcam8
+    m_DisplayName: CM vcam13
     m_Version: 1
   - m_Start: 1.5
     m_ClipIn: 0
@@ -299,8 +299,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 0
         value: 1
-        inSlope: 0
-        outSlope: 0
+        inSlope: -2
+        outSlope: -2
         tangentMode: 0
         weightedMode: 0
         inWeight: 0
@@ -308,8 +308,8 @@ MonoBehaviour:
       - serializedVersion: 3
         time: 1
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -0
+        outSlope: -0
         tangentMode: 0
         weightedMode: 0
         inWeight: 0

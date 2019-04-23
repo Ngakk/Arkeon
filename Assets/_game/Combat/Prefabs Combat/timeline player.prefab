@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6066758302883020041}
-  m_LocalRotation: {x: 0.01789104, y: 0.7074228, z: -0.017918548, w: 0.7063369}
+  m_LocalRotation: {x: 0.05605508, y: 0.70647746, z: -0.056311432, w: 0.7032614}
   m_LocalPosition: {x: -7.193918, y: -0.59337324, z: -1.9265897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -132,12 +132,12 @@ MonoBehaviour:
   m_LookaheadIgnoreY: 0
   m_HorizontalDamping: 0.5
   m_VerticalDamping: 0.5
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenX: 0.4975
+  m_ScreenY: 0.35000014
   m_DeadZoneWidth: 0.076
-  m_DeadZoneHeight: 0.153
-  m_SoftZoneWidth: 0.8
-  m_SoftZoneHeight: 0.8
+  m_DeadZoneHeight: 0.11
+  m_SoftZoneWidth: 0.68
+  m_SoftZoneHeight: 0.45
   m_BiasX: 0
   m_BiasY: 0
   m_CenterOnActivate: 1
@@ -187,7 +187,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6066758303210739367}
-  m_LocalRotation: {x: 0.022452908, y: 0.7072923, z: -0.022487428, w: 0.7062066}
+  m_LocalRotation: {x: 0.060652163, y: 0.70609415, z: -0.060929533, w: 0.7028798}
   m_LocalPosition: {x: -7.193918, y: -0.509, z: -1.9265897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -256,7 +256,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6066758303231294840}
-  m_LocalRotation: {x: 0.017891042, y: 0.70742273, z: -0.017918544, w: 0.70633703}
+  m_LocalRotation: {x: 0.056110963, y: 0.706473, z: -0.056367565, w: 0.7032569}
   m_LocalPosition: {x: -7.193918, y: -0.59337324, z: -1.9265897}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -464,8 +464,8 @@ MonoBehaviour:
   m_LookaheadIgnoreY: 0
   m_HorizontalDamping: 0.5
   m_VerticalDamping: 0.5
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenX: 0.4975
+  m_ScreenY: 0.35
   m_DeadZoneWidth: 0.076
   m_DeadZoneHeight: 0.153
   m_SoftZoneWidth: 0.8
@@ -558,10 +558,10 @@ MonoBehaviour:
   m_LookaheadIgnoreY: 0
   m_HorizontalDamping: 0.5
   m_VerticalDamping: 0.5
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
+  m_ScreenX: 0.4975
+  m_ScreenY: 0.3500001
   m_DeadZoneWidth: 0.076
-  m_DeadZoneHeight: 0.153
+  m_DeadZoneHeight: 0.11
   m_SoftZoneWidth: 0.8
   m_SoftZoneHeight: 0.8
   m_BiasX: 0
