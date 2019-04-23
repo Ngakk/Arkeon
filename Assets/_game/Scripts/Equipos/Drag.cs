@@ -12,8 +12,6 @@ public class Drag : MonoBehaviour
 
     public GameObject PokeSeleccionado;
 
-    float Distance;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -45,13 +43,6 @@ public class Drag : MonoBehaviour
                 PokeSeleccionado.transform.position = new Vector3(hit.point.x, hit.point.y, tmp.z);
 
             }
-        }
-
-        if(Seleccionado == true)
-        {
-            Vector3 tmp = PokeSeleccionado.transform.position;
-
-            //PokeSeleccionado.transform.position = new Vector3(, , tmp.z);
         }
         
         if(Input.GetKeyUp(KeyCode.Mouse0))
