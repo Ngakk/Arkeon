@@ -1,80 +1,95 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Equipos;
 
-public class Teams : MonoBehaviour
+namespace Equipos
 {
-    public TeamManager manager;
-    
-    public List<Transform> Positions = new List<Transform>();
-    
-    // Start is called before the first frame update
-    void Start()
+    public class Teams : MonoBehaviour
     {
-        
-    }
+        public TeamManager manager;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        public List<Transform> Positions = new List<Transform>();
 
-    public void MostrarLuz()
-    {
-        for (int i = 0; i < manager.LibroLuz.Count; i++)
+        // Start is called before the first frame update
+        void Start()
         {
-            manager.LibroLuz[i].SetActive(true);
-            manager.LibroLuz[i].transform.position = Positions[i].position;
+
         }
-        for (int i = 0; i < manager.LibroOscuridad.Count; i++)
+
+        // Update is called once per frame
+        void Update()
         {
-            manager.LibroOscuridad[i].SetActive(false);
+
         }
-        
-        for (int i = 0; i < manager.LibroTierra.Count; i++)
+
+        public void MostrarTodos()
         {
-            manager.LibroTierra[i].SetActive(false);
+            MostrarLuz();
+            MostrarOscuro();
+            MostrarTierra();
         }
-        
-    }
-    
-    public void MostrarOscuro()
-    {
-        for (int i = 0; i < manager.LibroOscuridad.Count; i++)
+
+        public void MostrarLuz()
         {
-            manager.LibroOscuridad[i].SetActive(true);
-            manager.LibroOscuridad[i].transform.position = Positions[i].position;
+            for (int i = 0; i < manager.LibroLuz.Count; i++)
+            {
+                manager.LibroLuz[i].SetActive(true);
+                manager.LibroLuz[i].transform.position = Positions[i].position;
+            }
+
+            /*
+            for (int i = 0; i < manager.LibroOscuridad.Count; i++)
+            {
+                manager.LibroOscuridad[i].SetActive(false);
+            }
+
+            for (int i = 0; i < manager.LibroTierra.Count; i++)
+            {
+                manager.LibroTierra[i].SetActive(false);
+            }
+            */
         }
-        
-        for (int i = 0; i < manager.LibroLuz.Count; i++)
-        {
-            manager.LibroLuz[i].SetActive(false);
+
+        public void MostrarOscuro()
+        { 
+            for (int i = 0; i < manager.LibroOscuridad.Count; i++)
+            {
+                manager.LibroOscuridad[i].SetActive(true);
+                manager.LibroOscuridad[i].transform.position = Positions[i].position;
+            }
+
+            /*
+            for (int i = 0; i < manager.LibroLuz.Count; i++)
+            {
+                manager.LibroLuz[i].SetActive(false);
+            }
+
+            for (int i = 0; i < manager.LibroTierra.Count; i++)
+            {
+                manager.LibroTierra[i].SetActive(false);
+            }
+            */
         }
-        
-        for (int i = 0; i < manager.LibroTierra.Count; i++)
+
+        public void MostrarTierra()
         {
-            manager.LibroTierra[i].SetActive(false);
-        }
-    }
-    
-    public void MostrarTierra()
-    {
-        for (int i = 0; i < manager.LibroTierra.Count; i++)
-        {
-            manager.LibroTierra[i].SetActive(true);
-            manager.LibroTierra[i].transform.position = Positions[i].position;
-        }
-        
-        for (int i = 0; i < manager.LibroLuz.Count; i++)
-        {
-            manager.LibroLuz[i].SetActive(false);
-        }
-        
-        for (int i = 0; i < manager.LibroOscuridad.Count; i++)
-        {
-            manager.LibroOscuridad[i].SetActive(false);
+            for (int i = 0; i < manager.LibroTierra.Count; i++)
+            {
+                manager.LibroTierra[i].SetActive(true);
+                manager.LibroTierra[i].transform.position = Positions[i].position;
+            }
+
+            /*
+            for (int i = 0; i < manager.LibroLuz.Count; i++)
+            {
+                manager.LibroLuz[i].SetActive(false);
+            }
+
+            for (int i = 0; i < manager.LibroOscuridad.Count; i++)
+            {
+                manager.LibroOscuridad[i].SetActive(false);
+            }
+            */
         }
     }
 }

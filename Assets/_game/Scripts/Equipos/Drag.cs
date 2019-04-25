@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Equipos;
 
 public class Drag : MonoBehaviour
 {
@@ -11,6 +12,12 @@ public class Drag : MonoBehaviour
     bool Seleccionado = false;
 
     public GameObject PokeSeleccionado;
+
+    TeamManager manager;
+
+    Teams teams;
+
+    Vector3 PosicionOriginal;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +41,7 @@ public class Drag : MonoBehaviour
                 if (Seleccionado == false)
                 {
                     PokeSeleccionado = hit.collider.gameObject;
+                    PosicionOriginal = hit.transform.position;
                 }
 
                 Seleccionado = true;
@@ -41,15 +49,22 @@ public class Drag : MonoBehaviour
                 Vector3 tmp = hit.transform.position;
 
                 PokeSeleccionado.transform.position = new Vector3(hit.point.x, hit.point.y, tmp.z);
-
             }
         }
-        
-        if(Input.GetKeyUp(KeyCode.Mouse0))
+
+        if (Input.GetKeyUp(KeyCode.Mouse0))
         {
             Seleccionado = false;
+
+            PokeSeleccionado.transform.position = PosicionOriginal;
+
             PokeSeleccionado = null;
         }
+    }
 
+    void Agregar(GameObject ArkeonAgregado)
+    {
+        manager.AgregarEquipo(ArkeonAgregado);
+        teams.MostrarTodos();
     }
 }

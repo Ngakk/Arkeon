@@ -10,13 +10,13 @@ namespace Equipos
     {
         // Libros
         public List<GameObject> LibroLuz = new List<GameObject>();
-        public int PokeLuz;
+        //public int PokeLuz;
 
         public List<GameObject> LibroOscuridad = new List<GameObject>();
-        public int PokeOscuro;
+        //public int PokeOscuro;
 
         public List<GameObject> LibroTierra = new List<GameObject>();
-        public int PokeTierra;
+        //public int PokeTierra;
 
         // Pokemon que siempre esta con el jugador
         // Este wey no ocupa espacio en los libros
@@ -25,67 +25,56 @@ namespace Equipos
         // Equipo para la batalla
         public List<GameObject> EquipoCombate = new List<GameObject>();
 
-        public Camera cam;
-        public LayerMask mascara;
+        //public Camera cam;
+        //public LayerMask mascara;
 
-    // Start is called before the first frame update
+        // Start is called before the first frame update
         void Start()
         {
-            LibroLuz.Capacity = PokeLuz;
-            LibroOscuridad.Capacity = PokeOscuro;
-            LibroTierra.Capacity = PokeTierra;
+            LibroLuz.Capacity = 3;
+            LibroOscuridad.Capacity = 3;
+            LibroTierra.Capacity = 3;
 
             EquipoCombate.Capacity = 9;
-
-            cam = Camera.main;
         }
 
         // Update is called once per frame
         void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+
+        }
+
+        public void AgregarEquipo(GameObject Arkeon)
+        {
+            Poke poke = Arkeon.GetComponent<Poke>();
+
+            if (poke.tipo == Poke.Tipos.Luz)
             {
-                RaycastHit hit;
-
-                // Linea invisible que se lanzara en la posicion donde tocamos la pantalla
-                Ray rayo = cam.ScreenPointToRay(Input.mousePosition);
-
-                // Si el rayo colisiona con el objeto con el layer indicado
-                if (Physics.Raycast(rayo, out hit, Mathf.Infinity, mascara))
+                if (LibroLuz.Count < LibroLuz.Capacity)
                 {
-                    Poke elPoke = hit.collider.gameObject.GetComponent<Poke>();
-                    
-                    if (elPoke.tipo == Poke.Tipos.Luz)
-                    {
-                        if (LibroLuz.Count < LibroLuz.Capacity)
-                        {
-                            LibroLuz.Add(hit.collider.gameObject);
-                            EquipoCombate.Add(hit.collider.gameObject);
-                            hit.collider.gameObject.SetActive(false);
-                        }
-                    }
-                    
-                    if (elPoke.tipo == Poke.Tipos.Oscuridad)
-                    {
-                        if (LibroOscuridad.Count < LibroOscuridad.Capacity)
-                        {
-                            LibroOscuridad.Add(hit.collider.gameObject);
-                            EquipoCombate.Add(hit.collider.gameObject);
-                            hit.collider.gameObject.SetActive(false);
-                        }
-                    }
-                    
-                    if (elPoke.tipo == Poke.Tipos.Tierra)
-                    {
-                        if (LibroTierra.Count < LibroTierra.Capacity)
-                        {
-                            LibroTierra.Add(hit.collider.gameObject);
-                            EquipoCombate.Add(hit.collider.gameObject);
-                            hit.collider.gameObject.SetActive(false);
-                        }
-                    }
+                    LibroLuz.Add(Arkeon);
+                    EquipoCombate.Add(Arkeon);
+                }
+            }
+
+            if (poke.tipo == Poke.Tipos.Oscuridad)
+            {
+                if (LibroOscuridad.Count < LibroOscuridad.Capacity)
+                {
+                    LibroOscuridad.Add(Arkeon);
+                    EquipoCombate.Add(Arkeon);
+                }
+            }
+
+            if (poke.tipo == Poke.Tipos.Tierra)
+            {
+                if (LibroTierra.Count < LibroTierra.Capacity)
+                {
+                    LibroTierra.Add(Arkeon);
+                    EquipoCombate.Add(Arkeon);
                 }
             }
         }
     }
+    
 }
