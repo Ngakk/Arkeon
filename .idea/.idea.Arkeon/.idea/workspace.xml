@@ -23,15 +23,7 @@
     <option name="FILTER_BY_CURRENT_PROJECT" value="true" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f3cfca88-17c9-4398-85af-1430495b9150" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arkeon/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arkeon/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_game/Scenes/Equipos.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_game/Scenes/Equipos.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_game/Scripts/Equipos/Drag.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_game/Scripts/Equipos/Drag.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_game/Scripts/Equipos/TeamManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_game/Scripts/Equipos/TeamManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_game/Scripts/Equipos/Teams.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_game/Scripts/Equipos/Teams.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/_game/Scripts/Poke.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/_game/Scripts/Poke.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
-    </list>
+    <list default="true" id="f3cfca88-17c9-4398-85af-1430495b9150" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,8 +100,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/_game/Scripts/Equipos/Drag.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="494">
-              <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+            <state relative-caret-position="477">
+              <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
               <folding>
                 <marker date="1556652503240" expanded="false" signature="6:93" ph="..." />
                 <marker date="1556652503240" expanded="true" signature="128:2358" ph="{...}" />
@@ -253,12 +245,12 @@
       <workItem from="1554233945448" duration="588000" />
       <workItem from="1554235021011" duration="2881000" />
       <workItem from="1555006565286" duration="5021000" />
-      <workItem from="1556648869351" duration="3613000" />
+      <workItem from="1556648869351" duration="4235000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22806000" />
+    <option name="totallyTimeSpent" value="23428000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -426,8 +418,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/_game/Scripts/Equipos/Drag.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
+        <state relative-caret-position="477">
+          <caret line="72" column="48" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="48" />
           <folding>
             <marker date="1556652503240" expanded="false" signature="6:93" ph="..." />
             <marker date="1556652503240" expanded="true" signature="128:2358" ph="{...}" />
