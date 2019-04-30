@@ -21,6 +21,8 @@
           <e p="Scripts" t="Include">
             <e p="Ataques.cs" t="Include" />
             <e p="Equipos" t="Include">
+              <e p="Drag.cs" t="Include" />
+              <e p="Equipar.cs" t="Include" />
               <e p="TeamManager.cs" t="Include" />
               <e p="Teams.cs" t="Include" />
             </e>

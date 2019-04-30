@@ -48,7 +48,7 @@ public class Drag : MonoBehaviour
 
                 Vector3 tmp = hit.transform.position;
 
-                PokeSeleccionado.transform.position = new Vector3(hit.point.x, hit.point.y, tmp.z);
+                PokeSeleccionado.transform.position = new Vector3(hit.point.x, hit.point.y - 1, tmp.z);
             }
         }
 
