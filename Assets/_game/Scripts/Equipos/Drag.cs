@@ -9,6 +9,8 @@ public class Drag : MonoBehaviour
 
     public LayerMask mascara;
 
+    public GameObject libro;
+
     bool Seleccionado = false;
 
     public GameObject PokeSeleccionado;
