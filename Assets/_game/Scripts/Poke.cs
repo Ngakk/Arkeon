@@ -30,12 +30,12 @@ namespace Pokemon
         {
             vida = vidaMax;
             
-            Debug.Log("Nombre: " + Nombre);
+            /*Debug.Log("Nombre: " + Nombre);
             Debug.Log("Vida Maxima: " + vidaMax);
             Debug.Log("Vida: " + vida);
             Debug.Log("Nivel Actual: " + nivel);
             Debug.Log("Tipo: " + tipo);
-            Debug.Log("Numero Ataques: " + LosAtaques.Length);
+            Debug.Log("Numero Ataques: " + LosAtaques.Length);*/
             for (int i = 0; i < LosAtaques.Length; i++)
             {
                 int pos = i + 1;

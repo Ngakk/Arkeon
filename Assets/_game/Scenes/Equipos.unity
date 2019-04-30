@@ -149,7 +149,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos6
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -196,18 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da69d47ba7960c4097d252d844abf6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LibroLuz:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  LibroOscuridad:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  LibroTierra:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  LibroLuz: []
+  LibroOscuridad: []
+  LibroTierra: []
   Familiar: {fileID: 0}
   EquipoCombate:
   - {fileID: 0}
@@ -231,7 +222,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &241501743
 GameObject:
@@ -399,7 +390,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos7
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -583,7 +574,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos9
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -637,7 +628,7 @@ GameObject:
   - component: {fileID: 864518281}
   - component: {fileID: 864518282}
   m_Layer: 0
-  m_Name: PosManager
+  m_Name: TeamsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -664,7 +655,7 @@ Transform:
   - {fileID: 1660759262}
   - {fileID: 753528755}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &864518282
 MonoBehaviour:
@@ -678,17 +669,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199d4585f88a6cd458e41dfa2fd5fdac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
-  Positions:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  manager: {fileID: 208671443}
+  PositionsLuz:
+  - {fileID: 1798166442}
+  - {fileID: 1615940079}
+  - {fileID: 1578491067}
+  PositionsOscuro:
+  - {fileID: 1545776702}
+  - {fileID: 1438750565}
+  - {fileID: 155503762}
+  PositionsTierra:
+  - {fileID: 326553569}
+  - {fileID: 1660759262}
+  - {fileID: 753528755}
 --- !u!1 &867413923
 GameObject:
   m_ObjectHideFlags: 0
@@ -806,8 +799,12 @@ MonoBehaviour:
   mascara:
     serializedVersion: 2
     m_Bits: 512
-  libro: {fileID: 0}
+  mascaraLibro:
+    serializedVersion: 2
+    m_Bits: 1024
   PokeSeleccionado: {fileID: 0}
+  manager: {fileID: 208671443}
+  teams: {fileID: 864518282}
 --- !u!1001 &979027993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1651,7 +1648,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1438750564
 GameObject:
@@ -1665,7 +1662,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos5
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1811,7 +1808,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos4
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1841,7 +1838,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos3
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1871,7 +1868,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos2
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2017,7 +2014,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos8
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2325,10 +2322,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   manager: {fileID: 867413927}
-  Positions:
-  - {fileID: 1798166442}
-  - {fileID: 1615940079}
-  - {fileID: 1578491067}
+  PositionsLuz: []
+  PositionsOscuro: []
+  PositionsTierra: []
 --- !u!114 &1755590922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2405,7 +2401,7 @@ RectTransform:
   - {fileID: 612886034}
   - {fileID: 241501744}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2424,7 +2420,7 @@ GameObject:
   m_Layer: 0
   m_Name: Pos1
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2620,7 +2616,7 @@ Transform:
   - {fileID: 1287920023}
   - {fileID: 461116227}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1981455289
 GameObject:
@@ -2927,6 +2923,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LibroPref
       objectReference: {fileID: 0}
+    - target: {fileID: 3113600353928846889, guid: bbd2151bcb387e149910d67c7aebd30a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8989116182739245864, guid: bbd2151bcb387e149910d67c7aebd30a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3032,5 +3033,15 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5ef31b9616e5757408902549c9259315, type: 2}
+    - target: {fileID: 6092177891538244762, guid: bbd2151bcb387e149910d67c7aebd30a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641207826348277655, guid: bbd2151bcb387e149910d67c7aebd30a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbd2151bcb387e149910d67c7aebd30a, type: 3}

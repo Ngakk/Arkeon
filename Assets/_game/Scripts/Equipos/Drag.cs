@@ -8,16 +8,15 @@ public class Drag : MonoBehaviour
     public Camera cam;
 
     public LayerMask mascara;
-
-    public GameObject libro;
+    public LayerMask mascaraLibro;
 
     bool Seleccionado = false;
 
     public GameObject PokeSeleccionado;
 
-    TeamManager manager;
+    public TeamManager manager;
 
-    Teams teams;
+    public Teams teams;
 
     Vector3 PosicionOriginal;
 
@@ -25,6 +24,7 @@ public class Drag : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        // Debug.Log(libro.GetComponent<BoxCollider>().size);
     }
 
     // Update is called once per frame
@@ -55,11 +55,28 @@ public class Drag : MonoBehaviour
         }
 
         if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
+        {   
+            RaycastHit hit;
+
+            // Linea invisible que se lanzara en la posicion donde tocamos la pantalla
+            Ray rayo = cam.ScreenPointToRay(Input.mousePosition);
+
+            // Si el rayo colisiona con el objeto con el layer indicado
+            if (Physics.Raycast(rayo, out hit, Mathf.Infinity, mascaraLibro))
+            {
+                Agregar(PokeSeleccionado);
+            }
+            else
+            {
+                if (PokeSeleccionado)
+                {
+                    PokeSeleccionado.transform.position = PosicionOriginal;
+                }
+            }
+            
             Seleccionado = false;
-
-            PokeSeleccionado.transform.position = PosicionOriginal;
-
+            
+            
             PokeSeleccionado = null;
         }
     }

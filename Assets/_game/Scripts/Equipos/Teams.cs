@@ -8,19 +8,9 @@ namespace Equipos
     {
         public TeamManager manager;
 
-        public List<Transform> Positions = new List<Transform>();
-
-        // Start is called before the first frame update
-        void Start()
-        {
-
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
+        public List<Transform> PositionsLuz = new List<Transform>();
+        public List<Transform> PositionsOscuro = new List<Transform>();
+        public List<Transform> PositionsTierra = new List<Transform>();
 
         public void MostrarTodos()
         {
@@ -34,20 +24,8 @@ namespace Equipos
             for (int i = 0; i < manager.LibroLuz.Count; i++)
             {
                 manager.LibroLuz[i].SetActive(true);
-                manager.LibroLuz[i].transform.position = Positions[i].position;
+                manager.LibroLuz[i].transform.position = PositionsLuz[i].position;
             }
-
-            /*
-            for (int i = 0; i < manager.LibroOscuridad.Count; i++)
-            {
-                manager.LibroOscuridad[i].SetActive(false);
-            }
-
-            for (int i = 0; i < manager.LibroTierra.Count; i++)
-            {
-                manager.LibroTierra[i].SetActive(false);
-            }
-            */
         }
 
         public void MostrarOscuro()
@@ -55,20 +33,8 @@ namespace Equipos
             for (int i = 0; i < manager.LibroOscuridad.Count; i++)
             {
                 manager.LibroOscuridad[i].SetActive(true);
-                manager.LibroOscuridad[i].transform.position = Positions[i].position;
+                manager.LibroOscuridad[i].transform.position = PositionsOscuro[i].position;
             }
-
-            /*
-            for (int i = 0; i < manager.LibroLuz.Count; i++)
-            {
-                manager.LibroLuz[i].SetActive(false);
-            }
-
-            for (int i = 0; i < manager.LibroTierra.Count; i++)
-            {
-                manager.LibroTierra[i].SetActive(false);
-            }
-            */
         }
 
         public void MostrarTierra()
@@ -76,20 +42,8 @@ namespace Equipos
             for (int i = 0; i < manager.LibroTierra.Count; i++)
             {
                 manager.LibroTierra[i].SetActive(true);
-                manager.LibroTierra[i].transform.position = Positions[i].position;
+                manager.LibroTierra[i].transform.position = PositionsTierra[i].position;
             }
-
-            /*
-            for (int i = 0; i < manager.LibroLuz.Count; i++)
-            {
-                manager.LibroLuz[i].SetActive(false);
-            }
-
-            for (int i = 0; i < manager.LibroOscuridad.Count; i++)
-            {
-                manager.LibroOscuridad[i].SetActive(false);
-            }
-            */
         }
     }
 }

@@ -25,9 +25,6 @@ namespace Equipos
         // Equipo para la batalla
         public List<GameObject> EquipoCombate = new List<GameObject>();
 
-        //public Camera cam;
-        //public LayerMask mascara;
-
         // Start is called before the first frame update
         void Start()
         {
@@ -38,14 +35,10 @@ namespace Equipos
             EquipoCombate.Capacity = 9;
         }
 
-        // Update is called once per frame
-        void Update()
-        {
-
-        }
-
         public void AgregarEquipo(GameObject Arkeon)
         {
+            Debug.Log("Agregando");
+            
             Poke poke = Arkeon.GetComponent<Poke>();
 
             if (poke.tipo == Poke.Tipos.Luz)
