@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ArenaPointReference : MonoBehaviour
 {
-    public Transform AllyMain, AllyFamiliar, AllyRight, AllyCenter, AllyLeft, EnemyMain, EnemyFamiliar, EnemyRight, EnemyCenter, EnemyLeft;
+    public Transform AllyMain, AllyFamiliar, AllyRight, AllyCenter, AllyLeft, AllyFront, EnemyMain, EnemyFamiliar, EnemyRight, EnemyCenter, EnemyLeft, EnemyFront;
 
     /// <summary>
     /// Regresa el punto en el mundo respecto a si es aliado o enemigo y el numero de invocación que es. Regresa la posición del jugador si los valores estan mal.

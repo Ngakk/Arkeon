@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ab6396912eb4140b81bc43a7da9f84, type: 3}
   m_Name: CoolCapsule 1
   m_EditorClassIdentifier: 
-  ModelPrefab: {fileID: 3759170950674461054, guid: dd7abe167426f9d41830ca9826954f55,
+  ModelPrefab: {fileID: 3759170950674461054, guid: e8ffe601717f5d44b8e6f8a4fcdaaff3,
     type: 3}
   Stats: {fileID: 11400000, guid: 64efbaa199bed394a9849b4fbd26ee68, type: 2}
   Attacks:
