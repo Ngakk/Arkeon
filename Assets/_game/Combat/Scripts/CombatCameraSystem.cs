@@ -14,6 +14,7 @@ namespace Mangos
     /// [2] Transición de escena desde la vista de Combate a Jugador.
     /// [3] Transición de escene desde la vista de Jugador a Combate.
     /// [4] Vista al enemigo y sus invocaciones.
+    /// [5] Transición de escena desde la vista de Combate a Enemigo.
     /// </summary>
 
     public class CombatCameraSystem : MonoBehaviour
@@ -26,7 +27,8 @@ namespace Mangos
         public GameObject invocationPos3;
         public GameObject familiar;
 
-        public CinemachineVirtualCamera[] CM_VCameras;
+        public CinemachineVirtualCamera[] CM_VCamerasToPlayer;
+        public CinemachineVirtualCamera[] CM_VCamerasToEnemy;
 
         void Start()
         {
@@ -37,10 +39,16 @@ namespace Mangos
         public void CombatView()
         {
             //Método para mover la vista del Jugador a la cámara de combate
-            for(int i = 0; i < playableDirectors.Count; i++)
+            for (int i = 0; i < playableDirectors.Count; i++)
                 playableDirectors[i].Stop();
-            playableDirectors[3].Play();
-            StartCoroutine("FinishCombatViewFromPlayer");
+            if (playableDirectors[1].state == PlayState.Playing)
+            {
+                playableDirectors[3].Play();
+                StartCoroutine("FinishCombatViewFromPlayer");
+            } else if (playableDirectors[4].state == PlayState.Playing)
+            {
+                playableDirectors[0].Play();
+            }
         }
 
         public void ChangeViewToPlayerInv()
@@ -57,8 +65,8 @@ namespace Mangos
             //Método para mover la vista de Combate a la cámara del Enemigo
             for (int i = 0; i < playableDirectors.Count; i++)
                 playableDirectors[i].Stop();
-            playableDirectors[4].Play();
-            //StartCoroutine("FinishEnemyViewFromCombat");
+            playableDirectors[5].Play();
+            StartCoroutine("FinishEnemyViewFromCombat");
         }
 
         public void ChangeViewToCombatFromEnemy()
@@ -74,49 +82,49 @@ namespace Mangos
 
         public void FocusEnemy()
         {
-            for (int i = 0; i < CM_VCameras.Length; i++)
+            for (int i = 0; i < CM_VCamerasToEnemy.Length; i++)
             {
-                CM_VCameras[i].LookAt = enemy.transform;
+                CM_VCamerasToEnemy[i].LookAt = enemy.transform;
             }
         }
 
         public void FocusPlayer()
         {
-            for (int i = 0; i < CM_VCameras.Length; i++)
+            for (int i = 0; i < CM_VCamerasToPlayer.Length; i++)
             {
-                CM_VCameras[i].LookAt = player.transform;
+                CM_VCamerasToPlayer[i].LookAt = player.transform;
             }
         }
 
         public void FocusInv1()
         {
-            for (int i = 0; i < CM_VCameras.Length; i++)
+            for (int i = 0; i < CM_VCamerasToPlayer.Length; i++)
             {
-                CM_VCameras[i].LookAt = invocationPos1.transform;
+                CM_VCamerasToPlayer[i].LookAt = invocationPos1.transform;
             }
         }
 
         public void FocusInv2()
         {
-            for (int i = 0; i < CM_VCameras.Length; i++)
+            for (int i = 0; i < CM_VCamerasToPlayer.Length; i++)
             {
-                CM_VCameras[i].LookAt = invocationPos2.transform;
+                CM_VCamerasToPlayer[i].LookAt = invocationPos2.transform;
             }
         }
 
         public void FocusInv3()
         {
-            for (int i = 0; i < CM_VCameras.Length; i++)
+            for (int i = 0; i < CM_VCamerasToPlayer.Length; i++)
             {
-                CM_VCameras[i].LookAt = invocationPos3.transform;
+                CM_VCamerasToPlayer[i].LookAt = invocationPos3.transform;
             }
         }
 
         public void FocusFamiliar()
         {
-            for (int i = 0; i < CM_VCameras.Length; i++)
+            for (int i = 0; i < CM_VCamerasToPlayer.Length; i++)
             {
-                CM_VCameras[i].LookAt = familiar.transform;
+                CM_VCamerasToPlayer[i].LookAt = familiar.transform;
             }
         }
 
@@ -157,12 +165,13 @@ namespace Mangos
 
         IEnumerator FinishEnemyViewFromCombat()
         {
-            yield return new WaitForSeconds((float)playableDirectors[2].duration);
-            playableDirectors[2].Stop();
+            yield return new WaitForSeconds((float)playableDirectors[5].duration);
+            playableDirectors[5].Stop();
 
-            if (playableDirectors[2].state != PlayState.Playing)
+            if (playableDirectors[5].state != PlayState.Playing)
             {
-                playableDirectors[1].Play();
+                Debug.Log("Se cambió exitosamente a enemigo");
+                playableDirectors[4].Play();
             }
         }
     }
