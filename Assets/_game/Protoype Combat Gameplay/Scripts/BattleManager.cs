@@ -7,23 +7,28 @@ namespace Mangos
     public class BattleManager : MonoBehaviour
     {
         public PlayerCharacterBattle PlayerCharacter;
-        public ArkeonSpirit SingleEnemy;
+        public GameObject SingleEnemy;
         public PlayerCharacterBattle EnemyCharacter;
         public ArenaPointReference ArenaPointReference;
         public bool IsSingleEnemy = true;
 
-        //Un id de un arkeon es la posicion del arkeon en su respectivo equipo, empezando por 0
+        //IMPORTANTE: Un id de un arkeon es la posicion del arkeon en su respectivo equipo, empezando por 0. Los equipos se constituyen de todas los arkeons que el jugador trae cargando
+
         private List<int> AllyArkeonsOutId = new List<int> (); //Las ids de los arkeons aliados que ya estan afuera
         private List<int> EnemyArkeonsOutId = new List<int> (); //Los ids de los arkeons enemigos que ya estan afuera
 
-        private List<GameObject> AllyArkeonsOut = new List<GameObject>();
-        private List<GameObject> EnemyArkeonsOut = new List<GameObject>();
+        private List<GameObject> AllyArkeonsOut = new List<GameObject>(); //Lista de referencias a los gameObjects instanciados, estan en la misma posición que en la lista de equipo, si no han sido instanciados son nulos 
+        private List<GameObject> EnemyArkeonsOut = new List<GameObject>(); //Ej: si tienes el ID del arkeon, puedes usar ese id para sacar el gameObject de este arreglos usando el id, EnemyArkeonsOut[id];
 
         //Valores que se mantienen para usarse en funciones llamadas por eventos de animacion
         private bool IsPlayerTurn = true;
+        private bool isDefenderSet = false;
+        private int ArkeonInFrontId = -1;
         private ArkeonSpirit ArkeonInFront = null;
+        private int ArkeonDefendingId = -1;
         private ArkeonSpirit ArkeonDefending = null;
-        private ArkeonAttack LastArkeonAttack = null;
+        private int NextArkeonAttackId = -1;
+        private ArkeonAttack NextArkeonAttack = null;
 
         //Se puede:
         //Invocar
@@ -53,7 +58,7 @@ namespace Mangos
             }
             else
             {
-                ArkeonDefending = SingleEnemy;
+                //ArkeonDefending = SingleEnemy;
             }
         }
 
@@ -82,7 +87,12 @@ namespace Mangos
 
             if(Input.GetKeyDown(KeyCode.W))
             {
-                ArkeonAttackRequest(true, 0, 0);
+                ArkeonSetAttackRequest(true, 0, 0);
+            }
+
+            if(Input.GetKeyDown(KeyCode.E))
+            {
+                
             }
         }
 
@@ -170,6 +180,7 @@ namespace Mangos
             PlayerCharacterBattle mage = _ally ? PlayerCharacter : EnemyCharacter;
 
             IsPlayerTurn = _ally;
+            ArkeonInFrontId = _id;
             ArkeonInFront = mage.ArkeonTeam[_id];
 
             GameObject arkeon = _ally ? AllyArkeonsOut[_id] : EnemyArkeonsOut[_id];
@@ -180,7 +191,7 @@ namespace Mangos
         /// <summary>
         /// TODO summary
         /// </summary>
-        private void CallShieldArkeonRequest(bool _ally, int _id)
+        public void CallShieldArkeonRequest(bool _ally, int _id)
         {
             if (!IsSingleEnemy && !_ally)
             {
@@ -210,11 +221,30 @@ namespace Mangos
             List<GameObject> arkeonsOut = _ally ? AllyArkeonsOut : EnemyArkeonsOut;
 
             ArkeonDefending = mage.ArkeonTeam[_id];
+            isDefenderSet = true;
 
             mage.SendArkeonForward(_id, arkeonsOut[_id]);
         }
 
-        // ------------------------ Ataques ------------------------
+        /// <summary>
+        /// Intenta avisar que un mago decidió no usar un arkeon para defender, se puede llama sin importar quien es el defensor
+        /// </summary>
+        public void WontCallShieldRequest()
+        {
+            //TODO: condiciones
+            WontCallShield();
+        }
+
+        /// <summary>
+        /// Se setea la decición de no usar un arkeon como escudo, sea quien sea el que defiende
+        /// </summary>
+        private void WontCallShield()
+        {
+            ArkeonDefending = null;
+            isDefenderSet = true;
+        }
+
+        // ------------------------ Seteo de ataques ------------------------
 
         /// <summary>
         /// Hace una peticion para que un arkeon de algun equipo ataque, _ally = si es arkeon de aliado o enemigo, _arkeonId = La posicion en el equipo del arkeon, _attackId = la posición del ataque del arkeon
@@ -222,7 +252,7 @@ namespace Mangos
         /// <param name="_ally"></param>
         /// <param name="_arkeonId"></param>
         /// <param name="_attackId"></param>
-        public void ArkeonAttackRequest(bool _ally, int _arkeonId, int _attackId)
+        public void ArkeonSetAttackRequest(bool _ally, int _arkeonId, int _attackId)
         {
             PlayerCharacterBattle mage = _ally ? PlayerCharacter : EnemyCharacter;
 
@@ -232,7 +262,7 @@ namespace Mangos
                 if(mage.ArkeonTeam[_arkeonId].Attacks.Count > _attackId)
                 {
                     //El arkeon si tiene ese ataque
-                    ArkeonAttack(_ally, _arkeonId, _attackId);
+                    ArkeonSetAttack(_ally, _arkeonId, _attackId);
                 }
                 else
                 {
@@ -251,25 +281,26 @@ namespace Mangos
         /// <param name="_ally"></param>
         /// <param name="_arkeonId"></param>
         /// <param name="_attackId"></param>
-        private void ArkeonAttack(bool _ally, int _arkeonId, int _attackId)
+        private void ArkeonSetAttack(bool _ally, int _arkeonId, int _attackId)
         {
             PlayerCharacterBattle mage = _ally ? PlayerCharacter : EnemyCharacter;
 
-            LastArkeonAttack = ArkeonInFront.Attacks[_attackId];
+            NextArkeonAttackId = _attackId;
+            NextArkeonAttack = ArkeonInFront.Attacks[_attackId];
 
             GameObject arkeon = _ally ? AllyArkeonsOut[_arkeonId] : EnemyArkeonsOut[_arkeonId];
 
-            
+            isDefenderSet = false;
 
             mage.ArkeonAttackAnimation(_arkeonId, _attackId, arkeon);
         }
 
-        public void FamiliarAttackRequest(bool _ally, int _attackId)
+        public void FamiliarSetAttackRequest(bool _ally, int _attackId)
         {
 
         }
 
-        public void SingleEnemyArkeonAttackRequest(int _attackId)
+        private void FamiliarSetAttack(bool _ally, int _attackId)
         {
 
         }
@@ -294,8 +325,53 @@ namespace Mangos
 
         }
 
+        // ------------------ Batalla ------------------
+
+        /// <summary>
+        /// Intenta empezar una batalla (i.e un arkeon/familiar realiza el ataque), si es que los valores necesarios estan seteados. 
+        /// </summary>
+        public void StartBattleRequest()
+        {
+            if(ArkeonInFront && NextArkeonAttack && isDefenderSet)
+            {
+                //Estan seteados todos los datos
+                if (ArkeonDefending || (!ArkeonDefending && EnemyCharacter))
+                {
+                    //Hay o un arkeon defendiendo o un mago enemigo a quien atacar
+                    StartBattle();
+                }
+                else
+                {
+                    Debug.Log("No esta seteado el receptor del ataque");
+                }
+            }
+        }
+
+        /// <summary>
+        /// Empieza una batalla
+        /// </summary>
+        private void StartBattle()
+        {
+            PlayerCharacterBattle mage = IsPlayerTurn ?  PlayerCharacter : EnemyCharacter;
+            PlayerCharacterBattle opponent = IsPlayerTurn ? EnemyCharacter : PlayerCharacter;
+            List<GameObject> mageTeam = IsPlayerTurn ? AllyArkeonsOut : EnemyArkeonsOut;
+
+            if (ArkeonDefending)
+            {
+                //El ataque es hacia un arqueon
+                NextArkeonAttack.PreHit(ArkeonInFront.Stats, ArkeonDefending.Stats);
+                mage.ArkeonAttackAnimation(ArkeonInFrontId, NextArkeonAttackId, mageTeam[ArkeonInFrontId]);
+            }
+            else
+            {
+                //El ataque es hacia un mago
+                NextArkeonAttack.PreHit(ArkeonInFront.Stats, opponent);
+                mage.ArkeonAttackAnimation(ArkeonInFrontId, NextArkeonAttackId, mageTeam[ArkeonInFrontId]);
+            }
+        }
+
         // ------------------ Llamadas desde eventos de animacion ------------------
-        
+
 
         // ------------------ Funcionalidades ------------------
         private GameObject SpawnArkeon(bool _ally, int _id)
@@ -315,3 +391,44 @@ namespace Mangos
 }
 
 //TODO: Hacr que el ataque haga daño y las animaciones de daño y todo eso
+
+/* Responsibilidades de cada entidad
+ * 
+ * Arkeon:
+ *  - Hacer Animaciones
+ *  - Atacar
+ *  - Tener Stats
+ *  - Tener ataques
+ *  
+ * Jugador:
+ *  - Tener arkeons
+ *  - Comandar arkeons
+ *  - Invocar arkeons
+ *  - usar al familiar
+ *  - Tiene stats
+ *  
+ * Familiar:
+ *  - Tiene stats
+ *  - Invocar arkeons
+ *  - Atacar
+ *  - Tiene ataques 
+ *  - Hacer animaciones
+ *  - Tiene efectos pasivos
+ *  
+ * BattleManager:
+ *  - Decirle a un personaje que hacer
+ *  - Esperar eventos de animaciones
+ *  - Setearle referencias a los que hacen las cosas
+ *  
+ * BattleTurnManager:
+ *  - Saber en que estado esta
+ *  - Cambiar de turnos
+ *  - Empezar y terminar peleas
+ *  - Decirle al controller si si puede hacer lo que quiere
+ *  - Preguntarlo al BattleManager si se puede hacer lo que el controller quiere
+ * 
+ * Controller:
+ *  - Pedirle al turn manager que haga cosas
+ *  - decirle al jugador que onda
+ * 
+ * /

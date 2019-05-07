@@ -31,12 +31,15 @@ namespace Mangos
         /// <summary>
         /// Que hacer antes del golpe, si se cambian stats.
         /// </summary>
-        public virtual void PreHit(ArkeonStats _target)
+        public virtual void PreHit(ArkeonStats _attacker, ArkeonStats _target)
         {
 
         }
 
-        public virtual void PreHit(PlayerCharacterBattle _target)
+        /// <summary>
+        /// Que hacer antes del golpe, si se cambian stats.
+        /// </summary>
+        public virtual void PreHit(ArkeonStats _attacker, PlayerCharacterBattle _target)
         {
 
         }
@@ -44,7 +47,15 @@ namespace Mangos
         /// <summary>
         /// Que hacer en el momento del golpe.
         /// </summary>
-        public virtual void OnHit(ArkeonStats _target)
+        public virtual void OnHit(ArkeonStats _attacker, ArkeonStats _target)
+        {
+
+        }
+
+        /// <summary>
+        /// Que hacer en el momento del golpe.
+        /// </summary>
+        public virtual void OnHit(ArkeonStats _attacker, PlayerCharacterBattle _target)
         {
 
         }
@@ -52,7 +63,15 @@ namespace Mangos
         /// <summary>
         /// Que hacer despues de el golpe. Por ejemplo, un debuff.
         /// </summary>
-        public virtual void PostHit()
+        public virtual void PostHit(ArkeonStats _attacker, ArkeonStats _target)
+        {
+
+        }
+
+        /// <summary>
+        /// Que hacer despues de el golpe. Por ejemplo, un debuff.
+        /// </summary>
+        public virtual void PostHit(ArkeonStats _attacker, PlayerCharacterBattle _target)
         {
 
         }
