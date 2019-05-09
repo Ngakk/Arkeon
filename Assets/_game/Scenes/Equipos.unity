@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -112,98 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &68510133
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 68510134}
-  - component: {fileID: 68510137}
-  - component: {fileID: 68510136}
-  - component: {fileID: 68510135}
-  m_Layer: 0
-  m_Name: Quad
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &68510134
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68510133}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1615940079}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &68510135
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68510133}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &68510136
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68510133}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 53c575df095588b44913290479cde66b, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &68510137
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 68510133}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &128550249 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2276160294500499, guid: 330745029ca2d944784f0db593bb1e20,
@@ -329,7 +237,7 @@ GameObject:
   - component: {fileID: 211264090}
   - component: {fileID: 211264089}
   m_Layer: 10
-  m_Name: Cube
+  m_Name: Libro
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -401,7 +309,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 211264088}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.7, y: -0.14, z: 0.24}
+  m_LocalPosition: {x: -3.5, y: 0, z: 0}
   m_LocalScale: {x: 5.366655, y: 5.8041, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -876,8 +784,6 @@ GameObject:
   - component: {fileID: 867413926}
   - component: {fileID: 867413925}
   - component: {fileID: 867413924}
-  - component: {fileID: 867413927}
-  - component: {fileID: 867413928}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -949,45 +855,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &867413927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 867413923}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5da69d47ba7960c4097d252d844abf6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LibroLuz: []
-  LibroOscuridad: []
-  LibroTierra: []
-  Familiar: {fileID: 0}
-  EquipoCombate: []
---- !u!114 &867413928
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 867413923}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f82d01daa52f05d498a0c0bfedcdfa54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 0}
-  mascara:
-    serializedVersion: 2
-    m_Bits: 512
-  mascaraLibro:
-    serializedVersion: 2
-    m_Bits: 1024
-  PokeSeleccionado: {fileID: 0}
-  manager: {fileID: 208671443}
-  teams: {fileID: 864518282}
 --- !u!1001 &979027993
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1020,7 +887,7 @@ PrefabInstance:
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -1086,6 +953,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: mascaraLibro.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: teams
+      value: 
+      objectReference: {fileID: 1755590921}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: manager
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4572551802921069428, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -1503,7 +1385,7 @@ PrefabInstance:
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -1564,6 +1446,21 @@ PrefabInstance:
         type: 3}
       propertyPath: tipo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: mascaraLibro.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: teams
+      value: 
+      objectReference: {fileID: 1755590921}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: manager
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4572551802921069428, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -1688,7 +1585,7 @@ PrefabInstance:
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -1749,6 +1646,21 @@ PrefabInstance:
         type: 3}
       propertyPath: tipo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: mascaraLibro.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: teams
+      value: 
+      objectReference: {fileID: 1755590921}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: manager
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4572551802921069428, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -1838,125 +1750,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1429263339
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1429263345}
-  - component: {fileID: 1429263344}
-  - component: {fileID: 1429263343}
-  - component: {fileID: 1429263342}
-  - component: {fileID: 1429263341}
-  - component: {fileID: 1429263340}
-  m_Layer: 0
-  m_Name: Cube (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1429263340
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429263339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b44639415567ca41b2dbcc58f82882c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1429263341
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429263339}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Delegates: []
-  delegates: []
---- !u!65 &1429263342
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429263339}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1429263343
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429263339}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1429263344
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429263339}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1429263345
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1429263339}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0.02283448, z: -0.004}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1438750564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1987,98 +1780,6 @@ Transform:
   m_Father: {fileID: 864518281}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1476742950
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1476742951}
-  - component: {fileID: 1476742954}
-  - component: {fileID: 1476742953}
-  - component: {fileID: 1476742952}
-  m_Layer: 0
-  m_Name: Quad
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1476742951
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476742950}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.49, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1798166442}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!64 &1476742952
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476742950}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 0
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &1476742953
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476742950}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 53c575df095588b44913290479cde66b, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &1476742954
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1476742950}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &1519687999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2111,7 +1812,7 @@ PrefabInstance:
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -2172,6 +1873,21 @@ PrefabInstance:
         type: 3}
       propertyPath: tipo
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: mascaraLibro.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: teams
+      value: 
+      objectReference: {fileID: 1755590921}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: manager
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4572551802921069428, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -2281,8 +1997,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.009999752, y: 1.15, z: 1.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 68510134}
+  m_Children: []
   m_Father: {fileID: 864518281}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2318,7 +2033,7 @@ PrefabInstance:
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -2379,6 +2094,21 @@ PrefabInstance:
         type: 3}
       propertyPath: tipo
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: mascaraLibro.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: teams
+      value: 
+      objectReference: {fileID: 1755590921}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: manager
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4572551802921069428, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -2464,7 +2194,7 @@ PrefabInstance:
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -2526,6 +2256,21 @@ PrefabInstance:
       propertyPath: tipo
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: mascaraLibro.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: teams
+      value: 
+      objectReference: {fileID: 1755590921}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4572551802921069428, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
       propertyPath: m_Layer
@@ -2580,7 +2325,7 @@ PrefabInstance:
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -2641,6 +2386,21 @@ PrefabInstance:
         type: 3}
       propertyPath: tipo
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: mascaraLibro.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: teams
+      value: 
+      objectReference: {fileID: 1755590921}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: manager
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4572551802921069428, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -2721,7 +2481,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 199d4585f88a6cd458e41dfa2fd5fdac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 867413927}
+  manager: {fileID: 0}
   PositionsLuz: []
   PositionsOscuro: []
   PositionsTierra: []
@@ -2834,8 +2594,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.9099996, y: 1.15, z: 1.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1476742951}
+  m_Children: []
   m_Father: {fileID: 864518281}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2896,7 +2655,7 @@ PrefabInstance:
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -2957,6 +2716,21 @@ PrefabInstance:
         type: 3}
       propertyPath: tipo
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: mascaraLibro.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: teams
+      value: 
+      objectReference: {fileID: 1755590921}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: manager
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4572551802921069428, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -3130,7 +2904,7 @@ PrefabInstance:
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3389245933537213549, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}
@@ -3191,6 +2965,21 @@ PrefabInstance:
         type: 3}
       propertyPath: tipo
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: mascaraLibro.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: teams
+      value: 
+      objectReference: {fileID: 1755590921}
+    - target: {fileID: 8364783171504638280, guid: 330745029ca2d944784f0db593bb1e20,
+        type: 3}
+      propertyPath: manager
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4572551802921069428, guid: 330745029ca2d944784f0db593bb1e20,
         type: 3}

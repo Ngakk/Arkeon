@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\agust\.Rider2018.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\agust\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_Arkeon.-1310513440.00" t="ExcludeRecursive" />
-    <e p="C:\Users\agust\Documents\GitHub\Arkeon" t="IncludeRecursive">
+    <e p="C:\GitHub\Arkeon" t="IncludeRecursive">
       <e p="Arkeon.sln" t="IncludeFlat" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
@@ -21,7 +19,6 @@
           <e p="Scripts" t="Include">
             <e p="Ataques.cs" t="Include" />
             <e p="Equipos" t="Include">
-              <e p="Drag.cs" t="Include" />
               <e p="Equipar.cs" t="Include" />
               <e p="TeamManager.cs" t="Include" />
               <e p="Teams.cs" t="Include" />
@@ -227,12 +224,11 @@
           </e>
         </e>
       </e>
-      <e p="Library" t="ExcludeRecursive" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
-      <e p="Temp" t="ExcludeRecursive">
-        <e p="bin" t="ExcludeRecursive" />
-      </e>
+      <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
+    <e p="C:\Users\agust\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\agust\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Arkeon.-1502352196.00" t="ExcludeRecursive" />
   </component>
 </project>
