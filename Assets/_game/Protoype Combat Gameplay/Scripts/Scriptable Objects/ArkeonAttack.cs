@@ -12,6 +12,12 @@ namespace Mangos
         NATURE
     }
 
+    public enum AttackTypes : int
+    {
+        PHYSICAL,
+        SPECIAL
+    }
+
     [CreateAssetMenu]
     public class ArkeonAttack : ScriptableObject
     {
