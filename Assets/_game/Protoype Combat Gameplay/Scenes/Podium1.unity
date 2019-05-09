@@ -514,14 +514,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7042b7e9caf73ed4f999c948c1dac188, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 20
-  MP: 10
-  Inventory:
-  - {fileID: 11400000, guid: 2ed42742092e3ed498ae5a92c922da9f, type: 2}
+  enemySide: 0
   ArkeonTeam:
   - {fileID: 11400000, guid: bd4c251c544337848a23761bc0ea4a86, type: 2}
   - {fileID: 11400000, guid: 53eb81a19ec8b7a4ab73706e8af1aec7, type: 2}
   - {fileID: 11400000, guid: 0f2a4b121d582884e92b19ed7eaef198, type: 2}
+  Inventory:
+  - {fileID: 11400000, guid: 2ed42742092e3ed498ae5a92c922da9f, type: 2}
+  HP: 20
+  MP: 10
 --- !u!4 &374512275
 Transform:
   m_ObjectHideFlags: 0
@@ -657,10 +658,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afadd285bfb5bad4cadad797597322ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerCharacter: {fileID: 374512274}
-  SingleEnemy: {fileID: 11400000, guid: bd4c251c544337848a23761bc0ea4a86, type: 2}
-  EnemyCharacter: {fileID: 0}
   ArenaPointReference: {fileID: 1037719916}
+  PlayerCharacter: {fileID: 374512274}
+  EnemyCharacter: {fileID: 0}
+  SingleEnemy: {fileID: 0}
   IsSingleEnemy: 1
 --- !u!4 &510002922
 Transform:
@@ -905,6 +906,50 @@ Transform:
   - {fileID: 2029598369}
   m_Father: {fileID: 1037719917}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &949519373
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 949519375}
+  - component: {fileID: 949519374}
+  m_Layer: 0
+  m_Name: testing delete this
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &949519374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949519373}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1107a534081ccb240bf389846e16e033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 374512274}
+--- !u!4 &949519375
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 949519373}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.893106, y: 8.694856, z: -4.657406}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &956160358
 GameObject:
