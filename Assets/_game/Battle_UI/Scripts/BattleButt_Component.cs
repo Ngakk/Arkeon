@@ -91,7 +91,7 @@ public class BattleButt_Component : MonoBehaviour
         infoPanel.SetActive(true);
         if (!_obj)
         {
-            infoPanel.GetComponent<BattleButt_InfoComponent>().SetName(randomNames[Random.Range(0, randomNames.Length)]);
+            //infoPanel.GetComponent<BattleButt_InfoComponent>().SetName(randomNames[Random.Range(0, randomNames.Length)]);
         }
     }
 
