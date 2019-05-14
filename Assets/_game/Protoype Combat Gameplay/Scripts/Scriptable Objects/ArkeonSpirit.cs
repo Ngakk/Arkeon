@@ -7,19 +7,19 @@ namespace Mangos
     [CreateAssetMenu]
     public class ArkeonSpirit : ScriptableObject
     {
-        public GameObject ModelPrefab; //Only for prototyping, perhaps
-        public ArkeonStats Stats;
-        public List<ArkeonAttack> Attacks = new List<ArkeonAttack>();
-        private Animator Anim;
+        public GameObject modelPrefab; //Only for prototyping, perhaps
+        public ArkeonStats stats;
+        public List<ArkeonAttack> attacks = new List<ArkeonAttack>();
+        private Animator anim;
 
         public Animator GetAnimator()
         {
-            if(!Anim)
+            if(!anim)
             {
-                Anim = ModelPrefab.GetComponent<Animator>();
+                anim = modelPrefab.GetComponent<Animator>();
             }
 
-            return Anim;
+            return anim;
         }
     }
 }

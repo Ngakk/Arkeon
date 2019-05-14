@@ -21,23 +21,20 @@ namespace Mangos
     [CreateAssetMenu]
     public class ArkeonAttack : ScriptableObject
     {
-        public string Name;
-        public string Description;
-        public int Power;
+        public string myName;
+        public string description;
+        public int power;
         public int Cost;
-        public int Accuaracy;
-        public ArkeonTypes Type;
-        public bool IsPhysical;
+        public int accuaracy;
+        public ArkeonTypes type;
+        public bool isPhysical;
 
-        //TODO: 
-        // - hacer mas funciones para que se hagan cosas tanto a un jugador/familiar como a un arkeon
-        // - hacer clase que guarde stats de hp, mana etc para jugador/familiar
-        // - llamar las funciones de arkeon atack desde battle manager en sus respectivas funciones (sin importar si debe o no)
+        //TODO: pensar en sistema de pre, on y post hit, ademas de cosas al inicio de los turnos y la madre.
 
         /// <summary>
         /// Que hacer antes del golpe, si se cambian stats.
         /// </summary>
-        public virtual void PreHit(ArkeonStats _attacker, ArkeonStats _target)
+        public virtual void PreHit(List<ArkeonStats> _attacker, ArkeonStats _target)
         {
 
         }

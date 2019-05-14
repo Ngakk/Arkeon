@@ -6,7 +6,7 @@ using UnityEngine;
  * ArkeonStats:
  *  - Guardar stats
  *  
- * ArkeonSpirit:
+ * Arkeonspirit:
  *  - Una instancia de arkeon en asset
  * 
  * ArkeonInBattle:
@@ -19,52 +19,57 @@ namespace Mangos
 {
     public class ArkeonInBattle : MonoBehaviour
     {
-        public ArkeonSpirit Spirit;
+        public ArkeonSpirit spirit;
 
-        public bool ShowOnStart = true;
+        public bool showOnStart = true;
 
         private Animator anim;
 
         private void Start()
         {
             anim = GetComponent<Animator>();
-            if (ShowOnStart)
+            if (showOnStart)
                 AnimShow();
         }
 
 
         //Combate
-        public void Attack(int _attack)
+        public void GoForward()
         {
+            AnimGoForward();
+        }
 
+        public void AttackSet(int _attack)
+        {
+            ManagerStaticBattle.battleManager.SetAttack(this, spirit.attacks[_attack]);
         }
 
         // ---------------- Animations ----------------
-        public void AnimShow()
+        private void AnimShow()
         {
             anim.SetTrigger("Show");
         }
-        public void AnimHide()
+        private void AnimHide()
         {
 
         }
-        public void AnimGoForward()
+        private void AnimGoForward()
         {
             anim.SetTrigger("GoForward");
         }
-        public void AnimBackward()
+        private void AnimBackward()
         {
 
         }
-        public void AnimAttack(AttackTypes _type)
+        private void AnimAttack(AttackTypes _type)
         {
 
         }
-        public void AnimGetHit()
+        private void AnimGetHit()
         {
 
         }
-        public void AnimDie()
+        private void AnimDie()
         {
 
         }

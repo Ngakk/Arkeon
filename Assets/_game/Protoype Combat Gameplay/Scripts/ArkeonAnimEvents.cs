@@ -6,11 +6,11 @@ namespace Mangos
 {
     public class ArkeonAnimEvents : MonoBehaviour
     {
-        public Animator Anim;
+        public Animator anim;
 
         private void Start()
         {
-            Anim = GetComponent<Animator>();
+            anim = GetComponent<Animator>();
         }
 
         //Metodos para ser llamados por eventos de animacion

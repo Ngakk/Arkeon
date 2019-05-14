@@ -58,12 +58,18 @@ namespace Mangos
         }
 
         [Header("Setup en editor")]
-        public ArenaPointReference ArenaPointReference;
+        public ArenaPointReference arenaPointReference;
         [Header("Setup Al iniciar escena")]
-        public PlayerCharacterBattle PlayerCharacter;
-        public PlayerCharacterBattle EnemyCharacter;
-        public GameObject SingleEnemy;
-        public bool IsSingleEnemy = true;
+        public PlayerCharacterBattle playerCharacter;
+        public PlayerCharacterBattle enemyCharacter;
+        public GameObject singleEnemy;
+        public bool isSingleEnemy = true;
+        public State state;
+
+        private ArkeonInBattle attacker;
+        private ArkeonInBattle defender;
+        private ArkeonAttack attack;
+        private bool anArkeonIsShield = false;
 
         //IMPORTANTE: Un id de un arkeon es la posicion del arkeon en su respectivo equipo, empezando por 0. Los equipos se constituyen de todas los arkeons que el jugador trae cargando
 
@@ -74,22 +80,7 @@ namespace Mangos
 
         private void Start()
         {
-            for(int i = 0; i < PlayerCharacter.ArkeonTeam.Count; i++)
-            {
-                AllyArkeonsOut.Add(null);
-            }
-
-            if (!IsSingleEnemy)
-            {
-                for (int i = 0; i < EnemyCharacter.ArkeonTeam.Count; i++)
-                {
-                    EnemyArkeonsOut.Add(null);
-                }
-            }
-            else
-            {
-                //ArkeonDefending = SingleEnemy;
-            }
+            
         }
 
         private void Update()
@@ -127,7 +118,36 @@ namespace Mangos
         }
 
         // ------------------ Batalla ------------------
+        public void SetAttack(ArkeonInBattle _attacker, ArkeonAttack _attack)
+        {
+            if(state == State.NOTHING)
+            {
+                state = State.ATTACK_SET;
+                attacker = _attacker;
+                attack = _attack;
+            }
+        }
 
+        public void SetDefender(ArkeonInBattle _defender)
+        {
+            if(state == State.ATTACK_SET)
+            {
+                state = State.DEFENDER_SET;
+                anArkeonIsShield = true;
+
+                if (_defender == null)
+                {
+                    anArkeonIsShield = false;
+                }
+            }
+
+            
+        }
+
+        public void StartBattle()
+        {
+
+        }
 
     }
 }

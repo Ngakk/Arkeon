@@ -30,8 +30,8 @@ namespace Mangos
 
         [Header("Setup")]
         public bool enemySide = false; //Para saber de que lado del escenario esta
-        public List<ArkeonSpirit> ArkeonTeam = new List<ArkeonSpirit>();
-        public List<CombatItem> Inventory = new List<CombatItem>();
+        public List<ArkeonSpirit> arkeonTeam = new List<ArkeonSpirit>();
+        public List<CombatItem> inventory = new List<CombatItem>();
         [Header("Stats")]
         public int HP = 20;
         public int MP = 20;
@@ -47,17 +47,17 @@ namespace Mangos
             if (ArkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId))
                 return false; //Ya no caben o ya esta afuera
 
-            Transform point = ManagerStaticBattle.battleManager.ArenaPointReference.GetInvokePoint(!enemySide, ArkeonsOut.Count); //Obtengo la posición para el arkeon
+            Transform point = ManagerStaticBattle.battleManager.arenaPointReference.GetInvokePoint(!enemySide, ArkeonsOut.Count); //Obtengo la posición para el arkeon
 
-            GameObject go = Instantiate(ArkeonTeam[_arkeonTeamId].ModelPrefab, point.position, point.rotation); //Lo Invoco
+            GameObject go = Instantiate(arkeonTeam[_arkeonTeamId].modelPrefab, point.position, point.rotation); //Lo Invoco
 
             //Setup de arkeon
             if (!go.GetComponent<ArkeonInBattle>())
                 go.AddComponent<ArkeonInBattle>();
 
             ArkeonInBattle aib = go.GetComponent<ArkeonInBattle>();
-            aib.Spirit = ArkeonTeam[_arkeonTeamId];
-            aib.ShowOnStart = true;
+            aib.spirit = arkeonTeam[_arkeonTeamId];
+            aib.showOnStart = true;
 
             //Actualizando variables
             ArkeonsOut.Add(new ArkeonBattleStatus(_arkeonTeamId, aib, false));
@@ -73,7 +73,7 @@ namespace Mangos
             if (ArkeonsOut.Count <= _arkeonOutId)
                 return false;
 
-            ArkeonsOut[_arkeonOutId].arkeon.AnimGoForward();
+            ArkeonsOut[_arkeonOutId].arkeon.GoForward();
 
             return true;
         }
@@ -82,10 +82,11 @@ namespace Mangos
         //atacar
         public bool CommandArkeonAttack(int _arkeonOutId, int _attack)
         {
-            if (ArkeonsOut[_arkeonOutId].isOnFront || ArkeonsOut[_arkeonOutId].arkeon.Spirit.Attacks.Count < _attack)
+            if (ArkeonsOut[_arkeonOutId].isOnFront || ArkeonsOut[_arkeonOutId].arkeon.spirit.attacks.Count < _attack)
                 return false;
 
             //TODO NEXT SESSION: hacer que le diga al battle manager que quiere atacar, mandar eso desde el arkeon
+            ArkeonsOut[_arkeonOutId].arkeon.AttackSet(_attack);
 
             return true;
         }
