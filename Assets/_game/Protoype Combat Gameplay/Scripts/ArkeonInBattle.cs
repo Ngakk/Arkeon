@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,7 @@ namespace Mangos
     {
         public ArkeonSpirit spirit;
 
+        public bool isAlly;
         public bool showOnStart = true;
 
         private Animator anim;
@@ -41,7 +43,27 @@ namespace Mangos
 
         public void AttackSet(int _attack)
         {
-            ManagerStaticBattle.battleManager.SetAttack(this, spirit.attacks[_attack]);
+            ManagerStaticBattle.battleManager.SetAttack(this, spirit.attacks[_attack], isAlly);
+        }
+
+        public void AttackStart(bool isPhysical, Action<ArkeonAttack.HitTypes> _onHitCallback)
+        {
+            AnimAttack(isPhysical ? AttackTypes.PHYSICAL : AttackTypes.SPECIAL);        //TODO NS: cambiar cosas para que ArkeonAttack se encargue de las animaciones con callbacks a este script y a battle manages
+        }
+
+        public void Squeal()
+        {
+
+        }
+
+        public void Dodge()
+        {
+
+        }
+
+        public void Laugh()
+        {
+
         }
 
         // ---------------- Animations ----------------
@@ -63,7 +85,7 @@ namespace Mangos
         }
         private void AnimAttack(AttackTypes _type)
         {
-
+            anim.SetTrigger("Attack");
         }
         private void AnimGetHit()
         {

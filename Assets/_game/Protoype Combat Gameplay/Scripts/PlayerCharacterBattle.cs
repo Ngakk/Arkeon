@@ -58,6 +58,7 @@ namespace Mangos
             ArkeonInBattle aib = go.GetComponent<ArkeonInBattle>();
             aib.spirit = arkeonTeam[_arkeonTeamId];
             aib.showOnStart = true;
+            aib.isAlly = !enemySide;
 
             //Actualizando variables
             ArkeonsOut.Add(new ArkeonBattleStatus(_arkeonTeamId, aib, false));
@@ -77,19 +78,36 @@ namespace Mangos
 
             return true;
         }
-        
 
         //atacar
         public bool CommandArkeonAttack(int _arkeonOutId, int _attack)
         {
             if (ArkeonsOut[_arkeonOutId].isOnFront || ArkeonsOut[_arkeonOutId].arkeon.spirit.attacks.Count < _attack)
                 return false;
-
-            //TODO NEXT SESSION: hacer que le diga al battle manager que quiere atacar, mandar eso desde el arkeon
+            
             ArkeonsOut[_arkeonOutId].arkeon.AttackSet(_attack);
 
             return true;
         }
+
+        //defender
+        public bool CommandArkeonShield(int _arkeonOutId)
+        {
+            if (ArkeonsOut[_arkeonOutId].isOnFront)
+                return false;
+
+            ManagerStaticBattle.battleManager.SetDefender(ArkeonsOut[_arkeonOutId].arkeon);
+
+            return true;
+        }
+
+        public bool ComandNoShield()
+        {
+            ManagerStaticBattle.battleManager.SetDefender(null);
+
+            return true;
+        }
+
 
         //Usar items
         public void UseItem(int _item)

@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ab6396912eb4140b81bc43a7da9f84, type: 3}
   m_Name: CoolCapsule
   m_EditorClassIdentifier: 
-  ModelPrefab: {fileID: 3759170950674461054, guid: dd7abe167426f9d41830ca9826954f55,
+  modelPrefab: {fileID: 3759170950674461054, guid: dd7abe167426f9d41830ca9826954f55,
     type: 3}
-  Stats: {fileID: 11400000, guid: 64efbaa199bed394a9849b4fbd26ee68, type: 2}
-  Attacks:
+  stats: {fileID: 11400000, guid: 64efbaa199bed394a9849b4fbd26ee68, type: 2}
+  attacks:
   - {fileID: 11400000, guid: 2d2ad1bf2e164654983d4f8818525b50, type: 2}
