@@ -10,139 +10,185 @@ using UnityEngine.UI;
  * 3+ sublevel options
  */
 
-public class BattleButt_Component : MonoBehaviour
+namespace UnityEngine.EventSystems
 {
-    public GameObject[] mainPanels;
-    public GameObject infoPanel;
-
-    public enum subMenus
+    public class BattleButt_Component : MonoBehaviour
     {
-        SMN = 0,
-        ATK = 1,
-        ITM = 2,
-        SMNARK = 10,
-        ATKARK = 11
-    };
+        public GameObject[] mainPanels;
+        public GameObject itemInfoPanel;
+        public GameObject attackInfoPanel;
+        public GameObject arkeonInfoPanel;
 
-    public enum books
-    {
-        BOOKA = 0,
-        BOOKB = 1,
-        BOOKC = 2
-    }
+        private Stack<GameObject> activeInfoPanels = new Stack<GameObject>();
 
-    private subMenus currentSubMenuIndex = subMenus.ATK;
-    private GameObject currentSubMenu;
+        public struct MainPanel
+        {
+            public GameObject panel;
+            public int id;
+        };
 
-    // PLACEHOLDER
-    private string[] randomNames =
-    {
-        "Bust-a-nut Sword",
-        "Homeward Bone",
-        "PP Hard",
-        "Blue Shell",
-        "Soldier's Syringe",
-        "AWP",
-        "PK Fire",
-        "Skullheart"
-    };
+        public MainPanel[] s_mainPanels = new MainPanel[3];
 
-    void Start()
-    {
-        ShowSubMenu((int)currentSubMenuIndex);
-        currentSubMenu = mainPanels[(int)currentSubMenuIndex];
-    }
+        public enum subMenus
+        {
+            SMN = 0,
+            ATK = 1,
+            ITM = 2,
+            SMNARK = 10,
+            ATKARK = 11
+        };
 
-    public void ShowSubMenu(int _index)
-    {
-        if (_index < mainPanels.Length)
+        public enum books
+        {
+            BOOKA = 0,
+            BOOKB = 1,
+            BOOKC = 2
+        }
+
+        private subMenus currentSubMenuIndex = subMenus.ATK;
+        private GameObject currentSubMenu;
+
+        void Start()
+        {
+            InitializeMainPanels();
+            ShowSubMenu((int)currentSubMenuIndex);
+            currentSubMenu = mainPanels[(int)currentSubMenuIndex];
+        }
+
+        private void InitializeMainPanels()
         {
             for (int i = 0; i < mainPanels.Length; i++)
             {
-                if (i == _index)
-                    mainPanels[i].SetActive(true);
-                else
-                    mainPanels[i].SetActive(false);
+                s_mainPanels[i].panel = mainPanels[i].GetComponent<BattleButt_PanelComponent>().panel;
+                s_mainPanels[i].id = mainPanels[i].GetComponent<BattleButt_PanelComponent>().id;
             }
-            mainPanels[_index].GetComponent<BattleButt_SubComponent>().LoadDefaultState();
-            currentSubMenuIndex = (subMenus)_index;
-            currentSubMenu = mainPanels[(int)currentSubMenuIndex];
         }
-    }
 
-    public void ShowSubOption(int _index)
-    {
-        int maxOptions = currentSubMenu.GetComponent<BattleButt_SubComponent>().options.Length;
-        if (_index < maxOptions)
+        // Index Based SubMenus
+        public void ShowSubMenu(int _index)
         {
-            for (int i = 0; i < maxOptions; i++)
+            if (_index < mainPanels.Length)
             {
-                currentSubMenu.GetComponent<BattleButt_SubComponent>().options[i].SetActive(false);
-                if (i == _index)
+                for (int i = 0; i < mainPanels.Length; i++)
                 {
-                    currentSubMenu.GetComponent<BattleButt_SubComponent>().options[i].SetActive(true);
+                    if (i == _index)
+                        mainPanels[i].SetActive(true);
+                    else
+                        mainPanels[i].SetActive(false);
+                }
+                mainPanels[_index].GetComponent<BattleButt_SubComponent>().LoadDefaultState();
+                currentSubMenuIndex = (subMenus)_index;
+                currentSubMenu = mainPanels[(int)currentSubMenuIndex];
+            }
+        }
+
+        // ID Based SubMenus
+        public void ShowSubMenuID(int _id)
+        {
+            for (int i = 0; i < s_mainPanels.Length; i++)
+            {
+                if (_id == s_mainPanels[i].id)
+                {
+                    HideAllMenus();
+                    s_mainPanels[i].panel.SetActive(true);
                 }
             }
         }
-    }
 
-    public void ShowObjInfo(GameObject _obj)
-    {
-        infoPanel.SetActive(true);
-        if (!_obj)
+        public void HideAllMenus()
         {
-            //infoPanel.GetComponent<BattleButt_InfoComponent>().SetName(randomNames[Random.Range(0, randomNames.Length)]);
+            for (int i = 0; i < s_mainPanels.Length; i++)
+            {
+                s_mainPanels[i].panel.SetActive(false);
+            }
         }
-    }
 
-    public void CloseObjInfo()
-    {
-        infoPanel.SetActive(false);
-    }
+        // Index Based SubOptions
+        public void ShowSubOption(int _index)
+        {
+            int maxOptions = currentSubMenu.GetComponent<BattleButt_SubComponent>().options.Length;
+            if (_index < maxOptions)
+            {
+                for (int i = 0; i < maxOptions; i++)
+                {
+                    currentSubMenu.GetComponent<BattleButt_SubComponent>().options[i].SetActive(false);
+                    if (i == _index)
+                    {
+                        currentSubMenu.GetComponent<BattleButt_SubComponent>().options[i].SetActive(true);
+                    }
+                }
+            }
+        }
 
-    void Update()
-    {
-        // Temp Testing Methods
+        public void ShowObjInfo()
+        {
+            Debug.Log("Clicked " + EventSystem.current.currentSelectedGameObject.name);
+            // TODO
+            // Initialize Panel Data
+            switch (EventSystem.current.currentSelectedGameObject.tag)
+            {
+                case "BM_Item":
+                    itemInfoPanel.SetActive(true);
+                    activeInfoPanels.Push(itemInfoPanel);
+                    break;
 
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            ShowObjInfo(null);
+                case "BM_Attack":
+                    attackInfoPanel.SetActive(true);
+                    activeInfoPanels.Push(attackInfoPanel);
+                    break;
+
+                case "BM_Arkeon":
+                    arkeonInfoPanel.SetActive(true);
+                    activeInfoPanels.Push(arkeonInfoPanel);
+                    break;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.P))
+
+        public void CloseObjInfo()
         {
-            CloseObjInfo();
+            activeInfoPanels.Pop().SetActive(false);
         }
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+
+        void Update()
         {
-            ShowSubMenu(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            ShowSubMenu(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            ShowSubMenu(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad0))
-        {
-            ShowSubOption(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            ShowSubOption(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            ShowSubOption(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            ShowSubOption(3);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad4))
-        {
-            ShowSubOption(4);
+            // Temp Testing Methods
+
+            if (Input.GetKeyDown(KeyCode.P))
+            {
+                CloseObjInfo();
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                ShowSubMenuID(0);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                ShowSubMenuID(5);
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                ShowSubMenuID(20);
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad0))
+            {
+                ShowSubOption(0);
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad1))
+            {
+                ShowSubOption(1);
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad2))
+            {
+                ShowSubOption(2);
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad3))
+            {
+                ShowSubOption(3);
+            }
+            if (Input.GetKeyDown(KeyCode.Keypad4))
+            {
+                ShowSubOption(4);
+            }
         }
     }
 }
