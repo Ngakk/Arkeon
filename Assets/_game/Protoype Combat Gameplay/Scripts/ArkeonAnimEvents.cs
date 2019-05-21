@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,6 +8,9 @@ namespace Mangos
     public class ArkeonAnimEvents : MonoBehaviour
     {
         public Animator anim;
+
+        public Action onAttackHitAction;
+        //public Action onAttackEndAction;
 
         private void Start()
         {
@@ -27,14 +31,14 @@ namespace Mangos
         /// <summary>
         /// Es llamado justo en el golpe de la animacion de ataque
         /// </summary>
-        public void OnAttackApex()
+        public void OnAttackHit()
         {
-            
+            onAttackHitAction.Invoke();
         }
 
         public void OnAttackEnd()
         {
-
+            ManagerStaticBattle.battleManager.OnAttackEndAvA();
         }
     }
 }

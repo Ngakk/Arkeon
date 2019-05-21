@@ -14,7 +14,7 @@ namespace Mangos
 {
     public class PlayerCharacterBattle : MonoBehaviour
     {
-        public struct ArkeonBattleStatus
+        public class ArkeonBattleStatus
         {
             public ArkeonBattleStatus(int _teamId, ArkeonInBattle _arkeon, bool _isOnFront)
             {
@@ -36,7 +36,7 @@ namespace Mangos
         public int HP = 20;
         public int MP = 20;
         [Header("Instancias")]
-        public List<ArkeonBattleStatus> ArkeonsOut = new List<ArkeonBattleStatus>();
+        public List<ArkeonBattleStatus> arkeonsOut = new List<ArkeonBattleStatus>();
 
         //Comandos de arkeons
         //Invocar
@@ -44,10 +44,10 @@ namespace Mangos
         {
             //Esto talvez cambia si decidimos que es mejor instanciar todos los arkeons al inicio de la pelea y mostrarlos al ser invocados
 
-            if (ArkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId))
+            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId))
                 return false; //Ya no caben o ya esta afuera
 
-            Transform point = ManagerStaticBattle.battleManager.arenaPointReference.GetInvokePoint(!enemySide, ArkeonsOut.Count); //Obtengo la posición para el arkeon
+            Transform point = ManagerStaticBattle.battleManager.arenaPointReference.GetInvokePoint(!enemySide, arkeonsOut.Count); //Obtengo la posición para el arkeon
 
             GameObject go = Instantiate(arkeonTeam[_arkeonTeamId].modelPrefab, point.position, point.rotation); //Lo Invoco
 
@@ -61,43 +61,49 @@ namespace Mangos
             aib.isAlly = !enemySide;
 
             //Actualizando variables
-            ArkeonsOut.Add(new ArkeonBattleStatus(_arkeonTeamId, aib, false));
+            arkeonsOut.Add(new ArkeonBattleStatus(_arkeonTeamId, aib, false));
 
+            Debug.Log("Succesfully invoked arkeon");
             return true;
+
+            1 = 0;
+
+            //TODO: ponerle vida al arkeon instanceado
         }
 
         //Mandar para enfrete
         public bool ChooseAttacker(int _arkeonOutId)
         {
-            //TODO: checar si otro esta enfrente para no mandar este y regresar falso
-
-            if (ArkeonsOut.Count <= _arkeonOutId)
+            //TODO: checar si otro esta enfrente para no mandar ;este y regresar falso
+            Debug.Log("ArkeonsOut count = " + arkeonsOut.Count);
+            if (arkeonsOut.Count <= _arkeonOutId)
                 return false;
 
-            ArkeonsOut[_arkeonOutId].arkeon.GoForward();
+            arkeonsOut[_arkeonOutId].arkeon.GoForward();
 
+            Debug.Log("Succesfully choosed attacker");
             return true;
         }
 
         //atacar
         public bool CommandArkeonAttack(int _arkeonOutId, int _attack)
         {
-            if (ArkeonsOut[_arkeonOutId].isOnFront || ArkeonsOut[_arkeonOutId].arkeon.spirit.attacks.Count < _attack)
+            if (arkeonsOut[_arkeonOutId].isOnFront || arkeonsOut[_arkeonOutId].arkeon.spirit.attacks.Count < _attack)
                 return false;
             
-            ArkeonsOut[_arkeonOutId].arkeon.AttackSet(_attack);
-
+            arkeonsOut[_arkeonOutId].arkeon.AttackSet(_attack);
+            Debug.Log("Succesfully commanded arkeon attack");
             return true;
         }
 
         //defender
         public bool CommandArkeonShield(int _arkeonOutId)
         {
-            if (ArkeonsOut[_arkeonOutId].isOnFront)
+            if (arkeonsOut[_arkeonOutId].isOnFront)
                 return false;
 
-            ManagerStaticBattle.battleManager.SetDefender(ArkeonsOut[_arkeonOutId].arkeon);
-
+            ManagerStaticBattle.battleManager.SetDefender(arkeonsOut[_arkeonOutId].arkeon);
+            Debug.Log("Succesfully shielded with arkeon");
             return true;
         }
 
@@ -132,9 +138,9 @@ namespace Mangos
         //funcionalidades
         private bool IsArkeonOut(int _arkeon)
         {
-            for(int i = 0; i < ArkeonsOut.Count; i++)
+            for(int i = 0; i < arkeonsOut.Count; i++)
             {
-                if (ArkeonsOut[i].teamId == _arkeon)
+                if (arkeonsOut[i].teamId == _arkeon)
                     return true;
             }
 

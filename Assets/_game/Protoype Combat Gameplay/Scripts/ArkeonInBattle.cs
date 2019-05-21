@@ -21,17 +21,26 @@ namespace Mangos
     public class ArkeonInBattle : MonoBehaviour
     {
         public ArkeonSpirit spirit;
-
+        [HideInInspector]
+        public ArkeonAnimEvents animEvents;
         public bool isAlly;
         public bool showOnStart = true;
 
         private Animator anim;
+
+        public int HP;
+        public int AtkMod;
+        public int DefMod;
 
         private void Start()
         {
             anim = GetComponent<Animator>();
             if (showOnStart)
                 AnimShow();
+
+            animEvents = GetComponent<ArkeonAnimEvents>();
+            if (animEvents == null)
+                animEvents = gameObject.AddComponent<ArkeonAnimEvents>();
         }
 
 
@@ -46,13 +55,24 @@ namespace Mangos
             ManagerStaticBattle.battleManager.SetAttack(this, spirit.attacks[_attack], isAlly);
         }
 
-        public void AttackStart(bool isPhysical, Action<ArkeonAttack.HitTypes> _onHitCallback)
+        public void AttackStart(ArkeonAttack _attack, ArkeonInBattle _target, Action<ArkeonAttack.HitTypes, int> _onHitCallback)
         {
-            AnimAttack(isPhysical ? AttackTypes.PHYSICAL : AttackTypes.SPECIAL);        //TODO NS: cambiar cosas para que ArkeonAttack se encargue de las animaciones con callbacks a este script y a battle manages
+            _attack.OnBattle(this, _target, _onHitCallback);
         }
 
-        public void Squeal()
+        public void AttackStart(ArkeonAttack _attack, PlayerCharacterBattle _target, Action<ArkeonAttack.HitTypes, int> _onHitCallback)
         {
+            _attack.OnBattle(this, _target, _onHitCallback);
+        }
+
+        public void Squeal(int _dmg)
+        {
+            //Show number particles and stuff
+            HP -= _dmg;
+
+            if (HP < 0) HP = 0;
+
+            AnimGetHit();
 
         }
 
@@ -64,6 +84,11 @@ namespace Mangos
         public void Laugh()
         {
 
+        }
+
+        public void Die()
+        {
+            AnimDie();
         }
 
         // ---------------- Animations ----------------
@@ -83,13 +108,17 @@ namespace Mangos
         {
 
         }
-        private void AnimAttack(AttackTypes _type)
+        public void AnimAttack(AttackAnimations _type)
         {
             anim.SetTrigger("Attack");
         }
+        public void AnimGoBack()
+        {
+            anim.SetTrigger("GoBack");
+        }
         private void AnimGetHit()
         {
-
+            anim.SetTrigger("Squirm");
         }
         private void AnimDie()
         {

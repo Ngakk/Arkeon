@@ -119,6 +119,15 @@ namespace Mangos
             }*/
         }
 
+        private void ResetVariables()
+        {
+            state = State.NOTHING;
+            attack = null;
+            attacker = null;
+            defender = null;
+            anArkeonIsShield = false;
+        }
+
         // ------------------ Batalla ------------------
         public void SetAttack(ArkeonInBattle _attacker, ArkeonAttack _attack, bool _isAlly)
         {
@@ -136,7 +145,6 @@ namespace Mangos
             if(state == State.ATTACK_SET)
             {
                 state = State.DEFENDER_SET;
-                anArkeonIsShield = true;
 
                 if (_defender == null)
                 {
@@ -145,6 +153,9 @@ namespace Mangos
                 }
                 else
                 {
+
+                    anArkeonIsShield = true;
+                    defender = _defender;
                     StartBattleAvA();
                 }
             }
@@ -154,21 +165,20 @@ namespace Mangos
         {
             state = State.BATTLING;
 
-            attack.PreHit(attacker, defender);
-            attacker.AttackStart(attack.isPhysical);
-            attack.OnHit(attacker, defender, OnHitAvA);
+            attack.PreBattle(attacker, defender);
+            attacker.AttackStart(attack, defender, OnHitAvA);
         }
 
         public void StartBattleAvP()
         {
             state = State.BATTLING;
 
-            attack.PreHit(attacker, defender);
-            attacker.AttackStart(attack.isPhysical);
+            attack.PreBattle(attacker, defender);
+            attacker.AttackStart(attack, defender, OnHitAvP);
         }
 
         //Callback on hit
-        public void OnHitAvA(ArkeonAttack.HitTypes _hit)
+        public void OnHitAvA(ArkeonAttack.HitTypes _hit, int _dmg)
         {
             if (state != State.BATTLING)
                 return;
@@ -177,7 +187,7 @@ namespace Mangos
             {
                 case ArkeonAttack.HitTypes.HIT:
                 case ArkeonAttack.HitTypes.CRIT:
-                    defender.Squeal();
+                    defender.Squeal(_dmg);
                     break;
                 case ArkeonAttack.HitTypes.MISS:
                     defender.Dodge();
@@ -188,6 +198,11 @@ namespace Mangos
                 default:
                     break;
             }
+        }
+
+        public void OnHitAvP(ArkeonAttack.HitTypes _hit, int _dmg)
+        {
+
         }
 
         //Respuesta a animaciones
@@ -201,15 +216,29 @@ namespace Mangos
             if (state != State.BATTLING)
                 return;
 
-            attack.PostHit(attacker, defender);
+            attack.PostBattle(attacker, defender, OnPostBattleEnd);
 
+            //TODO: checar si ya se ganó o perdió
+        }
+
+        public void OnPostBattleEnd()
+        {
             state = State.NOTHING;
             attack = null;
             attacker = null;
             defender = null;
             anArkeonIsShield = false;
 
-            //TODO: checar si ya se ganó o perdió
+            for(int i = playerCharacter.arkeonsOut.Count-1; i >= 0; i--)
+            {
+                playerCharacter.arkeonsOut[i].isOnFront = false;
+                if(playerCharacter.arkeonsOut[i].arkeon.HP <= 0)
+                {
+                    Debug.Log("Arkeon is dead");
+                    playerCharacter.arkeonsOut[i].arkeon.Die();
+                    playerCharacter.arkeonsOut.RemoveAt(i);
+                }
+            }
         }
     }
 }

@@ -10,6 +10,7 @@ namespace Mangos
         public GameObject modelPrefab; //Only for prototyping, perhaps
         public ArkeonStats stats;
         public List<ArkeonAttack> attacks = new List<ArkeonAttack>();
+
         private Animator anim;
 
         public Animator GetAnimator()
