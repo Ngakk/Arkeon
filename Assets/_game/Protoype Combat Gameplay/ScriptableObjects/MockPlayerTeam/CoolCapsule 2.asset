@@ -16,4 +16,4 @@ MonoBehaviour:
     type: 3}
   stats: {fileID: 11400000, guid: 64efbaa199bed394a9849b4fbd26ee68, type: 2}
   attacks:
-  - {fileID: 11400000, guid: 2d2ad1bf2e164654983d4f8818525b50, type: 2}
+  - {fileID: 11400000, guid: 2a25a758178cf544d8eb2c42f5bea6be, type: 2}
