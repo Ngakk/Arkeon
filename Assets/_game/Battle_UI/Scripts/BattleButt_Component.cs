@@ -57,9 +57,10 @@ namespace UnityEngine.EventSystems
 
         private void InitializeMainPanels()
         {
+            Debug.Log("Initialized Panels");
             for (int i = 0; i < mainPanels.Length; i++)
             {
-                s_mainPanels[i].panel = mainPanels[i].GetComponent<BattleButt_PanelComponent>().panel;
+                s_mainPanels[i].panel = mainPanels[i];
                 s_mainPanels[i].id = mainPanels[i].GetComponent<BattleButt_PanelComponent>().id;
             }
         }

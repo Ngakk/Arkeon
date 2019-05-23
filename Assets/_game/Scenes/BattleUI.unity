@@ -1085,8 +1085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7289391b50aa7f48822f52440bd01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
-  id: 20
+  id: 3
 --- !u!1 &154100673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1916,6 +1915,7 @@ GameObject:
   - component: {fileID: 297187189}
   - component: {fileID: 297187191}
   - component: {fileID: 297187190}
+  - component: {fileID: 297187192}
   m_Layer: 5
   m_Name: BUI_ArkeonAtksA
   m_TagString: Untagged
@@ -1983,6 +1983,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 297187188}
   m_CullTransparentMesh: 0
+--- !u!114 &297187192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297187188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7289391b50aa7f48822f52440bd01e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 22
 --- !u!1 &306627372
 GameObject:
   m_ObjectHideFlags: 0
@@ -1994,6 +2007,7 @@ GameObject:
   - component: {fileID: 306627373}
   - component: {fileID: 306627375}
   - component: {fileID: 306627374}
+  - component: {fileID: 306627376}
   m_Layer: 5
   m_Name: BUI_SummonedArkeons
   m_TagString: Untagged
@@ -2061,6 +2075,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 306627372}
   m_CullTransparentMesh: 0
+--- !u!114 &306627376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 306627372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7289391b50aa7f48822f52440bd01e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 21
 --- !u!1001 &327877837
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2412,6 +2439,7 @@ GameObject:
   - component: {fileID: 356700719}
   - component: {fileID: 356700718}
   - component: {fileID: 356700720}
+  - component: {fileID: 356700722}
   - component: {fileID: 356700721}
   m_Layer: 5
   m_Name: BUI_AtkOptions
@@ -2513,8 +2541,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7289391b50aa7f48822f52440bd01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
-  id: 5
+  id: 2
+--- !u!114 &356700722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356700716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a5d39c8013519c478aeb4863b28ec7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arkeonCards:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  arkeonAttacks:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  atkPrefab: {fileID: 0}
 --- !u!1 &357173210
 GameObject:
   m_ObjectHideFlags: 0
@@ -4017,7 +4067,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -10
+      value: 134
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -4027,7 +4077,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -4037,7 +4087,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -4602,7 +4652,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -10
+      value: 134
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -4612,7 +4662,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -4622,7 +4672,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -5116,6 +5166,7 @@ GameObject:
   - component: {fileID: 954870233}
   - component: {fileID: 954870235}
   - component: {fileID: 954870234}
+  - component: {fileID: 954870236}
   m_Layer: 5
   m_Name: BUI_ArkeonAtksD
   m_TagString: Untagged
@@ -5183,6 +5234,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 954870232}
   m_CullTransparentMesh: 0
+--- !u!114 &954870236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 954870232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7289391b50aa7f48822f52440bd01e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 25
 --- !u!224 &968608303 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 968608303, guid: 9839bbdb2a3534141a90d91946c0bad8,
@@ -5297,8 +5361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7289391b50aa7f48822f52440bd01e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panel: {fileID: 0}
-  id: 0
+  id: 1
 --- !u!1 &1005631727
 GameObject:
   m_ObjectHideFlags: 0
@@ -5463,6 +5526,7 @@ GameObject:
   - component: {fileID: 1049569689}
   - component: {fileID: 1049569691}
   - component: {fileID: 1049569690}
+  - component: {fileID: 1049569692}
   m_Layer: 5
   m_Name: BUI_ArkeonAtksB
   m_TagString: Untagged
@@ -5530,6 +5594,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1049569688}
   m_CullTransparentMesh: 0
+--- !u!114 &1049569692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1049569688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7289391b50aa7f48822f52440bd01e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 23
 --- !u!1 &1135534078
 GameObject:
   m_ObjectHideFlags: 0
@@ -6412,6 +6489,7 @@ GameObject:
   - component: {fileID: 1534958756}
   - component: {fileID: 1534958758}
   - component: {fileID: 1534958757}
+  - component: {fileID: 1534958759}
   m_Layer: 5
   m_Name: BUI_ArkeonAtksC
   m_TagString: Untagged
@@ -6479,6 +6557,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534958755}
   m_CullTransparentMesh: 0
+--- !u!114 &1534958759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534958755}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7289391b50aa7f48822f52440bd01e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 24
 --- !u!1001 &1555520256
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8109,7 +8200,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -10
+      value: 134
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -8119,7 +8210,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -8129,7 +8220,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -9144,11 +9235,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 7345817277006923933, guid: 75345469463cf084482e4b178f1059f5,
-        type: 3}
-      propertyPath: m_RaycastTarget
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7345817277006923934, guid: 75345469463cf084482e4b178f1059f5,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -9183,6 +9269,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7345817277006923933, guid: 75345469463cf084482e4b178f1059f5,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75345469463cf084482e4b178f1059f5, type: 3}
@@ -10077,7 +10168,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -10
+      value: 134
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -10087,7 +10178,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
@@ -10097,7 +10188,7 @@ PrefabInstance:
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5754496515055948024, guid: 8c9874cf4c926ef4e821fd1e441befc7,
         type: 3}
