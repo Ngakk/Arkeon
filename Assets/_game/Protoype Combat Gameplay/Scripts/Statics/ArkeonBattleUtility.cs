@@ -6,23 +6,16 @@ namespace Mangos
 {
     public static class ArkeonBattleUtility
     {
-        public enum HitLevel
-        {
-            MISS,
-            HIT,
-            CRIT
-        }
-
         //Struct para transportar resultados de un combate o ataque
         public struct ArkeonCombatResult
         {
-            public ArkeonCombatResult(HitLevel _hitLevel, int _damageDone)
+            public ArkeonCombatResult(ArkeonAttack.HitTypes _hitType, int _damageDone)
             {
-                hitLevel = _hitLevel;
+                hitType = _hitType;
                 damageDone = _damageDone;
             }
 
-            public HitLevel hitLevel;   //Nos dice si el ataque fue hit, miss o crit
+            public ArkeonAttack.HitTypes hitType;   //Nos dice si el ataque fue hit, miss o crit
             public int damageDone;      //Cuanto daño fue hecho, ya incluye multiplicador de crit y se vuelve 0 si fue miss.
         }
 
@@ -45,10 +38,10 @@ namespace Mangos
         /// <param name="_arkAtk"></param>
         /// <param name="_defStat"></param>
         /// <returns></returns>
-        public static ArkeonCombatResult GetCombatResult(ArkeonStats _atkStat, ArkeonAttack _arkAtk, ArkeonStats _defStat)
+        public static ArkeonCombatResult GetCombatResult(ArkeonInBattle _attacker, ArkeonAttack _arkAtk, ArkeonInBattle _defender)
         {
             //TODO: calcular bien que pdo
-            return new ArkeonCombatResult(HitLevel.HIT, 10);
+            return new ArkeonCombatResult(ArkeonAttack.HitTypes.HIT, 10);
         }
     }
 }

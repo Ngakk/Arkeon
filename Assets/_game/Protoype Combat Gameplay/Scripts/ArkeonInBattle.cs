@@ -41,6 +41,10 @@ namespace Mangos
             animEvents = GetComponent<ArkeonAnimEvents>();
             if (animEvents == null)
                 animEvents = gameObject.AddComponent<ArkeonAnimEvents>();
+
+            //Cambiar despues, a que agarre hp y no maxhp
+            HP = spirit.stats.MaxHP;
+            spirit.stats.HP = HP;
         }
 
 
@@ -55,27 +59,22 @@ namespace Mangos
             ManagerStaticBattle.battleManager.SetAttack(this, spirit.attacks[_attack], isAlly);
         }
 
-        public void AttackStart(ArkeonAttack _attack, ArkeonInBattle _target, Action<ArkeonAttack.HitTypes, int> _onHitCallback)
+        public void AttackStart(ArkeonAttack _attack, ArkeonInBattle _target, Action<ArkeonAttack.HitTypes> _onHitCallback)
         {
             _attack.OnBattle(this, _target, _onHitCallback);
         }
 
-        public void AttackStart(ArkeonAttack _attack, PlayerCharacterBattle _target, Action<ArkeonAttack.HitTypes, int> _onHitCallback)
+        public void AttackStart(ArkeonAttack _attack, PlayerCharacterBattle _target, Action<ArkeonAttack.HitTypes> _onHitCallback)
         {
             _attack.OnBattle(this, _target, _onHitCallback);
         }
 
-        public void Squeal(int _dmg)
+        public void Squeal()
         {
-            //Show number particles and stuff
-            HP -= _dmg;
-
-            if (HP < 0) HP = 0;
-
             AnimGetHit();
 
         }
-
+        
         public void Dodge()
         {
 
@@ -89,6 +88,8 @@ namespace Mangos
         public void Die()
         {
             AnimDie();
+            Invoke("SelfDestroy", 5.0f);
+            //spirit.stats.HP = 0;
         }
 
         // ---------------- Animations ----------------
@@ -122,7 +123,12 @@ namespace Mangos
         }
         private void AnimDie()
         {
+            anim.SetTrigger("Die");
+        }
 
+        private void SelfDestroy()
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -16,16 +16,18 @@ namespace Mangos
     {
         public class ArkeonBattleStatus
         {
-            public ArkeonBattleStatus(int _teamId, ArkeonInBattle _arkeon, bool _isOnFront)
+            public ArkeonBattleStatus(int _teamId, ArkeonInBattle _arkeon, bool _isOnFront, int _spaceId)
             {
                 teamId = _teamId;
                 arkeon = _arkeon;
                 isOnFront = _isOnFront;
+                spaceId = _spaceId;
             }
 
             public int teamId;
             public ArkeonInBattle arkeon;
             public bool isOnFront;
+            public int spaceId;
         }
 
         [Header("Setup")]
@@ -44,10 +46,15 @@ namespace Mangos
         {
             //Esto talvez cambia si decidimos que es mejor instanciar todos los arkeons al inicio de la pelea y mostrarlos al ser invocados
 
-            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId))
-                return false; //Ya no caben o ya esta afuera
+            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId) || /*arkeonTeam[_arkeonTeamId].stats.HP <= 0 ||*/ _arkeonTeamId > arkeonTeam.Count - 1)
+            {
+                Debug.Log("No se puede invocar ese arkeon, arkeonOutCount: " + arkeonsOut.Count + ", hp: " + arkeonTeam[_arkeonTeamId].stats.HP + ", teamId: " + _arkeonTeamId);
+                return false; //Ya no caben, ya esta afuera o esta muerto
+            }
 
-            Transform point = ManagerStaticBattle.battleManager.arenaPointReference.GetInvokePoint(!enemySide, arkeonsOut.Count); //Obtengo la posición para el arkeon
+            int space = GetNextAvailableSpace();
+
+            Transform point = ManagerStaticBattle.battleManager.arenaPointReference.GetInvokePoint(!enemySide, space); //Obtengo la posición para el arkeon
 
             GameObject go = Instantiate(arkeonTeam[_arkeonTeamId].modelPrefab, point.position, point.rotation); //Lo Invoco
 
@@ -61,14 +68,10 @@ namespace Mangos
             aib.isAlly = !enemySide;
 
             //Actualizando variables
-            arkeonsOut.Add(new ArkeonBattleStatus(_arkeonTeamId, aib, false));
+            arkeonsOut.Add(new ArkeonBattleStatus(_arkeonTeamId, aib, false, space));
 
             Debug.Log("Succesfully invoked arkeon");
             return true;
-
-            1 = 0;
-
-            //TODO: ponerle vida al arkeon instanceado
         }
 
         //Mandar para enfrete
@@ -76,7 +79,7 @@ namespace Mangos
         {
             //TODO: checar si otro esta enfrente para no mandar ;este y regresar falso
             Debug.Log("ArkeonsOut count = " + arkeonsOut.Count);
-            if (arkeonsOut.Count <= _arkeonOutId)
+            if (!IsArkeonOut(arkeonsOut[_arkeonOutId].teamId))
                 return false;
 
             arkeonsOut[_arkeonOutId].arkeon.GoForward();
@@ -145,6 +148,18 @@ namespace Mangos
             }
 
             return false;
+        }
+
+        private int GetNextAvailableSpace()
+        {
+            List<int> spaces = new List<int>() { 0, 1, 2 };
+
+            for(int i = 0; i < arkeonsOut.Count; i++)
+            {
+                spaces.Remove(arkeonsOut[i].spaceId);
+            }
+
+            return spaces[0];
         }
     }
 }
