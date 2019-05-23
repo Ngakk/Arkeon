@@ -27,5 +27,10 @@ public class NodeInputController : MonoBehaviour
     }
 
 
+    public void StartChain(GameObject startingButton)
+    {
+
+    }
+
 
 }

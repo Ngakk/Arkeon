@@ -112,222 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &23492454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 23492455}
-  - component: {fileID: 23492456}
-  m_Layer: 5
-  m_Name: touch05
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &23492455
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23492454}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5247543, y: 1.5247543, z: 1.5247543}
-  m_Children:
-  - {fileID: 1294583271}
-  m_Father: {fileID: 374946301}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035156, y: -361.99997}
-  m_SizeDelta: {x: 125, y: 125}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &23492456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 23492454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 291735648, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactable: 1
-  _visible: 1
-  _hideWhenIdle: 0
-  _allowedMouseButtons: 1
-  _transitionType: 1
-  _transitionColorTint:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.5647059}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.8901961}
-    m_DisabledColor: {r: 0.78125, g: 0.78125, b: 0.78125, a: 0.3137255}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  _transitionSpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  _transitionAnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  _targetGraphic: {fileID: 1294583272}
-  _onInteractionStateTransition:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onVisibilityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToNormal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToHighlighted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToPressed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _targetCustomControllerElement:
-    _splitValue: 1
-    _target:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: -1
-      _valueRange: 0
-      _valueContribution: 0
-      _invert: 0
-    _positiveTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 4
-      _valueRange: 1
-      _valueContribution: 0
-      _invert: 0
-    _negativeTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 4
-      _valueRange: 2
-      _valueContribution: 0
-      _invert: 0
-  _buttonType: 0
-  _activateOnSwipeIn: 0
-  _stayActiveOnSwipeOut: 1
-  _useDigitalAxisSimulation: 0
-  _digitalAxisGravity: 3
-  _digitalAxisSensitivity: 3
-  _axis:
-    _buttonActivationThreshold: 0.5
-    _calibration:
-      _enabled: 1
-      _deadZone: 0
-      _calibratedZero: 0
-      _calibratedMin: -1
-      _calibratedMax: 1
-      _invert: 0
-      _sensitivityType: 0
-      _sensitivity: 1
-      _sensitivityCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _applyRangeCalibration: 1
-  _touchRegion: {fileID: 351848602}
-  _useTouchRegionOnly: 0
-  _moveToTouchPosition: 0
-  _returnOnRelease: 1
-  _followTouchPosition: 0
-  _animateOnMoveToTouch: 1
-  _moveToTouchSpeed: 2
-  _animateOnReturn: 1
-  _returnSpeed: 2
-  _manageRaycasting: 1
-  _onAxisValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 534669906}
-        m_MethodName: AddToStack
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 5
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 --- !u!1 &170076733
 GameObject:
   m_ObjectHideFlags: 0
@@ -397,7 +181,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &170451619
+--- !u!1 &428850718
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -405,338 +189,116 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 170451620}
-  - component: {fileID: 170451621}
+  - component: {fileID: 428850719}
+  - component: {fileID: 428850723}
+  - component: {fileID: 428850722}
+  - component: {fileID: 428850721}
+  - component: {fileID: 428850720}
   m_Layer: 5
-  m_Name: touch01
+  m_Name: Button (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &170451620
+--- !u!224 &428850719
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170451619}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 428850718}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5247543, y: 1.5247543, z: 1.5247543}
-  m_Children:
-  - {fileID: 1129151208}
-  m_Father: {fileID: 374946301}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -244.1, y: -145.58}
-  m_SizeDelta: {x: 125, y: 125}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &170451621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 170451619}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 291735648, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactable: 1
-  _visible: 1
-  _hideWhenIdle: 0
-  _allowedMouseButtons: -1
-  _transitionType: 1
-  _transitionColorTint:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.5647059}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.8901961}
-    m_DisabledColor: {r: 0.78125, g: 0.78125, b: 0.78125, a: 0.3137255}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  _transitionSpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  _transitionAnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  _targetGraphic: {fileID: 1129151209}
-  _onInteractionStateTransition:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onVisibilityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToNormal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToHighlighted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToPressed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _targetCustomControllerElement:
-    _splitValue: 1
-    _target:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: -1
-      _valueRange: 0
-      _valueContribution: 0
-      _invert: 0
-    _positiveTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 0
-      _valueRange: 1
-      _valueContribution: 0
-      _invert: 0
-    _negativeTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 0
-      _valueRange: 2
-      _valueContribution: 0
-      _invert: 0
-  _buttonType: 0
-  _activateOnSwipeIn: 0
-  _stayActiveOnSwipeOut: 1
-  _useDigitalAxisSimulation: 0
-  _digitalAxisGravity: 3
-  _digitalAxisSensitivity: 3
-  _axis:
-    _buttonActivationThreshold: 0.5
-    _calibration:
-      _enabled: 1
-      _deadZone: 0
-      _calibratedZero: 0
-      _calibratedMin: -1
-      _calibratedMax: 1
-      _invert: 0
-      _sensitivityType: 0
-      _sensitivity: 1
-      _sensitivityCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _applyRangeCalibration: 1
-  _touchRegion: {fileID: 351848602}
-  _useTouchRegionOnly: 0
-  _moveToTouchPosition: 0
-  _returnOnRelease: 1
-  _followTouchPosition: 0
-  _animateOnMoveToTouch: 1
-  _moveToTouchSpeed: 2
-  _animateOnReturn: 1
-  _returnSpeed: 2
-  _manageRaycasting: 1
-  _onAxisValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 534669906}
-        m_MethodName: AddToStack
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 1
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!1 &351848600
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 351848601}
-  - component: {fileID: 351848604}
-  - component: {fileID: 351848603}
-  - component: {fileID: 351848602}
-  m_Layer: 0
-  m_Name: Touch Region
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &351848601
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351848600}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.68096, y: 0.68096, z: 0.68096}
   m_Children: []
-  m_Father: {fileID: 374946301}
-  m_RootOrder: 9
+  m_Father: {fileID: 592423376}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.9, y: -362.7}
-  m_SizeDelta: {x: 725.9, y: 667.3}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &351848602
+--- !u!114 &428850720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351848600}
+  m_GameObject: {fileID: 428850718}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 836999113, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad0aea5052c0b14e8796f504dc7135b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactable: 1
-  _visible: 1
-  _hideWhenIdle: 0
-  _allowedMouseButtons: 1
-  _transitionType: 0
-  _transitionColorTint:
+  lineRenderer: {fileID: 1909229363}
+  buttonNumber: 2
+  currentNumber: 0
+  nodeInputController: {fileID: 534669906}
+--- !u!114 &428850721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 428850718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_DisabledColor: {r: 0.78125, g: 0.78125, b: 0.78125, a: 0.5}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
-  _transitionSpriteState:
+  m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
-  _transitionAnimationTriggers:
+  m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  _targetGraphic: {fileID: 351848603}
-  _onInteractionStateTransition:
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 428850722}
+  m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onVisibilityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToNormal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToHighlighted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToPressed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _hideAtRuntime: 1
---- !u!114 &351848603
+--- !u!114 &428850722
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351848600}
+  m_GameObject: {fileID: 428850718}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.05490196}
-  m_RaycastTarget: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -745,87 +307,14 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!222 &351848604
+--- !u!222 &428850723
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 351848600}
+  m_GameObject: {fileID: 428850718}
   m_CullTransparentMesh: 0
---- !u!1 &374946300
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 374946301}
-  - component: {fileID: 374946302}
-  m_Layer: 5
-  m_Name: Touch Controller
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &374946301
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374946300}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 170451620}
-  - {fileID: 861371779}
-  - {fileID: 1359855615}
-  - {fileID: 1611662121}
-  - {fileID: 23492455}
-  - {fileID: 1010314347}
-  - {fileID: 1600810997}
-  - {fileID: 1731693659}
-  - {fileID: 616957807}
-  - {fileID: 351848601}
-  m_Father: {fileID: 1256030479}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -149}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &374946302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 374946300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -6045369, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rewiredInputManager: {fileID: 1837384141}
-  _customControllerSelector:
-    _findUsingSourceId: 1
-    _sourceId: 0
-    _findUsingTag: 0
-    _tag: 
-    _findInPlayer: 0
-    _playerId: 0
-  _createCustomControllerSettings:
-    _createCustomController: 1
-    _customControllerSourceId: 0
-    _assignToPlayerId: 9999999
-    _destroyCustomController: 1
-  _disableMouseInputWhenEnabled: 0
-  _useCustomController: 1
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -877,7 +366,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 101
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -903,7 +392,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534669902}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 557, y: 1227, z: -990}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -921,8 +410,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce988a98a5588de4fb34709412acdd2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  touchbuttons: []
---- !u!1 &616957806
+  touchbuttons:
+  - {fileID: 787168710}
+  - {fileID: 428850718}
+  - {fileID: 1800138435}
+  - {fileID: 1621163359}
+  - {fileID: 1222314989}
+  - {fileID: 1508352560}
+  - {fileID: 1408236768}
+  - {fileID: 1343799134}
+  - {fileID: 1975450079}
+--- !u!1 &592423375
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -930,215 +428,107 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 616957807}
-  - component: {fileID: 616957808}
+  - component: {fileID: 592423376}
+  - component: {fileID: 592423379}
+  - component: {fileID: 592423378}
+  - component: {fileID: 592423377}
   m_Layer: 5
-  m_Name: touch09
+  m_Name: Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &616957807
+--- !u!224 &592423376
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616957806}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_GameObject: {fileID: 592423375}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5247543, y: 1.5247543, z: 1.5247543}
+  m_LocalScale: {x: 7.5, y: 7.5, z: 1}
   m_Children:
-  - {fileID: 1483500931}
-  m_Father: {fileID: 374946301}
-  m_RootOrder: 8
+  - {fileID: 787168711}
+  - {fileID: 428850719}
+  - {fileID: 1800138436}
+  - {fileID: 1621163360}
+  - {fileID: 1222314990}
+  - {fileID: 1508352561}
+  - {fileID: 1408236769}
+  - {fileID: 1343799135}
+  - {fileID: 1975450080}
+  m_Father: {fileID: 1123014234}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.1, y: -581.42}
-  m_SizeDelta: {x: 125, y: 125}
+  m_AnchoredPosition: {x: 0, y: -470}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &616957808
+--- !u!114 &592423377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616957806}
+  m_GameObject: {fileID: 592423375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 291735648, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
+  m_Script: {fileID: -2095666955, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactable: 1
-  _visible: 1
-  _hideWhenIdle: 0
-  _allowedMouseButtons: 1
-  _transitionType: 1
-  _transitionColorTint:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.5647059}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.8901961}
-    m_DisabledColor: {r: 0.78125, g: 0.78125, b: 0.78125, a: 0.3137255}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  _transitionSpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  _transitionAnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  _targetGraphic: {fileID: 1483500932}
-  _onInteractionStateTransition:
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 4
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 25, y: 25}
+  m_Spacing: {x: 7, y: 7}
+  m_Constraint: 0
+  m_ConstraintCount: 2
+--- !u!114 &592423378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592423375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.7820038, g: 0.8018868, b: 0.13995194, a: 0.23137255}
+  m_RaycastTarget: 0
+  m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onVisibilityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToNormal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToHighlighted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToPressed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _targetCustomControllerElement:
-    _splitValue: 1
-    _target:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: -1
-      _valueRange: 0
-      _valueContribution: 0
-      _invert: 0
-    _positiveTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 8
-      _valueRange: 1
-      _valueContribution: 0
-      _invert: 0
-    _negativeTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 8
-      _valueRange: 2
-      _valueContribution: 0
-      _invert: 0
-  _buttonType: 0
-  _activateOnSwipeIn: 0
-  _stayActiveOnSwipeOut: 1
-  _useDigitalAxisSimulation: 0
-  _digitalAxisGravity: 3
-  _digitalAxisSensitivity: 3
-  _axis:
-    _buttonActivationThreshold: 0.5
-    _calibration:
-      _enabled: 1
-      _deadZone: 0
-      _calibratedZero: 0
-      _calibratedMin: -1
-      _calibratedMax: 1
-      _invert: 0
-      _sensitivityType: 0
-      _sensitivity: 1
-      _sensitivityCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _applyRangeCalibration: 1
-  _touchRegion: {fileID: 351848602}
-  _useTouchRegionOnly: 0
-  _moveToTouchPosition: 0
-  _returnOnRelease: 1
-  _followTouchPosition: 0
-  _animateOnMoveToTouch: 1
-  _moveToTouchSpeed: 2
-  _animateOnReturn: 1
-  _returnSpeed: 2
-  _manageRaycasting: 1
-  _onAxisValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 534669906}
-        m_MethodName: AddToStack
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 9
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!1 &672115771
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &592423379
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 592423375}
+  m_CullTransparentMesh: 0
+--- !u!1 &787168710
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1146,72 +536,191 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 672115774}
-  - component: {fileID: 672115773}
-  - component: {fileID: 672115772}
-  m_Layer: 0
-  m_Name: Rewired Event System
+  - component: {fileID: 787168711}
+  - component: {fileID: 787168715}
+  - component: {fileID: 787168714}
+  - component: {fileID: 787168713}
+  - component: {fileID: 787168712}
+  m_Layer: 5
+  m_Name: Button (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &672115772
+--- !u!224 &787168711
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787168710}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.68096, y: 0.68096, z: 0.68096}
+  m_Children: []
+  m_Father: {fileID: 592423376}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &787168712
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672115771}
+  m_GameObject: {fileID: 787168710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10efa70eea88e69459c632aac286892d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad0aea5052c0b14e8796f504dc7135b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rewiredInputManager: {fileID: 1837384141}
-  useAllRewiredGamePlayers: 1
-  useRewiredSystemPlayer: 1
-  rewiredPlayerIds: 00000000
-  usePlayingPlayersOnly: 0
-  playerMice: []
-  moveOneElementPerAxisPress: 0
-  setActionsById: 0
-  horizontalActionId: -1
-  verticalActionId: -1
-  submitActionId: -1
-  cancelActionId: -1
-  m_HorizontalAxis: UIHorizontal
-  m_VerticalAxis: UIVertical
-  m_SubmitButton: UISubmit
-  m_CancelButton: UICancel
-  m_InputActionsPerSecond: 4.5
-  m_RepeatDelay: 0
-  m_allowMouseInput: 1
-  m_allowMouseInputIfTouchSupported: 1
-  m_allowTouchInput: 1
-  m_ForceModuleActive: 0
---- !u!114 &672115773
+  lineRenderer: {fileID: 1909229363}
+  buttonNumber: 1
+  currentNumber: 0
+  nodeInputController: {fileID: 534669906}
+--- !u!114 &787168713
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672115771}
+  m_GameObject: {fileID: 787168710}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 787168714}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &787168714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787168710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &787168715
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 787168710}
+  m_CullTransparentMesh: 0
+--- !u!1 &1029929991
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1029929994}
+  - component: {fileID: 1029929993}
+  - component: {fileID: 1029929992}
+  m_Layer: 0
+  m_Name: EventSystem
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1029929992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029929991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
+--- !u!114 &1029929993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029929991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
-  m_DragThreshold: 5
---- !u!4 &672115774
+  m_DragThreshold: 10
+--- !u!4 &1029929994
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 672115771}
+  m_GameObject: {fileID: 1029929991}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -1219,7 +728,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &861371778
+--- !u!1 &1123014230
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1227,604 +736,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 861371779}
-  - component: {fileID: 861371780}
+  - component: {fileID: 1123014234}
+  - component: {fileID: 1123014233}
+  - component: {fileID: 1123014232}
+  - component: {fileID: 1123014231}
   m_Layer: 5
-  m_Name: touch02
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &861371779
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861371778}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5247543, y: 1.5247543, z: 1.5247543}
-  m_Children:
-  - {fileID: 2110050539}
-  m_Father: {fileID: 374946301}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -145.58}
-  m_SizeDelta: {x: 125, y: 125}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &861371780
+--- !u!114 &1123014231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 861371778}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 291735648, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactable: 1
-  _visible: 1
-  _hideWhenIdle: 0
-  _allowedMouseButtons: 1
-  _transitionType: 1
-  _transitionColorTint:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.5647059}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.8901961}
-    m_DisabledColor: {r: 0.78125, g: 0.78125, b: 0.78125, a: 0.3137255}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  _transitionSpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  _transitionAnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  _targetGraphic: {fileID: 2110050540}
-  _onInteractionStateTransition:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onVisibilityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToNormal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToHighlighted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToPressed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _targetCustomControllerElement:
-    _splitValue: 1
-    _target:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: -1
-      _valueRange: 0
-      _valueContribution: 0
-      _invert: 0
-    _positiveTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 1
-      _valueRange: 1
-      _valueContribution: 0
-      _invert: 0
-    _negativeTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 1
-      _valueRange: 2
-      _valueContribution: 0
-      _invert: 0
-  _buttonType: 0
-  _activateOnSwipeIn: 0
-  _stayActiveOnSwipeOut: 1
-  _useDigitalAxisSimulation: 0
-  _digitalAxisGravity: 3
-  _digitalAxisSensitivity: 3
-  _axis:
-    _buttonActivationThreshold: 0.5
-    _calibration:
-      _enabled: 1
-      _deadZone: 0
-      _calibratedZero: 0
-      _calibratedMin: -1
-      _calibratedMax: 1
-      _invert: 0
-      _sensitivityType: 0
-      _sensitivity: 1
-      _sensitivityCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _applyRangeCalibration: 1
-  _touchRegion: {fileID: 351848602}
-  _useTouchRegionOnly: 0
-  _moveToTouchPosition: 0
-  _returnOnRelease: 1
-  _followTouchPosition: 0
-  _animateOnMoveToTouch: 1
-  _moveToTouchSpeed: 2
-  _animateOnReturn: 1
-  _returnSpeed: 2
-  _manageRaycasting: 1
-  _onAxisValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 534669906}
-        m_MethodName: AddToStack
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 2
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!1 &1010314346
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1010314347}
-  - component: {fileID: 1010314348}
-  m_Layer: 5
-  m_Name: touch06
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1010314347
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010314346}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5247543, y: 1.5247543, z: 1.5247543}
-  m_Children:
-  - {fileID: 2119805743}
-  m_Father: {fileID: 374946301}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.1, y: -362}
-  m_SizeDelta: {x: 125, y: 125}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1010314348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1010314346}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 291735648, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactable: 1
-  _visible: 1
-  _hideWhenIdle: 0
-  _allowedMouseButtons: 1
-  _transitionType: 1
-  _transitionColorTint:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.5647059}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.8901961}
-    m_DisabledColor: {r: 0.78125, g: 0.78125, b: 0.78125, a: 0.3137255}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  _transitionSpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  _transitionAnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  _targetGraphic: {fileID: 2119805744}
-  _onInteractionStateTransition:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onVisibilityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToNormal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToHighlighted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToPressed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _targetCustomControllerElement:
-    _splitValue: 1
-    _target:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: -1
-      _valueRange: 0
-      _valueContribution: 0
-      _invert: 0
-    _positiveTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 5
-      _valueRange: 1
-      _valueContribution: 0
-      _invert: 0
-    _negativeTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 5
-      _valueRange: 2
-      _valueContribution: 0
-      _invert: 0
-  _buttonType: 0
-  _activateOnSwipeIn: 0
-  _stayActiveOnSwipeOut: 1
-  _useDigitalAxisSimulation: 0
-  _digitalAxisGravity: 3
-  _digitalAxisSensitivity: 3
-  _axis:
-    _buttonActivationThreshold: 0.5
-    _calibration:
-      _enabled: 1
-      _deadZone: 0
-      _calibratedZero: 0
-      _calibratedMin: -1
-      _calibratedMax: 1
-      _invert: 0
-      _sensitivityType: 0
-      _sensitivity: 1
-      _sensitivityCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _applyRangeCalibration: 1
-  _touchRegion: {fileID: 351848602}
-  _useTouchRegionOnly: 0
-  _moveToTouchPosition: 0
-  _returnOnRelease: 1
-  _followTouchPosition: 0
-  _animateOnMoveToTouch: 1
-  _moveToTouchSpeed: 2
-  _animateOnReturn: 1
-  _returnSpeed: 2
-  _manageRaycasting: 1
-  _onAxisValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 534669906}
-        m_MethodName: AddToStack
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 6
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!1 &1067302766
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1067302767}
-  - component: {fileID: 1067302769}
-  - component: {fileID: 1067302768}
-  m_Layer: 5
-  m_Name: Outline
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1067302767
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067302766}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1731693659}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1067302768
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067302766}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1067302769
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067302766}
-  m_CullTransparentMesh: 0
---- !u!1 &1129151207
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1129151208}
-  - component: {fileID: 1129151210}
-  - component: {fileID: 1129151209}
-  m_Layer: 5
-  m_Name: Outline
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1129151208
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129151207}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 170451620}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1129151209
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129151207}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1129151210
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1129151207}
-  m_CullTransparentMesh: 0
---- !u!1 &1256030475
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1256030479}
-  - component: {fileID: 1256030478}
-  - component: {fileID: 1256030477}
-  - component: {fileID: 1256030476}
-  m_Layer: 5
-  m_Name: Rewired Touch Control Canvas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1256030476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256030475}
+  m_GameObject: {fileID: 1123014230}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -1835,13 +764,13 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1256030477
+--- !u!114 &1123014232
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256030475}
+  m_GameObject: {fileID: 1123014230}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
@@ -1857,19 +786,19 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!223 &1256030478
+--- !u!223 &1123014233
 Canvas:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256030475}
+  m_GameObject: {fileID: 1123014230}
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 534669904}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -1878,27 +807,27 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!224 &1256030479
+--- !u!224 &1123014234
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1256030475}
+  m_GameObject: {fileID: 1123014230}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 374946301}
+  - {fileID: 592423376}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!1 &1260010904
+--- !u!1 &1222314989
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1906,45 +835,105 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1260010905}
-  - component: {fileID: 1260010907}
-  - component: {fileID: 1260010906}
+  - component: {fileID: 1222314990}
+  - component: {fileID: 1222314994}
+  - component: {fileID: 1222314993}
+  - component: {fileID: 1222314992}
+  - component: {fileID: 1222314991}
   m_Layer: 5
-  m_Name: Outline
+  m_Name: Button (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1260010905
+--- !u!224 &1222314990
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260010904}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1222314989}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.68096, y: 0.68096, z: 0.68096}
   m_Children: []
-  m_Father: {fileID: 1611662121}
-  m_RootOrder: 0
+  m_Father: {fileID: 592423376}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1260010906
+--- !u!114 &1222314991
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260010904}
+  m_GameObject: {fileID: 1222314989}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad0aea5052c0b14e8796f504dc7135b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 1909229363}
+  buttonNumber: 5
+  currentNumber: 0
+  nodeInputController: {fileID: 534669906}
+--- !u!114 &1222314992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222314989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1222314993}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1222314993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222314989}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -1955,7 +944,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1964,15 +953,15 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!222 &1260010907
+--- !u!222 &1222314994
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1260010904}
+  m_GameObject: {fileID: 1222314989}
   m_CullTransparentMesh: 0
---- !u!1 &1294583270
+--- !u!1 &1343799134
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1980,1011 +969,133 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1294583271}
-  - component: {fileID: 1294583273}
-  - component: {fileID: 1294583272}
+  - component: {fileID: 1343799135}
+  - component: {fileID: 1343799139}
+  - component: {fileID: 1343799138}
+  - component: {fileID: 1343799137}
+  - component: {fileID: 1343799136}
   m_Layer: 5
-  m_Name: Outline
+  m_Name: Button (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1294583271
+--- !u!224 &1343799135
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294583270}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1343799134}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.68096, y: 0.68096, z: 0.68096}
   m_Children: []
-  m_Father: {fileID: 23492455}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1294583272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294583270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1294583273
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294583270}
-  m_CullTransparentMesh: 0
---- !u!1 &1359855614
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1359855615}
-  - component: {fileID: 1359855616}
-  m_Layer: 5
-  m_Name: touch03
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1359855615
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359855614}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5247543, y: 1.5247543, z: 1.5247543}
-  m_Children:
-  - {fileID: 2080141602}
-  m_Father: {fileID: 374946301}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 244.1, y: -145.58}
-  m_SizeDelta: {x: 125, y: 125}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1359855616
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359855614}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 291735648, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactable: 1
-  _visible: 1
-  _hideWhenIdle: 0
-  _allowedMouseButtons: 1
-  _transitionType: 1
-  _transitionColorTint:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.5647059}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.8901961}
-    m_DisabledColor: {r: 0.78125, g: 0.78125, b: 0.78125, a: 0.3137255}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  _transitionSpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  _transitionAnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  _targetGraphic: {fileID: 2080141603}
-  _onInteractionStateTransition:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onVisibilityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToNormal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToHighlighted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToPressed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _targetCustomControllerElement:
-    _splitValue: 1
-    _target:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: -1
-      _valueRange: 0
-      _valueContribution: 0
-      _invert: 0
-    _positiveTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 2
-      _valueRange: 1
-      _valueContribution: 0
-      _invert: 0
-    _negativeTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 2
-      _valueRange: 2
-      _valueContribution: 0
-      _invert: 0
-  _buttonType: 0
-  _activateOnSwipeIn: 0
-  _stayActiveOnSwipeOut: 1
-  _useDigitalAxisSimulation: 0
-  _digitalAxisGravity: 3
-  _digitalAxisSensitivity: 3
-  _axis:
-    _buttonActivationThreshold: 0.5
-    _calibration:
-      _enabled: 1
-      _deadZone: 0
-      _calibratedZero: 0
-      _calibratedMin: -1
-      _calibratedMax: 1
-      _invert: 0
-      _sensitivityType: 0
-      _sensitivity: 1
-      _sensitivityCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _applyRangeCalibration: 1
-  _touchRegion: {fileID: 351848602}
-  _useTouchRegionOnly: 0
-  _moveToTouchPosition: 0
-  _returnOnRelease: 1
-  _followTouchPosition: 0
-  _animateOnMoveToTouch: 1
-  _moveToTouchSpeed: 2
-  _animateOnReturn: 1
-  _returnSpeed: 2
-  _manageRaycasting: 1
-  _onAxisValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 534669906}
-        m_MethodName: AddToStack
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 3
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!1 &1483500930
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1483500931}
-  - component: {fileID: 1483500933}
-  - component: {fileID: 1483500932}
-  m_Layer: 5
-  m_Name: Outline
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1483500931
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483500930}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 616957807}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1483500932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483500930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &1483500933
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1483500930}
-  m_CullTransparentMesh: 0
---- !u!1 &1600810996
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1600810997}
-  - component: {fileID: 1600810998}
-  m_Layer: 5
-  m_Name: touch07
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1600810997
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600810996}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5247543, y: 1.5247543, z: 1.5247543}
-  m_Children:
-  - {fileID: 2020689870}
-  m_Father: {fileID: 374946301}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -244.1, y: -581.42}
-  m_SizeDelta: {x: 125, y: 125}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1600810998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600810996}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 291735648, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactable: 1
-  _visible: 1
-  _hideWhenIdle: 0
-  _allowedMouseButtons: 1
-  _transitionType: 1
-  _transitionColorTint:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.5647059}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.8901961}
-    m_DisabledColor: {r: 0.78125, g: 0.78125, b: 0.78125, a: 0.3137255}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  _transitionSpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  _transitionAnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  _targetGraphic: {fileID: 2020689871}
-  _onInteractionStateTransition:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onVisibilityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToNormal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToHighlighted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToPressed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _targetCustomControllerElement:
-    _splitValue: 1
-    _target:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: -1
-      _valueRange: 0
-      _valueContribution: 0
-      _invert: 0
-    _positiveTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 6
-      _valueRange: 1
-      _valueContribution: 0
-      _invert: 0
-    _negativeTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 6
-      _valueRange: 2
-      _valueContribution: 0
-      _invert: 0
-  _buttonType: 0
-  _activateOnSwipeIn: 0
-  _stayActiveOnSwipeOut: 1
-  _useDigitalAxisSimulation: 0
-  _digitalAxisGravity: 3
-  _digitalAxisSensitivity: 3
-  _axis:
-    _buttonActivationThreshold: 0.5
-    _calibration:
-      _enabled: 1
-      _deadZone: 0
-      _calibratedZero: 0
-      _calibratedMin: -1
-      _calibratedMax: 1
-      _invert: 0
-      _sensitivityType: 0
-      _sensitivity: 1
-      _sensitivityCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _applyRangeCalibration: 1
-  _touchRegion: {fileID: 351848602}
-  _useTouchRegionOnly: 0
-  _moveToTouchPosition: 0
-  _returnOnRelease: 1
-  _followTouchPosition: 0
-  _animateOnMoveToTouch: 1
-  _moveToTouchSpeed: 2
-  _animateOnReturn: 1
-  _returnSpeed: 2
-  _manageRaycasting: 1
-  _onAxisValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 534669906}
-        m_MethodName: AddToStack
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 7
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!1 &1611662120
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1611662121}
-  - component: {fileID: 1611662122}
-  m_Layer: 5
-  m_Name: touch04
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1611662121
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611662120}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5247543, y: 1.5247543, z: 1.5247543}
-  m_Children:
-  - {fileID: 1260010905}
-  m_Father: {fileID: 374946301}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -244.1, y: -361.99997}
-  m_SizeDelta: {x: 125, y: 125}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1611662122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1611662120}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 291735648, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _interactable: 1
-  _visible: 1
-  _hideWhenIdle: 0
-  _allowedMouseButtons: 1
-  _transitionType: 1
-  _transitionColorTint:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.5647059}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.8901961}
-    m_DisabledColor: {r: 0.78125, g: 0.78125, b: 0.78125, a: 0.3137255}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  _transitionSpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  _transitionAnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_DisabledTrigger: Disabled
-  _targetGraphic: {fileID: 1260010906}
-  _onInteractionStateTransition:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onVisibilityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToNormal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToHighlighted:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToPressed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _targetCustomControllerElement:
-    _splitValue: 1
-    _target:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: -1
-      _valueRange: 0
-      _valueContribution: 0
-      _invert: 0
-    _positiveTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 3
-      _valueRange: 1
-      _valueContribution: 0
-      _invert: 0
-    _negativeTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 3
-      _valueRange: 2
-      _valueContribution: 0
-      _invert: 0
-  _buttonType: 0
-  _activateOnSwipeIn: 0
-  _stayActiveOnSwipeOut: 1
-  _useDigitalAxisSimulation: 0
-  _digitalAxisGravity: 3
-  _digitalAxisSensitivity: 3
-  _axis:
-    _buttonActivationThreshold: 0.5
-    _calibration:
-      _enabled: 1
-      _deadZone: 0
-      _calibratedZero: 0
-      _calibratedMin: -1
-      _calibratedMax: 1
-      _invert: 0
-      _sensitivityType: 0
-      _sensitivity: 1
-      _sensitivityCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _applyRangeCalibration: 1
-  _touchRegion: {fileID: 351848602}
-  _useTouchRegionOnly: 0
-  _moveToTouchPosition: 0
-  _returnOnRelease: 1
-  _followTouchPosition: 0
-  _animateOnMoveToTouch: 1
-  _moveToTouchSpeed: 2
-  _animateOnReturn: 1
-  _returnSpeed: 2
-  _manageRaycasting: 1
-  _onAxisValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 534669906}
-        m_MethodName: AddToStack
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 4
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!1 &1731693658
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1731693659}
-  - component: {fileID: 1731693660}
-  m_Layer: 5
-  m_Name: touch08
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1731693659
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731693658}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5247543, y: 1.5247543, z: 1.5247543}
-  m_Children:
-  - {fileID: 1067302767}
-  m_Father: {fileID: 374946301}
+  m_Father: {fileID: 592423376}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00012207031, y: -581.42}
-  m_SizeDelta: {x: 125, y: 125}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1731693660
+--- !u!114 &1343799136
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1731693658}
+  m_GameObject: {fileID: 1343799134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 291735648, guid: 09c9b883b79ef864a99683bb36c5776d, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad0aea5052c0b14e8796f504dc7135b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactable: 1
-  _visible: 1
-  _hideWhenIdle: 0
-  _allowedMouseButtons: 1
-  _transitionType: 1
-  _transitionColorTint:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 0.23529412}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 0.5647059}
-    m_PressedColor: {r: 1, g: 1, b: 1, a: 0.8901961}
-    m_DisabledColor: {r: 0.78125, g: 0.78125, b: 0.78125, a: 0.3137255}
+  lineRenderer: {fileID: 1909229363}
+  buttonNumber: 8
+  currentNumber: 0
+  nodeInputController: {fileID: 534669906}
+--- !u!114 &1343799137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343799134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
-  _transitionSpriteState:
+  m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
-  _transitionAnimationTriggers:
+  m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  _targetGraphic: {fileID: 1067302768}
-  _onInteractionStateTransition:
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1343799138}
+  m_OnClick:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+InteractionStateTransitionEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onVisibilityChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchInteractable+VisibilityChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToNormal:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToHighlighted:
+--- !u!114 &1343799138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343799134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToPressed:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _onInteractionStateChangedToDisabled:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  _targetCustomControllerElement:
-    _splitValue: 1
-    _target:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: -1
-      _valueRange: 0
-      _valueContribution: 0
-      _invert: 0
-    _positiveTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 7
-      _valueRange: 1
-      _valueContribution: 0
-      _invert: 0
-    _negativeTarget:
-      _element:
-        _elementType: 1
-        _selectorType: 2
-        _elementName: 
-        _elementIndex: 0
-        _elementId: 7
-      _valueRange: 2
-      _valueContribution: 0
-      _invert: 0
-  _buttonType: 0
-  _activateOnSwipeIn: 0
-  _stayActiveOnSwipeOut: 1
-  _useDigitalAxisSimulation: 0
-  _digitalAxisGravity: 3
-  _digitalAxisSensitivity: 3
-  _axis:
-    _buttonActivationThreshold: 0.5
-    _calibration:
-      _enabled: 1
-      _deadZone: 0
-      _calibratedZero: 0
-      _calibratedMin: -1
-      _calibratedMax: 1
-      _invert: 0
-      _sensitivityType: 0
-      _sensitivity: 1
-      _sensitivityCurve:
-        serializedVersion: 2
-        m_Curve:
-        - serializedVersion: 3
-          time: 0
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 1
-          value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.33333334
-          outWeight: 0.33333334
-        m_PreInfinity: 2
-        m_PostInfinity: 2
-        m_RotationOrder: 4
-      _applyRangeCalibration: 1
-  _touchRegion: {fileID: 351848602}
-  _useTouchRegionOnly: 0
-  _moveToTouchPosition: 0
-  _returnOnRelease: 1
-  _followTouchPosition: 0
-  _animateOnMoveToTouch: 1
-  _moveToTouchSpeed: 2
-  _animateOnReturn: 1
-  _returnSpeed: 2
-  _manageRaycasting: 1
-  _onAxisValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+AxisValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonValueChangedEventHandler,
-      Rewired_Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonDown:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 534669906}
-        m_MethodName: AddToStack
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 8
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonDownEventHandler, Rewired_Core,
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  _onButtonUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: Rewired.ComponentControls.TouchButton+ButtonUpEventHandler, Rewired_Core,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!1 &1837384140
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1343799139
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343799134}
+  m_CullTransparentMesh: 0
+--- !u!1 &1408236768
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2992,343 +1103,659 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1837384142}
-  - component: {fileID: 1837384141}
-  m_Layer: 0
-  m_Name: Rewired Input Manager
+  - component: {fileID: 1408236769}
+  - component: {fileID: 1408236773}
+  - component: {fileID: 1408236772}
+  - component: {fileID: 1408236771}
+  - component: {fileID: 1408236770}
+  m_Layer: 5
+  m_Name: Button (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1837384141
+--- !u!224 &1408236769
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408236768}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.68096, y: 0.68096, z: 0.68096}
+  m_Children: []
+  m_Father: {fileID: 592423376}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1408236770
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837384140}
+  m_GameObject: {fileID: 1408236768}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 581b3e3c96df0ef42aef16b63b27b87f, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad0aea5052c0b14e8796f504dc7135b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _dontDestroyOnLoad: 1
-  _userData:
-    configVars:
-      updateLoop: 1
-      alwaysUseUnityInput: 0
-      windowsStandalonePrimaryInputSource: 0
-      osx_primaryInputSource: 0
-      linux_primaryInputSource: 0
-      windowsUWP_primaryInputSource: 0
-      xboxOne_primaryInputSource: 0
-      ps4_primaryInputSource: 0
-      webGL_primaryInputSource: 0
-      useXInput: 1
-      useNativeMouse: 1
-      useEnhancedDeviceSupport: 1
-      windowsStandalone_useSteamRawInputControllerWorkaround: 0
-      osxStandalone_useEnhancedDeviceSupport: 1
-      android_supportUnknownGamepads: 1
-      ps4_assignJoysticksByPS4JoyId: 1
-      useSteamControllerSupport: 1
-      logToScreen: 0
-      runInEditMode: 0
-      allowInputInEditorSceneView: 0
-      platformVars_windowsStandalone:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-        useNativeKeyboard: 1
-        joystickRefreshRate: 240
-      platformVars_linuxStandalone:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_osxStandalone:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_windows8Store:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_windowsUWP:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-        useGamepadAPI: 1
-        useHIDAPI: 1
-      platformVars_iOS:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_tvOS:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_android:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_ps3:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_ps4:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_psVita:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_xbox360:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_xboxOne:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_wii:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_wiiu:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_switch:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      platformVars_webGL:
-        disableKeyboard: 0
-        ignoreInputWhenAppNotInFocus: 1
-      maxJoysticksPerPlayer: 1
-      autoAssignJoysticks: 1
-      assignJoysticksToPlayingPlayersOnly: 0
-      distributeJoysticksEvenly: 1
-      reassignJoystickToPreviousOwnerOnReconnect: 1
-      defaultJoystickAxis2DDeadZoneType: 1
-      force4WayHats: 0
-      throttleCalibrationMode: 0
-      activateActionButtonsOnNegativeValue: 0
-      deferControllerConnectedEventsOnStart: 0
-      logLevel: 7
-      editorSettings:
-        exportConsts_useParentClass: 0
-        exportConsts_parentClassName: RewiredConsts
-        exportConsts_useNamespace: 1
-        exportConsts_namespace: RewiredConsts
-        exportConsts_actions: 1
-        exportConsts_actionsClassName: Action
-        exportConsts_actionsIncludeActionCategory: 0
-        exportConsts_actionsCreateClassesForActionCategories: 0
-        exportConsts_mapCategories: 1
-        exportConsts_mapCategoriesClassName: Category
-        exportConsts_layouts: 1
-        exportConsts_layoutsClassName: Layout
-        exportConsts_players: 1
-        exportConsts_playersClassName: Player
-        exportConsts_inputBehaviors: 0
-        exportConsts_inputBehaviorsClassName: InputBehavior
-        exportConsts_customControllers: 1
-        exportConsts_customControllersClassName: CustomController
-        exportConsts_customControllersAxesClassName: Axis
-        exportConsts_customControllersButtonsClassName: Button
-        exportConsts_allCapsConstantNames: 0
-    players:
-    - _id: 9999999
-      _name: System
-      _descriptiveName: System
-      _startPlaying: 1
-      _defaultJoystickMaps: []
-      _defaultMouseMaps: []
-      _defaultKeyboardMaps: []
-      _defaultCustomControllerMaps: []
-      _startingCustomControllers: []
-      _assignMouseOnStart: 1
-      _assignKeyboardOnStart: 1
-      _excludeFromControllerAutoAssignment: 1
-    - _id: 1
-      _name: Player0
-      _descriptiveName: Player0
-      _startPlaying: 1
-      _defaultJoystickMaps: []
-      _defaultMouseMaps:
-      - _enabled: 1
-        _categoryId: 0
-        _layoutId: 0
-      _defaultKeyboardMaps: []
-      _defaultCustomControllerMaps:
-      - _enabled: 1
-        _categoryId: 0
-        _layoutId: 0
-      _startingCustomControllers: []
-      _assignMouseOnStart: 1
-      _assignKeyboardOnStart: 1
-      _excludeFromControllerAutoAssignment: 0
-    actions: []
-    actionCategories:
-    - _name: Default
-      _descriptiveName: Default
-      _tag: 
-      _id: 0
-      _userAssignable: 1
-    actionCategoryMap:
-      list:
-      - categoryId: 0
-        actionIds: 
-    inputBehaviors:
-    - _id: 0
-      _name: Default
-      _joystickAxisSensitivity: 1
-      _digitalAxisSimulation: 1
-      _digitalAxisSnap: 1
-      _digitalAxisInstantReverse: 0
-      _digitalAxisGravity: 3
-      _digitalAxisSensitivity: 3
-      _mouseXYAxisMode: 0
-      _mouseOtherAxisMode: 0
-      _mouseXYAxisSensitivity: 1
-      _mouseXYAxisDeltaCalc: 0
-      _mouseOtherAxisSensitivity: 1
-      _customControllerAxisSensitivity: 1
-      _buttonDoublePressSpeed: 0.3
-      _buttonShortPressTime: 0.25
-      _buttonShortPressExpiresIn: 0
-      _buttonLongPressTime: 1
-      _buttonLongPressExpiresIn: 0
-      _buttonDeadZone: 0.5
-      _buttonDownBuffer: 0
-      _buttonRepeatRate: 30
-      _buttonRepeatDelay: 0
-    mapCategories:
-    - _name: Default
-      _descriptiveName: Default
-      _tag: 
-      _id: 0
-      _userAssignable: 1
-      _checkConflictsWithAllCategories: 1
-      _checkConflictsCategoryIds: 
-    joystickLayouts:
-    - _name: Default
-      _descriptiveName: Default
-      _id: 0
-    keyboardLayouts:
-    - _name: Default
-      _descriptiveName: Default
-      _id: 0
-    mouseLayouts:
-    - _name: Default
-      _descriptiveName: Default
-      _id: 0
-    customControllerLayouts:
-    - _name: Default
-      _descriptiveName: Default
-      _id: 0
-    joystickMaps: []
-    keyboardMaps: []
-    mouseMaps: []
-    customControllerMaps: []
-    customControllers:
-    - _name: CustomController0
-      _descriptiveName: CustomController0
-      _id: 0
-      _elementIdentifiers:
-      - _id: 0
-        _name: Button0
-        _positiveName: 
-        _negativeName: 
-        _elementType: 1
-        _compoundElementType: 0
-      - _id: 1
-        _name: Button1
-        _positiveName: 
-        _negativeName: 
-        _elementType: 1
-        _compoundElementType: 0
-      - _id: 2
-        _name: Button2
-        _positiveName: 
-        _negativeName: 
-        _elementType: 1
-        _compoundElementType: 0
-      - _id: 3
-        _name: Button3
-        _positiveName: 
-        _negativeName: 
-        _elementType: 1
-        _compoundElementType: 0
-      - _id: 4
-        _name: Button4
-        _positiveName: 
-        _negativeName: 
-        _elementType: 1
-        _compoundElementType: 0
-      - _id: 5
-        _name: Button5
-        _positiveName: 
-        _negativeName: 
-        _elementType: 1
-        _compoundElementType: 0
-      - _id: 6
-        _name: Button6
-        _positiveName: 
-        _negativeName: 
-        _elementType: 1
-        _compoundElementType: 0
-      - _id: 7
-        _name: Button7
-        _positiveName: 
-        _negativeName: 
-        _elementType: 1
-        _compoundElementType: 0
-      - _id: 8
-        _name: Button8
-        _positiveName: 
-        _negativeName: 
-        _elementType: 1
-        _compoundElementType: 0
-      _axes: []
-      _buttons:
-      - elementIdentifierId: 0
-        name: Button0
-      - elementIdentifierId: 1
-        name: Button1
-      - elementIdentifierId: 2
-        name: Button2
-      - elementIdentifierId: 3
-        name: Button3
-      - elementIdentifierId: 4
-        name: Button4
-      - elementIdentifierId: 5
-        name: Button5
-      - elementIdentifierId: 6
-        name: Button6
-      - elementIdentifierId: 7
-        name: Button7
-      - elementIdentifierId: 8
-        name: Button8
-      _elementIdentifierIdCounter: 9
-    playerIdCounter: 2
-    actionIdCounter: 0
-    actionCategoryIdCounter: 1
-    inputBehaviorIdCounter: 1
-    mapCategoryIdCounter: 1
-    joystickLayoutIdCounter: 1
-    keyboardLayoutIdCounter: 1
-    mouseLayoutIdCounter: 1
-    customControllerLayoutIdCounter: 1
-    joystickMapIdCounter: 0
-    keyboardMapIdCounter: 0
-    mouseMapIdCounter: 0
-    customControllerMapIdCounter: 1
-    customControllerIdCounter: 1
-  _controllerDataFiles: {fileID: 11400000, guid: d21d2b20df8369642b76aafbb2576ba7,
-    type: 2}
---- !u!4 &1837384142
+  lineRenderer: {fileID: 1909229363}
+  buttonNumber: 7
+  currentNumber: 0
+  nodeInputController: {fileID: 534669906}
+--- !u!114 &1408236771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408236768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1408236772}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1408236772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408236768}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1408236773
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1408236768}
+  m_CullTransparentMesh: 0
+--- !u!1 &1508352560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1508352561}
+  - component: {fileID: 1508352565}
+  - component: {fileID: 1508352564}
+  - component: {fileID: 1508352563}
+  - component: {fileID: 1508352562}
+  m_Layer: 5
+  m_Name: Button (6)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1508352561
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508352560}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.68096, y: 0.68096, z: 0.68096}
+  m_Children: []
+  m_Father: {fileID: 592423376}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1508352562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508352560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad0aea5052c0b14e8796f504dc7135b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 1909229363}
+  buttonNumber: 6
+  currentNumber: 0
+  nodeInputController: {fileID: 534669906}
+--- !u!114 &1508352563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508352560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1508352564}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1508352564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508352560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1508352565
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1508352560}
+  m_CullTransparentMesh: 0
+--- !u!1 &1621163359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1621163360}
+  - component: {fileID: 1621163364}
+  - component: {fileID: 1621163363}
+  - component: {fileID: 1621163362}
+  - component: {fileID: 1621163361}
+  m_Layer: 5
+  m_Name: Button (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1621163360
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621163359}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.68096, y: 0.68096, z: 0.68096}
+  m_Children: []
+  m_Father: {fileID: 592423376}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1621163361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621163359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad0aea5052c0b14e8796f504dc7135b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 1909229363}
+  buttonNumber: 4
+  currentNumber: 0
+  nodeInputController: {fileID: 534669906}
+--- !u!114 &1621163362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621163359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1621163363}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1621163363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621163359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1621163364
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1621163359}
+  m_CullTransparentMesh: 0
+--- !u!1 &1800138435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1800138436}
+  - component: {fileID: 1800138440}
+  - component: {fileID: 1800138439}
+  - component: {fileID: 1800138438}
+  - component: {fileID: 1800138437}
+  m_Layer: 5
+  m_Name: Button (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1800138436
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800138435}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.68096, y: 0.68096, z: 0.68096}
+  m_Children: []
+  m_Father: {fileID: 592423376}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1800138437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800138435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad0aea5052c0b14e8796f504dc7135b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 1909229363}
+  buttonNumber: 3
+  currentNumber: 0
+  nodeInputController: {fileID: 534669906}
+--- !u!114 &1800138438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800138435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1800138439}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1800138439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800138435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1800138440
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1800138435}
+  m_CullTransparentMesh: 0
+--- !u!1 &1909229362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1909229364}
+  - component: {fileID: 1909229363}
+  m_Layer: 0
+  m_Name: LineRenderer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!120 &1909229363
+LineRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909229362}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions: []
+  m_Parameters:
+    serializedVersion: 3
+    widthMultiplier: 150
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.15
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 0.11792451, g: 0.9554748, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    shadowBias: 0.5
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+--- !u!4 &1909229364
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1837384140}
+  m_GameObject: {fileID: 1909229362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2020689869
+--- !u!1 &1975450079
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3336,45 +1763,105 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2020689870}
-  - component: {fileID: 2020689872}
-  - component: {fileID: 2020689871}
+  - component: {fileID: 1975450080}
+  - component: {fileID: 1975450084}
+  - component: {fileID: 1975450083}
+  - component: {fileID: 1975450082}
+  - component: {fileID: 1975450081}
   m_Layer: 5
-  m_Name: Outline
+  m_Name: Button (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2020689870
+--- !u!224 &1975450080
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020689869}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 1975450079}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.68096, y: 0.68096, z: 0.68096}
   m_Children: []
-  m_Father: {fileID: 1600810997}
-  m_RootOrder: 0
+  m_Father: {fileID: 592423376}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2020689871
+--- !u!114 &1975450081
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020689869}
+  m_GameObject: {fileID: 1975450079}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Script: {fileID: 11500000, guid: 5ad0aea5052c0b14e8796f504dc7135b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineRenderer: {fileID: 1909229363}
+  buttonNumber: 9
+  currentNumber: 0
+  nodeInputController: {fileID: 534669906}
+--- !u!114 &1975450082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975450079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1975450083}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &1975450083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1975450079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -3385,7 +1872,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3394,233 +1881,11 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
---- !u!222 &2020689872
+--- !u!222 &1975450084
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020689869}
-  m_CullTransparentMesh: 0
---- !u!1 &2080141601
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2080141602}
-  - component: {fileID: 2080141604}
-  - component: {fileID: 2080141603}
-  m_Layer: 5
-  m_Name: Outline
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2080141602
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080141601}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1359855615}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2080141603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080141601}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &2080141604
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2080141601}
-  m_CullTransparentMesh: 0
---- !u!1 &2110050538
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2110050539}
-  - component: {fileID: 2110050541}
-  - component: {fileID: 2110050540}
-  m_Layer: 5
-  m_Name: Outline
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2110050539
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110050538}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 861371779}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2110050540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110050538}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &2110050541
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2110050538}
-  m_CullTransparentMesh: 0
---- !u!1 &2119805742
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2119805743}
-  - component: {fileID: 2119805745}
-  - component: {fileID: 2119805744}
-  m_Layer: 5
-  m_Name: Outline
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2119805743
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119805742}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1010314347}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2119805744
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119805742}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: acd8278e920cf5e46bbef8a57bd04ae5, type: 3}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &2119805745
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2119805742}
+  m_GameObject: {fileID: 1975450079}
   m_CullTransparentMesh: 0
