@@ -3,48 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-//TODO: Hacr que el ataque haga daño y las animaciones de daño y todo eso
-
-/* Responsibilidades de cada entidad
- * 
- * Arkeon:
- *  - Hacer Animaciones
- *  - Atacar
- *  - Tener Stats
- *  - Tener ataques
- *  
- * Jugador:
- *  - Tener arkeons
- *  - Comandar arkeons
- *  - Invocar arkeons
- *  - usar al familiar
- *  - Tiene stats
- *  
- * Familiar:
- *  - Tiene stats
- *  - Invocar arkeons
- *  - Atacar
- *  - Tiene ataques 
- *  - Hacer animaciones
- *  - Tiene efectos pasivos
- *  
- * BattleManager:
- *  - Decirle a un personaje que hacer
- *  - Esperar eventos de animaciones
- *  - Setearle referencias a los que hacen las cosas
- *  
- * BattleTurnManager:
- *  - Saber en que estado esta
- *  - Cambiar de turnos
- *  - Empezar y terminar peleas
- *  - Decirle al controller si si puede hacer lo que quiere
- *  - Preguntarlo al BattleManager si se puede hacer lo que el controller quiere
- * 
- * Controller:
- *  - Pedirle al turn manager que haga cosas
- *  - decirle al jugador que onda
- * 
- */
 
 namespace Mangos
 {
@@ -83,40 +41,6 @@ namespace Mangos
         private void Start()
         {
             
-        }
-
-        private void Update()
-        {
-            /*//Testing
-            if(Input.GetKeyDown(KeyCode.Alpha1))
-            {
-                InvokeArkeonRequest(true, 0);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha2))
-            {
-                InvokeArkeonRequest(true, 1);
-            }
-
-            if (Input.GetKeyDown(KeyCode.Alpha3))
-            {
-                InvokeArkeonRequest(true, 2);
-            }
-
-            if(Input.GetKeyDown(KeyCode.Q))
-            {
-                CallForthArkeonRequest(true, 0);
-            }
-
-            if(Input.GetKeyDown(KeyCode.W))
-            {
-                ArkeonSetAttackRequest(true, 0, 0);
-            }
-
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                
-            }*/
         }
 
         private void ResetVariables()
@@ -233,7 +157,7 @@ namespace Mangos
             for(int i = playerCharacter.arkeonsOut.Count-1; i >= 0; i--)
             {
                 playerCharacter.arkeonsOut[i].isOnFront = false;
-                if(playerCharacter.arkeonsOut[i].arkeon.HP <= 0)
+                if(playerCharacter.arkeonsOut[i].arkeon.spirit.stats.HP <= 0)
                 {
                     Debug.Log("Arkeon is dead");
                     playerCharacter.arkeonsOut[i].arkeon.Die();
@@ -244,7 +168,7 @@ namespace Mangos
             for (int i = enemyCharacter.arkeonsOut.Count - 1; i >= 0; i--)
             {
                 enemyCharacter.arkeonsOut[i].isOnFront = false;
-                if (enemyCharacter.arkeonsOut[i].arkeon.HP <= 0)
+                if (enemyCharacter.arkeonsOut[i].arkeon.spirit.stats.HP <= 0)
                 {
                     Debug.Log("Arkeon is dead");
                     enemyCharacter.arkeonsOut[i].arkeon.Die();
@@ -253,5 +177,11 @@ namespace Mangos
             }
         }
 
+
+        public void ChangeTurns()
+        {
+            isAllyAttacking = !isAllyAttacking
+            //TODO: hacer que se hagan cosas al inicio del turno.
+        }
     }
 }

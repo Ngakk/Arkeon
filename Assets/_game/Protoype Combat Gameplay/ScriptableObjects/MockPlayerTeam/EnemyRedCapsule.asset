@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8ab6396912eb4140b81bc43a7da9f84, type: 3}
-  m_Name: CoolCapsule 1
+  m_Name: EnemyRedCapsule
   m_EditorClassIdentifier: 
+  Name: picashu
   modelPrefab: {fileID: 3759170950674461054, guid: e8ffe601717f5d44b8e6f8a4fcdaaff3,
     type: 3}
-  stats: {fileID: 11400000, guid: 64efbaa199bed394a9849b4fbd26ee68, type: 2}
+  stats: {fileID: 11400000, guid: e27855075f8ec7e458832328cc851b91, type: 2}
   attacks:
   - {fileID: 11400000, guid: 2a25a758178cf544d8eb2c42f5bea6be, type: 2}
+  - {fileID: 11400000, guid: a6abf2e127477c84c969913adfb2c4fc, type: 2}
+  - {fileID: 11400000, guid: 447579d5330931e4696f4669b388e727, type: 2}

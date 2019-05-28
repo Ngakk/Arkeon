@@ -7,6 +7,7 @@ namespace Mangos
     [CreateAssetMenu]
     public class ArkeonSpirit : ScriptableObject
     {
+        public string Name;
         public GameObject modelPrefab; //Only for prototyping, perhaps
         public ArkeonStats stats;
         public List<ArkeonAttack> attacks = new List<ArkeonAttack>();

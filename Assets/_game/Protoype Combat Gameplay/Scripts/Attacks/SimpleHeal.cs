@@ -3,22 +3,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Mangos {
-    [CreateAssetMenu(fileName = "SimpleAttack", menuName = "Arkeon Attacks/Simple Attack", order = 0)]
-    public class SimpleAttack : ArkeonAttack
+namespace Mangos
+{
+    [CreateAssetMenu(fileName = "SimpleHeal", menuName = "Arkeon Attacks/Simple Heal", order = 0)]
+    public class SimpleHeal : ArkeonAttack
     {
         public override void OnBattle(ArkeonInBattle _attacker, ArkeonInBattle _target, Action<HitTypes> _onHitCallback)
         {
-            ArkeonBattleUtility.ArkeonCombatResult result = ArkeonBattleUtility.GetCombatResult(_attacker, this, _target);
-
             _attacker.animEvents.onAttackHitAction = () =>
             {
-                _onHitCallback(result.hitType);
-                _target.spirit.stats.HP -= result.damageDone;
-            };
+                _target.spirit.stats.HP += power;
+                if (_target.spirit.stats.HP > _target.spirit.stats.MaxHP)
+                    _target.spirit.stats.HP = _target.spirit.stats.MaxHP;
 
-            _attacker.AnimAttack(animation);
-            _attacker.AnimGoBack();
+                _attacker.AnimGoBack();
+            };
+            _attacker.AnimAttack(AttackAnimations.HEAL);
+
         }
 
         public override void OnBattle(ArkeonInBattle _attacker, PlayerCharacterBattle _target, Action<HitTypes> _onHitCallback)

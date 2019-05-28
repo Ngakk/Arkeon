@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48848424b5e616148821c994dd6daebf, type: 3}
-  m_Name: Stat1
+  m_Name: EnemyRedCapsule
   m_EditorClassIdentifier: 
   HP: 8
   MaxHP: 8
   Atk: 5
   Def: 4
+  Cost: 0

@@ -37,8 +37,20 @@ namespace Mangos
         [Header("Stats")]
         public int HP = 20;
         public int MP = 20;
+        private int MaxMP;
         [Header("Instancias")]
         public List<ArkeonBattleStatus> arkeonsOut = new List<ArkeonBattleStatus>();
+
+        private void Start()
+        {
+            MaxMP = MP;
+        }
+
+        //Cosas de battalla
+        public void OnTurnStart()
+        {
+            MP = Mathf.Max(MaxMP, MP);
+        }
 
         //Comandos de arkeons
         //Invocar
@@ -46,7 +58,7 @@ namespace Mangos
         {
             //Esto talvez cambia si decidimos que es mejor instanciar todos los arkeons al inicio de la pelea y mostrarlos al ser invocados
 
-            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId) || /*arkeonTeam[_arkeonTeamId].stats.HP <= 0 ||*/ _arkeonTeamId > arkeonTeam.Count - 1)
+            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId) || arkeonTeam[_arkeonTeamId].stats.HP <= 0 || _arkeonTeamId > arkeonTeam.Count - 1)
             {
                 Debug.Log("No se puede invocar ese arkeon, arkeonOutCount: " + arkeonsOut.Count + ", hp: " + arkeonTeam[_arkeonTeamId].stats.HP + ", teamId: " + _arkeonTeamId);
                 return false; //Ya no caben, ya esta afuera o esta muerto
@@ -124,19 +136,12 @@ namespace Mangos
 
         }
 
-        //Cosas de batalla
-        //TODO
-
         //Comandos de familiar
         //atacar
         public void CommandFamiliarAttack(int _attack)
         {
 
         }
-
-        // ----------------------- Animaciones -----------------------
-
-        //TODO
 
         //funcionalidades
         private bool IsArkeonOut(int _arkeon)

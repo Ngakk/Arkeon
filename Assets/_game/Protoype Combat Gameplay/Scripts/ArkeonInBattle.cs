@@ -28,7 +28,7 @@ namespace Mangos
 
         private Animator anim;
 
-        public int HP;
+        //public int HP;
         public int AtkMod;
         public int DefMod;
 
@@ -42,9 +42,9 @@ namespace Mangos
             if (animEvents == null)
                 animEvents = gameObject.AddComponent<ArkeonAnimEvents>();
 
-            //Cambiar despues, a que agarre hp y no maxhp
+            /*//Cambiar despues, a que agarre hp y no maxhp desde donde esten guardados los datos de el equipo
             HP = spirit.stats.MaxHP;
-            spirit.stats.HP = HP;
+            spirit.stats.HP = HP;*/
         }
 
 
