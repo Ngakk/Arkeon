@@ -9,7 +9,10 @@ namespace Mangos
     {
         LIGHT,
         DARK,
-        NATURE
+        WIND,
+        WATER,
+        EARTH,
+        FIRE
     }
 
     public enum AttackTypes : int

@@ -49,12 +49,13 @@ namespace Mangos
                     {
                         allyState = State.NOT_TURN;
                         enemyState = State.TURN;
+                        ManagerStaticBattle.battleManager.ChangeTurns();
                     }
                     break;
                 case State.SUMMON:
                     for(int i = 0; i < myScript.player.arkeonTeam.Count; i++)
                     {
-                        if(GUILayout.Button("Invoke " + myScript.player.arkeonTeam[i].Name))
+                        if(GUILayout.Button("Invoke " + myScript.player.arkeonTeam[i].Name + " (" + myScript.player.arkeonTeam[i].stats.Cost + ")"))
                         {
                             myScript.player.InvokeArkeon(i);
                         }
@@ -83,12 +84,17 @@ namespace Mangos
                     if (myScript.player.arkeonsOut.Count == 0) break;
                     for (int i = 0; i < myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks.Count; i++)
                     {
-                        if (GUILayout.Button(myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].myName))
+                        if (GUILayout.Button(myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].myName + " (" + myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].cost + ")"))
                         {
                             myScript.player.CommandArkeonAttack(allyChosen, i);
                             allyState = State.WAITING;
                             enemyState = State.SHIELDING;
                         }
+                    }
+                    if (GUILayout.Button("Cancle"))
+                    {
+                        myScript.player.StepBackAttacker();
+                        allyState = State.ATTACK;
                     }
                     break;
                 case State.SHIELDING:
@@ -130,12 +136,13 @@ namespace Mangos
                     {
                         enemyState = State.NOT_TURN;
                         allyState = State.TURN;
+                        ManagerStaticBattle.battleManager.ChangeTurns();
                     }
                     break;
                 case State.SUMMON:
                     for (int i = 0; i < myScript.enemy.arkeonTeam.Count; i++)
                     {
-                        if (GUILayout.Button("Invoke " + myScript.enemy.arkeonTeam[i].Name))
+                        if (GUILayout.Button("Invoke " + myScript.enemy.arkeonTeam[i].Name + " (" + myScript.player.arkeonTeam[i].stats.Cost + ")"))
                         {
                             myScript.enemy.InvokeArkeon(i);
                         }
@@ -164,12 +171,17 @@ namespace Mangos
                     if (myScript.enemy.arkeonsOut.Count == 0) break;
                     for (int i = 0; i < myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks.Count; i++)
                     {
-                        if (GUILayout.Button(myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks[i].myName))
+                        if (GUILayout.Button(myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks[i].myName + " (" + myScript.enemy.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].cost + ")"))
                         {
                             myScript.enemy.CommandArkeonAttack(enemyChosen, i);
                             enemyState = State.WAITING;
                             allyState = State.SHIELDING;
                         }
+                    }
+                    if(GUILayout.Button("Cancle"))
+                    {
+                        myScript.enemy.StepBackAttacker();
+                        enemyState = State.ATTACK;
                     }
                     break;
                 case State.SHIELDING:

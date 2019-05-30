@@ -54,6 +54,11 @@ namespace Mangos
             AnimGoForward();
         }
 
+        public void StepBack()
+        {
+            AnimGoBack();
+        }
+
         public void AttackSet(int _attack)
         {
             ManagerStaticBattle.battleManager.SetAttack(this, spirit.attacks[_attack], isAlly);
@@ -104,10 +109,6 @@ namespace Mangos
         private void AnimGoForward()
         {
             anim.SetTrigger("GoForward");
-        }
-        private void AnimBackward()
-        {
-
         }
         public void AnimAttack(AttackAnimations _type)
         {

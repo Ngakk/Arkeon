@@ -41,7 +41,47 @@ namespace Mangos
         public static ArkeonCombatResult GetCombatResult(ArkeonInBattle _attacker, ArkeonAttack _arkAtk, ArkeonInBattle _defender)
         {
             //TODO: calcular bien que pdo
-            return new ArkeonCombatResult(ArkeonAttack.HitTypes.HIT, 10);
+            ArkeonAttack.HitTypes hitType;
+            int damageDone = 0;
+
+            float hitChance = _arkAtk.accuaracy;
+            float rng = Random.Range(0.0f, 100.0f);
+
+            if(hitChance > rng)
+            {
+                hitType = ArkeonAttack.HitTypes.HIT;
+
+                float modifier = MatchupMultiplier(_arkAtk.type, _defender.spirit.stats.Type) /*TODO: crit*/;
+
+                damageDone = Mathf.FloorToInt(((((2f*_attacker.spirit.stats.LVL)/5f) * _arkAtk.power * (_attacker.spirit.stats.Atk/_defender.spirit.stats.Def))/50f) * modifier);
+
+            }
+            else
+            {
+                hitType = ArkeonAttack.HitTypes.MISS;
+                damageDone = 0;
+            }
+
+            return new ArkeonCombatResult(hitType, damageDone);
         }
+
+        public static int MatchupMultiplier(ArkeonTypes _type1, ArkeonTypes _type2)
+        {
+            switch(_type1)
+            {
+                case ArkeonTypes.DARK:
+                    break;
+                case ArkeonTypes.LIGHT:
+                    break;
+                case ArkeonTypes.WIND:
+                case ArkeonTypes.WATER:
+                case ArkeonTypes.EARTH:
+                case ArkeonTypes.FIRE:
+                    break;
+            }
+
+            return 1;
+        }
+
     }
 }

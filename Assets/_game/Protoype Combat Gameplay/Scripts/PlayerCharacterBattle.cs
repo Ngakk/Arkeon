@@ -49,7 +49,7 @@ namespace Mangos
         //Cosas de battalla
         public void OnTurnStart()
         {
-            MP = Mathf.Max(MaxMP, MP);
+            MP = Mathf.Min(MaxMP, MP+5);
         }
 
         //Comandos de arkeons
@@ -58,7 +58,7 @@ namespace Mangos
         {
             //Esto talvez cambia si decidimos que es mejor instanciar todos los arkeons al inicio de la pelea y mostrarlos al ser invocados
 
-            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId) || arkeonTeam[_arkeonTeamId].stats.HP <= 0 || _arkeonTeamId > arkeonTeam.Count - 1)
+            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId) || arkeonTeam[_arkeonTeamId].stats.HP <= 0 || _arkeonTeamId > arkeonTeam.Count - 1 || arkeonTeam[_arkeonTeamId].stats.Cost > MP)
             {
                 Debug.Log("No se puede invocar ese arkeon, arkeonOutCount: " + arkeonsOut.Count + ", hp: " + arkeonTeam[_arkeonTeamId].stats.HP + ", teamId: " + _arkeonTeamId);
                 return false; //Ya no caben, ya esta afuera o esta muerto
@@ -82,6 +82,8 @@ namespace Mangos
             //Actualizando variables
             arkeonsOut.Add(new ArkeonBattleStatus(_arkeonTeamId, aib, false, space));
 
+            MP -= arkeonTeam[_arkeonTeamId].stats.Cost;
+
             Debug.Log("Succesfully invoked arkeon");
             return true;
         }
@@ -94,19 +96,39 @@ namespace Mangos
             if (!IsArkeonOut(arkeonsOut[_arkeonOutId].teamId))
                 return false;
 
+            arkeonsOut[_arkeonOutId].isOnFront = true;
             arkeonsOut[_arkeonOutId].arkeon.GoForward();
 
             Debug.Log("Succesfully choosed attacker");
             return true;
         }
 
+        //Mandar hacia atras
+        public bool StepBackAttacker()
+        {
+            Debug.Log("Stepping back");
+            for(int i = 0; i < arkeonsOut.Count; i++)
+            {
+                if (arkeonsOut[i].isOnFront)
+                {
+                    Debug.Log("Entered step back on " + i);
+                    arkeonsOut[i].arkeon.StepBack();
+                    arkeonsOut[i].isOnFront = false;
+                }
+            }
+
+            return true;
+        }
+
         //atacar
         public bool CommandArkeonAttack(int _arkeonOutId, int _attack)
         {
-            if (arkeonsOut[_arkeonOutId].isOnFront || arkeonsOut[_arkeonOutId].arkeon.spirit.attacks.Count < _attack)
+            if (!arkeonsOut[_arkeonOutId].isOnFront || arkeonsOut[_arkeonOutId].arkeon.spirit.attacks.Count < _attack || arkeonsOut[_arkeonOutId].arkeon.spirit.stats.Cost > MP)
                 return false;
             
             arkeonsOut[_arkeonOutId].arkeon.AttackSet(_attack);
+            MP -= arkeonsOut[_arkeonOutId].arkeon.spirit.stats.Cost;
+
             Debug.Log("Succesfully commanded arkeon attack");
             return true;
         }

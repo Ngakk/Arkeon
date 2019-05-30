@@ -12,8 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48848424b5e616148821c994dd6daebf, type: 3}
   m_Name: EnemyWhiteCapsule
   m_EditorClassIdentifier: 
-  HP: 8
-  MaxHP: 8
-  Atk: 5
-  Def: 4
-  Cost: 0
+  LVL: 5
+  HP: 4
+  MaxHP: 4
+  Atk: 4
+  Def: 8
+  Cost: 3
+  Type: 2

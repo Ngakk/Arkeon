@@ -180,7 +180,15 @@ namespace Mangos
 
         public void ChangeTurns()
         {
-            isAllyAttacking = !isAllyAttacking
+            if (isAllyAttacking)
+            {
+                enemyCharacter.OnTurnStart();
+                isAllyAttacking = false;
+            }
+            else{
+                playerCharacter.OnTurnStart();
+                isAllyAttacking = false;
+            }
             //TODO: hacer que se hagan cosas al inicio del turno.
         }
     }

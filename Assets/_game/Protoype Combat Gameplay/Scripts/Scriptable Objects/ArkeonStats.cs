@@ -7,10 +7,12 @@ namespace Mangos
     [CreateAssetMenu]
     public class ArkeonStats : ScriptableObject
     {
+        public int LVL;
         public int HP;
         public int MaxHP;
         public int Atk;
         public int Def;
         public int Cost;
+        public ArkeonTypes Type;
     }
 }
