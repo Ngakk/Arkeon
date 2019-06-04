@@ -20,8 +20,16 @@ public class BattleMenu_Main : MonoBehaviour
     public GameObject[] panels;
 
     private MENUSTATES currentMenuState = MENUSTATES.SMN;
+    public int[] summonedArkeonIds;
     private GameObject[] summonedAkeons;
     private int selectedArkeon;
+
+    public int testGlyph;
+
+    public void TestGlyph()
+    {
+        ProcessGlyph(testGlyph);
+    }
 
     public void ProcessGlyph(int _glyphId)
     {
@@ -30,7 +38,7 @@ public class BattleMenu_Main : MonoBehaviour
             SetActivePanel(_glyphId); 
         } else if (_glyphId >= 10 && _glyphId < 99)
         {
-            // TODO Check what the arkeon id glyph is going to be used for with ProcessArkeonSelection
+            ProcessArkeonSelection(_glyphId);
         } else if (_glyphId >= 100)
         {
 
@@ -39,7 +47,14 @@ public class BattleMenu_Main : MonoBehaviour
 
     public void ProcessArkeonSelection(int _arkId)
     {
-
+        if (currentMenuState == MENUSTATES.BOOKA || currentMenuState == MENUSTATES.BOOKB || currentMenuState == MENUSTATES.BOOKC)
+        {
+            SummonArkeon(_arkId);
+        }
+        else if (currentMenuState == MENUSTATES.ATK)
+        {
+            SelectSummonedArkeon(_arkId);
+        }
     }
 
     public void HideAllPanels()
@@ -116,18 +131,31 @@ public class BattleMenu_Main : MonoBehaviour
     public void SelectSummonedArkeon(int _arkId)
     {
         // Select summoned Arkeon to command
-        
-        // Check if arkeon with id _arkId exists
+
+        // Check if arkeon with id _arkId exists & is summoned
         // Set selectedArkeon to _arkId
         // Change panel to ArkeonCmd
         // Load attacks from selectedArkeon
 
+        bool isSummoned = false;
+
         if (currentMenuState == MENUSTATES.ATK)
         {
-            Debug.Log("Selected Arkeon #" + _arkId);
-            selectedArkeon = _arkId;
-            SetActivePanel((int)MENUSTATES.ARKEONCMD);
-            panels[(int)MENUSTATES.ARKEONCMD].GetComponentInChildren<TextMeshProUGUI>().text = "Selected Arkeon #" + _arkId;
+            for (int i = 0; i < summonedArkeonIds.Length; i++)
+            {
+                if (summonedArkeonIds[i] == _arkId)
+                    isSummoned = true;
+            }
+
+            if (isSummoned)
+            {
+                Debug.Log("Selected Arkeon #" + _arkId);
+                selectedArkeon = _arkId;
+                SetActivePanel((int)MENUSTATES.ARKEONCMD);
+                panels[(int)MENUSTATES.ARKEONCMD].GetComponentInChildren<TextMeshProUGUI>().text = "Selected Arkeon #" + _arkId;
+            }
+            else
+                Debug.Log("Invalid Arkeon Id");
         }
     }
 
