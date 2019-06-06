@@ -23,6 +23,7 @@ public class BattleMenu_Main : MonoBehaviour
     public int[] summonedArkeonIds;
     private GameObject[] summonedAkeons;
     private int selectedArkeon;
+    public int[] availableAttackIds;
 
     public int testGlyph;
 
@@ -41,7 +42,7 @@ public class BattleMenu_Main : MonoBehaviour
             ProcessArkeonSelection(_glyphId);
         } else if (_glyphId >= 100)
         {
-
+            SelectAttack(_glyphId);
         }
     }
 
@@ -174,11 +175,14 @@ public class BattleMenu_Main : MonoBehaviour
     public void SelectItem(int _itemId)
     {
         // Select Item
+        if (currentMenuState == MENUSTATES.ITM)
+            Debug.Log("Selected item #" + _itemId);
     }
 
     public void Run()
     {
         // Run form battle
+        Debug.Log("Ran Away");
     }
 
     void Start()
