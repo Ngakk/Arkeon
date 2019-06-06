@@ -5,15 +5,6 @@ using UnityEngine;
 
 namespace Mangos
 {
-    public enum ArkeonTypes : int
-    {
-        LIGHT,
-        DARK,
-        WIND,
-        WATER,
-        EARTH,
-        FIRE
-    }
 
     public enum AttackTypes : int
     {
@@ -37,8 +28,9 @@ namespace Mangos
         public int power;
         public int cost;
         public int accuaracy;
-        public ArkeonTypes type;
+        public ArkeonElement type;
         public bool isPhysical;
+        public bool targetsEnemy = true;
         public AttackAnimations animation;
 
         /// <summary>

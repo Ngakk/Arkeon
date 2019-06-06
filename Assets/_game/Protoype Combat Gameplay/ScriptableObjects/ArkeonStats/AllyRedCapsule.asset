@@ -18,4 +18,4 @@ MonoBehaviour:
   Atk: 4
   Def: 4
   Cost: 3
-  Type: 5
+  Type: {fileID: 11400000, guid: 8a161614631ac9d458e9d3e9607c1f09, type: 2}

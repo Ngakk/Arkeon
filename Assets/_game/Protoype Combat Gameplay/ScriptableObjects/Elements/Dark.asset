@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48848424b5e616148821c994dd6daebf, type: 3}
-  m_Name: EnemyRedCapsule
+  m_Script: {fileID: 11500000, guid: ecbf169e71dcc954da3ca32486176ece, type: 3}
+  m_Name: Dark
   m_EditorClassIdentifier: 
-  LVL: 5
-  HP: 5
-  MaxHP: 8
-  Atk: 5
-  Def: 4
-  Cost: 4
-  Type: {fileID: 11400000, guid: 708fc30a0b6970145bff853c9a3885c5, type: 2}
+  defeatedBy:
+  - {fileID: 11400000, guid: a4c97200caf8eb0449b94217efcbf0b3, type: 2}

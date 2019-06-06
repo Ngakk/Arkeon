@@ -18,10 +18,11 @@ namespace Mangos
             SHIELDING,
             NOT_TURN
         }
-
+        //1=2 //TODO hacer que se pueda curar a si mismo el picashu
         State allyState = State.TURN, enemyState = State.NOT_TURN;
 
         int allyChosen = 0, enemyChosen = 0;
+        bool returnToTurn = false;
 
         public override void OnInspectorGUI()
         {
@@ -30,7 +31,7 @@ namespace Mangos
 
             InputSimulatorTesting myScript = (InputSimulatorTesting)target;
 
-            EditorGUILayout.LabelField("Ally", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("Ally options", EditorStyles.boldLabel);
             EditorGUILayout.LabelField("HP: ", myScript.player.HP.ToString());
             EditorGUILayout.LabelField("MP: ", myScript.player.MP.ToString());
 
@@ -87,8 +88,16 @@ namespace Mangos
                         if (GUILayout.Button(myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].myName + " (" + myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].cost + ")"))
                         {
                             myScript.player.CommandArkeonAttack(allyChosen, i);
-                            allyState = State.WAITING;
-                            enemyState = State.SHIELDING;
+                            if (myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].targetsEnemy)
+                            {
+                                allyState = State.WAITING;
+                                enemyState = State.SHIELDING;
+                            }
+                            else
+                            {
+                                allyState = State.SHIELDING;
+                                returnToTurn = true;
+                            }
                         }
                     }
                     if (GUILayout.Button("Cancle"))
@@ -103,7 +112,15 @@ namespace Mangos
                         if (GUILayout.Button("Block with " + myScript.player.arkeonsOut[i].arkeon.spirit.Name))
                         {
                             myScript.player.CommandArkeonShield(i);
-                            allyState = State.NOT_TURN;
+                            if (!returnToTurn)
+                            {
+                                allyState = State.NOT_TURN;
+                            }
+                            else
+                            {
+                                allyState = State.TURN;
+                                returnToTurn = false;
+                            }
                         }
                     }
                     break;
@@ -159,6 +176,7 @@ namespace Mangos
                         {
                             myScript.enemy.ChooseAttacker(i);
                             enemyChosen = i;
+                            Debug.Log("Enemy chosen = " + i);
                             enemyState = State.CHOOSING;
                         }
                     }
@@ -169,13 +187,24 @@ namespace Mangos
                     break;
                 case State.CHOOSING:
                     if (myScript.enemy.arkeonsOut.Count == 0) break;
+                    Debug.Log("CHOOSING with enemy " + enemyChosen + ", attack count: " + myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks.Count);
                     for (int i = 0; i < myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks.Count; i++)
                     {
-                        if (GUILayout.Button(myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks[i].myName + " (" + myScript.enemy.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].cost + ")"))
+                        Debug.Log("Creating button " + i);
+                        if (GUILayout.Button(myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks[i].myName + " (" + myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks[i].cost + ")"))
                         {
                             myScript.enemy.CommandArkeonAttack(enemyChosen, i);
-                            enemyState = State.WAITING;
-                            allyState = State.SHIELDING;
+
+                            if (myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks[i].targetsEnemy)
+                            {
+                                enemyState = State.WAITING;
+                                allyState = State.SHIELDING;
+                            }
+                            else
+                            {
+                                enemyState = State.SHIELDING;
+                                returnToTurn = true;
+                            }
                         }
                     }
                     if(GUILayout.Button("Cancle"))
@@ -190,7 +219,15 @@ namespace Mangos
                         if (GUILayout.Button("Block with " + myScript.enemy.arkeonsOut[i].arkeon.spirit.Name))
                         {
                             myScript.enemy.CommandArkeonShield(i);
-                            enemyState = State.NOT_TURN;
+                            if (!returnToTurn)
+                            {
+                                enemyState = State.NOT_TURN;
+                            }
+                            else
+                            {
+                                enemyState = State.TURN;
+                                returnToTurn = false;
+                            }
                         }
                     }
                     break;
@@ -203,6 +240,20 @@ namespace Mangos
                     }
                     break;
             }
+
+            EditorGUILayout.LabelField("Ally team", EditorStyles.boldLabel);
+            for (int i = 0; i < myScript.player.arkeonsOut.Count; i++)
+            {
+                EditorGUILayout.LabelField(myScript.player.arkeonsOut[i].arkeon.spirit.Name + " HP: ", myScript.player.arkeonsOut[i].arkeon.spirit.stats.HP.ToString() + "/" + myScript.player.arkeonsOut[i].arkeon.spirit.stats.MaxHP.ToString());
+            }
+
+            EditorGUILayout.LabelField("Enemy team", EditorStyles.boldLabel);
+            for (int i = 0; i < myScript.enemy.arkeonsOut.Count; i++)
+            {
+                EditorGUILayout.LabelField(myScript.enemy.arkeonsOut[i].arkeon.spirit.Name + " HP: ", myScript.enemy.arkeonsOut[i].arkeon.spirit.stats.HP.ToString() + "/" + myScript.enemy.arkeonsOut[i].arkeon.spirit.stats.MaxHP.ToString());
+            }
+
+            //EditorGUI.DrawRect(new Rect(50, 500, 100, 70), Color.green);
         }
     }
 }

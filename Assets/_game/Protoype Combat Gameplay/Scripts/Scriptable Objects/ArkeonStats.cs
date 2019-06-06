@@ -13,6 +13,6 @@ namespace Mangos
         public int Atk;
         public int Def;
         public int Cost;
-        public ArkeonTypes Type;
+        public ArkeonElement Type;
     }
 }

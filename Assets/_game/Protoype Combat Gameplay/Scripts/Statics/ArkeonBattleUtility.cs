@@ -53,7 +53,14 @@ namespace Mangos
 
                 float modifier = MatchupMultiplier(_arkAtk.type, _defender.spirit.stats.Type) /*TODO: crit*/;
 
-                damageDone = Mathf.FloorToInt(((((2f*_attacker.spirit.stats.LVL)/5f) * _arkAtk.power * (_attacker.spirit.stats.Atk/_defender.spirit.stats.Def))/50f) * modifier);
+                float lvlMod = (2f * _attacker.spirit.stats.LVL) / 5f;
+                float statMod = ((float)_attacker.spirit.stats.Atk / (float)_defender.spirit.stats.Def);
+
+                damageDone = Mathf.FloorToInt(((lvlMod * (float)_arkAtk.power * statMod) /25f) * modifier);
+                Debug.Log("Damage calculated: " + damageDone);
+                Debug.Log("lvlMod: " + lvlMod);
+                Debug.Log("statMod: " + statMod);
+
 
             }
             else
@@ -65,22 +72,19 @@ namespace Mangos
             return new ArkeonCombatResult(hitType, damageDone);
         }
 
-        public static int MatchupMultiplier(ArkeonTypes _type1, ArkeonTypes _type2)
+        public static float MatchupMultiplier(ArkeonElement _type1, ArkeonElement _type2)
         {
-            switch(_type1)
+            if(_type2.defeatedBy.Contains(_type1))
             {
-                case ArkeonTypes.DARK:
-                    break;
-                case ArkeonTypes.LIGHT:
-                    break;
-                case ArkeonTypes.WIND:
-                case ArkeonTypes.WATER:
-                case ArkeonTypes.EARTH:
-                case ArkeonTypes.FIRE:
-                    break;
+                return 2f;
             }
 
-            return 1;
+            if(_type1.defeatedBy.Contains(_type2))
+            {
+                return 0.5f;
+            }
+
+            return 1f;
         }
 
     }

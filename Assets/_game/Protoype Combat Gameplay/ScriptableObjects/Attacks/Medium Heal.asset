@@ -17,6 +17,7 @@ MonoBehaviour:
   power: 6
   cost: 2
   accuaracy: 100
-  type: 0
+  type: {fileID: 11400000, guid: a4c97200caf8eb0449b94217efcbf0b3, type: 2}
   isPhysical: 0
+  targetsEnemy: 0
   animation: 3
