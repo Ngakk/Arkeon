@@ -9,31 +9,37 @@ public class BattleMenu_ArkCard : MonoBehaviour
     public Image arkImg;
     public TextMeshProUGUI arkName;
     public Slider arkHp;
-    public Transform costPanel;
-    public GameObject costPfb;
+    public GameObject costPanel;
+    public TextMeshProUGUI arkCostText;
 
-    void SetAllData(Sprite _img, string _name, int _hp, int _cost)
+    [Header("Testing Data Fill")]
+    public string arkeonName;
+    public Sprite arkeonImg;
+    public int arkeonMaxHP;
+    public int arkeonHP;
+    public int arkeonCost;
+
+    private void Start()
+    {
+        SetAllData(arkeonImg, arkeonName, arkeonMaxHP, arkeonHP, arkeonCost);
+    }
+
+    void SetAllData(Sprite _img, string _name, int _maxHp, int _hp, int _cost)
     {
         arkImg.sprite = _img;
         arkName.text = _name;
+        arkHp.maxValue = _maxHp;
         arkHp.value = _hp;
-        int yOffset = 0;
-        for (int i = 0; i < _cost; i++)
+        int i = 0;
+        foreach(Transform child in costPanel.transform)
         {
-            GameObject crystal = Instantiate(costPfb, costPanel.transform);
-            crystal.GetComponent<RectTransform>().anchoredPosition = new Vector3(15 + (15*i), -15-(20*yOffset), 0);
-            if (i % 7 == 0)
-                yOffset++;
+            child.gameObject.SetActive(false);
+            if (i < _cost)
+            {
+                child.gameObject.SetActive(true);
+                i++;
+            }
         }
-    }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
+        arkCostText.text = arkeonHP + " / " + arkeonMaxHP;
     }
 }

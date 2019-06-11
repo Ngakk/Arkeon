@@ -169,7 +169,7 @@ public class BattleMenu_Main : MonoBehaviour
     {
         // Select Attack from current selected Arkeon
         if (currentMenuState == MENUSTATES.ARKEONCMD)
-            Debug.Log("Selected Attack #" + _atkId + "from Arkeon #" + selectedArkeon);
+            Debug.Log("Selected Attack #" + _atkId + " from Arkeon #" + selectedArkeon);
     }
 
     public void SelectItem(int _itemId)
