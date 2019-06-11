@@ -41,9 +41,12 @@ namespace Mangos
         [Header("Instancias")]
         public List<ArkeonBattleStatus> arkeonsOut = new List<ArkeonBattleStatus>();
 
+        private Animator anim;
+
         private void Start()
         {
             MaxMP = MP;
+            anim = GetComponentInChildren<Animator>();
         }
 
         //Cosas de battalla
@@ -163,6 +166,12 @@ namespace Mangos
         public void CommandFamiliarAttack(int _attack)
         {
 
+        }
+
+        //Animaciones propias
+        void GetHit()
+        {
+            anim.SetTrigger("GetHit");
         }
 
         //funcionalidades

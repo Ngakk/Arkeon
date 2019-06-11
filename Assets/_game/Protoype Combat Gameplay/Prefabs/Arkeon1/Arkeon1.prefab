@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 7416138705741902585}
   - component: {fileID: 1843889865943081015}
   - component: {fileID: 4947575160747799408}
+  - component: {fileID: 406976478162480211}
   m_Layer: 0
   m_Name: Arkeon1
   m_TagString: Untagged
@@ -279,3 +280,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd66ca007f7f161429d0b23293a7e1e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
+--- !u!114 &406976478162480211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3759170950674461054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 383ec54d4acfc644da0a5d13fc97e2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spirit: {fileID: 11400000, guid: bd4c251c544337848a23761bc0ea4a86, type: 2}
+  animEvents: {fileID: 0}
+  isAlly: 0
+  showOnStart: 0
+  AtkMod: 0
+  DefMod: 0

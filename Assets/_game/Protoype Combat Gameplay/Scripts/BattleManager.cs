@@ -27,6 +27,7 @@ namespace Mangos
 
         private ArkeonInBattle attacker;
         private ArkeonInBattle defender;
+        private PlayerCharacterBattle _characterDefender;
         private ArkeonAttack attack;
         private bool anArkeonIsShield = false;
         private bool isAllyAttacking = true;
@@ -40,7 +41,7 @@ namespace Mangos
 
         private void Start()
         {
-            
+
         }
 
         private void ResetVariables()
@@ -55,7 +56,7 @@ namespace Mangos
         // ------------------ Batalla ------------------
         public void SetAttack(ArkeonInBattle _attacker, ArkeonAttack _attack, bool _isAlly)
         {
-            if(state == State.NOTHING)
+            if (state == State.NOTHING)
             {
                 state = State.ATTACK_SET;
                 attacker = _attacker;
@@ -64,25 +65,42 @@ namespace Mangos
             }
         }
 
-        public void SetDefender(ArkeonInBattle _defender)
+        public bool SetDefender(ArkeonInBattle _defender)
         {
-            if(state == State.ATTACK_SET)
+            if (_defender == null)
+            {
+                return false;
+            }
+
+            if (state == State.ATTACK_SET)
             {
                 state = State.DEFENDER_SET;
 
-                if (_defender == null)
-                {
-                    anArkeonIsShield = false;
-                    StartBattleAvP();
-                }
-                else
-                {
-
-                    anArkeonIsShield = true;
-                    defender = _defender;
-                    StartBattleAvA();
-                }
+                anArkeonIsShield = true;
+                defender = _defender;
+                StartBattleAvA();
+                return true;
+                
             }
+            return false;
+        }
+
+        public bool SetCharacterDefender(PlayerCharacterBattle _defender)
+        {
+            if (_defender == null)
+            {
+                return false;
+            }
+
+            if (state == State.ATTACK_SET)
+            {
+                _characterDefender = _defender;
+                anArkeonIsShield = false;
+                StartBattleAvP();
+                return true;
+            }
+            return false;
+            
         }
 
         public void StartBattleAvA()

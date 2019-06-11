@@ -35,198 +35,115 @@ namespace Mangos
             EditorGUILayout.LabelField("HP: ", myScript.player.HP.ToString());
             EditorGUILayout.LabelField("MP: ", myScript.player.MP.ToString());
 
-            switch (allyState)
+            CharacterOptions(myScript.player, ref allyState, ref enemyState, ref allyChosen);
+
+            EditorGUILayout.LabelField("Enemy options", EditorStyles.boldLabel);
+            EditorGUILayout.LabelField("HP: ", myScript.enemy.HP.ToString());
+            EditorGUILayout.LabelField("MP: ", myScript.enemy.MP.ToString());
+            
+            CharacterOptions(myScript.enemy, ref enemyState, ref allyState, ref enemyChosen);
+
+            //EditorGUI.DrawRect(new Rect(50, 500, 100, 70), Color.green);
+        }
+
+
+
+        void CharacterOptions(PlayerCharacterBattle _chara, ref State _state, ref State _enemyState, ref int _chosen)
+        {
+            switch (_state)
             {
                 case State.TURN:
                     if (GUILayout.Button("Summon"))
                     {
-                        allyState = State.SUMMON;
+                        _state = State.SUMMON;
                     }
                     if (GUILayout.Button("Attack"))
                     {
-                        allyState = State.ATTACK;
+                        _state = State.ATTACK;
                     }
                     if (GUILayout.Button("End turn"))
                     {
-                        allyState = State.NOT_TURN;
-                        enemyState = State.TURN;
+                        _state = State.NOT_TURN;
+                        _enemyState = State.TURN;
                         ManagerStaticBattle.battleManager.ChangeTurns();
                     }
                     break;
                 case State.SUMMON:
-                    for(int i = 0; i < myScript.player.arkeonTeam.Count; i++)
+                    for (int i = 0; i < _chara.arkeonTeam.Count; i++)
                     {
-                        if(GUILayout.Button("Invoke " + myScript.player.arkeonTeam[i].Name + " (" + myScript.player.arkeonTeam[i].stats.Cost + ")"))
+                        if (GUILayout.Button("Invoke " + _chara.arkeonTeam[i].Name + " (" + _chara.arkeonTeam[i].stats.Cost + ")"))
                         {
-                            myScript.player.InvokeArkeon(i);
+                            if (_chara.InvokeArkeon(i))
+                            {
+                                _state = State.TURN;
+                            }
                         }
                     }
                     if (GUILayout.Button("Go back"))
                     {
-                        allyState = State.TURN;
+                        _state = State.TURN;
                     }
                     break;
                 case State.ATTACK:
-                    for (int i = 0; i < myScript.player.arkeonsOut.Count; i++)
+                    for (int i = 0; i < _chara.arkeonsOut.Count; i++)
                     {
-                        if (GUILayout.Button("Attack with " + myScript.player.arkeonsOut[i].arkeon.spirit.Name))
+                        if (GUILayout.Button("Attack with " + _chara.arkeonsOut[i].arkeon.spirit.Name))
                         {
-                            myScript.player.ChooseAttacker(i);
-                            allyChosen = i;
-                            allyState = State.CHOOSING;
+                            if (_chara.ChooseAttacker(i))
+                            {
+                                _chosen = i;
+                                _state = State.CHOOSING;
+                            }
                         }
                     }
                     if (GUILayout.Button("Go back"))
                     {
-                        allyState = State.TURN;
+                        _state = State.TURN;
                     }
                     break;
                 case State.CHOOSING:
-                    if (myScript.player.arkeonsOut.Count == 0) break;
-                    for (int i = 0; i < myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks.Count; i++)
+                    if (_chara.arkeonsOut.Count == 0) break;
+                    for (int i = 0; i < _chara.arkeonsOut[_chosen].arkeon.spirit.attacks.Count; i++)
                     {
-                        if (GUILayout.Button(myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].myName + " (" + myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].cost + ")"))
+                        if (GUILayout.Button(_chara.arkeonsOut[_chosen].arkeon.spirit.attacks[i].myName + " (" + _chara.arkeonsOut[_chosen].arkeon.spirit.attacks[i].cost + ")"))
                         {
-                            myScript.player.CommandArkeonAttack(allyChosen, i);
-                            if (myScript.player.arkeonsOut[allyChosen].arkeon.spirit.attacks[i].targetsEnemy)
+                            if (_chara.CommandArkeonAttack(_chosen, i))
                             {
-                                allyState = State.WAITING;
-                                enemyState = State.SHIELDING;
-                            }
-                            else
-                            {
-                                allyState = State.SHIELDING;
-                                returnToTurn = true;
+                                if (_chara.arkeonsOut[_chosen].arkeon.spirit.attacks[i].targetsEnemy)
+                                {
+                                    _state = State.WAITING;
+                                    _enemyState = State.SHIELDING;
+                                }
+                                else
+                                {
+                                    _state = State.SHIELDING;
+                                    returnToTurn = true;
+                                }
                             }
                         }
                     }
                     if (GUILayout.Button("Cancle"))
                     {
-                        myScript.player.StepBackAttacker();
-                        allyState = State.ATTACK;
+                        _chara.StepBackAttacker();
+                        _state = State.ATTACK;
                     }
                     break;
                 case State.SHIELDING:
-                    for (int i = 0; i < myScript.player.arkeonsOut.Count; i++)
+                    for (int i = 0; i < _chara.arkeonsOut.Count; i++)
                     {
-                        if (GUILayout.Button("Block with " + myScript.player.arkeonsOut[i].arkeon.spirit.Name))
+                        if (GUILayout.Button("Block with " + _chara.arkeonsOut[i].arkeon.spirit.Name))
                         {
-                            myScript.player.CommandArkeonShield(i);
-                            if (!returnToTurn)
+                            if (_chara.CommandArkeonShield(i))
                             {
-                                allyState = State.NOT_TURN;
-                            }
-                            else
-                            {
-                                allyState = State.TURN;
-                                returnToTurn = false;
-                            }
-                        }
-                    }
-                    break;
-                case State.NOT_TURN:
-                    break;
-                case State.WAITING:
-                    if(GUILayout.Button("Stop waiting"))
-                    {
-                        allyState = State.TURN;
-                    }
-                    break;
-            }
-
-            EditorGUILayout.LabelField("Enemy options", EditorStyles.boldLabel);
-            EditorGUILayout.LabelField("HP: ", myScript.enemy.HP.ToString());
-            EditorGUILayout.LabelField("MP: ", myScript.enemy.MP.ToString());
-
-            switch (enemyState)
-            {
-                case State.TURN:
-                    if (GUILayout.Button("Summon"))
-                    {
-                        enemyState = State.SUMMON;
-                    }
-                    if (GUILayout.Button("Attack"))
-                    {
-                        enemyState = State.ATTACK;
-                    }
-                    if (GUILayout.Button("End turn"))
-                    {
-                        enemyState = State.NOT_TURN;
-                        allyState = State.TURN;
-                        ManagerStaticBattle.battleManager.ChangeTurns();
-                    }
-                    break;
-                case State.SUMMON:
-                    for (int i = 0; i < myScript.enemy.arkeonTeam.Count; i++)
-                    {
-                        if (GUILayout.Button("Invoke " + myScript.enemy.arkeonTeam[i].Name + " (" + myScript.player.arkeonTeam[i].stats.Cost + ")"))
-                        {
-                            myScript.enemy.InvokeArkeon(i);
-                        }
-                    }
-                    if (GUILayout.Button("Go back"))
-                    {
-                        enemyState = State.TURN;
-                    }
-                    break;
-                case State.ATTACK:
-                    for (int i = 0; i < myScript.enemy.arkeonsOut.Count; i++)
-                    {
-                        if (GUILayout.Button("Attack with " + myScript.enemy.arkeonsOut[i].arkeon.spirit.Name))
-                        {
-                            myScript.enemy.ChooseAttacker(i);
-                            enemyChosen = i;
-                            Debug.Log("Enemy chosen = " + i);
-                            enemyState = State.CHOOSING;
-                        }
-                    }
-                    if (GUILayout.Button("Go back"))
-                    {
-                        enemyState = State.TURN;
-                    }
-                    break;
-                case State.CHOOSING:
-                    if (myScript.enemy.arkeonsOut.Count == 0) break;
-                    Debug.Log("CHOOSING with enemy " + enemyChosen + ", attack count: " + myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks.Count);
-                    for (int i = 0; i < myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks.Count; i++)
-                    {
-                        Debug.Log("Creating button " + i);
-                        if (GUILayout.Button(myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks[i].myName + " (" + myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks[i].cost + ")"))
-                        {
-                            myScript.enemy.CommandArkeonAttack(enemyChosen, i);
-
-                            if (myScript.enemy.arkeonsOut[enemyChosen].arkeon.spirit.attacks[i].targetsEnemy)
-                            {
-                                enemyState = State.WAITING;
-                                allyState = State.SHIELDING;
-                            }
-                            else
-                            {
-                                enemyState = State.SHIELDING;
-                                returnToTurn = true;
-                            }
-                        }
-                    }
-                    if(GUILayout.Button("Cancle"))
-                    {
-                        myScript.enemy.StepBackAttacker();
-                        enemyState = State.ATTACK;
-                    }
-                    break;
-                case State.SHIELDING:
-                    for (int i = 0; i < myScript.enemy.arkeonsOut.Count; i++)
-                    {
-                        if (GUILayout.Button("Block with " + myScript.enemy.arkeonsOut[i].arkeon.spirit.Name))
-                        {
-                            myScript.enemy.CommandArkeonShield(i);
-                            if (!returnToTurn)
-                            {
-                                enemyState = State.NOT_TURN;
-                            }
-                            else
-                            {
-                                enemyState = State.TURN;
-                                returnToTurn = false;
+                                if (!returnToTurn)
+                                {
+                                    _state = State.NOT_TURN;
+                                }
+                                else
+                                {
+                                    _state = State.TURN;
+                                    returnToTurn = false;
+                                }
                             }
                         }
                     }
@@ -236,24 +153,11 @@ namespace Mangos
                 case State.WAITING:
                     if (GUILayout.Button("Stop waiting"))
                     {
-                        enemyState = State.TURN;
+                        _state = State.TURN;
                     }
                     break;
             }
-
-            EditorGUILayout.LabelField("Ally team", EditorStyles.boldLabel);
-            for (int i = 0; i < myScript.player.arkeonsOut.Count; i++)
-            {
-                EditorGUILayout.LabelField(myScript.player.arkeonsOut[i].arkeon.spirit.Name + " HP: ", myScript.player.arkeonsOut[i].arkeon.spirit.stats.HP.ToString() + "/" + myScript.player.arkeonsOut[i].arkeon.spirit.stats.MaxHP.ToString());
-            }
-
-            EditorGUILayout.LabelField("Enemy team", EditorStyles.boldLabel);
-            for (int i = 0; i < myScript.enemy.arkeonsOut.Count; i++)
-            {
-                EditorGUILayout.LabelField(myScript.enemy.arkeonsOut[i].arkeon.spirit.Name + " HP: ", myScript.enemy.arkeonsOut[i].arkeon.spirit.stats.HP.ToString() + "/" + myScript.enemy.arkeonsOut[i].arkeon.spirit.stats.MaxHP.ToString());
-            }
-
-            //EditorGUI.DrawRect(new Rect(50, 500, 100, 70), Color.green);
         }
+
     }
 }
