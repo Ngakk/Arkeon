@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Mangos
 {
-    [CreateAssetMenu(fileName = "SimpleHeal", menuName = "Arkeon Attacks/Simple Heal", order = 0)]
+    [CreateAssetMenu(fileName = "SimpleHeal", menuName = "Arkeon Creature/Arkeon Attacks/Simple Heal", order = 0)]
     public class SimpleHeal : ArkeonAttack
     {
         public override void OnBattle(ArkeonInBattle _attacker, ArkeonInBattle _target, Action<HitTypes> _onHitCallback)

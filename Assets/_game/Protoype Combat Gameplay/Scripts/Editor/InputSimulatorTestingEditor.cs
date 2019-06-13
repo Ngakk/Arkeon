@@ -71,7 +71,7 @@ namespace Mangos
                 case State.SUMMON:
                     for (int i = 0; i < _chara.arkeonTeam.Count; i++)
                     {
-                        if (GUILayout.Button("Invoke " + _chara.arkeonTeam[i].Name + " (" + _chara.arkeonTeam[i].stats.Cost + ")"))
+                        if (GUILayout.Button("Invoke " + _chara.arkeonTeam[i].originalName + " (" + _chara.arkeonTeam[i].stats.Cost + ")"))
                         {
                             if (_chara.InvokeArkeon(i))
                             {
@@ -87,7 +87,7 @@ namespace Mangos
                 case State.ATTACK:
                     for (int i = 0; i < _chara.arkeonsOut.Count; i++)
                     {
-                        if (GUILayout.Button("Attack with " + _chara.arkeonsOut[i].arkeon.spirit.Name))
+                        if (GUILayout.Button("Attack with " + _chara.arkeonsOut[i].arkeon.spirit.originalName))
                         {
                             if (_chara.ChooseAttacker(i))
                             {
@@ -131,7 +131,7 @@ namespace Mangos
                 case State.SHIELDING:
                     for (int i = 0; i < _chara.arkeonsOut.Count; i++)
                     {
-                        if (GUILayout.Button("Block with " + _chara.arkeonsOut[i].arkeon.spirit.Name))
+                        if (GUILayout.Button("Block with " + _chara.arkeonsOut[i].arkeon.spirit.originalName))
                         {
                             if (_chara.CommandArkeonShield(i))
                             {

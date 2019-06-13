@@ -4,13 +4,11 @@ using UnityEngine;
 
 namespace Mangos
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(fileName = "ArkeonData", menuName = "Arkeon Creature/Arkeon Data", order = 2)]
     public class ArkeonSpirit : ScriptableObject
     {
-        public string Name;
+        public string originalName;
         public GameObject modelPrefab; //Only for prototyping, perhaps
-        public ArkeonStats stats;
-        public List<ArkeonAttack> attacks = new List<ArkeonAttack>();
 
         private Animator anim;
 

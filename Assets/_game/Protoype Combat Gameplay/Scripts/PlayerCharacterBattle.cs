@@ -33,7 +33,7 @@ namespace Mangos
         [Header("Setup")]
         public bool enemySide = false; //Para saber de que lado del escenario esta
         public List<ArkeonSpirit> arkeonTeam = new List<ArkeonSpirit>();
-        public List<CombatItem> inventory = new List<CombatItem>();
+        public List<Item> inventory = new List<Item>();
         [Header("Stats")]
         public int HP = 20;
         public int MP = 20;
@@ -41,12 +41,11 @@ namespace Mangos
         [Header("Instancias")]
         public List<ArkeonBattleStatus> arkeonsOut = new List<ArkeonBattleStatus>();
 
-        private Animator anim;
+        public Animator anim;
 
         private void Start()
         {
             MaxMP = MP;
-            anim = GetComponentInChildren<Animator>();
         }
 
         //Cosas de battalla

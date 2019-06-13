@@ -20,7 +20,7 @@ namespace Mangos
         HEAL,
     }
 
-    [CreateAssetMenu(fileName = "BaseAttack", menuName = "Arkeon Attacks/Base Attack", order = 0)]
+    //[CreateAssetMenu(fileName = "BaseAttack", menuName = "Arkeon Creature/Arkeon Attacks/Base Attack", order = 3)]
     public class ArkeonAttack : ScriptableObject
     {
         public string myName;

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Mangos {
-    [CreateAssetMenu(fileName = "SimpleAttack", menuName = "Arkeon Attacks/Simple Attack", order = 0)]
+    [CreateAssetMenu(fileName = "SimpleAttack", menuName = "Arkeon Creature/Arkeon Attacks/Simple Attack", order = 0)]
     public class SimpleAttack : ArkeonAttack
     {
         public override void OnBattle(ArkeonInBattle _attacker, ArkeonInBattle _target, Action<HitTypes> _onHitCallback)
