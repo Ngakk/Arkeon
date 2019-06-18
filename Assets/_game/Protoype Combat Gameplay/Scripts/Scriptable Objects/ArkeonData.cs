@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Mangos
+namespace ArkeonBattle
 {
     [CreateAssetMenu(fileName = "ArkeonData", menuName = "Arkeon Creature/Arkeon Data", order = 2)]
-    public class ArkeonSpirit : ScriptableObject
+    public class ArkeonData : ScriptableObject
     {
         public string originalName;
         public GameObject modelPrefab; //Only for prototyping, perhaps

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace Mangos
+namespace ArkeonBattle
 {
     [CustomEditor(typeof(InputSimulatorTesting))]
     public class InputSimulatorTestingEditor : Editor
@@ -71,7 +71,7 @@ namespace Mangos
                 case State.SUMMON:
                     for (int i = 0; i < _chara.arkeonTeam.Count; i++)
                     {
-                        if (GUILayout.Button("Invoke " + _chara.arkeonTeam[i].originalName + " (" + _chara.arkeonTeam[i].stats.Cost + ")"))
+                        if (GUILayout.Button("Invoke " + _chara.arkeonTeam[i].arkeonData.originalName + " (" + _chara.arkeonTeam[i].stats.cost + ")"))
                         {
                             if (_chara.InvokeArkeon(i))
                             {
@@ -87,7 +87,7 @@ namespace Mangos
                 case State.ATTACK:
                     for (int i = 0; i < _chara.arkeonsOut.Count; i++)
                     {
-                        if (GUILayout.Button("Attack with " + _chara.arkeonsOut[i].arkeon.spirit.originalName))
+                        if (GUILayout.Button("Attack with " + _chara.arkeonsOut[i].arkeon.myInstance.arkeonData.originalName))
                         {
                             if (_chara.ChooseAttacker(i))
                             {
@@ -103,13 +103,13 @@ namespace Mangos
                     break;
                 case State.CHOOSING:
                     if (_chara.arkeonsOut.Count == 0) break;
-                    for (int i = 0; i < _chara.arkeonsOut[_chosen].arkeon.spirit.attacks.Count; i++)
+                    for (int i = 0; i < _chara.arkeonsOut[_chosen].arkeon.myInstance.attacks.Count; i++)
                     {
-                        if (GUILayout.Button(_chara.arkeonsOut[_chosen].arkeon.spirit.attacks[i].myName + " (" + _chara.arkeonsOut[_chosen].arkeon.spirit.attacks[i].cost + ")"))
+                        if (GUILayout.Button(_chara.arkeonsOut[_chosen].arkeon.myInstance.attacks[i].myName + " (" + _chara.arkeonsOut[_chosen].arkeon.myInstance.attacks[i].cost + ")"))
                         {
                             if (_chara.CommandArkeonAttack(_chosen, i))
                             {
-                                if (_chara.arkeonsOut[_chosen].arkeon.spirit.attacks[i].targetsEnemy)
+                                if (_chara.arkeonsOut[_chosen].arkeon.myInstance.attacks[i].targetsEnemy)
                                 {
                                     _state = State.WAITING;
                                     _enemyState = State.SHIELDING;
@@ -131,7 +131,7 @@ namespace Mangos
                 case State.SHIELDING:
                     for (int i = 0; i < _chara.arkeonsOut.Count; i++)
                     {
-                        if (GUILayout.Button("Block with " + _chara.arkeonsOut[i].arkeon.spirit.originalName))
+                        if (GUILayout.Button("Block with " + _chara.arkeonsOut[i].arkeon.myInstance.arkeonData.originalName))
                         {
                             if (_chara.CommandArkeonShield(i))
                             {

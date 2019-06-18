@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-namespace Mangos
+namespace ArkeonBattle
 {
     public class BattleManager : MonoBehaviour
     {
@@ -175,7 +175,7 @@ namespace Mangos
             for(int i = playerCharacter.arkeonsOut.Count-1; i >= 0; i--)
             {
                 playerCharacter.arkeonsOut[i].isOnFront = false;
-                if(playerCharacter.arkeonsOut[i].arkeon.spirit.stats.HP <= 0)
+                if(playerCharacter.arkeonsOut[i].arkeon.myInstance.currentHp <= 0)
                 {
                     Debug.Log("Arkeon is dead");
                     playerCharacter.arkeonsOut[i].arkeon.Die();
@@ -186,7 +186,7 @@ namespace Mangos
             for (int i = enemyCharacter.arkeonsOut.Count - 1; i >= 0; i--)
             {
                 enemyCharacter.arkeonsOut[i].isOnFront = false;
-                if (enemyCharacter.arkeonsOut[i].arkeon.spirit.stats.HP <= 0)
+                if (enemyCharacter.arkeonsOut[i].arkeon.myInstance.currentHp <= 0)
                 {
                     Debug.Log("Arkeon is dead");
                     enemyCharacter.arkeonsOut[i].arkeon.Die();

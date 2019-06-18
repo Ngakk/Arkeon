@@ -3,7 +3,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Mangos {
+namespace ArkeonBattle
+{
     [CreateAssetMenu(fileName = "SimpleAttack", menuName = "Arkeon Creature/Arkeon Attacks/Simple Attack", order = 0)]
     public class SimpleAttack : ArkeonAttack
     {
@@ -14,7 +15,7 @@ namespace Mangos {
             _attacker.animEvents.onAttackHitAction = () =>
             {
                 _onHitCallback(result.hitType);
-                _target.spirit.stats.HP -= result.damageDone;
+                _target.myInstance.currentHp -= result.damageDone;
             };
 
             _attacker.AnimAttack(animation);

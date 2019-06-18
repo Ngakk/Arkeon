@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace Mangos
+namespace ArkeonBattle
 {
     [CustomEditor(typeof(PlayerCharacterBattle))]
     public class PlayerCharacterBattleEditor : Editor
@@ -19,7 +19,7 @@ namespace Mangos
             {
                 for(int i = 0; i < myScript.arkeonTeam.Count; i++)
                 {
-                    myScript.arkeonTeam[i].stats.HP = myScript.arkeonTeam[i].stats.MaxHP;
+                    myScript.arkeonTeam[i].currentHp = myScript.arkeonTeam[i].stats.maxHp;
                 }
             }
         }

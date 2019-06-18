@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Mangos
+namespace ArkeonBattle
 {
     [CreateAssetMenu(fileName = "SimpleHeal", menuName = "Arkeon Creature/Arkeon Attacks/Simple Heal", order = 0)]
     public class SimpleHeal : ArkeonAttack
@@ -12,9 +12,9 @@ namespace Mangos
         {
             _attacker.animEvents.onAttackHitAction = () =>
             {
-                _target.spirit.stats.HP += power;
-                if (_target.spirit.stats.HP > _target.spirit.stats.MaxHP)
-                    _target.spirit.stats.HP = _target.spirit.stats.MaxHP;
+                _target.myInstance.currentHp += power;
+                if (_target.myInstance.currentHp > _target.myInstance.stats.maxHp)
+                    _target.myInstance.currentHp = _target.myInstance.stats.maxHp;
 
                 _attacker.AnimGoBack();
             };

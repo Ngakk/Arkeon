@@ -10,12 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8ab6396912eb4140b81bc43a7da9f84, type: 3}
-  m_Name: AllyRedCapsule
+  m_Name: RedCapsule
   m_EditorClassIdentifier: 
-  Name: Tibert
+  originalName: RedCapsule
   modelPrefab: {fileID: 3759170950674461054, guid: e8ffe601717f5d44b8e6f8a4fcdaaff3,
     type: 3}
-  stats: {fileID: 11400000, guid: 957e645819fd9264ba2df7210c13d07e, type: 2}
-  attacks:
-  - {fileID: 11400000, guid: 2a25a758178cf544d8eb2c42f5bea6be, type: 2}
-  - {fileID: 11400000, guid: 447579d5330931e4696f4669b388e727, type: 2}

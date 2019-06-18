@@ -9,13 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48848424b5e616148821c994dd6daebf, type: 3}
-  m_Name: AllyRedCapsule
+  m_Script: {fileID: 11500000, guid: c8ab6396912eb4140b81bc43a7da9f84, type: 3}
+  m_Name: WhiteCapsule
   m_EditorClassIdentifier: 
-  LVL: 5
-  HP: 7
-  MaxHP: 7
-  Atk: 4
-  Def: 4
-  Cost: 3
-  Type: {fileID: 11400000, guid: 8a161614631ac9d458e9d3e9607c1f09, type: 2}
+  originalName: WhiteCapsule
+  modelPrefab: {fileID: 3759170950674461054, guid: dd7abe167426f9d41830ca9826954f55,
+    type: 3}

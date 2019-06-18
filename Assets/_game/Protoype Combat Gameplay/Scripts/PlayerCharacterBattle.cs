@@ -10,7 +10,7 @@ using UnityEngine;
  *  - Tiene stats
 */
 
-namespace Mangos
+namespace ArkeonBattle
 {
     public class PlayerCharacterBattle : MonoBehaviour
     {
@@ -32,7 +32,7 @@ namespace Mangos
 
         [Header("Setup")]
         public bool enemySide = false; //Para saber de que lado del escenario esta
-        public List<ArkeonSpirit> arkeonTeam = new List<ArkeonSpirit>();
+        public ArkeonTeam arkeonTeam;
         public List<Item> inventory = new List<Item>();
         [Header("Stats")]
         public int HP = 20;
@@ -60,9 +60,9 @@ namespace Mangos
         {
             //Esto talvez cambia si decidimos que es mejor instanciar todos los arkeons al inicio de la pelea y mostrarlos al ser invocados
 
-            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId) || arkeonTeam[_arkeonTeamId].stats.HP <= 0 || _arkeonTeamId > arkeonTeam.Count - 1 || arkeonTeam[_arkeonTeamId].stats.Cost > MP)
+            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId) || arkeonTeam[_arkeonTeamId].currentHp <= 0 || _arkeonTeamId > arkeonTeam.Count - 1 || arkeonTeam[_arkeonTeamId].stats.cost > MP)
             {
-                Debug.Log("No se puede invocar ese arkeon, arkeonOutCount: " + arkeonsOut.Count + ", hp: " + arkeonTeam[_arkeonTeamId].stats.HP + ", teamId: " + _arkeonTeamId);
+                Debug.Log("No se puede invocar ese arkeon, arkeonOutCount: " + arkeonsOut.Count + ", hp: " + arkeonTeam[_arkeonTeamId].currentHp + ", teamId: " + _arkeonTeamId);
                 return false; //Ya no caben, ya esta afuera o esta muerto
             }
 
@@ -70,21 +70,22 @@ namespace Mangos
 
             Transform point = ManagerStaticBattle.battleManager.arenaPointReference.GetInvokePoint(!enemySide, space); //Obtengo la posición para el arkeon
 
-            GameObject go = Instantiate(arkeonTeam[_arkeonTeamId].modelPrefab, point.position, point.rotation); //Lo Invoco
+            GameObject go = Instantiate(arkeonTeam[_arkeonTeamId].arkeonData.modelPrefab, point.position, point.rotation); //Lo Invoco
 
             //Setup de arkeon
             if (!go.GetComponent<ArkeonInBattle>())
                 go.AddComponent<ArkeonInBattle>();
 
             ArkeonInBattle aib = go.GetComponent<ArkeonInBattle>();
-            aib.spirit = arkeonTeam[_arkeonTeamId];
+            aib.myInstance = arkeonTeam[_arkeonTeamId];
             aib.showOnStart = true;
             aib.isAlly = !enemySide;
+            aib.myInstance = arkeonTeam[_arkeonTeamId];
 
             //Actualizando variables
             arkeonsOut.Add(new ArkeonBattleStatus(_arkeonTeamId, aib, false, space));
 
-            MP -= arkeonTeam[_arkeonTeamId].stats.Cost;
+            MP -= arkeonTeam[_arkeonTeamId].stats.cost;
 
             Debug.Log("Succesfully invoked arkeon");
             return true;
@@ -125,11 +126,11 @@ namespace Mangos
         //atacar
         public bool CommandArkeonAttack(int _arkeonOutId, int _attack)
         {
-            if (!arkeonsOut[_arkeonOutId].isOnFront || arkeonsOut[_arkeonOutId].arkeon.spirit.attacks.Count < _attack || arkeonsOut[_arkeonOutId].arkeon.spirit.stats.Cost > MP)
+            if (!arkeonsOut[_arkeonOutId].isOnFront || arkeonsOut[_arkeonOutId].arkeon.myInstance.attacks.Count < _attack || arkeonsOut[_arkeonOutId].arkeon.myInstance.stats.cost > MP)
                 return false;
             
             arkeonsOut[_arkeonOutId].arkeon.AttackSet(_attack);
-            MP -= arkeonsOut[_arkeonOutId].arkeon.spirit.stats.Cost;
+            MP -= arkeonsOut[_arkeonOutId].arkeon.myInstance.stats.cost;
 
             Debug.Log("Succesfully commanded arkeon attack");
             return true;

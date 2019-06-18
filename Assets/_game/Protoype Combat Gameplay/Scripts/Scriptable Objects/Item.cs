@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Mangos
+namespace ArkeonBattle
 {
     [CreateAssetMenu]
     public class Item : ScriptableObject

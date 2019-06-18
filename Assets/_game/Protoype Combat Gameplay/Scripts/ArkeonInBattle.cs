@@ -16,11 +16,11 @@ using UnityEngine;
  *  - Tener Stats
  *  - Tener ataques
  */
-namespace Mangos
+namespace ArkeonBattle
 {
     public class ArkeonInBattle : MonoBehaviour
     {
-        public ArkeonSpirit spirit;
+        public ArkeonInstance myInstance;
         [HideInInspector]
         public ArkeonAnimEvents animEvents;
         public bool isAlly;
@@ -61,7 +61,7 @@ namespace Mangos
 
         public void AttackSet(int _attack)
         {
-            ManagerStaticBattle.battleManager.SetAttack(this, spirit.attacks[_attack], isAlly);
+            ManagerStaticBattle.battleManager.SetAttack(this, myInstance.attacks[_attack], isAlly);
         }
 
         public void AttackStart(ArkeonAttack _attack, ArkeonInBattle _target, Action<ArkeonAttack.HitTypes> _onHitCallback)

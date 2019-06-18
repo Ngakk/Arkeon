@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Mangos
+namespace ArkeonBattle
 {
     public static class ArkeonBattleUtility
     {
@@ -51,10 +51,10 @@ namespace Mangos
             {
                 hitType = ArkeonAttack.HitTypes.HIT;
 
-                float modifier = MatchupMultiplier(_arkAtk.type, _defender.spirit.stats.Type) /*TODO: crit*/;
+                float modifier = MatchupMultiplier(_arkAtk.type, _defender.myInstance.stats.type) /*TODO: crit*/;
 
-                float lvlMod = (2f * _attacker.spirit.stats.LVL) / 5f;
-                float statMod = ((float)_attacker.spirit.stats.Atk / (float)_defender.spirit.stats.Def);
+                float lvlMod = (2f * _attacker.myInstance.stats.lvl) / 5f;
+                float statMod = ((float)_attacker.myInstance.stats.atk / (float)_defender.myInstance.stats.def);
 
                 damageDone = Mathf.FloorToInt(((lvlMod * (float)_arkAtk.power * statMod) /25f) * modifier);
                 Debug.Log("Damage calculated: " + damageDone);

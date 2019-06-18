@@ -1895,15 +1895,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6921177929694802169, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4090936793102507400, guid: a52b99c2e7d023c4e95445a6fd382122,
         type: 3}
       propertyPath: m_Name
       value: PlayerChido
+      objectReference: {fileID: 0}
+    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 4090936793264932634}
+    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
+        type: 3}
+      propertyPath: arkeonTeam
+      value: 
+      objectReference: {fileID: 11400000, guid: 38a25288636a7524783e95f77e276066,
+        type: 2}
+    - target: {fileID: 6921177929694802169, guid: a52b99c2e7d023c4e95445a6fd382122,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4090936793102507402, guid: a52b99c2e7d023c4e95445a6fd382122,
         type: 3}
@@ -1960,11 +1971,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 4090936793264932634}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a52b99c2e7d023c4e95445a6fd382122, type: 3}
 --- !u!95 &4090936793264932634 stripped
@@ -1985,6 +1991,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemigoChido
       objectReference: {fileID: 0}
+    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
+        type: 3}
+      propertyPath: anim
+      value: 
+      objectReference: {fileID: 4654686381331042262}
+    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
+        type: 3}
+      propertyPath: arkeonTeam
+      value: 
+      objectReference: {fileID: 11400000, guid: c36abed540d47fd4da2ed63529d15753,
+        type: 2}
     - target: {fileID: 4654686380760048611, guid: b2f82cc19ddfb34498beaec56fca968b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2040,11 +2057,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
-        type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 4654686381331042262}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2f82cc19ddfb34498beaec56fca968b, type: 3}
 --- !u!95 &4654686381331042262 stripped
