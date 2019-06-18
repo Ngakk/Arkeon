@@ -9,11 +9,13 @@ public class BattleMenu_Item : MonoBehaviour
     public TextMeshProUGUI itmName;
     public Image itmImg;
     public TextMeshProUGUI itmQty;
+    public int itemId;
 
-    public void SetAllData(Sprite _spr, string _name, int _qty)
+    public void SetAllData(Sprite _spr, string _name, int _qty, int _id)
     {
         itmImg.sprite = _spr;
         itmName.text = _name;
         itmQty.text = _qty.ToString();
+        itemId = _id;
     }
 }

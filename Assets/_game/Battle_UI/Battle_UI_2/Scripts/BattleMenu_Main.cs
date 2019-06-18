@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class BattleMenu_Main : MonoBehaviour
@@ -18,12 +19,14 @@ public class BattleMenu_Main : MonoBehaviour
     };
 
     public GameObject[] panels;
+    public GameObject item_pfb;
 
     private MENUSTATES currentMenuState = MENUSTATES.SMN;
     public int[] summonedArkeonIds;
     private GameObject[] summonedAkeons;
     private int selectedArkeon;
-    public int[] availableAttackIds;
+    public string[] itemNames;
+    public Sprite itmImg;
 
     public int testGlyph;
 
@@ -172,6 +175,18 @@ public class BattleMenu_Main : MonoBehaviour
             Debug.Log("Selected Attack #" + _atkId + " from Arkeon #" + selectedArkeon);
     }
 
+    public void LoadItems()
+    {
+        // Load Carried Items Data from Database & Instantiate Buttons
+        for (int i = 0; i < itemNames.Length; i++)
+        {
+            GameObject itm = Instantiate(item_pfb, panels[2].transform);
+            itm.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -40-(90*i), 0);
+            itm.GetComponent<BattleMenu_Item>().SetAllData(itmImg, itemNames[i], 99, i);
+            itm.GetComponent<Button>().onClick.AddListener(delegate {SelectItem(itm.GetComponent<BattleMenu_Item>().itemId);});
+        }
+    }
+
     public void SelectItem(int _itemId)
     {
         // Select Item
@@ -188,6 +203,7 @@ public class BattleMenu_Main : MonoBehaviour
     void Start()
     {
         SetActivePanel((int)currentMenuState);
+        LoadItems();
     }
 
     void Update()
