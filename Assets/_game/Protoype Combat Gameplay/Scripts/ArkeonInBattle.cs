@@ -27,8 +27,7 @@ namespace ArkeonBattle
         public bool showOnStart = true;
 
         private Animator anim;
-
-        //public int HP;
+        
         public int AtkMod;
         public int DefMod;
 
@@ -41,10 +40,6 @@ namespace ArkeonBattle
             animEvents = GetComponent<ArkeonAnimEvents>();
             if (animEvents == null)
                 animEvents = gameObject.AddComponent<ArkeonAnimEvents>();
-
-            /*//Cambiar despues, a que agarre hp y no maxhp desde donde esten guardados los datos de el equipo
-            HP = spirit.stats.MaxHP;
-            spirit.stats.HP = HP;*/
         }
 
 

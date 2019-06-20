@@ -27,7 +27,7 @@ namespace ArkeonBattle
 
         private ArkeonInBattle attacker;
         private ArkeonInBattle defender;
-        private PlayerCharacterBattle _characterDefender;
+        private PlayerCharacterBattle characterDefender;
         private ArkeonAttack attack;
         private bool anArkeonIsShield = false;
         private bool isAllyAttacking = true;
@@ -94,7 +94,7 @@ namespace ArkeonBattle
 
             if (state == State.ATTACK_SET)
             {
-                _characterDefender = _defender;
+                characterDefender = _defender;
                 anArkeonIsShield = false;
                 StartBattleAvP();
                 return true;
@@ -115,8 +115,8 @@ namespace ArkeonBattle
         {
             state = State.BATTLING;
 
-            attack.PreBattle(attacker, defender);
-            attacker.AttackStart(attack, defender, OnHitAvP);
+            attack.PreBattle(attacker, characterDefender);
+            attacker.AttackStart(attack, characterDefender, OnHitAvP);
         }
 
         //Callback on hit
@@ -144,13 +144,36 @@ namespace ArkeonBattle
 
         public void OnHitAvP(ArkeonAttack.HitTypes _hit)
         {
+            if (state != State.BATTLING)
+                return;
 
+            switch(_hit)
+            {
+                case ArkeonAttack.HitTypes.HIT:
+                case ArkeonAttack.HitTypes.CRIT:
+                    characterDefender.Squeal();
+                    break;
+                case ArkeonAttack.HitTypes.MISS:
+                    characterDefender.Dodge();
+                    break;
+                case ArkeonAttack.HitTypes.NO_DAMAGE:
+                    characterDefender.Laugh();
+                    break;
+                default:
+                    break;
+            }
         }
 
         //Respuesta a animaciones
         public void OnHit()
         {
 
+        }
+
+        public void OnAttackEnd()
+        {
+            if(anArkeonIsShield) { OnAttackEndAvA(); }
+            else { OnAttackEndAvP(); }
         }
 
         public void OnAttackEndAvA()
@@ -161,6 +184,14 @@ namespace ArkeonBattle
             attack.PostBattle(attacker, defender, OnPostBattleEnd);
 
             //TODO: checar si ya se ganó o perdió
+        }
+
+        public void OnAttackEndAvP()
+        {
+            if (state != State.BATTLING)
+                return;
+
+            attack.PostBattle(attacker, characterDefender, OnPostBattleEnd);
         }
 
         public void OnPostBattleEnd()

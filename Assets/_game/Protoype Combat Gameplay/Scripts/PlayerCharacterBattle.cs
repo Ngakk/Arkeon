@@ -34,33 +34,62 @@ namespace ArkeonBattle
         public bool enemySide = false; //Para saber de que lado del escenario esta
         public ArkeonTeam arkeonTeam;
         public List<Item> inventory = new List<Item>();
+        public ArkeonInstance familiar;
         [Header("Stats")]
-        public int HP = 20;
-        public int MP = 20;
-        private int MaxMP;
+        public ArkeonStats stats;
+        public int currentHp;
+        public int currentMp;
         [Header("Instancias")]
         public List<ArkeonBattleStatus> arkeonsOut = new List<ArkeonBattleStatus>();
+        public ArkeonInBattle familiarOut;
 
         public Animator anim;
 
         private void Start()
         {
-            MaxMP = MP;
+            currentHp = stats.maxHp;
+            currentMp = stats.maxMp;
+
+            InvokeFamiliar();
         }
 
         //Cosas de battalla
         public void OnTurnStart()
         {
-            MP = Mathf.Min(MaxMP, MP+5);
+            currentMp = Mathf.Min(stats.maxMp, currentMp + 5);
+        }
+
+        public bool InvokeFamiliar()
+        {
+            if(familiar == null)
+            {
+                return false;
+            }
+
+            Transform point = enemySide ? ManagerStaticBattle.battleManager.arenaPointReference.EnemyFamiliar : ManagerStaticBattle.battleManager.arenaPointReference.AllyFamiliar; //Obtengo la posición para el arkeon
+
+            GameObject go = Instantiate(familiar.arkeonData.modelPrefab, point.position, point.rotation); //Lo Invoco
+
+            if (!go.GetComponent<ArkeonInBattle>())
+                go.AddComponent<ArkeonInBattle>();
+
+            ArkeonInBattle aib = go.GetComponent<ArkeonInBattle>();
+            aib.myInstance = familiar;
+            aib.showOnStart = true;
+            aib.isAlly = !enemySide;
+            aib.myInstance = familiar;
+
+            return true;
         }
 
         //Comandos de arkeons
         //Invocar
+
         public bool InvokeArkeon(int _arkeonTeamId)
         {
             //Esto talvez cambia si decidimos que es mejor instanciar todos los arkeons al inicio de la pelea y mostrarlos al ser invocados
 
-            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId) || arkeonTeam[_arkeonTeamId].currentHp <= 0 || _arkeonTeamId > arkeonTeam.Count - 1 || arkeonTeam[_arkeonTeamId].stats.cost > MP)
+            if (arkeonsOut.Count >= 3 || IsArkeonOut(_arkeonTeamId) || arkeonTeam[_arkeonTeamId].currentHp <= 0 || _arkeonTeamId > arkeonTeam.Count - 1 || arkeonTeam[_arkeonTeamId].stats.cost > currentMp)
             {
                 Debug.Log("No se puede invocar ese arkeon, arkeonOutCount: " + arkeonsOut.Count + ", hp: " + arkeonTeam[_arkeonTeamId].currentHp + ", teamId: " + _arkeonTeamId);
                 return false; //Ya no caben, ya esta afuera o esta muerto
@@ -85,7 +114,7 @@ namespace ArkeonBattle
             //Actualizando variables
             arkeonsOut.Add(new ArkeonBattleStatus(_arkeonTeamId, aib, false, space));
 
-            MP -= arkeonTeam[_arkeonTeamId].stats.cost;
+            currentMp -= arkeonTeam[_arkeonTeamId].stats.cost;
 
             Debug.Log("Succesfully invoked arkeon");
             return true;
@@ -126,11 +155,11 @@ namespace ArkeonBattle
         //atacar
         public bool CommandArkeonAttack(int _arkeonOutId, int _attack)
         {
-            if (!arkeonsOut[_arkeonOutId].isOnFront || arkeonsOut[_arkeonOutId].arkeon.myInstance.attacks.Count < _attack || arkeonsOut[_arkeonOutId].arkeon.myInstance.stats.cost > MP)
+            if (!arkeonsOut[_arkeonOutId].isOnFront || arkeonsOut[_arkeonOutId].arkeon.myInstance.attacks.Count < _attack || arkeonsOut[_arkeonOutId].arkeon.myInstance.stats.cost > currentMp)
                 return false;
             
             arkeonsOut[_arkeonOutId].arkeon.AttackSet(_attack);
-            MP -= arkeonsOut[_arkeonOutId].arkeon.myInstance.stats.cost;
+            currentMp -= arkeonsOut[_arkeonOutId].arkeon.myInstance.stats.cost;
 
             Debug.Log("Succesfully commanded arkeon attack");
             return true;
@@ -147,9 +176,9 @@ namespace ArkeonBattle
             return true;
         }
 
-        public bool ComandNoShield()
+        public bool CommandNoShield()
         {
-            ManagerStaticBattle.battleManager.SetDefender(null);
+            ManagerStaticBattle.battleManager.SetCharacterDefender(this);
 
             return true;
         }
@@ -169,9 +198,19 @@ namespace ArkeonBattle
         }
 
         //Animaciones propias
-        void GetHit()
+        public void Squeal()
         {
             anim.SetTrigger("GetHit");
+        }
+
+        public void Dodge()
+        {
+
+        }
+
+        public void Laugh()
+        {
+
         }
 
         //funcionalidades

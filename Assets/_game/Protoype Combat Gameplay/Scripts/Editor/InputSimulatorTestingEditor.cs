@@ -32,14 +32,14 @@ namespace ArkeonBattle
             InputSimulatorTesting myScript = (InputSimulatorTesting)target;
 
             EditorGUILayout.LabelField("Ally options", EditorStyles.boldLabel);
-            EditorGUILayout.LabelField("HP: ", myScript.player.HP.ToString());
-            EditorGUILayout.LabelField("MP: ", myScript.player.MP.ToString());
+            EditorGUILayout.LabelField("HP: ", myScript.player.currentHp.ToString());
+            EditorGUILayout.LabelField("MP: ", myScript.player.currentMp.ToString());
 
             CharacterOptions(myScript.player, ref allyState, ref enemyState, ref allyChosen);
 
             EditorGUILayout.LabelField("Enemy options", EditorStyles.boldLabel);
-            EditorGUILayout.LabelField("HP: ", myScript.enemy.HP.ToString());
-            EditorGUILayout.LabelField("MP: ", myScript.enemy.MP.ToString());
+            EditorGUILayout.LabelField("HP: ", myScript.enemy.currentHp.ToString());
+            EditorGUILayout.LabelField("MP: ", myScript.enemy.currentMp.ToString());
             
             CharacterOptions(myScript.enemy, ref enemyState, ref allyState, ref enemyChosen);
 
@@ -144,6 +144,21 @@ namespace ArkeonBattle
                                     _state = State.TURN;
                                     returnToTurn = false;
                                 }
+                            }
+                        }
+                    }
+                    if(GUILayout.Button("No block"))
+                    {
+                        if(_chara.CommandNoShield())
+                        {
+                            if (!returnToTurn)
+                            {
+                                _state = State.NOT_TURN;
+                            }
+                            else
+                            {
+                                _state = State.TURN;
+                                returnToTurn = false;
                             }
                         }
                     }

@@ -38,7 +38,7 @@ namespace ArkeonBattle
         /// <param name="_arkAtk"></param>
         /// <param name="_defStat"></param>
         /// <returns></returns>
-        public static ArkeonCombatResult GetCombatResult(ArkeonInBattle _attacker, ArkeonAttack _arkAtk, ArkeonInBattle _defender)
+        public static ArkeonCombatResult GetCombatResult(ArkeonStats _attacker, ArkeonAttack _arkAtk, ArkeonStats _defender)
         {
             //TODO: calcular bien que pdo
             ArkeonAttack.HitTypes hitType;
@@ -51,10 +51,10 @@ namespace ArkeonBattle
             {
                 hitType = ArkeonAttack.HitTypes.HIT;
 
-                float modifier = MatchupMultiplier(_arkAtk.type, _defender.myInstance.stats.type) /*TODO: crit*/;
+                float modifier = MatchupMultiplier(_arkAtk.type, _defender.type) /*TODO: crit*/;
 
-                float lvlMod = (2f * _attacker.myInstance.stats.lvl) / 5f;
-                float statMod = ((float)_attacker.myInstance.stats.atk / (float)_defender.myInstance.stats.def);
+                float lvlMod = (2f * _attacker.lvl) / 5f;
+                float statMod = ((float)_attacker.atk / (float)_defender.def);
 
                 damageDone = Mathf.FloorToInt(((lvlMod * (float)_arkAtk.power * statMod) /25f) * modifier);
                 Debug.Log("Damage calculated: " + damageDone);

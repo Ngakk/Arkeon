@@ -38,7 +38,7 @@ namespace ArkeonBattle
 
         public void OnAttackEnd()
         {
-            ManagerStaticBattle.battleManager.OnAttackEndAvA();
+            ManagerStaticBattle.battleManager.OnAttackEnd();
         }
     }
 }

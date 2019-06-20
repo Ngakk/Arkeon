@@ -24,7 +24,15 @@ namespace ArkeonBattle
 
         public override void OnBattle(ArkeonInBattle _attacker, PlayerCharacterBattle _target, Action<HitTypes> _onHitCallback)
         {
-            base.OnBattle(_attacker, _target, _onHitCallback);
+            _attacker.animEvents.onAttackHitAction = () =>
+            {
+                _target.currentHp += power;
+                if (_target.currentHp > _target.stats.maxHp)
+                    _target.currentHp = _target.stats.maxHp;
+
+                _attacker.AnimGoBack();
+            };
+            _attacker.AnimAttack(AttackAnimations.HEAL);
         }
     }
 }

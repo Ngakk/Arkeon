@@ -10,7 +10,7 @@ namespace ArkeonBattle
     {
         public override void OnBattle(ArkeonInBattle _attacker, ArkeonInBattle _target, Action<HitTypes> _onHitCallback)
         {
-            ArkeonBattleUtility.ArkeonCombatResult result = ArkeonBattleUtility.GetCombatResult(_attacker, this, _target);
+            ArkeonBattleUtility.ArkeonCombatResult result = ArkeonBattleUtility.GetCombatResult(_attacker.myInstance.stats, this, _target.myInstance.stats);
 
             _attacker.animEvents.onAttackHitAction = () =>
             {
@@ -24,7 +24,17 @@ namespace ArkeonBattle
 
         public override void OnBattle(ArkeonInBattle _attacker, PlayerCharacterBattle _target, Action<HitTypes> _onHitCallback)
         {
-            base.OnBattle(_attacker, _target, _onHitCallback);
+            ArkeonBattleUtility.ArkeonCombatResult result = ArkeonBattleUtility.GetCombatResult(_attacker.myInstance.stats, this, _target.stats);
+
+            _attacker.animEvents.onAttackHitAction = () =>
+            {
+                _onHitCallback(result.hitType);
+                _target.currentHp -= result.damageDone;
+                Debug.Log("Damage done: " + result.damageDone);
+            };
+
+            _attacker.AnimAttack(animation);
+            _attacker.AnimGoBack();
         }
     }
 }
