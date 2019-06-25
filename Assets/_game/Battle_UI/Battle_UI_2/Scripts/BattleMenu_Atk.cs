@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using ArkeonBattle;
 
 public class BattleMenu_Atk : MonoBehaviour
 {
@@ -11,15 +12,11 @@ public class BattleMenu_Atk : MonoBehaviour
     public TextMeshProUGUI atkCost;
     public Image atkGlyph;
 
-    // Start is called before the first frame update
-    void Start()
+    public void SetAllData(string _name, ArkeonElement _type, int _cost, Sprite _glyph)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        atkName.text = _name;
+        atkType.sprite = _type.sprite;
+        atkCost.text = _cost.ToString();
+        atkGlyph.sprite = _glyph;
     }
 }

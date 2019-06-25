@@ -7,6 +7,7 @@ namespace ArkeonBattle
     [CreateAssetMenu(fileName = "ArkeonElement", menuName = "Arkeon Element", order = 0)]
     public class ArkeonElement : ScriptableObject
     {
+        public Sprite sprite;
         public List<ArkeonElement> defeatedBy;
     }
 }

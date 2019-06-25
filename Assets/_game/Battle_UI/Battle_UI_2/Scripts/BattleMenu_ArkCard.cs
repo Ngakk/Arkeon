@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using ArkeonBattle;
 
 public class BattleMenu_ArkCard : MonoBehaviour
 {
@@ -12,19 +13,22 @@ public class BattleMenu_ArkCard : MonoBehaviour
     public GameObject costPanel;
     public TextMeshProUGUI arkCostText;
 
-    [Header("Testing Data Fill")]
-    public string arkeonName;
-    public Sprite arkeonImg;
-    public int arkeonMaxHP;
-    public int arkeonHP;
-    public int arkeonCost;
+    public ArkeonInstance arkeonInstanceSO;
+
+    public GameObject infoPanel;
+
+    private void Awake()
+    {
+        infoPanel = GameObject.FindGameObjectWithTag("BM_InfoMain");
+    }
 
     private void Start()
     {
-        SetAllData(arkeonImg, arkeonName, arkeonMaxHP, arkeonHP, arkeonCost);
+        //Data Fill
+        SetAllData(arkeonInstanceSO.sprite, arkeonInstanceSO.myName, arkeonInstanceSO.stats.maxHp, (int)arkeonInstanceSO.currentHp, arkeonInstanceSO.stats.cost);
     }
 
-    void SetAllData(Sprite _img, string _name, int _maxHp, int _hp, int _cost)
+    public void SetAllData(Sprite _img, string _name, int _maxHp, int _hp, int _cost)
     {
         arkImg.sprite = _img;
         arkName.text = _name;
@@ -40,6 +44,11 @@ public class BattleMenu_ArkCard : MonoBehaviour
                 i++;
             }
         }
-        arkCostText.text = arkeonHP + " / " + arkeonMaxHP;
+        arkCostText.text = _hp + " / " + _maxHp;
+    }
+
+    public void InspectArkeon()
+    {
+        infoPanel.GetComponent<BattleMenu_InfoMain>().InspectArkeon(arkeonInstanceSO);
     }
 }

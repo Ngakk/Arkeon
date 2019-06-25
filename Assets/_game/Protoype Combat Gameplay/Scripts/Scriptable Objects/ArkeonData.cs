@@ -8,6 +8,7 @@ namespace ArkeonBattle
     public class ArkeonData : ScriptableObject
     {
         public string originalName;
+        public string description;
         public GameObject modelPrefab; //Only for prototyping, perhaps
 
         private Animator anim;

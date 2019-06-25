@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aba1afd98458944a9c9d51cf9d7c9b2, type: 3}
+  m_Name: TestAttackB
+  m_EditorClassIdentifier: 
+  glyph: {fileID: 0}
+  myName: Mafia
+  description: Pops a cap in the opponent's head
+  power: 99
+  cost: 10
+  accuaracy: 5
+  type: {fileID: 11400000, guid: 60d2ba944d1d2c84c8e4336f9874a7a3, type: 2}
+  isPhysical: 1
+  targetsEnemy: 1
+  animation: 0

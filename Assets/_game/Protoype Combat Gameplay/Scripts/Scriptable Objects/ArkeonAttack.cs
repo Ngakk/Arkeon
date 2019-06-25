@@ -23,6 +23,7 @@ namespace ArkeonBattle
     //[CreateAssetMenu(fileName = "BaseAttack", menuName = "Arkeon Creature/Arkeon Attacks/Base Attack", order = 3)]
     public class ArkeonAttack : ScriptableObject
     {
+        public Sprite glyph;
         public string myName;
         public string description;
         public int power;

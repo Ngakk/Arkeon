@@ -15,4 +15,14 @@ public class BattleMenu_ItemInfo : MonoBehaviour
     {
         
     }
+
+    public void EnableInfoPanel()
+    {
+        this.gameObject.SetActive(true);
+    }
+
+    public void DisableInfoPanel()
+    {
+        this.gameObject.SetActive(false);
+    }
 }
