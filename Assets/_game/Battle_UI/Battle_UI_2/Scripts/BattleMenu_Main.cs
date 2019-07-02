@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using ArkeonBattle;
 
 public class BattleMenu_Main : MonoBehaviour
 {
@@ -22,8 +23,7 @@ public class BattleMenu_Main : MonoBehaviour
     public GameObject item_pfb;
 
     private MENUSTATES currentMenuState = MENUSTATES.SMN;
-    public int[] summonedArkeonIds;
-    private GameObject[] summonedAkeons;
+    public ArkeonInstance[] summonedArkeonIds;
     private int selectedArkeon;
     public string[] itemNames;
     public Sprite itmImg;
@@ -132,10 +132,12 @@ public class BattleMenu_Main : MonoBehaviour
         // Load Saved Arkeons from Book with id _bookId
     }
 
+    //TODO
+    // Change SelectSummonedArkeon Function to work onClick
+
     public void SelectSummonedArkeon(int _arkId)
     {
         // Select summoned Arkeon to command
-
         // Check if arkeon with id _arkId exists & is summoned
         // Set selectedArkeon to _arkId
         // Change panel to ArkeonCmd
@@ -147,8 +149,10 @@ public class BattleMenu_Main : MonoBehaviour
         {
             for (int i = 0; i < summonedArkeonIds.Length; i++)
             {
-                if (summonedArkeonIds[i] == _arkId)
+                if (summonedArkeonIds[i] == _arkId) // Check TODO
+                {
                     isSummoned = true;
+                }
             }
 
             if (isSummoned)
@@ -157,6 +161,8 @@ public class BattleMenu_Main : MonoBehaviour
                 selectedArkeon = _arkId;
                 SetActivePanel((int)MENUSTATES.ARKEONCMD);
                 panels[(int)MENUSTATES.ARKEONCMD].GetComponentInChildren<TextMeshProUGUI>().text = "Selected Arkeon #" + _arkId;
+
+                
             }
             else
                 Debug.Log("Invalid Arkeon Id");
@@ -204,81 +210,5 @@ public class BattleMenu_Main : MonoBehaviour
     {
         SetActivePanel((int)currentMenuState);
         LoadItems();
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SetActivePanel(0);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            SetActivePanel(1);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            SetActivePanel(2);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            SetActivePanel(3);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            SetActivePanel(4);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            SetActivePanel(5);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            SetActivePanel(6);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            SetActivePanel(7);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad0))
-        {
-            SummonArkeon(100);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-        {
-            SummonArkeon(105);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            SummonArkeon(210);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            SummonArkeon(169);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad4))
-        {
-            SelectSummonedArkeon(110);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad5))
-        {
-            SelectSummonedArkeon(150);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad6))
-        {
-            SelectSummonedArkeon(169);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad7))
-        {
-            SelectSummonedArkeon(420);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad8))
-        {
-            SelectAttack(20);
-        }
-        if (Input.GetKeyDown(KeyCode.Keypad9))
-        {
-            
-        }
     }
 }

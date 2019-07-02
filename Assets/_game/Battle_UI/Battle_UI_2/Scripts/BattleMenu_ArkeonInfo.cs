@@ -31,9 +31,9 @@ public class BattleMenu_ArkeonInfo : MonoBehaviour
         arkCost.text = _arkInst.stats.cost.ToString();
     }
 
-    public void SetAttacks(ArkeonAttack[] _attacks)
+    public void SetAttacks(List<ArkeonAttack> _attacks)
     {
-        for (int i = 0; i < _attacks.Length; i++)
+        for (int i = 0; i < _attacks.Count; i++)
         {
             GameObject atk = Instantiate(atkPfb, arkAttacksPanel.transform);
             atk.GetComponent<BattleMenu_Atk>().SetAllData(_attacks[i].myName, _attacks[i].type, _attacks[i].cost, _attacks[i].glyph);

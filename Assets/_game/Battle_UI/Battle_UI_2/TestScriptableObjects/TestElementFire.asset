@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbf169e71dcc954da3ca32486176ece, type: 3}
   m_Name: TestElementFire
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: f1bc771bc63672841b5bde24b00d01d2, type: 3}
   defeatedBy:
   - {fileID: 11400000, guid: 89c2c0d9b8a580c4ca43b66cb326ba80, type: 2}

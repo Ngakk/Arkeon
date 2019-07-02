@@ -17,15 +17,19 @@ public class BattleMenu_ArkCard : MonoBehaviour
 
     public GameObject infoPanel;
 
+    private Button cardButton;
+
     private void Awake()
     {
         infoPanel = GameObject.FindGameObjectWithTag("BM_InfoMain");
+        cardButton = GetComponent<Button>();
     }
 
     private void Start()
     {
         //Data Fill
         SetAllData(arkeonInstanceSO.sprite, arkeonInstanceSO.myName, arkeonInstanceSO.stats.maxHp, (int)arkeonInstanceSO.currentHp, arkeonInstanceSO.stats.cost);
+        cardButton.onClick.AddListener(InspectArkeon);
     }
 
     public void SetAllData(Sprite _img, string _name, int _maxHp, int _hp, int _cost)

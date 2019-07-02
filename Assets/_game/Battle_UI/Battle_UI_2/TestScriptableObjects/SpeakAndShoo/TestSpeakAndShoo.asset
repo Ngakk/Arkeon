@@ -12,15 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a963a86fbc22dda4896ff646196d2cbe, type: 3}
   m_Name: TestSpeakAndShoo
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: 5f05189fecc314b4eaa57f6e29caff55, type: 3}
-  myName: 
-  currentHp: 0
+  sprite: {fileID: 21300000, guid: 9904b9bf6d8b2cc4c8920dbf1cb3b7f7, type: 3}
+  myName: SpeakAndShoo
+  currentHp: 6
   stats:
-    lvl: 0
-    maxHp: 0
-    atk: 0
-    def: 0
-    cost: 0
-    type: {fileID: 0}
-  attacks: []
-  arkeonData: {fileID: 0}
+    lvl: 1
+    maxHp: 6
+    atk: 5
+    def: 2
+    cost: 6
+    type: {fileID: 11400000, guid: 89c2c0d9b8a580c4ca43b66cb326ba80, type: 2}
+  attacks:
+  - {fileID: 11400000, guid: 9f2594d2757e7014f87f44cd64c8cbbd, type: 2}
+  arkeonData: {fileID: 11400000, guid: 5fb5b3bba3e791b4b9c7b10a227871da, type: 2}
