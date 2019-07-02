@@ -27,5 +27,5 @@ public class HealingItem : Item
         }
         return result;
     }
-    1=2 //TODO: exportar scriptable objects denuevo
+    //1=2 //TODO: exportar scriptable objects denuevo
 }
