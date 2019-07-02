@@ -6,6 +6,7 @@ using Rewired;
 [RequireComponent(typeof(Rigidbody))]
 public class MyCharacter : MonoBehaviour 
 {
+    //Hola Amigos
     public GameObject playerModel;
     [SerializeField]
     private int playerID = 0;
@@ -13,7 +14,7 @@ public class MyCharacter : MonoBehaviour
     private float moveSpeed= 2.5f;
     private bool direction; // true = left
     [SerializeField]
-    private Camera Mcamera;
+    private Camera mainCamera;
     private Player player;
     private Rigidbody cc;
     private Vector3 moveVector;
@@ -31,7 +32,7 @@ public class MyCharacter : MonoBehaviour
 	void Update () {
         GetInput();
         ProcessInput();
-        Mcamera.transform.position = new Vector3(transform.position.x, Mcamera.transform.position.y, transform.position.z);
+        mainCamera.transform.position = new Vector3(transform.position.x, mainCamera.transform.position.y, transform.position.z);
 	}
 
     private void GetInput() {
@@ -43,13 +44,14 @@ public class MyCharacter : MonoBehaviour
         if(moveVector.x != 0.0f || moveVector.z != 0.0f)
         {
             cc.velocity = moveVector * moveSpeed;
+            //if(rotationVector.)
             AnguloR = Mathf.Atan2 (rotationVector.x, rotationVector.z) * Mathf.Rad2Deg;
         }
         if(moveVector.x == 0.0f && moveVector.z == 0.0f)
         {
             cc.velocity = Vector3.zero;
         }
-        playerModel.transform.rotation = Quaternion.Euler(new Vector3(playerModel.transform.rotation.x, AnguloR, 30.0f));
+        playerModel.transform.localRotation = Quaternion.AngleAxis (AnguloR, Vector3.up);
     }
 
     void OnCollisionEnter(Collision col)
