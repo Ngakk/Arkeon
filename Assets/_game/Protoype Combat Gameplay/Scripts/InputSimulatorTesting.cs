@@ -57,10 +57,10 @@ namespace ArkeonBattle
         public void ChooseAllyAttacker2() { player.ChooseAttacker(1); }
         public void ChooseAllyAttacker3() { player.ChooseAttacker(2); }
 
-        public void CommandAllyAttack1() { player.CommandArkeonAttack(allyArkeonChosen, 0); }
+        /*public void CommandAllyAttack1() { player.CommandArkeonAttack(allyArkeonChosen, 0); }
         public void CommandAllyAttack2() { player.CommandArkeonAttack(allyArkeonChosen, 1);}
         public void CommandAllyAttack3() { player.CommandArkeonAttack(allyArkeonChosen, 2);}
-        public void CommandAllyAttack4() { player.CommandArkeonAttack(allyArkeonChosen, 3); }
+        public void CommandAllyAttack4() { player.CommandArkeonAttack(allyArkeonChosen, 3); }*/
 
         public void CommandAllyShield1() { player.CommandArkeonShield(0); }
         public void CommandAllyShield2() { player.CommandArkeonShield(1);}
@@ -74,10 +74,10 @@ namespace ArkeonBattle
         public void ChooseEnemyAttacker2() { enemy.ChooseAttacker(1); }
         public void ChooseEnemyAttacker3() { enemy.ChooseAttacker(2); }
 
-        public void CommandEnemyAttack1() { enemy.CommandArkeonAttack(enemyArkeonChosen, 0); }
+        /*public void CommandEnemyAttack1() { enemy.CommandArkeonAttack(enemyArkeonChosen, 0); }
         public void CommandEnemyAttack2() { enemy.CommandArkeonAttack(enemyArkeonChosen, 1); }
         public void CommandEnemyAttack3() { enemy.CommandArkeonAttack(enemyArkeonChosen, 2); }
-        public void CommandEnemyAttack4() { enemy.CommandArkeonAttack(enemyArkeonChosen, 3); }
+        public void CommandEnemyAttack4() { enemy.CommandArkeonAttack(enemyArkeonChosen, 3); }*/
 
         public void CommandEnemyShield1() { enemy.CommandArkeonShield(0); }
         public void CommandEnemyShield2() { enemy.CommandArkeonShield(1); }

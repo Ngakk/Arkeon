@@ -22,5 +22,8 @@ MonoBehaviour:
     def: 3
     cost: 0
     type: {fileID: 11400000, guid: 4af7dd34fddfbe443b928af74edb73d3, type: 2}
-  attacks: []
+  attacks:
+  - {fileID: 11400000, guid: 447579d5330931e4696f4669b388e727, type: 2}
+  - {fileID: 11400000, guid: 2a25a758178cf544d8eb2c42f5bea6be, type: 2}
+  - {fileID: 11400000, guid: a6abf2e127477c84c969913adfb2c4fc, type: 2}
   arkeonData: {fileID: 11400000, guid: 67e41ef9b2494da46a01d306b458f03b, type: 2}

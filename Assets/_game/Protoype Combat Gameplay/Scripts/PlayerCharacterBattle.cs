@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ using UnityEngine;
 
 namespace ArkeonBattle
 {
+    [RequireComponent(typeof(CharacterAnimEvents))]
     public class PlayerCharacterBattle : MonoBehaviour
     {
         public class ArkeonBattleStatus
@@ -33,7 +35,7 @@ namespace ArkeonBattle
         [Header("Setup")]
         public bool enemySide = false; //Para saber de que lado del escenario esta
         public ArkeonTeam arkeonTeam;
-        public List<Item> inventory = new List<Item>();
+        public Inventory inventory;
         public ArkeonInstance familiar;
         [Header("Stats")]
         public ArkeonStats stats;
@@ -41,12 +43,16 @@ namespace ArkeonBattle
         public int currentMp;
         [Header("Instancias")]
         public List<ArkeonBattleStatus> arkeonsOut = new List<ArkeonBattleStatus>();
-        public ArkeonInBattle familiarOut;
+        public ArkeonBattleStatus familiarOut;
 
         public Animator anim;
 
+        public CharacterAnimEvents animEvents;
+
         private void Start()
         {
+            animEvents = GetComponent<CharacterAnimEvents>();
+
             currentHp = stats.maxHp;
             currentMp = stats.maxMp;
 
@@ -78,6 +84,8 @@ namespace ArkeonBattle
             aib.showOnStart = true;
             aib.isAlly = !enemySide;
             aib.myInstance = familiar;
+
+            familiarOut = new ArkeonBattleStatus(0, aib, false, 0);
 
             return true;
         }
@@ -135,6 +143,17 @@ namespace ArkeonBattle
             return true;
         }
 
+        public bool ChooseFamiliarAttacker()
+        {
+            if (familiarOut == null)
+                return false;
+
+            familiarOut.isOnFront = true;
+            familiarOut.arkeon.GoForward();
+
+            return true;
+        }
+
         //Mandar hacia atras
         public bool StepBackAttacker()
         {
@@ -152,18 +171,40 @@ namespace ArkeonBattle
             return true;
         }
 
-        //atacar
-        public bool CommandArkeonAttack(int _arkeonOutId, int _attack)
+        public bool StepBackFamiliar()
         {
-            if (!arkeonsOut[_arkeonOutId].isOnFront || arkeonsOut[_arkeonOutId].arkeon.myInstance.attacks.Count < _attack || arkeonsOut[_arkeonOutId].arkeon.myInstance.stats.cost > currentMp)
+            if (!familiarOut.isOnFront)
+                return false;
+
+            familiarOut.arkeon.StepBack();
+            familiarOut.isOnFront = false;
+
+            return true;
+        }
+
+        //atacar
+        public bool CommandArkeonAttack(ArkeonBattleStatus _status, int _attack)
+        {
+            if (!_status.isOnFront || _status.arkeon.myInstance.attacks.Count < _attack || _status.arkeon.myInstance.stats.cost > currentMp)
                 return false;
             
-            arkeonsOut[_arkeonOutId].arkeon.AttackSet(_attack);
-            currentMp -= arkeonsOut[_arkeonOutId].arkeon.myInstance.stats.cost;
+            _status.arkeon.AttackSet(_attack);
+            currentMp -= _status.arkeon.myInstance.attacks[_attack].cost;
 
             Debug.Log("Succesfully commanded arkeon attack");
             return true;
         }
+
+        /*public bool CommandFamiliarAttack(int _attack)
+        {
+            if (!familiarOut.isOnFront || familiarOut.arkeon.myInstance.currentHp <= 0)
+                return false;
+
+            familiarOut.arkeon.AttackSet(_attack);
+            currentMp -= familiarOut.arkeon.myInstance.attacks[_attack].cost;
+
+            return true;
+        }*/
 
         //defender
         public bool CommandArkeonShield(int _arkeonOutId)
@@ -183,18 +224,23 @@ namespace ArkeonBattle
             return true;
         }
 
-
-        //Usar items
-        public void UseItem(int _item)
+        public bool CommandFamiliarShield()
         {
+            if (familiarOut.arkeon.myInstance.currentHp <= 0)
+                return false;
 
+            ManagerStaticBattle.battleManager.SetDefender(familiarOut.arkeon);
+
+            return true;
         }
 
-        //Comandos de familiar
-        //atacar
-        public void CommandFamiliarAttack(int _attack)
+        public bool UseItem(int _id)
         {
+            if (inventory.Count <= _id)
+                return false;
 
+            ManagerStaticBattle.battleManager.SetItemToUse(_id, this);
+            return true;
         }
 
         //Animaciones propias
@@ -211,6 +257,11 @@ namespace ArkeonBattle
         public void Laugh()
         {
 
+        }
+
+        public void UseItemAnimation()
+        {
+            anim.SetTrigger("Item");
         }
 
         //funcionalidades

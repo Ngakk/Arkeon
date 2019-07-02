@@ -1,17 +1,25 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using ArkeonBattle;
 
-namespace ArkeonBattle
+
+public class Item : ScriptableObject
 {
-    [CreateAssetMenu]
-    public class Item : ScriptableObject
-    {
-        public string Name;
-        public string Description;
+    public string name = "item";
+    public string description = "description";
 
-        public int Value;
-        public bool AffectsHealth = false;
-        public bool AffectMana = false;
+    public int value;
+
+    public virtual void Use(PlayerCharacterBattle _user, ArkeonInstance _target, Action _apexCallback)
+    { 
+        _user.animEvents.animationApex = _apexCallback;
+        _user.UseItemAnimation();
+    }
+
+    public virtual List<bool> GetCanUseList(ArkeonTeam _team)
+    {
+        return new List<bool>(_team.Count);
     }
 }

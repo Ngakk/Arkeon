@@ -21,6 +21,7 @@ namespace ArkeonBattle
                 {
                     myScript.arkeonTeam[i].currentHp = myScript.arkeonTeam[i].stats.maxHp;
                 }
+                myScript.familiar.currentHp = myScript.familiar.stats.maxHp;
             }
         }
     }

@@ -12,6 +12,7 @@ namespace ArkeonBattle
         {
             NOTHING,
             ATTACK_SET,
+            ITEM_SET,
             DEFENDER_SET,
             BATTLING
         }
@@ -29,6 +30,7 @@ namespace ArkeonBattle
         private ArkeonInBattle defender;
         private PlayerCharacterBattle characterDefender;
         private ArkeonAttack attack;
+        private int itemIdOnInventory;
         private bool anArkeonIsShield = false;
         private bool isAllyAttacking = true;
 
@@ -80,8 +82,16 @@ namespace ArkeonBattle
                 defender = _defender;
                 StartBattleAvA();
                 return true;
-                
             }
+
+            if(state == State.ITEM_SET)
+            {
+                state = State.DEFENDER_SET;
+
+                defender = _defender;
+                StartUseItem();
+            }
+
             return false;
         }
 
@@ -117,6 +127,24 @@ namespace ArkeonBattle
 
             attack.PreBattle(attacker, characterDefender);
             attacker.AttackStart(attack, characterDefender, OnHitAvP);
+        }
+
+        public void SetItemToUse(int _itemId, PlayerCharacterBattle _user)
+        {
+            if (state != State.NOTHING)
+                return;
+
+            itemIdOnInventory = _itemId;
+            characterDefender = _user;
+
+            state = State.ITEM_SET;
+        }
+
+        public void StartUseItem()
+        {
+            state = State.BATTLING;
+            characterDefender.inventory[itemIdOnInventory].item.Use(characterDefender, defender.myInstance, OnItemEffect);
+            characterDefender.inventory.Consume(itemIdOnInventory);
         }
 
         //Callback on hit
@@ -162,6 +190,17 @@ namespace ArkeonBattle
                 default:
                     break;
             }
+        }
+
+        //Callback on item
+        public void OnItemEffect()
+        {
+            //DO some particle effects or something
+
+            defender = null;
+            characterDefender = null;
+            itemIdOnInventory = -1;
+            state = State.NOTHING;
         }
 
         //Respuesta a animaciones

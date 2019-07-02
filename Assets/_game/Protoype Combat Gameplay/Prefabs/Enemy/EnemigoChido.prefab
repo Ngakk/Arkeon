@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 4654686380760048611}
   - component: {fileID: 4654686380760048608}
   - component: {fileID: 4598678283054285490}
+  - component: {fileID: 416445074671318460}
   m_Layer: 0
   m_Name: EnemigoChido
   m_TagString: Untagged
@@ -76,14 +77,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySide: 1
-  arkeonTeam:
-  - {fileID: 11400000, guid: 31e5f46983c5281489bf028ce553a8ce, type: 2}
-  - {fileID: 11400000, guid: 295ce422cf1537542a9a78c8311231c9, type: 2}
-  - {fileID: 11400000, guid: ffb03336e6b34f042a37efb0d0123e40, type: 2}
-  inventory: []
-  HP: 20
-  MP: 10
-  anim: {fileID: 0}
+  arkeonTeam: {fileID: 11400000, guid: c36abed540d47fd4da2ed63529d15753, type: 2}
+  inventory: {fileID: 0}
+  familiar: {fileID: 11400000, guid: 0b1ea8f5bdfeac049b119d765bb8bed9, type: 2}
+  stats:
+    lvl: 5
+    maxHp: 20
+    maxMp: 10
+    atk: 0
+    def: 1
+    cost: 0
+    type: {fileID: 11400000, guid: 4af7dd34fddfbe443b928af74edb73d3, type: 2}
+  currentHp: 20
+  currentMp: 10
+  anim: {fileID: 4598678283054285490}
+  animEvents: {fileID: 416445074671318460}
 --- !u!95 &4598678283054285490
 Animator:
   serializedVersion: 3
@@ -103,6 +111,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &416445074671318460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4654686380760048609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddab10aa96a47ba4894a75f3fc671bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 4598678283054285490}
 --- !u!1 &4654686381069460870
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa05fc4278b34a644aaaff1bfab0e975, type: 3}
-  m_Name: Small Mana Pot
+  m_Script: {fileID: 11500000, guid: 9f96fdcac076bcb48949faca5783740d, type: 3}
+  m_Name: EnemyInventory
   m_EditorClassIdentifier: 
-  Name: Small Mana Pot
-  Description: Imbues you with a bit of magical power
-  Value: 5
-  AffectsHealth: 0
-  AffectMana: 1
+  items:
+  - {fileID: 11400000, guid: 7482d85c59bbe8a4db24fd1a0b99e3f9, type: 2}

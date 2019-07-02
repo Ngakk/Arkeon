@@ -1888,6 +1888,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2029598368}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1606893335998702045 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1606893335998702045, guid: a52b99c2e7d023c4e95445a6fd382122,
+    type: 3}
+  m_PrefabInstance: {fileID: 4090936793264932633}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddab10aa96a47ba4894a75f3fc671bb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4090936793264932633
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1902,67 +1914,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
         type: 3}
-      propertyPath: anim
+      propertyPath: animEvents
       value: 
-      objectReference: {fileID: 4090936793264932634}
+      objectReference: {fileID: 1606893335998702045}
     - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
         type: 3}
-      propertyPath: arkeonTeam
+      propertyPath: inventory
       value: 
-      objectReference: {fileID: 11400000, guid: 38a25288636a7524783e95f77e276066,
+      objectReference: {fileID: 11400000, guid: 5c5b6cf3fdc71424d820d3175d03f9e3,
         type: 2}
-    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: stats.lvl
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: stats.maxHp
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: stats.maxMp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: stats.atk
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: stats.def
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: stats.type
-      value: 
-      objectReference: {fileID: 11400000, guid: 4af7dd34fddfbe443b928af74edb73d3,
-        type: 2}
-    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: currentHp
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: currentMp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4090936793102507403, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: familiar
-      value: 
-      objectReference: {fileID: 11400000, guid: dc377d31ad954dd4898788aa270e1392,
-        type: 2}
-    - target: {fileID: 6921177929694802169, guid: a52b99c2e7d023c4e95445a6fd382122,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4090936793102507402, guid: a52b99c2e7d023c4e95445a6fd382122,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2020,12 +1980,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a52b99c2e7d023c4e95445a6fd382122, type: 3}
---- !u!95 &4090936793264932634 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8326215079831068455, guid: a52b99c2e7d023c4e95445a6fd382122,
-    type: 3}
-  m_PrefabInstance: {fileID: 4090936793264932633}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4654686381331042261
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2040,56 +1994,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
         type: 3}
-      propertyPath: anim
+      propertyPath: inventory
       value: 
-      objectReference: {fileID: 4654686381331042262}
-    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
-        type: 3}
-      propertyPath: arkeonTeam
-      value: 
-      objectReference: {fileID: 11400000, guid: c36abed540d47fd4da2ed63529d15753,
-        type: 2}
-    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
-        type: 3}
-      propertyPath: stats.lvl
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
-        type: 3}
-      propertyPath: stats.maxHp
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
-        type: 3}
-      propertyPath: stats.maxMp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
-        type: 3}
-      propertyPath: stats.def
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
-        type: 3}
-      propertyPath: stats.type
-      value: 
-      objectReference: {fileID: 11400000, guid: 4af7dd34fddfbe443b928af74edb73d3,
-        type: 2}
-    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
-        type: 3}
-      propertyPath: currentHp
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
-        type: 3}
-      propertyPath: currentMp
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4654686380760048608, guid: b2f82cc19ddfb34498beaec56fca968b,
-        type: 3}
-      propertyPath: familiar
-      value: 
-      objectReference: {fileID: 11400000, guid: 0b1ea8f5bdfeac049b119d765bb8bed9,
+      objectReference: {fileID: 11400000, guid: b4af08a6c55cbae43b5e3db4e713d42e,
         type: 2}
     - target: {fileID: 4654686380760048611, guid: b2f82cc19ddfb34498beaec56fca968b,
         type: 3}
@@ -2148,9 +2055,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2f82cc19ddfb34498beaec56fca968b, type: 3}
---- !u!95 &4654686381331042262 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4598678283054285490, guid: b2f82cc19ddfb34498beaec56fca968b,
-    type: 3}
-  m_PrefabInstance: {fileID: 4654686381331042261}
-  m_PrefabAsset: {fileID: 0}

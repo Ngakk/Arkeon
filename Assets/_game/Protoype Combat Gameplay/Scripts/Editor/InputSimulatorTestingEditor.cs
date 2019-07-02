@@ -16,7 +16,8 @@ namespace ArkeonBattle
             CHOOSING,
             WAITING,
             SHIELDING,
-            NOT_TURN
+            NOT_TURN,
+            ITEM
         }
         //1=2 //TODO hacer que se pueda curar a si mismo el picashu
         State allyState = State.TURN, enemyState = State.NOT_TURN;
@@ -44,9 +45,10 @@ namespace ArkeonBattle
             CharacterOptions(myScript.enemy, ref enemyState, ref allyState, ref enemyChosen);
 
             //EditorGUI.DrawRect(new Rect(50, 500, 100, 70), Color.green);
+
+            CharacterTeam(myScript.player);
+            CharacterTeam(myScript.enemy);
         }
-
-
 
         void CharacterOptions(PlayerCharacterBattle _chara, ref State _state, ref State _enemyState, ref int _chosen)
         {
@@ -60,6 +62,10 @@ namespace ArkeonBattle
                     if (GUILayout.Button("Attack"))
                     {
                         _state = State.ATTACK;
+                    }
+                    if(GUILayout.Button("Use Item"))
+                    {
+                        _state = State.ITEM;
                     }
                     if (GUILayout.Button("End turn"))
                     {
@@ -96,20 +102,30 @@ namespace ArkeonBattle
                             }
                         }
                     }
+                    if (GUILayout.Button("Attack with " + _chara.familiar.arkeonData.originalName))
+                    {
+                        if(_chara.ChooseFamiliarAttacker())
+                        {
+                            _chosen = -1;
+                            _state = State.CHOOSING;
+                        }
+                    }
                     if (GUILayout.Button("Go back"))
                     {
                         _state = State.TURN;
                     }
                     break;
                 case State.CHOOSING:
-                    if (_chara.arkeonsOut.Count == 0) break;
-                    for (int i = 0; i < _chara.arkeonsOut[_chosen].arkeon.myInstance.attacks.Count; i++)
+
+                    PlayerCharacterBattle.ArkeonBattleStatus status = _chosen >= 0 ? _chara.arkeonsOut[_chosen] : _chara.familiarOut;
+
+                    for (int i = 0; i < status.arkeon.myInstance.attacks.Count; i++)
                     {
-                        if (GUILayout.Button(_chara.arkeonsOut[_chosen].arkeon.myInstance.attacks[i].myName + " (" + _chara.arkeonsOut[_chosen].arkeon.myInstance.attacks[i].cost + ")"))
+                        if (GUILayout.Button(status.arkeon.myInstance.attacks[i].myName + " (" + status.arkeon.myInstance.attacks[i].cost + ")"))
                         {
-                            if (_chara.CommandArkeonAttack(_chosen, i))
+                            if (_chara.CommandArkeonAttack(status, i))
                             {
-                                if (_chara.arkeonsOut[_chosen].arkeon.myInstance.attacks[i].targetsEnemy)
+                                if (status.arkeon.myInstance.attacks[i].targetsEnemy)
                                 {
                                     _state = State.WAITING;
                                     _enemyState = State.SHIELDING;
@@ -124,7 +140,11 @@ namespace ArkeonBattle
                     }
                     if (GUILayout.Button("Cancle"))
                     {
-                        _chara.StepBackAttacker();
+                        if (_chosen >= 0)
+                            _chara.StepBackAttacker();
+                        else
+                            _chara.StepBackFamiliar();
+
                         _state = State.ATTACK;
                     }
                     break;
@@ -144,6 +164,21 @@ namespace ArkeonBattle
                                     _state = State.TURN;
                                     returnToTurn = false;
                                 }
+                            }
+                        }
+                    }
+                    if(GUILayout.Button("Block with Familiar"))
+                    {
+                        if(_chara.CommandFamiliarShield())
+                        {
+                            if (!returnToTurn)
+                            {
+                                _state = State.NOT_TURN;
+                            }
+                            else
+                            {
+                                _state = State.TURN;
+                                returnToTurn = false;
                             }
                         }
                     }
@@ -171,8 +206,40 @@ namespace ArkeonBattle
                         _state = State.TURN;
                     }
                     break;
+                case State.ITEM:
+                    for(int i = 0; i < _chara.inventory.Count; i++)
+                    {
+                        if(GUILayout.Button(_chara.inventory.items[i].item.name))
+                        {
+                            returnToTurn = true;
+                            _chara.UseItem(i);
+                            _state = State.SHIELDING;
+                        }
+                    }
+                    if(GUILayout.Button("Cancle"))
+                    {
+                        _state = State.TURN;
+                    }
+                    break;
             }
         }
 
+        void CharacterTeam(PlayerCharacterBattle _chara)
+        {
+            string header = _chara.enemySide ? "Enemy team" : "Ally team";
+            
+            EditorGUILayout.LabelField(header, EditorStyles.boldLabel);
+            if (_chara.familiarOut != null)
+            {
+                if (_chara.familiarOut.arkeon.myInstance.currentHp > 0)
+                {
+                    EditorGUILayout.LabelField("Familiar HP:", (_chara.familiar.currentHp + "/" + _chara.familiar.stats.maxHp));
+                }
+            }
+            for (int i = 0; i < _chara.arkeonsOut.Count; i++)
+            {
+                EditorGUILayout.LabelField(_chara.arkeonsOut[i].arkeon.myInstance.myName + " HP:", (_chara.arkeonsOut[i].arkeon.myInstance.currentHp + "/" + _chara.arkeonsOut[i].arkeon.myInstance.stats.maxHp));
+            }
+        }
     }
 }
