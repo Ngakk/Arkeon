@@ -10,11 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7ce0fdb4e39b5744abf0c061bd2a3e30, type: 3}
-  m_Name: _
+  m_Name: Raices
   m_EditorClassIdentifier: 
-  id: 
+  id: 127
   points: []
   gesture:
-    lines: []
+    lines:
+    - points:
+      - {x: 0.06965174, y: 0.12935323}
+      - {x: 0.2039801, y: 0.41791046}
+      - {x: 0.3283582, y: 0.14427859}
+      - {x: 0.45771143, y: 0.39800996}
+      - {x: 0.58208954, y: 0.16417909}
+      - {x: 0.70149255, y: 0.39800996}
+      - {x: 0.8557214, y: 0.15422887}
+      closedLine: 0
   useLinesOrder: 0
   useLinesDirections: 0

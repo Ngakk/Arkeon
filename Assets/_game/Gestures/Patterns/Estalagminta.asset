@@ -12,9 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce0fdb4e39b5744abf0c061bd2a3e30, type: 3}
   m_Name: Estalagminta
   m_EditorClassIdentifier: 
-  id: 
+  id: 128
   points: []
   gesture:
-    lines: []
+    lines:
+    - points:
+      - {x: 0.07462686, y: 0.920398}
+      - {x: 0.14925373, y: 0.66169155}
+      - {x: 0.21393035, y: 0.89552236}
+      - {x: 0.24378109, y: 0.48756218}
+      - {x: 0.3482587, y: 0.8756219}
+      - {x: 0.41293532, y: 0.60199004}
+      - {x: 0.45273632, y: 0.8706468}
+      - {x: 0.54228854, y: 0.6069652}
+      - {x: 0.60199004, y: 0.840796}
+      - {x: 0.5970149, y: 0.28855723}
+      - {x: 0.7363184, y: 0.8706468}
+      - {x: 0.7960199, y: 0.65174127}
+      - {x: 0.8706468, y: 0.86069655}
+      closedLine: 0
   useLinesOrder: 0
   useLinesDirections: 0

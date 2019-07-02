@@ -6,6 +6,7 @@ using Rewired;
 [RequireComponent(typeof(Rigidbody))]
 public class MyCharacter : MonoBehaviour 
 {
+    //Hola Amigos
     public GameObject playerModel;
     [SerializeField]
     private int playerID = 0;

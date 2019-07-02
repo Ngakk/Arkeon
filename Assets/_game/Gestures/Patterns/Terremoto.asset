@@ -12,9 +12,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce0fdb4e39b5744abf0c061bd2a3e30, type: 3}
   m_Name: Terremoto
   m_EditorClassIdentifier: 
-  id: 
+  id: 129
   points: []
   gesture:
-    lines: []
+    lines:
+    - points:
+      - {x: 0.05970149, y: 0.43283582}
+      - {x: 0.13930348, y: 0.6965174}
+      - {x: 0.21393035, y: 0.19900495}
+      - {x: 0.29850745, y: 0.90547264}
+      - {x: 0.39800996, y: 0.06965172}
+      - {x: 0.51741296, y: 0.72139305}
+      - {x: 0.5970149, y: 0.12935323}
+      - {x: 0.73134327, y: 0.8756219}
+      - {x: 0.8358209, y: 0.159204}
+      - {x: 0.9004975, y: 0.61691546}
+      closedLine: 0
+    - points:
+      - {x: 0.039800994, y: 0.5174129}
+      - {x: 0.97512436, y: 0.5124378}
+      closedLine: 0
   useLinesOrder: 0
   useLinesDirections: 0
