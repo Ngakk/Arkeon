@@ -16,12 +16,14 @@ public class BattleMenu_ArkCard : MonoBehaviour
     public ArkeonInstance arkeonInstanceSO;
 
     public GameObject infoPanel;
+    public BattleMenu_Main menuMain;
 
     private Button cardButton;
 
     private void Awake()
     {
         infoPanel = GameObject.FindGameObjectWithTag("BM_InfoMain");
+        menuMain = GameObject.FindGameObjectWithTag("BM_Main").GetComponent<BattleMenu_Main>();
         cardButton = GetComponent<Button>();
     }
 
@@ -29,7 +31,7 @@ public class BattleMenu_ArkCard : MonoBehaviour
     {
         //Data Fill
         SetAllData(arkeonInstanceSO.sprite, arkeonInstanceSO.myName, arkeonInstanceSO.stats.maxHp, (int)arkeonInstanceSO.currentHp, arkeonInstanceSO.stats.cost);
-        cardButton.onClick.AddListener(InspectArkeon);
+        cardButton.onClick.AddListener(SelectArkeon);
     }
 
     public void SetAllData(Sprite _img, string _name, int _maxHp, int _hp, int _cost)
@@ -49,6 +51,11 @@ public class BattleMenu_ArkCard : MonoBehaviour
             }
         }
         arkCostText.text = _hp + " / " + _maxHp;
+    }
+
+    public void SelectArkeon()
+    {
+        menuMain.ProcessArkeonSelection(arkeonInstanceSO);
     }
 
     public void InspectArkeon()

@@ -7,7 +7,7 @@ using ArkeonBattle;
 
 public class BattleMenu_AttackInfo : MonoBehaviour
 {
-    public TextMeshProUGUI atknName;
+    public TextMeshProUGUI atkName;
     public Image glyph;
     public TextMeshProUGUI description;
     public Image type;
@@ -18,7 +18,7 @@ public class BattleMenu_AttackInfo : MonoBehaviour
 
     public void SetAllData(ArkeonAttack _attack)
     {
-        atknName.text = _attack.name;
+        atkName.text = _attack.myName;
         glyph.sprite = _attack.glyph;
         description.text = _attack.description;
         type.sprite = _attack.type.sprite;

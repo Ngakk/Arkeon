@@ -8,6 +8,7 @@ TagManager:
   - BM_Arkeon
   - BM_Attack
   - BM_InfoMain
+  - BM_Main
   layers:
   - Default
   - TransparentFX

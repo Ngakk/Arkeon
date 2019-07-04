@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 480b53b00c0a4224dab939f5be433a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  atknName: {fileID: 901442659222720334}
+  atkName: {fileID: 901442659222720334}
   glyph: {fileID: 901442659175868053}
   description: {fileID: 901442660661973526}
   type: {fileID: 4123289560117902915}
