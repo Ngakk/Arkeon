@@ -23,6 +23,7 @@ namespace ArkeonBattle
     //[CreateAssetMenu(fileName = "BaseAttack", menuName = "Arkeon Creature/Arkeon Attacks/Base Attack", order = 3)]
     public class ArkeonAttack : ScriptableObject
     {
+        public int db_id;
         public string myName;
         public string description;
         public int power;
@@ -87,6 +88,11 @@ namespace ArkeonBattle
         public virtual void PostBattle(ArkeonInBattle _attacker, PlayerCharacterBattle _target, Action _onEndCallback)
         {
             _onEndCallback.Invoke();
+        }
+
+        public virtual void GetInfoFromDatabase()
+        {
+
         }
 
         public enum HitTypes

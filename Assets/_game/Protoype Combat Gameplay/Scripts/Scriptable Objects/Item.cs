@@ -7,6 +7,7 @@ using ArkeonBattle;
 
 public class Item : ScriptableObject
 {
+    public int db_id;
     public string name = "item";
     public string description = "description";
 
