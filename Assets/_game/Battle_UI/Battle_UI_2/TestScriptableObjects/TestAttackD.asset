@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3aba1afd98458944a9c9d51cf9d7c9b2, type: 3}
+  m_Name: TestAttackD
+  m_EditorClassIdentifier: 
+  glyph: {fileID: 21300000, guid: 172f70d22811c0a4c9d77fac95e1f293, type: 3}
+  myName: Cross-Slash
+  description: Slashes the opponent 3 times. Paralyzes the opponent.
+  power: 35
+  cost: 20
+  accuaracy: 70
+  type: {fileID: 11400000, guid: 1d1acad9319592645818d30579f633df, type: 2}
+  isPhysical: 1
+  targetsEnemy: 1
+  animation: 0

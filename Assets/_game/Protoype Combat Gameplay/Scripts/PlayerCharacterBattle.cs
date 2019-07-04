@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -92,7 +92,6 @@ namespace ArkeonBattle
 
         //Comandos de arkeons
         //Invocar
-
         public bool InvokeArkeon(int _arkeonTeamId)
         {
             //Esto talvez cambia si decidimos que es mejor instanciar todos los arkeons al inicio de la pelea y mostrarlos al ser invocados

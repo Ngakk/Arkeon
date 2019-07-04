@@ -8,6 +8,7 @@ namespace ArkeonBattle
     public class ArkeonElement : ScriptableObject
     {
         public int db_id;
+        public Sprite sprite;
         public List<ArkeonElement> defeatedBy;
     }
 }

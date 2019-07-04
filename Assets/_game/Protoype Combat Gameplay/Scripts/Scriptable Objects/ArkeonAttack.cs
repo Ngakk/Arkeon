@@ -24,6 +24,7 @@ namespace ArkeonBattle
     public class ArkeonAttack : ScriptableObject
     {
         public int db_id;
+        public Sprite glyph;
         public string myName;
         public string description;
         public int power;

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a963a86fbc22dda4896ff646196d2cbe, type: 3}
+  m_Name: TestPickMyShoe
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 21300000, guid: 9904b9bf6d8b2cc4c8920dbf1cb3b7f7, type: 3}
+  myName: PickMyShoe
+  currentHp: 10
+  stats:
+    lvl: 1
+    maxHp: 10
+    atk: 10
+    def: 10
+    cost: 10
+    type: {fileID: 11400000, guid: 60d2ba944d1d2c84c8e4336f9874a7a3, type: 2}
+  attacks:
+  - {fileID: 11400000, guid: 10e8c138a79d97e49a400ef805b66699, type: 2}
+  - {fileID: 11400000, guid: fc96620378798dd48a5872da700e0f09, type: 2}
+  arkeonData: {fileID: 11400000, guid: 5fb5b3bba3e791b4b9c7b10a227871da, type: 2}

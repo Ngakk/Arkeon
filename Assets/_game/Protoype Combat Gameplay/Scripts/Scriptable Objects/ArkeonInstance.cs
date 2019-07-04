@@ -8,6 +8,7 @@ namespace ArkeonBattle
     [CreateAssetMenu(fileName = "ArkeonInstance", menuName = "Arkeon Creature/Arkeon Instance", order = 1)]
     public class ArkeonInstance : ScriptableObject
     {
+        public Sprite sprite;
         public string myName;
         public float currentHp;
         public ArkeonStats stats = new ArkeonStats();
@@ -20,7 +21,6 @@ namespace ArkeonBattle
     {
         public int lvl;
         public int maxHp;
-        public int maxMp;
         public int atk;
         public int def;
         public int cost;

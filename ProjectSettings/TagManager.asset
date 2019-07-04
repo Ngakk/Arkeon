@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BM_Item
+  - BM_Arkeon
+  - BM_Attack
+  - BM_InfoMain
   layers:
   - Default
   - TransparentFX

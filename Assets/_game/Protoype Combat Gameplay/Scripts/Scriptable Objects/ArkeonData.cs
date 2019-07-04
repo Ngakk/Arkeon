@@ -9,6 +9,7 @@ namespace ArkeonBattle
     {
         public int db_id;
         public string originalName;
+        public string description;
         public GameObject modelPrefab; //Only for prototyping, perhaps
 
         private Animator anim;
