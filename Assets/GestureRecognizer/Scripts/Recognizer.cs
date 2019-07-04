@@ -84,7 +84,7 @@ namespace GestureRecognizer
 
         private const int Detail = 100;
 
-        [Range(1, 4)]
+        [Range(1, 5)]
         public int numberOfThreads = 1;
 
         public List<GesturePattern> patterns;
