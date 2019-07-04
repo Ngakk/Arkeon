@@ -12,9 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ce0fdb4e39b5744abf0c061bd2a3e30, type: 3}
   m_Name: Tornado
   m_EditorClassIdentifier: 
-  id: 
+  id: 138
   points: []
   gesture:
-    lines: []
+    lines:
+    - points:
+      - {x: 0.05472637, y: 0.8706468}
+      - {x: 0.93532336, y: 0.86567163}
+      - {x: 0.11904764, y: 0.6984127}
+      - {x: 0.80158734, y: 0.68253964}
+      - {x: 0.18253969, y: 0.5238095}
+      - {x: 0.72222227, y: 0.47619048}
+      - {x: 0.32539687, y: 0.35714287}
+      - {x: 0.59523815, y: 0.28571427}
+      - {x: 0.436508, y: 0.20634922}
+      - {x: 0.50793654, y: 0.11111112}
+      closedLine: 0
   useLinesOrder: 0
   useLinesDirections: 0
