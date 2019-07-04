@@ -36,7 +36,8 @@ public class BattleMenu_ArkeonInfo : MonoBehaviour
         for (int i = 0; i < _attacks.Count; i++)
         {
             GameObject atk = Instantiate(atkPfb, arkAttacksPanel.transform);
-            atk.GetComponent<BattleMenu_Atk>().SetAllData(_attacks[i].myName, _attacks[i].type, _attacks[i].cost, _attacks[i].glyph);
+            atk.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, -75-(100*i), 0);
+            atk.GetComponent<BattleMenu_Atk>().SetAllData(_attacks[i]);
         }
     }
     

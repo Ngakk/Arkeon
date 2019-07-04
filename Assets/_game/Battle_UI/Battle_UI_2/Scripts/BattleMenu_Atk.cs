@@ -26,16 +26,19 @@ public class BattleMenu_Atk : MonoBehaviour
     private void Start()
     {
         //Data Fill
-        SetAllData(attackSO.name, attackSO.type, attackSO.cost, attackSO.glyph);
+        if (attackSO)
+            SetAllData(attackSO);
+
         atkButton.onClick.AddListener(InspectAttack);
     }
 
-    public void SetAllData(string _name, ArkeonElement _type, int _cost, Sprite _glyph)
+    public void SetAllData(ArkeonAttack _atk)
     {
-        atkName.text = _name;
-        atkType.sprite = _type.sprite;
-        atkCost.text = _cost.ToString();
-        atkGlyph.sprite = _glyph;
+        attackSO = _atk;
+        atkName.text = _atk.myName;
+        atkType.sprite = _atk.type.sprite;
+        atkCost.text = _atk.cost.ToString();
+        atkGlyph.sprite = _atk.glyph;
     }
 
     public void InspectAttack()
