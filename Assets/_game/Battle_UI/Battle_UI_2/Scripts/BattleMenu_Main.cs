@@ -19,6 +19,9 @@ public class BattleMenu_Main : MonoBehaviour
         ARKEONCMD = 7
     };
 
+    public PlayerCharacterBattle player;
+    public PlayerCharacterBattle enemy;
+
     public GameObject[] panels;
     public GameObject item_pfb;
     public GameObject atk_pfb;

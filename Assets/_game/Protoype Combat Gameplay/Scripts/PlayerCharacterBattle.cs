@@ -54,7 +54,6 @@ namespace ArkeonBattle
             animEvents = GetComponent<CharacterAnimEvents>();
 
             currentHp = stats.maxHp;
-            currentMp = stats.maxMp;
 
             InvokeFamiliar();
         }

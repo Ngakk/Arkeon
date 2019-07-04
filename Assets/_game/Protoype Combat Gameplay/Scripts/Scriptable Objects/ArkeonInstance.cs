@@ -21,6 +21,7 @@ namespace ArkeonBattle
     {
         public int lvl;
         public int maxHp;
+        public int maxMp;
         public int atk;
         public int def;
         public int cost;
