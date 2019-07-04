@@ -8,111 +8,87 @@ using UnityEngine.UI;
 
 public class AttackManager : MonoBehaviour
 {
-    MonsterBase currMonster;
-    public List<MonsterBase> allMonsters;
-    int MonsterIndex;
+    AttackBase currAttack;
+    public List<AttackBase> allAttacks;
+    int AttacksIndex;
 
     #region public variables
     public Text Number;
     public InputField Name;
-    public InputField Types;
-    public InputField CatchRate;
-    public InputField ExpRate;
-    public InputField EVYield;
-    public InputField Learnset;
-    public Slider MaleRatio;
-    public InputField Atk;
-    public InputField Def;
-    public InputField SpAtk;
-    public InputField SpDef;
-    public InputField Speed;
-    public InputField HP;
-    public Text MaleRatioLabel;
+    public InputField Description;
+    public InputField Power;
+    public InputField Cost;
+    public InputField Accuracy;
+    public InputField Type;
+    public Toggle IsPhysical;
+    public InputField InvocationCode;
+    public InputField EffectId;
     #endregion
 
 
     // Start is called before the first frame update
     void Start()
     {
-        MaleRatio.minValue = 0; MaleRatio.maxValue = 100;
-        Learnset.characterLimit = 0;
-
-        //Cargo el archivo Items.json desde Resources
-        string filePath = "pokes.json".Replace(".json", "");
+        string filePath = "attaks.json".Replace(".json", "");
         TextAsset ArchivoTarget = Resources.Load<TextAsset>(filePath);
         string elJson = ArchivoTarget.text;
-        Debug.Log(elJson);
 
-        allMonsters = new List<MonsterBase>();
+        allAttacks = new List<AttackBase>();
 
-        allMonsters = JsonConvert.DeserializeObject<List<MonsterBase>>(elJson);
+        allAttacks = JsonConvert.DeserializeObject<List<AttackBase>>(elJson);
 
-
-        Debug.Log(allMonsters.ToString());
-
-        if (allMonsters == null)
+        
+        if (allAttacks == null)
         {
-            Debug.LogError("All monsters is null");
+            Debug.LogError("All attacks is null");
             return;
         }
 
-        if (allMonsters.Count < 1) return;
+        if (allAttacks.Count < 1) return;
 
-        MonsterIndex = 0;
-        currMonster = allMonsters[MonsterIndex];
+        AttacksIndex = 0;
+        currAttack = allAttacks[AttacksIndex];
 
-        SetOnScreen(currMonster);
+        SetOnScreen(currAttack);
     }
 
-    void SetOnScreen(MonsterBase m)
+    void SetOnScreen(AttackBase a)
     {
-        Number.text = "Number: " + m.number.ToString();
-        Name.text = m.name;
-        Types.text = string.Join(",", Array.ConvertAll(m.types.ToArray(), i => i.ToString()));
-        CatchRate.text = m.catchRate.ToString();
-        ExpRate.text = m.experienceRate.ToString();
-        EVYield.text = string.Join(",", Array.ConvertAll(m.evYield.ToArray(), i => i.ToString()));
-        Learnset.text = string.Join(",", Array.ConvertAll(m.learnSet.ToArray(), i => i.ToString()));
-        MaleRatio.value = m.maleRatio;
-        Atk.text = m.baseStats.atk.ToString();
-        Def.text = m.baseStats.def.ToString();
-        SpAtk.text = m.baseStats.spAtk.ToString();
-        SpDef.text = m.baseStats.spDef.ToString();
-        Speed.text = m.baseStats.speed.ToString();
-        HP.text = m.baseStats.hp.ToString();
-        MaleRatioLabel.text = m.maleRatio.ToString();
+        Number.text = a.id.ToString();
+        Name.text = a.name;
+        Type.text = a.type.ToString();
+        Description.text = a.descrciption;
+        Power.text = a.power.ToString();
+        Cost.text = a.cost.ToString();
+        Accuracy.text = a.accuracy.ToString();
+        IsPhysical.isOn = a.isphysical;
+        InvocationCode.text = a.invocationcode;
+        EffectId.text = a.effectid.ToString();
     }
 
     public void NextPoke()
     {
-        if (MonsterIndex < allMonsters.Count - 1)
+        if (AttacksIndex < allAttacks.Count - 1)
         {
-            currMonster = allMonsters[++MonsterIndex];
-            SetOnScreen(currMonster);
+            currAttack = allAttacks[++AttacksIndex];
+            SetOnScreen(currAttack);
         }
     }
 
-    MonsterBase ScreenToObj(int newNumber = -1)
+    AttackBase ScreenToObj(int newNumber = -1)
     {
-        MonsterBase p = new MonsterBase
+        AttackBase p = new AttackBase
         {
-            number = newNumber > 0 ? newNumber : currMonster.number,
+            id = newNumber > 0 ? newNumber : currAttack.id,
             name = Name.text,
-            types = Types.text.Split(',').Select(int.Parse).ToList(),
-            baseStats = new BaseStats()
-            {
-                hp = int.Parse(HP.text),
-                atk = int.Parse(Atk.text),
-                def = int.Parse(Def.text),
-                spAtk = int.Parse(SpAtk.text),
-                spDef = int.Parse(SpDef.text),
-                speed = int.Parse(Speed.text)
-            },
-            catchRate = int.Parse(CatchRate.text),
-            experienceRate = int.Parse(ExpRate.text),
-            learnSet = Learnset.text.Split(',').Select(int.Parse).ToList(),
-            evYield = EVYield.text.Split(',').Select(int.Parse).ToList(),
-            maleRatio = (int)MaleRatio.value
+            type = int.Parse(Type.text),
+            descrciption = Description.text,
+            power = int.Parse(Power.text),
+            cost = int.Parse(Cost.text),
+            accuracy = int.Parse(Accuracy.text),
+            isphysical = IsPhysical.isOn,
+            invocationcode = InvocationCode.text,
+            effectid = int.Parse(EffectId.text)
         };
 
         return p;
@@ -120,39 +96,33 @@ public class AttackManager : MonoBehaviour
 
     public void UpdateCurrentPoke()
     {
-        currMonster = ScreenToObj();
-        allMonsters[MonsterIndex] = currMonster;
+        currAttack = ScreenToObj();
+        allAttacks[AttacksIndex] = currAttack;
         Save();
-    }
-
-    public void UpdateMaleRatio()
-    {
-        float val = MaleRatio.value;
-        MaleRatioLabel.text = ((int)val).ToString();
     }
 
     public void SaveNewPoke()
     {
-        MonsterIndex = allMonsters.Count+1;
-        MonsterBase newMonster = ScreenToObj(MonsterIndex);
-        Number.text = "Number: " + newMonster.number.ToString();
-        allMonsters.Add(newMonster);
+        AttacksIndex = allAttacks.Count + 1;
+        AttackBase newMonster = ScreenToObj(AttacksIndex);
+        Number.text = "Number: " + newMonster.id.ToString();
+        allAttacks.Add(newMonster);
 
         Save();
     }
 
     private void Save()
     {
-        string json = JsonConvert.SerializeObject(allMonsters);
-        File.WriteAllText("Assets/Resources/pokes.json", json);
+        string json = JsonConvert.SerializeObject(allAttacks);
+        File.WriteAllText("Assets/Resources/attaks.json", json);
     }
 
     public void PrevPoke()
     {
-        if (MonsterIndex > 0)
+        if (AttacksIndex > 0)
         {
-            currMonster = allMonsters[--MonsterIndex];
-            SetOnScreen(currMonster);
+            currAttack = allAttacks[--AttacksIndex];
+            SetOnScreen(currAttack);
         }
     }
 }
