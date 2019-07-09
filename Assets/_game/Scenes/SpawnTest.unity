@@ -960,14 +960,14 @@ MonoBehaviour:
     _sourceId: 0
     _findUsingTag: 0
     _tag: 
-    _findInPlayer: 0
+    _findInPlayer: 1
     _playerId: 0
   _createCustomControllerSettings:
     _createCustomController: 1
     _customControllerSourceId: 0
     _assignToPlayerId: 0
     _destroyCustomController: 1
-  _disableMouseInputWhenEnabled: 1
+  _disableMouseInputWhenEnabled: 0
   _useCustomController: 1
 --- !u!1 &1234908525
 GameObject:
