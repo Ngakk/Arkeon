@@ -30,27 +30,27 @@ public class BattleMenu_ArkCard : MonoBehaviour
     private void Start()
     {
         //Data Fill
-        SetAllData(arkeonInstanceSO.sprite, arkeonInstanceSO.myName, arkeonInstanceSO.stats.maxHp, (int)arkeonInstanceSO.currentHp, arkeonInstanceSO.stats.cost);
         cardButton.onClick.AddListener(SelectArkeon);
     }
 
-    public void SetAllData(Sprite _img, string _name, int _maxHp, int _hp, int _cost)
+    public void SetAllData(ArkeonInstance _ark)
     {
-        arkImg.sprite = _img;
-        arkName.text = _name;
-        arkHp.maxValue = _maxHp;
-        arkHp.value = _hp;
+        arkImg.sprite = _ark.sprite;
+        arkName.text = _ark.myName;
+        arkHp.maxValue = _ark.stats.maxHp;
+        arkHp.value = _ark.currentHp;
         int i = 0;
         foreach(Transform child in costPanel.transform)
         {
             child.gameObject.SetActive(false);
-            if (i < _cost)
+            if (i < _ark.stats.cost)
             {
                 child.gameObject.SetActive(true);
                 i++;
             }
         }
-        arkCostText.text = _hp + " / " + _maxHp;
+        arkCostText.text = _ark.currentHp + " / " + _ark.stats.maxHp;
+        arkeonInstanceSO = _ark;
     }
 
     public void SelectArkeon()
