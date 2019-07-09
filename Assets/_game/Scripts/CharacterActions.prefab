@@ -23,14 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3324342953138793474}
-  m_LocalRotation: {x: 0, y: 0, z: -0.258819, w: 0.9659259}
-  m_LocalPosition: {x: 0, y: -0.025, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.31113112, w: 0.95036703}
+  m_LocalPosition: {x: 0, y: 0.332, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6724446610040702871}
   m_Father: {fileID: 2465640562371383269}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -30}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -36.255}
 --- !u!1 &8768135988447321437
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +214,10 @@ MonoBehaviour:
       - _enabled: 1
         _categoryId: 0
         _layoutId: 0
-      _defaultCustomControllerMaps: []
+      _defaultCustomControllerMaps:
+      - _enabled: 1
+        _categoryId: 0
+        _layoutId: 0
       _startingCustomControllers: []
       _assignMouseOnStart: 1
       _assignKeyboardOnStart: 1
@@ -379,8 +382,82 @@ MonoBehaviour:
         _modifierKey2: 0
         _modifierKey3: 0
     mouseMaps: []
-    customControllerMaps: []
-    customControllers: []
+    customControllerMaps:
+    - id: 0
+      categoryId: 0
+      layoutId: 0
+      name: 
+      hardwareGuidString: 
+      customControllerUid: 0
+      actionElementMaps:
+      - _actionCategoryId: 0
+        _actionId: 0
+        _elementType: 0
+        _elementIdentifierId: 0
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+      - _actionCategoryId: 0
+        _actionId: 1
+        _elementType: 0
+        _elementIdentifierId: 1
+        _axisRange: 0
+        _invert: 0
+        _axisContribution: 0
+        _keyboardKeyCode: 0
+        _modifierKey1: 0
+        _modifierKey2: 0
+        _modifierKey3: 0
+    customControllers:
+    - _name: CustomController0
+      _descriptiveName: CustomController0
+      _id: 0
+      _elementIdentifiers:
+      - _id: 0
+        _name: Horizontal
+        _positiveName: 
+        _negativeName: 
+        _elementType: 0
+        _compoundElementType: 0
+      - _id: 1
+        _name: Vertical
+        _positiveName: 
+        _negativeName: 
+        _elementType: 0
+        _compoundElementType: 0
+      _axes:
+      - elementIdentifierId: 0
+        name: Horizontal
+        range: 0
+        invert: 0
+        deadZone: 0
+        zero: 0
+        min: -1
+        max: 1
+        doNotCalibrateRange: 0
+        axisInfo:
+          _dataFormat: 0
+          _excludeFromPolling: 0
+          _specialAxisType: 0
+      - elementIdentifierId: 1
+        name: Vertical
+        range: 0
+        invert: 0
+        deadZone: 0
+        zero: 0
+        min: -1
+        max: 1
+        doNotCalibrateRange: 0
+        axisInfo:
+          _dataFormat: 0
+          _excludeFromPolling: 0
+          _specialAxisType: 0
+      _buttons: []
+      _elementIdentifierIdCounter: 2
     playerIdCounter: 2
     actionIdCounter: 3
     actionCategoryIdCounter: 1
@@ -393,8 +470,8 @@ MonoBehaviour:
     joystickMapIdCounter: 2
     keyboardMapIdCounter: 1
     mouseMapIdCounter: 0
-    customControllerMapIdCounter: 0
-    customControllerIdCounter: 0
+    customControllerMapIdCounter: 1
+    customControllerIdCounter: 1
   _controllerDataFiles: {fileID: 11400000, guid: d21d2b20df8369642b76aafbb2576ba7,
     type: 2}
 --- !u!114 &1290380505241351619
@@ -409,10 +486,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5f34557e6d3a54f80e8e6b349b0c88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerModel: {fileID: 0}
+  playerModel: {fileID: 6724446610040413111}
   playerID: 0
   moveSpeed: 2.5
-  Mcamera: {fileID: 0}
+  mainCamera: {fileID: 0}
 --- !u!54 &3201477188945144399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -442,11 +519,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6336095cd6f5eb04e8b34d8c10370869, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.344
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6336095cd6f5eb04e8b34d8c10370869, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.198
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6336095cd6f5eb04e8b34d8c10370869, type: 3}
       propertyPath: m_LocalPosition.z
@@ -486,6 +563,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6336095cd6f5eb04e8b34d8c10370869, type: 3}
+--- !u!1 &6724446610040413111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 6336095cd6f5eb04e8b34d8c10370869,
+    type: 3}
+  m_PrefabInstance: {fileID: 6724446610040315159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6724446610040702871 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6336095cd6f5eb04e8b34d8c10370869,
