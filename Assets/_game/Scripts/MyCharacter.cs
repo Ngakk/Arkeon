@@ -32,7 +32,7 @@ public class MyCharacter : MonoBehaviour
 	void Update () {
         GetInput();
         ProcessInput();
-        mainCamera.transform.position = new Vector3(transform.position.x, mainCamera.transform.position.y, transform.position.z);
+        //mainCamera.transform.position = new Vector3(transform.position.x, mainCamera.transform.position.y, transform.position.z);
 	}
 
     private void GetInput() {
