@@ -23,14 +23,20 @@ public class BattleMenu_Main : MonoBehaviour
     public PlayerCharacterBattle enemy;
 
     public GameObject[] panels;
+    public Image[] mainOptions;
     public GameObject item_pfb;
     public GameObject atk_pfb;
+    public GameObject ark_pfb;
+
+    public ArkeonTeam team;
 
     private MENUSTATES currentMenuState = MENUSTATES.SMN;
-    public ArkeonInstance[] summonedArkeons;
+    private List<ArkeonInstance> summonedArkeons = new List<ArkeonInstance>();
     private ArkeonInstance selectedArkeon;
     public string[] itemNames;
     public Sprite itmImg;
+
+    private Color activeMenuColor = new Color(0.39f, 0.23f, 0.45f);
 
     public int testGlyph;
 
@@ -84,7 +90,15 @@ public class BattleMenu_Main : MonoBehaviour
                     validPanel = true;
             }
             else
+            {
                 validPanel = true;
+                for (int i = 0; i < mainOptions.Length; i++)
+                {
+                    mainOptions[i].color = Color.black;
+                    if (_index == i)
+                        mainOptions[_index].color = activeMenuColor;
+                }
+            } 
 
             if (validPanel)
             {
@@ -94,61 +108,82 @@ public class BattleMenu_Main : MonoBehaviour
                 Debug.Log("Current Menu State: " + currentMenuState);
             }
             else
-                Debug.Log("Invalid Panel");
+                Debug.Log("Invalid Panel " + _index);
         } else
             Debug.Log("Invalid Panel");
     }
 
     public void SummonArkeon(ArkeonInstance _ark)
     {
-        // Summon Arkeon with id _arkID from current opened book 
-        switch (currentMenuState)
+        if (summonedArkeons.Count < 2)
         {
-            case MENUSTATES.BOOKA:
-                Debug.Log("Arkeon " + _ark.myName + " from Book A");
-                break;
+            bool duplicate = false;
+            for (int i = 0; i < summonedArkeons.Count; i++)
+            {
+                if (summonedArkeons[i] == _ark)
+                    duplicate = true;
+            }
 
-            case MENUSTATES.BOOKB:
-                Debug.Log("Arkeon " + _ark.myName + " from Book B");
-                break;
-
-            case MENUSTATES.BOOKC:
-                Debug.Log("Arkeon " + _ark.myName + " from Book C");
-                break;
-
-            default:
-                Debug.Log("Invalid Option");
-                break;
+            if (!duplicate)
+            {
+                summonedArkeons.Add(_ark);
+                LoadSummonedArkeons();
+                SetActivePanel((int)MENUSTATES.ATK);
+            } else
+            {
+                Debug.Log("Arkeon Already Summoned");
+            }
+        } else
+        {
+            Debug.Log("Arkeon Limit Reached");
         }
     }
 
-    public void DismissArkeon(int _arkId)
+    public void LoadArkeons()
     {
-        // TODO: How to dismiss arkeons
-        // Dissmiss Arkeon from summoned arkeons with ID _arkId
+        // Load Book A Arkeons
+        for (int i = 0; i < team.lightBook.Count; i++)
+        {
+            GameObject ark = Instantiate(ark_pfb, panels[(int)MENUSTATES.BOOKA].transform);
+            ark.GetComponent<BattleMenu_ArkCard>().SetAllData(team.lightBook[i]);
+        }
+
+        // Load Book B Arkeons
+        for (int i = 0; i < team.darkBook.Count; i++)
+        {
+            GameObject ark = Instantiate(ark_pfb, panels[(int)MENUSTATES.BOOKB].transform);
+            ark.GetComponent<BattleMenu_ArkCard>().SetAllData(team.darkBook[i]);
+        }
+
+        // Load Book C Arkeons
+        for (int i = 0; i < team.natureBook.Count; i++)
+        {
+            GameObject ark = Instantiate(ark_pfb, panels[(int)MENUSTATES.BOOKC].transform);
+            ark.GetComponent<BattleMenu_ArkCard>().SetAllData(team.natureBook[i]);
+        }
     }
 
-    public void LoadArkeons(int _bookId)
+    public void LoadSummonedArkeons()
     {
-        // Load Saved Arkeons from Book with id _bookId
+        foreach(Transform child in panels[(int)MENUSTATES.ATK].transform)
+        {
+            Destroy(child.gameObject);
+        }
+        for (int i = 0; i < summonedArkeons.Count; i++)
+        {
+            GameObject ark = Instantiate(ark_pfb, panels[(int)MENUSTATES.ATK].transform);
+            ark.GetComponent<BattleMenu_ArkCard>().SetAllData(summonedArkeons[i]);
+        }
     }
-
-    //TODO
-    // Change SelectSummonedArkeon Function to work onClick
 
     public void SelectSummonedArkeon(ArkeonInstance _ark)
     {
-        // Select summoned Arkeon to command
-        // Check if arkeon with id _arkId exists & is summoned
-        // Set selectedArkeon to _arkId
-        // Change panel to ArkeonCmd
-        // Load attacks from selectedArkeon
 
         bool isSummoned = false;
 
         if (currentMenuState == MENUSTATES.ATK)
         {
-            for (int i = 0; i < summonedArkeons.Length; i++)
+            for (int i = 0; i < summonedArkeons.Count; i++)
             {
                 if (summonedArkeons[i] == _ark) // Check TODO
                 {
@@ -161,7 +196,6 @@ public class BattleMenu_Main : MonoBehaviour
                 Debug.Log("Selected Arkeon " + _ark.myName);
                 selectedArkeon = _ark;
                 SetActivePanel((int)MENUSTATES.ARKEONCMD);
-                panels[(int)MENUSTATES.ARKEONCMD].GetComponentInChildren<TextMeshProUGUI>().text = "Selected Arkeon " + _ark.myName;
                 LoadArkeonAttacks();
             }
             else
@@ -195,7 +229,19 @@ public class BattleMenu_Main : MonoBehaviour
     {
         // Select Attack from current selected Arkeon
         if (currentMenuState == MENUSTATES.ARKEONCMD)
-            Debug.Log("Selected Attack #" + _atkId + " from Arkeon #" + selectedArkeon);
+        {
+            ArkeonAttack selectedAttack = null;
+            for (int i = 0; i < selectedArkeon.attacks.Count; i++)
+            {
+                if (selectedArkeon.attacks[i].DBID == _atkId)
+                    selectedAttack = selectedArkeon.attacks[i];
+            }
+
+            if (selectedAttack != null)
+            {
+                Debug.Log(selectedArkeon.myName + " used " + selectedAttack.myName + "!");
+            }
+        }
     }
 
     public void LoadItems()
@@ -227,5 +273,7 @@ public class BattleMenu_Main : MonoBehaviour
     {
         SetActivePanel((int)currentMenuState);
         LoadItems();
+        LoadArkeons();
+        LoadSummonedArkeons();
     }
 }
