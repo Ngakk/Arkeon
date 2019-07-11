@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aba1afd98458944a9c9d51cf9d7c9b2, type: 3}
   m_Name: Scratch
   m_EditorClassIdentifier: 
+  db_id: 0
+  glyph: {fileID: 0}
   myName: Scratch
   description: Arkeon scratches the enemy
   power: 45
@@ -19,5 +21,6 @@ MonoBehaviour:
   accuaracy: 100
   type: {fileID: 11400000, guid: 39a888dfb52499b449db9685fdca98d9, type: 2}
   isPhysical: 1
-  targetsEnemy: 1
+  canTargetEnemy: 0
+  canTargetAlly: 0
   animation: 1

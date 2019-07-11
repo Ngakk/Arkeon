@@ -27,9 +27,8 @@ namespace ArkeonBattle
         public bool showOnStart = true;
 
         private Animator anim;
-        
-        public int AtkMod;
-        public int DefMod;
+
+        public ArkeonStats inBattleModifiers = new ArkeonStats();
 
         private void Start()
         {
@@ -40,8 +39,14 @@ namespace ArkeonBattle
             animEvents = GetComponent<ArkeonAnimEvents>();
             if (animEvents == null)
                 animEvents = gameObject.AddComponent<ArkeonAnimEvents>();
-        }
 
+            inBattleModifiers = new ArkeonStats();
+        }
+        
+        public ArkeonStats GetStats()
+        {
+            return inBattleModifiers + myInstance.stats;
+        }
 
         //Combate
         public void GoForward()
@@ -107,6 +112,7 @@ namespace ArkeonBattle
         }
         public void AnimAttack(AttackAnimations _type)
         {
+            anim.SetInteger("AttackType", (int)_type);
             anim.SetTrigger("Attack");
         }
         public void AnimGoBack()

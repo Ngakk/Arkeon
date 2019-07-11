@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee180513b724e594e919f0acc709d5ce, type: 3}
-  m_Name: LowHeal
+  m_Script: {fileID: 11500000, guid: 3aba1afd98458944a9c9d51cf9d7c9b2, type: 3}
+  m_Name: Spirit Strike
   m_EditorClassIdentifier: 
   db_id: 0
   glyph: {fileID: 0}
-  myName: Lesser Heal
-  description: Does a lesser heal
-  power: 3
-  cost: 1
+  myName: Spirit Strike
+  description: Lands a spirit strike on the enemy
+  power: 30
+  cost: 2
   accuaracy: 100
   type: {fileID: 11400000, guid: a4c97200caf8eb0449b94217efcbf0b3, type: 2}
   isPhysical: 0
   canTargetEnemy: 0
-  canTargetAlly: 1
-  animation: 3
+  canTargetAlly: 0
+  animation: 2

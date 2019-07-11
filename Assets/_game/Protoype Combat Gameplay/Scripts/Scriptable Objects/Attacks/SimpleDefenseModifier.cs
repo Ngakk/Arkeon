@@ -5,17 +5,17 @@ using UnityEngine;
 
 namespace ArkeonBattle
 {
-    [CreateAssetMenu(fileName = "SimpleAttack", menuName = "Arkeon Creature/Arkeon Attacks/Simple Attack", order = 0)]
-    public class SimpleAttack : ArkeonAttack
+    [CreateAssetMenu(fileName = "SimpleDefenseModifier", menuName = "Arkeon Creature/Arkeon Attacks/Simple Defense Modifier", order = 0)]
+    public class SimpleDefenseModifier : ArkeonAttack
     {
+        [Tooltip("Este valor es lo que se le va a agregar a los stats del arkeon, puede ser negativo o positivo")]
+        public int value = 0;
+
         public override void OnBattle(ArkeonInBattle _attacker, ArkeonInBattle _target, Action<HitTypes> _onHitCallback)
         {
-            ArkeonBattleUtility.ArkeonCombatResult result = ArkeonBattleUtility.GetCombatResult(_attacker.GetStats(), this, _target.GetStats());
-
             _attacker.animEvents.onAttackHitAction = () =>
             {
-                _onHitCallback(result.hitType);
-                _target.myInstance.currentHp -= result.damageDone;
+                _target.inBattleModifiers.def += value;
             };
 
             _attacker.AnimAttack(animation);
@@ -24,13 +24,9 @@ namespace ArkeonBattle
 
         public override void OnBattle(ArkeonInBattle _attacker, PlayerCharacterBattle _target, Action<HitTypes> _onHitCallback)
         {
-            ArkeonBattleUtility.ArkeonCombatResult result = ArkeonBattleUtility.GetCombatResult(_attacker.GetStats(), this, _target.GetStats());
-
             _attacker.animEvents.onAttackHitAction = () =>
             {
-                _onHitCallback(result.hitType);
-                _target.currentHp -= result.damageDone;
-                Debug.Log("Damage done: " + result.damageDone);
+                _target.inBattleModifiers.def += value;
             };
 
             _attacker.AnimAttack(animation);

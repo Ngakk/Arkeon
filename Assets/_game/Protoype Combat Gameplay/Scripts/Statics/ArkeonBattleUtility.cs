@@ -26,9 +26,12 @@ namespace ArkeonBattle
         /// <param name="_pwr"></param>
         /// <param name="_def"></param>
         /// <returns></returns>
-        public static int CalculateDamage(int _atk, int _pwr, int _def)
+        public static float CalculateBaseDamage(int _lvl, int _atk, int _pwr, int _def)
         {
-            return (int)Mathf.Round((_atk * _pwr) / _def);
+            float lvlMod = (0.4f * _lvl);
+            float statMod = ((float)_atk / (float)_def);
+
+            return (lvlMod * (float)_pwr * statMod) / 25f;
         }
 
         /// <summary>
@@ -53,15 +56,8 @@ namespace ArkeonBattle
 
                 float modifier = MatchupMultiplier(_arkAtk.type, _defender.type) /*TODO: crit*/;
 
-                float lvlMod = (2f * _attacker.lvl) / 5f;
-                float statMod = ((float)_attacker.atk / (float)_defender.def);
-
-                damageDone = Mathf.FloorToInt(((lvlMod * (float)_arkAtk.power * statMod) /25f) * modifier);
+                damageDone = Mathf.FloorToInt((CalculateBaseDamage(_attacker.lvl, _attacker.atk, _arkAtk.power, _defender.def) * modifier));
                 Debug.Log("Damage calculated: " + damageDone);
-                Debug.Log("lvlMod: " + lvlMod);
-                Debug.Log("statMod: " + statMod);
-
-
             }
             else
             {

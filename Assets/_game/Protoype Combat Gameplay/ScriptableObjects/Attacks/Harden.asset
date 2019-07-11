@@ -9,18 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee180513b724e594e919f0acc709d5ce, type: 3}
-  m_Name: LowHeal
+  m_Script: {fileID: 11500000, guid: bdceef51f0b5f794bb57d9c0b584c3d1, type: 3}
+  m_Name: Harden
   m_EditorClassIdentifier: 
   db_id: 0
   glyph: {fileID: 0}
-  myName: Lesser Heal
-  description: Does a lesser heal
-  power: 3
-  cost: 1
+  myName: Harden
+  description: Rises the caster's defense
+  power: 0
+  cost: 2
   accuaracy: 100
-  type: {fileID: 11400000, guid: a4c97200caf8eb0449b94217efcbf0b3, type: 2}
-  isPhysical: 0
-  canTargetEnemy: 0
-  canTargetAlly: 1
+  type: {fileID: 11400000, guid: 708fc30a0b6970145bff853c9a3885c5, type: 2}
+  isPhysical: 1
+  targetType: 0
   animation: 3
+  value: 2

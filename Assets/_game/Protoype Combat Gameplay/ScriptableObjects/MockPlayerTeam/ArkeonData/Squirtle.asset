@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8ab6396912eb4140b81bc43a7da9f84, type: 3}
-  m_Name: RedCapsule
+  m_Name: Squirtle
   m_EditorClassIdentifier: 
-  originalName: RedCapsule
-  modelPrefab: {fileID: 3759170950674461054, guid: e8ffe601717f5d44b8e6f8a4fcdaaff3,
+  db_id: 0
+  originalName: Squirtle
+  description: 
+  modelPrefab: {fileID: 3759170950674461054, guid: f22f7b24d4d1bde4d83702a87ac14c03,
     type: 3}

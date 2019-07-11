@@ -23,6 +23,7 @@ namespace ArkeonBattle
         State allyState = State.TURN, enemyState = State.NOT_TURN;
 
         int allyChosen = 0, enemyChosen = 0;
+        bool targetAlly, targetEnemy;
         bool returnToTurn = false;
 
         public override void OnInspectorGUI()
@@ -36,13 +37,13 @@ namespace ArkeonBattle
             EditorGUILayout.LabelField("HP: ", myScript.player.currentHp.ToString());
             EditorGUILayout.LabelField("MP: ", myScript.player.currentMp.ToString());
 
-            CharacterOptions(myScript.player, ref allyState, ref enemyState, ref allyChosen);
+            CharacterOptions(myScript.player, ref allyState, ref enemyState, ref allyChosen, myScript.enemy, ref targetAlly, ref targetEnemy);
 
             EditorGUILayout.LabelField("Enemy options", EditorStyles.boldLabel);
             EditorGUILayout.LabelField("HP: ", myScript.enemy.currentHp.ToString());
             EditorGUILayout.LabelField("MP: ", myScript.enemy.currentMp.ToString());
             
-            CharacterOptions(myScript.enemy, ref enemyState, ref allyState, ref enemyChosen);
+            CharacterOptions(myScript.enemy, ref enemyState, ref allyState, ref enemyChosen, myScript.player, ref targetAlly, ref targetEnemy);
 
             //EditorGUI.DrawRect(new Rect(50, 500, 100, 70), Color.green);
 
@@ -50,7 +51,7 @@ namespace ArkeonBattle
             CharacterTeam(myScript.enemy);
         }
 
-        void CharacterOptions(PlayerCharacterBattle _chara, ref State _state, ref State _enemyState, ref int _chosen)
+        void CharacterOptions(PlayerCharacterBattle _chara, ref State _state, ref State _enemyState, ref int _chosen, PlayerCharacterBattle _enemy, ref bool _targetAlly, ref bool _targetEnemy)
         {
             switch (_state)
             {
@@ -125,16 +126,71 @@ namespace ArkeonBattle
                         {
                             if (_chara.CommandArkeonAttack(status, i))
                             {
-                                if (status.arkeon.myInstance.attacks[i].targetsEnemy)
+                                switch (status.arkeon.myInstance.attacks[i].targetType)
+                                {
+                                    case AttackTargets.SELF:
+                                        if(_chara.CommandArkeonShield(_chosen))
+                                        {
+                                            _state = State.WAITING;
+                                        }
+                                        else
+                                        {
+                                            _state = State.CHOOSING;
+                                        }
+                                        break;
+                                    case AttackTargets.NON_TARGETED_ENEMY:
+                                        _state = State.WAITING;
+                                        _enemyState = State.SHIELDING;
+
+                                        _targetAlly = true;
+                                        _targetEnemy = false;
+                                        break;
+                                    case AttackTargets.TARGETED_ENEMY:
+                                        _state = State.SHIELDING;
+
+                                        returnToTurn = true;
+
+                                        _targetAlly = true;
+                                        _targetEnemy = false;
+                                        break;
+                                    case AttackTargets.TARGETED_ALLY:
+                                        _state = State.SHIELDING;
+
+                                        returnToTurn = true;
+
+                                        _targetAlly = false;
+                                        _targetEnemy = true;
+                                        break;
+                                    case AttackTargets.TARGETED_ALLY_OR_ENEMY:
+                                        _state = State.SHIELDING;
+
+                                        returnToTurn = true;
+
+                                        _targetAlly = true;
+                                        _targetEnemy = true;
+                                        break;
+                                }
+
+                                /*if (!status.arkeon.myInstance.attacks[i].canTargetEnemy && !status.arkeon.myInstance.attacks[i].canTargetAlly)
                                 {
                                     _state = State.WAITING;
                                     _enemyState = State.SHIELDING;
+
+                                    _targetAlly = !status.arkeon.myInstance.attacks[i].canTargetAlly;
+                                    _targetEnemy = status.arkeon.myInstance.attacks[i].canTargetEnemy;
                                 }
                                 else
                                 {
                                     _state = State.SHIELDING;
                                     returnToTurn = true;
-                                }
+
+                                    _targetAlly = status.arkeon.myInstance.attacks[i].canTargetAlly;
+                                    _targetEnemy = status.arkeon.myInstance.attacks[i].canTargetEnemy;
+                                }*/
+                            }
+                            else
+                            {
+                                Debug.Log("Couldn't command arkeon attack");
                             }
                         }
                     }
@@ -149,6 +205,7 @@ namespace ArkeonBattle
                     }
                     break;
                 case State.SHIELDING:
+                    GUILayout.Label("Ally arkeons:");
                     for (int i = 0; i < _chara.arkeonsOut.Count; i++)
                     {
                         if (GUILayout.Button("Block with " + _chara.arkeonsOut[i].arkeon.myInstance.arkeonData.originalName))
@@ -182,7 +239,49 @@ namespace ArkeonBattle
                             }
                         }
                     }
-                    if(GUILayout.Button("No block"))
+
+                    if (_targetEnemy)
+                    {
+                        GUILayout.Label("Enemy arkeons:");
+
+                        for (int i = 0; i < _enemy.arkeonsOut.Count; i++)
+                        {
+                            if (GUILayout.Button("Block with " + _enemy.arkeonsOut[i].arkeon.myInstance.arkeonData.originalName))
+                            {
+                                if (_enemy.CommandArkeonShield(i))
+                                {
+                                    if (!returnToTurn)
+                                    {
+                                        _state = State.NOT_TURN;
+                                    }
+                                    else
+                                    {
+                                        _state = State.TURN;
+                                        returnToTurn = false;
+                                    }
+                                }
+                            }
+                        }
+                        if (GUILayout.Button("Block with Familiar"))
+                        {
+                            if (_enemy.CommandFamiliarShield())
+                            {
+                                if (!returnToTurn)
+                                {
+                                    _state = State.NOT_TURN;
+                                }
+                                else
+                                {
+                                    _state = State.TURN;
+                                    returnToTurn = false;
+                                }
+                            }
+                        }
+                    }
+
+                    GUILayout.Label("Other options: ");
+
+                    if (GUILayout.Button("No block"))
                     {
                         if(_chara.CommandNoShield())
                         {

@@ -10,18 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a963a86fbc22dda4896ff646196d2cbe, type: 3}
-  m_Name: Arkeon1
+  m_Name: BulbasaurInstance
   m_EditorClassIdentifier: 
-  myName: unoriginal name
-  currentHp: 6
+  sprite: {fileID: 0}
+  myName: Bulbasaur
+  currentHp: 19
   stats:
-    lvl: 1
-    maxHp: 6
-    atk: 4
-    def: 4
-    cost: 4
-    type: {fileID: 11400000, guid: a4c97200caf8eb0449b94217efcbf0b3, type: 2}
+    lvl: 5
+    maxHp: 19
+    maxMp: 0
+    atk: 9
+    def: 9
+    cost: 6
+    type: {fileID: 11400000, guid: 708fc30a0b6970145bff853c9a3885c5, type: 2}
   attacks:
+  - {fileID: 11400000, guid: e2979580b6b23c34895825f7a2a1e78b, type: 2}
   - {fileID: 11400000, guid: 447579d5330931e4696f4669b388e727, type: 2}
-  - {fileID: 11400000, guid: 2a25a758178cf544d8eb2c42f5bea6be, type: 2}
   arkeonData: {fileID: 11400000, guid: 31e5f46983c5281489bf028ce553a8ce, type: 2}

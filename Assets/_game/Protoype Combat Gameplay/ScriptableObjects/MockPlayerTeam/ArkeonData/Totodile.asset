@@ -10,8 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c8ab6396912eb4140b81bc43a7da9f84, type: 3}
-  m_Name: WhiteCapsule
+  m_Name: Totodile
   m_EditorClassIdentifier: 
-  originalName: WhiteCapsule
-  modelPrefab: {fileID: 3759170950674461054, guid: dd7abe167426f9d41830ca9826954f55,
+  db_id: 0
+  originalName: Totodile
+  description: 
+  modelPrefab: {fileID: 3759170950674461054, guid: f22f7b24d4d1bde4d83702a87ac14c03,
     type: 3}

@@ -14,10 +14,19 @@ namespace ArkeonBattle
 
     public enum AttackAnimations : int
     {
-        NOTHING,
-        MELEE_ATTACK,
-        RANGED_ATTACK,
-        HEAL,
+        NOTHING = 0,
+        MELEE_ATTACK = 1,
+        RANGED_ATTACK = 2,
+        HEAL = 3,
+    }
+
+    public enum AttackTargets : int
+    {
+        SELF,
+        NON_TARGETED_ENEMY,
+        TARGETED_ENEMY,
+        TARGETED_ALLY,
+        TARGETED_ALLY_OR_ENEMY
     }
 
     //[CreateAssetMenu(fileName = "BaseAttack", menuName = "Arkeon Creature/Arkeon Attacks/Base Attack", order = 3)]
@@ -32,7 +41,7 @@ namespace ArkeonBattle
         public int accuaracy;
         public ArkeonElement type;
         public bool isPhysical;
-        public bool targetsEnemy = true;
+        public AttackTargets targetType;
         public AttackAnimations animation;
 
         /// <summary>

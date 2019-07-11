@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347e7dc9a1706294398b142735701e3b, type: 3}
   m_Name: EnemyTeam
   m_EditorClassIdentifier: 
-  lightBook:
-  - {fileID: 11400000, guid: e5fc123fe8ed0f64f976888c9dd4a747, type: 2}
+  lightBook: []
   darkBook: []
-  natureBook: []
+  natureBook:
+  - {fileID: 11400000, guid: 8f283ed0ae4a92b4e9e631b464389405, type: 2}
+  - {fileID: 11400000, guid: 2e8553bee4af0fa429a1b4adb8757f33, type: 2}
+  - {fileID: 11400000, guid: 48c2374c55dc6f245a119915ab147139, type: 2}

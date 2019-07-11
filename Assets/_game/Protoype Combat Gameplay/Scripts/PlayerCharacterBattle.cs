@@ -39,6 +39,7 @@ namespace ArkeonBattle
         public ArkeonInstance familiar;
         [Header("Stats")]
         public ArkeonStats stats;
+        public ArkeonStats inBattleModifiers;
         public int currentHp;
         public int currentMp;
         [Header("Instancias")]
@@ -54,6 +55,8 @@ namespace ArkeonBattle
             animEvents = GetComponent<CharacterAnimEvents>();
 
             currentHp = stats.maxHp;
+
+            inBattleModifiers = new ArkeonStats();
 
             InvokeFamiliar();
         }
@@ -87,6 +90,11 @@ namespace ArkeonBattle
             familiarOut = new ArkeonBattleStatus(0, aib, false, 0);
 
             return true;
+        }
+
+        public ArkeonStats GetStats()
+        {
+            return stats + inBattleModifiers;
         }
 
         //Comandos de arkeons
@@ -183,11 +191,13 @@ namespace ArkeonBattle
         //atacar
         public bool CommandArkeonAttack(ArkeonBattleStatus _status, int _attack)
         {
-            if (!_status.isOnFront || _status.arkeon.myInstance.attacks.Count < _attack || _status.arkeon.myInstance.stats.cost > currentMp)
+            ArkeonAttack arkAtk = _status.arkeon.myInstance.attacks[_attack];
+            Debug.Log("Tryed to use attack " + _status.arkeon.myInstance.attacks[_attack].myName + ". IsOnFront: " + _status.isOnFront + ", Status attack count: " + _status.arkeon.myInstance.attacks.Count + ", Attack cost: " + arkAtk.cost);
+            if (!_status.isOnFront || _status.arkeon.myInstance.attacks.Count < _attack || arkAtk.cost > currentMp)
                 return false;
             
             _status.arkeon.AttackSet(_attack);
-            currentMp -= _status.arkeon.myInstance.attacks[_attack].cost;
+            currentMp -= arkAtk.cost;
 
             Debug.Log("Succesfully commanded arkeon attack");
             return true;
@@ -207,7 +217,8 @@ namespace ArkeonBattle
         //defender
         public bool CommandArkeonShield(int _arkeonOutId)
         {
-            if (arkeonsOut[_arkeonOutId].isOnFront)
+            Debug.Log("Trying to defend with " + arkeonsOut[_arkeonOutId].arkeon.myInstance.arkeonData.originalName + ". IsOnFront: " + arkeonsOut[_arkeonOutId].isOnFront);
+            if (_arkeonOutId >= arkeonsOut.Count)
                 return false;
 
             ManagerStaticBattle.battleManager.SetDefender(arkeonsOut[_arkeonOutId].arkeon);
