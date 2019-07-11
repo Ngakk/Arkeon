@@ -233,7 +233,7 @@ public class BattleMenu_Main : MonoBehaviour
             ArkeonAttack selectedAttack = null;
             for (int i = 0; i < selectedArkeon.attacks.Count; i++)
             {
-                if (selectedArkeon.attacks[i].DBID == _atkId)
+                if (selectedArkeon.attacks[i].db_id == _atkId)
                     selectedAttack = selectedArkeon.attacks[i];
             }
 
