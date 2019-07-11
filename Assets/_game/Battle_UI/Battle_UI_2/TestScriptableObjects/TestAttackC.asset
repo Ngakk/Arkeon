@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aba1afd98458944a9c9d51cf9d7c9b2, type: 3}
   m_Name: TestAttackC
   m_EditorClassIdentifier: 
+  DBID: 130
   glyph: {fileID: 21300000, guid: 172f70d22811c0a4c9d77fac95e1f293, type: 3}
   myName: NothingPersonnel
   description: Teleports behind you

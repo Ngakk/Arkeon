@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aba1afd98458944a9c9d51cf9d7c9b2, type: 3}
   m_Name: TestAttackD
   m_EditorClassIdentifier: 
+  DBID: 150
   glyph: {fileID: 21300000, guid: 172f70d22811c0a4c9d77fac95e1f293, type: 3}
   myName: Cross-Slash
   description: Slashes the opponent 3 times. Paralyzes the opponent.
