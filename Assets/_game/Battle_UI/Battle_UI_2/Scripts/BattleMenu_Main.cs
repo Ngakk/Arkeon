@@ -31,11 +31,8 @@ public class BattleMenu_Main : MonoBehaviour
     public GameObject atk_pfb;
     public GameObject ark_pfb;
 
-    public ArkeonTeam team;
-
     private MENUSTATES currentMenuState = MENUSTATES.SMN;
     private MENUSTATES previousMenuState = MENUSTATES.SMN;
-    private List<ArkeonInstance> summonedArkeons = new List<ArkeonInstance>();
     private ArkeonInstance selectedArkeon;
     private ArkeonAttack selectedAttack = null;
     public string[] itemNames;
@@ -61,7 +58,7 @@ public class BattleMenu_Main : MonoBehaviour
         }
     }
 
-    public void ProcessArkeonSelection(ArkeonInstance _ark)
+    public void ProcessArkeonSelection(BattleMenu_ArkCard _ark)
     {
         if (currentMenuState == MENUSTATES.BOOKA || currentMenuState == MENUSTATES.BOOKB || currentMenuState == MENUSTATES.BOOKC)
         {
@@ -121,8 +118,9 @@ public class BattleMenu_Main : MonoBehaviour
             Debug.Log("Invalid Panel");
     }
 
-    public void SummonArkeon(ArkeonInstance _ark)
+    public void SummonArkeon(BattleMenu_ArkCard _ark)
     {
+        /* Legacy Method 
         if (summonedArkeons.Count < 2)
         {
             bool duplicate = false;
@@ -144,30 +142,40 @@ public class BattleMenu_Main : MonoBehaviour
         } else
         {
             Debug.Log("Arkeon Limit Reached");
-        }
+        } */
+        player.InvokeArkeon(_ark.arkeonTeamId);
+        LoadSummonedArkeons();
+        SetActivePanel((int)MENUSTATES.ATK);
     }
 
     public void LoadArkeons()
     {
         // Load Book A Arkeons
-        for (int i = 0; i < team.lightBook.Count; i++)
+        int teamId = 0;
+        for (int i = 0; i < player.arkeonTeam.lightBook.Count; i++)
         {
             GameObject ark = Instantiate(ark_pfb, panels[(int)MENUSTATES.BOOKA].transform);
-            ark.GetComponent<BattleMenu_ArkCard>().SetAllData(team.lightBook[i]);
+            ark.GetComponent<BattleMenu_ArkCard>().SetAllData(player.arkeonTeam.lightBook[i]);
+            ark.GetComponent<BattleMenu_ArkCard>().arkeonTeamId = teamId;
+            teamId++;
         }
 
         // Load Book B Arkeons
-        for (int i = 0; i < team.darkBook.Count; i++)
+        for (int i = 0; i < player.arkeonTeam.darkBook.Count; i++)
         {
             GameObject ark = Instantiate(ark_pfb, panels[(int)MENUSTATES.BOOKB].transform);
-            ark.GetComponent<BattleMenu_ArkCard>().SetAllData(team.darkBook[i]);
+            ark.GetComponent<BattleMenu_ArkCard>().SetAllData(player.arkeonTeam.darkBook[i]);
+            ark.GetComponent<BattleMenu_ArkCard>().arkeonTeamId = teamId;
+            teamId++;
         }
 
         // Load Book C Arkeons
-        for (int i = 0; i < team.natureBook.Count; i++)
+        for (int i = 0; i < player.arkeonTeam.natureBook.Count; i++)
         {
             GameObject ark = Instantiate(ark_pfb, panels[(int)MENUSTATES.BOOKC].transform);
-            ark.GetComponent<BattleMenu_ArkCard>().SetAllData(team.natureBook[i]);
+            ark.GetComponent<BattleMenu_ArkCard>().SetAllData(player.arkeonTeam.natureBook[i]);
+            ark.GetComponent<BattleMenu_ArkCard>().arkeonTeamId = teamId;
+            teamId++;
         }
     }
 
@@ -181,6 +189,7 @@ public class BattleMenu_Main : MonoBehaviour
         {
             GameObject ark = Instantiate(ark_pfb, panels[(int)MENUSTATES.ATK].transform);
             ark.GetComponent<BattleMenu_ArkCard>().SetAllData(player.arkeonsOut[i].arkeon.myInstance);
+            ark.GetComponent<BattleMenu_ArkCard>().arkeonOutId = i;
         }
     }
 
@@ -208,7 +217,8 @@ public class BattleMenu_Main : MonoBehaviour
             {
                 GameObject trg = Instantiate(ark_pfb, allyTargetsPanel.transform);
                 trg.GetComponent<BattleMenu_ArkCard>().SetAllData(_allyTargets[i].arkeon.myInstance);
-                trg.GetComponent<Button>().onClick.AddListener(delegate { SelectTarget(trg, _isAttack); });
+                trg.GetComponent<Button>().onClick.AddListener(delegate { SelectTarget(trg.GetComponent<BattleMenu_ArkCard>(), _isAttack); });
+                trg.GetComponent<BattleMenu_ArkCard>().arkeonOutId = i;
             }
         }
 
@@ -219,7 +229,8 @@ public class BattleMenu_Main : MonoBehaviour
             {
                 GameObject trg = Instantiate(ark_pfb, opptTargetsPanel.transform);
                 trg.GetComponent<BattleMenu_ArkCard>().SetAllData(_opptTargets[i].arkeon.myInstance);
-                trg.GetComponent<Button>().onClick.AddListener(delegate { SelectTarget(trg, _isAttack); });
+                trg.GetComponent<Button>().onClick.AddListener(delegate { SelectTarget(trg.GetComponent<BattleMenu_ArkCard>(), _isAttack); });
+                trg.GetComponent<BattleMenu_ArkCard>().arkeonOutId = i;
             }
         }
     }
@@ -229,16 +240,23 @@ public class BattleMenu_Main : MonoBehaviour
         SetActivePanel((int)previousMenuState);
     }
 
-    public void SelectTarget(GameObject _target, bool _isAttack)
+    public void SelectTarget(BattleMenu_ArkCard _target, bool _isAttack)
     {
         if (_isAttack)
-            Debug.Log(selectedArkeon.myName + " used " + selectedAttack.myName + " on " + _target.GetComponent<BattleMenu_ArkCard>().arkeonInstanceSO.myName);
+        {
+            Debug.Log(selectedArkeon.myName + " used " + selectedAttack.myName + " on " + _target.arkeonInstanceSO.myName);
+            //player.CommandArkeonAttack(null, selectedAttack.db_id);
+        }
         else
-            Debug.Log(_target + " selected as target");
+        {
+            Debug.Log(_target.gameObject.name + " selected as target");
+            player.CommandArkeonShield(_target.arkeonOutId);
+        } 
     }
 
-    public void SelectSummonedArkeon(ArkeonInstance _ark)
+    public void SelectSummonedArkeon(BattleMenu_ArkCard _ark)
     {
+        /* Legacy Method
         bool isSummoned = false;
 
         if (currentMenuState == MENUSTATES.ATK)
@@ -260,7 +278,12 @@ public class BattleMenu_Main : MonoBehaviour
             }
             else
                 Debug.Log("Invalid Arkeon");
-        }
+        } */
+
+        player.ChooseAttacker(_ark.arkeonOutId);
+        selectedArkeon = _ark.arkeonInstanceSO;
+        SetActivePanel((int)MENUSTATES.ARKEONCMD);
+        LoadArkeonAttacks();
     }
 
     public void LoadArkeonAttacks()

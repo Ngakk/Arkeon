@@ -14,6 +14,8 @@ public class BattleMenu_ArkCard : MonoBehaviour
     public TextMeshProUGUI arkCostText;
 
     public ArkeonInstance arkeonInstanceSO;
+    public int arkeonTeamId = -1;
+    public int arkeonOutId = -1;
 
     public GameObject infoPanel;
     public BattleMenu_Main menuMain;
@@ -55,7 +57,7 @@ public class BattleMenu_ArkCard : MonoBehaviour
 
     public void SelectArkeon()
     {
-        menuMain.ProcessArkeonSelection(arkeonInstanceSO);
+        menuMain.ProcessArkeonSelection(this);
     }
 
     public void InspectArkeon()
