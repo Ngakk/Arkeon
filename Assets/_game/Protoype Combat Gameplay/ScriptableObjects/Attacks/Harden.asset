@@ -22,5 +22,5 @@ MonoBehaviour:
   type: {fileID: 11400000, guid: 708fc30a0b6970145bff853c9a3885c5, type: 2}
   isPhysical: 1
   targetType: 0
-  animation: 3
+  animation: 0
   value: 2

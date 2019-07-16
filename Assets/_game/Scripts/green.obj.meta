@@ -41,6 +41,18 @@ ModelImporter:
     2100018: mayuL
     2100020: mayuR
     2100022: mouth
+    2100024: polygon0Mat
+    2100026: polygon1Mat
+    2100028: polygon10Mat
+    2100030: polygon11Mat
+    2100032: polygon2Mat
+    2100034: polygon3Mat
+    2100036: polygon4Mat
+    2100038: polygon5Mat
+    2100040: polygon6Mat
+    2100042: polygon7Mat
+    2100044: polygon8Mat
+    2100046: polygon9Mat
     2300000: polygon0
     2300002: polygon1
     2300004: polygon10

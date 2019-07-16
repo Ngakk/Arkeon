@@ -7493,13 +7493,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752876808}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 49edb0c6fcc7f6b428973f9700eadc33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  enemy: {fileID: 0}
+  player: {fileID: 374512274}
+  enemy: {fileID: 639167541}
   panels:
   - {fileID: 1705904997}
   - {fileID: 1816225639}
@@ -7510,14 +7510,14 @@ MonoBehaviour:
   - {fileID: 747807079}
   - {fileID: 267986688}
   - {fileID: 718859727}
+  allyTargetsPanel: {fileID: 0}
+  opptTargetsPanel: {fileID: 0}
+  mainOptions: []
   item_pfb: {fileID: 8349627310714501993, guid: c90f73afd39a8a348a65a0e76bb7b635,
     type: 3}
   atk_pfb: {fileID: 5105642571897521583, guid: 6bf7fa39a5e7955419d2e05cdbfe0a18, type: 3}
-  summonedArkeons:
-  - {fileID: 11400000, guid: d1734640c5c430042b8b705412783c9d, type: 2}
-  - {fileID: 11400000, guid: a0d0c49b61038a04788c5dc39f42bd82, type: 2}
-  - {fileID: 11400000, guid: 54b83c35dd0d4654897dea1a80492d4d, type: 2}
-  - {fileID: 11400000, guid: d3beb7784f55f234784f06d718dc5a2c, type: 2}
+  ark_pfb: {fileID: 0}
+  team: {fileID: 0}
   itemNames:
   - potion
   - ether
