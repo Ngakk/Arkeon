@@ -142,6 +142,8 @@ public class BattleMenu_Main : MonoBehaviour
     public void LoadArkeons()
     {
         // Load Book A Arkeons
+        Debug.Log(team);
+
         for (int i = 0; i < team.lightBook.Count; i++)
         {
             GameObject ark = Instantiate(ark_pfb, panels[(int)MENUSTATES.BOOKA].transform);

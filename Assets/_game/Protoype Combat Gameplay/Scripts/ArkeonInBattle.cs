@@ -112,7 +112,8 @@ namespace ArkeonBattle
         }
         public void AnimAttack(AttackAnimations _type)
         {
-            anim.SetInteger("AttackType", (int)_type);
+            Debug.Log("Anim attack type: " + (int)_type);
+            anim.SetInteger("Action", (int)_type);
             anim.SetTrigger("Attack");
         }
         public void AnimGoBack()

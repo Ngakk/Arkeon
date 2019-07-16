@@ -15,6 +15,4 @@ MonoBehaviour:
   lightBook: []
   darkBook: []
   natureBook:
-  - {fileID: 11400000, guid: 66f46a986d7d19842a6dcf645ab6b4a3, type: 2}
-  - {fileID: 11400000, guid: d802e09c55f4f3d438cf9c5627f5329c, type: 2}
   - {fileID: 11400000, guid: e5fc123fe8ed0f64f976888c9dd4a747, type: 2}
