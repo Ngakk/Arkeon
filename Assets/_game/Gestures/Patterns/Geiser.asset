@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce0fdb4e39b5744abf0c061bd2a3e30, type: 3}
+  m_Name: Geiser
+  m_EditorClassIdentifier: 
+  id: 133
+  points: []
+  gesture:
+    lines:
+    - points:
+      - {x: 0.07960199, y: 0.23383087}
+      - {x: 0.21393035, y: 0.25870645}
+      - {x: 0.35820895, y: 0.23880595}
+      - {x: 0.53731346, y: 0.16417909}
+      - {x: 0.65174127, y: 0.08457714}
+      closedLine: 0
+    - points:
+      - {x: 0.8606965, y: 0.17412937}
+      - {x: 0.7960199, y: 0.38805968}
+      - {x: 0.7910448, y: 0.5273632}
+      - {x: 0.8159204, y: 0.6567164}
+      - {x: 0.880597, y: 0.76119405}
+      closedLine: 0
+    - points:
+      - {x: 0.20895523, y: 0.3333333}
+      - {x: 0.21890548, y: 0.48258704}
+      - {x: 0.2835821, y: 0.5920398}
+      - {x: 0.37313432, y: 0.68159205}
+      - {x: 0.46766168, y: 0.7263682}
+      - {x: 0.5721393, y: 0.76119405}
+      - {x: 0.72139305, y: 0.76119405}
+      closedLine: 0
+    - points:
+      - {x: 0.05472637, y: 0.37810946}
+      - {x: 0.07960199, y: 0.56218904}
+      - {x: 0.15920398, y: 0.70149255}
+      - {x: 0.23383084, y: 0.78606963}
+      - {x: 0.31840795, y: 0.8557214}
+      - {x: 0.43781096, y: 0.8905473}
+      - {x: 0.6268657, y: 0.93532336}
+      - {x: 0.76616913, y: 0.9402985}
+      closedLine: 0
+  useLinesOrder: 0
+  useLinesDirections: 0

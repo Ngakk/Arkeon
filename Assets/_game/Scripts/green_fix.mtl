@@ -1,0 +1,96 @@
+newmtl belt
+Ka 0 0 0
+Kd 0.4705882 0.4705882 0.4705882
+d 1
+Tr 1
+map_Ka belt.png
+map_Kd belt.png
+map_d belt.png
+newmtl cap
+Ka 0 0 0
+Kd 0.4705882 0.4705882 0.4705882
+d 1
+Tr 1
+map_Ka cap.png
+map_Kd cap.png
+map_d cap.png
+newmtl eyeL
+Ka 0 0 0
+Kd 0.03137255 0.03137255 0.03137255
+d 1
+Tr 1
+map_Ka eyeL.png
+map_Kd eyeL.png
+map_d eyeL.png
+newmtl eyeR
+Ka 0 0 0
+Kd 0.03137255 0.03137255 0.03137255
+d 1
+Tr 1
+map_Ka eyeR.png
+map_Kd eyeR.png
+map_d eyeR.png
+newmtl hand
+Ka 0 0 0
+Kd 0.4705882 0.4705882 0.4705882
+d 1
+Tr 1
+map_Ka hand.png
+map_Kd hand.png
+map_d hand.png
+newmtl mayuL
+Ka 0 0 0
+Kd 0.4705882 0.4705882 0.4705882
+d 1
+Tr 1
+map_Ka mayuL_fix.png
+map_Kd mayuL_fix.png
+map_d mayuL_fix.png
+newmtl mayuR
+Ka 0 0 0
+Kd 0.4705882 0.4705882 0.4705882
+d 1
+Tr 1
+map_Ka mayuR_fix.png
+map_Kd mayuR_fix.png
+map_d mayuR_fix.png
+newmtl mouth
+Ka 0 0 0
+Kd 0.4705882 0.4705882 0.4705882
+d 1
+Tr 1
+map_Ka mouth_fix.png
+map_Kd mouth_fix.png
+map_d mouth_fix.png
+newmtl sheath
+Ka 0 0 0
+Kd 0.4705882 0.4705882 0.4705882
+d 1
+Tr 1
+map_Ka sheath.png
+map_Kd sheath.png
+map_d sheath.png
+newmtl sheathB
+Ka 0 0 0
+Kd 0.4705882 0.4705882 0.4705882
+d 1
+Tr 1
+map_Ka sheathB.png
+map_Kd sheathB.png
+map_d sheathB.png
+newmtl swA
+Ka 0 0 0
+Kd 0.4705882 0.4705882 0.4705882
+d 1
+Tr 1
+map_Ka swA.png
+map_Kd swA.png
+map_d swA.png
+newmtl swB
+Ka 0 0 0
+Kd 0.4705882 0.4705882 0.4705882
+d 1
+Tr 1
+map_Ka swB.png
+map_Kd swB.png
+map_d swB.png
