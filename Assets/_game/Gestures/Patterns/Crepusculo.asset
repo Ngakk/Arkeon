@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ce0fdb4e39b5744abf0c061bd2a3e30, type: 3}
+  m_Name: Crepusculo
+  m_EditorClassIdentifier: 
+  id: 119
+  points: []
+  gesture:
+    lines:
+    - points:
+      - {x: 0.08955224, y: 0.23880595}
+      - {x: 0.3084577, y: 0.23383087}
+      - {x: 0.48756218, y: 0.25870645}
+      - {x: 0.6318408, y: 0.39800996}
+      - {x: 0.7164179, y: 0.5671642}
+      - {x: 0.76119405, y: 0.86567163}
+      - {x: 0.8557214, y: 0.7164179}
+      - {x: 0.880597, y: 0.49253732}
+      - {x: 0.8109453, y: 0.27860695}
+      - {x: 0.67164177, y: 0.12935323}
+      - {x: 0.40298507, y: 0.08955222}
+      - {x: 0.1641791, y: 0.124378085}
+      closedLine: 1
+    - points:
+      - {x: 0.17412935, y: 0.23880595}
+      - {x: 0.1442786, y: 0.39800996}
+      - {x: 0.16915423, y: 0.5671642}
+      - {x: 0.26865673, y: 0.68159205}
+      - {x: 0.41791046, y: 0.78606963}
+      - {x: 0.60199004, y: 0.8159204}
+      - {x: 0.7363184, y: 0.7761194}
+      closedLine: 0
+    - points:
+      - {x: 0.08457711, y: 0.54228854}
+      - {x: 0.03482587, y: 0.6567164}
+      - {x: 0.17412935, y: 0.6965174}
+      - {x: 0.16915423, y: 0.8358209}
+      - {x: 0.33333334, y: 0.82089555}
+      - {x: 0.3681592, y: 0.93532336}
+      - {x: 0.46766168, y: 0.86567163}
+      closedLine: 0
+  useLinesOrder: 0
+  useLinesDirections: 0

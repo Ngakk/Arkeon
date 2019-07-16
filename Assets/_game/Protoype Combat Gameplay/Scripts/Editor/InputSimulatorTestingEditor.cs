@@ -142,6 +142,8 @@ namespace ArkeonBattle
                                         _state = State.WAITING;
                                         _enemyState = State.SHIELDING;
 
+                                        returnToTurn = true;
+
                                         _targetAlly = true;
                                         _targetEnemy = false;
                                         break;
@@ -150,8 +152,8 @@ namespace ArkeonBattle
 
                                         returnToTurn = true;
 
-                                        _targetAlly = true;
-                                        _targetEnemy = false;
+                                        _targetAlly = false;
+                                        _targetEnemy = true;
                                         break;
                                     case AttackTargets.TARGETED_ALLY:
                                         _state = State.SHIELDING;
@@ -205,12 +207,30 @@ namespace ArkeonBattle
                     }
                     break;
                 case State.SHIELDING:
-                    GUILayout.Label("Ally arkeons:");
-                    for (int i = 0; i < _chara.arkeonsOut.Count; i++)
+                    if (_targetAlly)
                     {
-                        if (GUILayout.Button("Block with " + _chara.arkeonsOut[i].arkeon.myInstance.arkeonData.originalName))
+                        GUILayout.Label("Ally arkeons:");
+                        for (int i = 0; i < _chara.arkeonsOut.Count; i++)
                         {
-                            if (_chara.CommandArkeonShield(i))
+                            if (GUILayout.Button("Block with " + _chara.arkeonsOut[i].arkeon.myInstance.arkeonData.originalName))
+                            {
+                                if (_chara.CommandArkeonShield(i))
+                                {
+                                    if (!returnToTurn)
+                                    {
+                                        _state = State.NOT_TURN;
+                                    }
+                                    else
+                                    {
+                                        _state = State.TURN;
+                                        returnToTurn = false;
+                                    }
+                                }
+                            }
+                        }
+                        if (GUILayout.Button("Block with Familiar"))
+                        {
+                            if (_chara.CommandFamiliarShield())
                             {
                                 if (!returnToTurn)
                                 {
@@ -224,21 +244,7 @@ namespace ArkeonBattle
                             }
                         }
                     }
-                    if(GUILayout.Button("Block with Familiar"))
-                    {
-                        if(_chara.CommandFamiliarShield())
-                        {
-                            if (!returnToTurn)
-                            {
-                                _state = State.NOT_TURN;
-                            }
-                            else
-                            {
-                                _state = State.TURN;
-                                returnToTurn = false;
-                            }
-                        }
-                    }
+
 
                     if (_targetEnemy)
                     {
@@ -279,20 +285,23 @@ namespace ArkeonBattle
                         }
                     }
 
-                    GUILayout.Label("Other options: ");
-
-                    if (GUILayout.Button("No block"))
+                    if (!returnToTurn)
                     {
-                        if(_chara.CommandNoShield())
+                        GUILayout.Label("Other options: ");
+
+                        if (GUILayout.Button("No block"))
                         {
-                            if (!returnToTurn)
+                            if (_chara.CommandNoShield())
                             {
-                                _state = State.NOT_TURN;
-                            }
-                            else
-                            {
-                                _state = State.TURN;
-                                returnToTurn = false;
+                                if (!returnToTurn)
+                                {
+                                    _state = State.NOT_TURN;
+                                }
+                                else
+                                {
+                                    _state = State.TURN;
+                                    returnToTurn = false;
+                                }
                             }
                         }
                     }

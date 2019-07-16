@@ -192,7 +192,6 @@ namespace ArkeonBattle
         public bool CommandArkeonAttack(ArkeonBattleStatus _status, int _attack)
         {
             ArkeonAttack arkAtk = _status.arkeon.myInstance.attacks[_attack];
-            Debug.Log("Tryed to use attack " + _status.arkeon.myInstance.attacks[_attack].myName + ". IsOnFront: " + _status.isOnFront + ", Status attack count: " + _status.arkeon.myInstance.attacks.Count + ", Attack cost: " + arkAtk.cost);
             if (!_status.isOnFront || _status.arkeon.myInstance.attacks.Count < _attack || arkAtk.cost > currentMp)
                 return false;
             

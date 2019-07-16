@@ -70,7 +70,7 @@ namespace ArkeonBattle
 
         public static float MatchupMultiplier(ArkeonElement _type1, ArkeonElement _type2)
         {
-            if(_type2.defeatedBy.Contains(_type1)) //todo: //me dio error aqui antes
+            if(_type2.defeatedBy.Contains(_type1))
             {
                 return 2f;
             }
