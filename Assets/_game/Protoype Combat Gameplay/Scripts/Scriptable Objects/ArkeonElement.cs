@@ -9,6 +9,6 @@ namespace ArkeonBattle
     {
         public int db_id;
         public Sprite sprite;
-        public List<ArkeonElement> defeatedBy;
+        public List<ArkeonElement> defeatedBy = new List<ArkeonElement>();
     }
 }

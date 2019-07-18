@@ -51,7 +51,15 @@ namespace ArkeonBattle
 
         public static ArkeonStats operator +(ArkeonStats s1, ArkeonStats s2)
         {
-            return new ArkeonStats(s1.lvl+s2.lvl, s1.maxHp+s2.maxHp, s1.maxMp+s2.maxMp, s1.atk+s2.atk, s1.def+s2.def, s1.cost+s1.cost, s1.type);
+            ArkeonElement final;
+            if (s1.type != null)
+                final = s1.type;
+            else if (s2.type != null)
+                final = s2.type;
+            else
+                final = new ArkeonElement();
+
+            return new ArkeonStats(s1.lvl+s2.lvl, s1.maxHp+s2.maxHp, s1.maxMp+s2.maxMp, s1.atk+s2.atk, s1.def+s2.def, s1.cost+s1.cost, final);
         }
     }
 }

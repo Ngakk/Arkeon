@@ -21,6 +21,5 @@ MonoBehaviour:
   accuaracy: 100
   type: {fileID: 11400000, guid: 39a888dfb52499b449db9685fdca98d9, type: 2}
   isPhysical: 1
-  canTargetEnemy: 0
-  canTargetAlly: 0
+  targetType: 1
   animation: 1

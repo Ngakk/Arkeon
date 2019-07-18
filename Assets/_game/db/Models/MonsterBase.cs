@@ -3,15 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
 public class BaseStats
 {
     public int hp { get; set; }
     public int atk { get; set; }
     public int def { get; set; }
-    public int spAtk { get; set; }
-    public int spDef { get; set; }
-    public int speed { get; set; }
+    public int cost { get; set; }
 }
 
 public class MonsterBase

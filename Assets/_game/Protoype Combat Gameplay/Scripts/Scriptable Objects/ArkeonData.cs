@@ -10,7 +10,7 @@ namespace ArkeonBattle
         public int db_id;
         public string originalName;
         public string description;
-        public BaseStats baseStats;
+        public BaseStats baseStats = new BaseStats();
         public GameObject modelPrefab; //Only for prototyping, perhaps
 
         private Animator anim;

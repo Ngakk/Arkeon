@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aba1afd98458944a9c9d51cf9d7c9b2, type: 3}
   m_Name: Tackle
   m_EditorClassIdentifier: 
+  db_id: 0
+  glyph: {fileID: 0}
   myName: Tackle
   description: Arkeon tackles the enemy
   power: 30
@@ -19,5 +21,5 @@ MonoBehaviour:
   accuaracy: 100
   type: {fileID: 11400000, guid: 708fc30a0b6970145bff853c9a3885c5, type: 2}
   isPhysical: 1
-  targetsEnemy: 1
+  targetType: 1
   animation: 1

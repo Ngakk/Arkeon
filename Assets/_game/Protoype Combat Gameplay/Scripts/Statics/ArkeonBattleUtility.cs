@@ -54,6 +54,7 @@ namespace ArkeonBattle
             {
                 hitType = ArkeonAttack.HitTypes.HIT;
 
+                Debug.Log("Combat result Defender: " + _defender + ", type: " + _defender.type);
                 float modifier = MatchupMultiplier(_arkAtk.type, _defender.type) /*TODO: crit*/;
 
                 damageDone = Mathf.FloorToInt((CalculateBaseDamage(_attacker.lvl, _attacker.atk, _arkAtk.power, _defender.def) * modifier));
@@ -70,6 +71,8 @@ namespace ArkeonBattle
 
         public static float MatchupMultiplier(ArkeonElement _type1, ArkeonElement _type2)
         {
+            Debug.Log(_type2);
+
             if(_type2.defeatedBy.Contains(_type1))
             {
                 return 2f;

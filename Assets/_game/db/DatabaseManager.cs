@@ -76,9 +76,9 @@ public class DatabaseManager : MonoBehaviour
         MaleRatio.value = m.maleRatio;
         Atk.text = m.baseStats.atk.ToString();
         Def.text = m.baseStats.def.ToString();
-        SpAtk.text = m.baseStats.spAtk.ToString();
+        /*SpAtk.text = m.baseStats.spAtk.ToString();
         SpDef.text = m.baseStats.spDef.ToString();
-        Speed.text = m.baseStats.speed.ToString();
+        Speed.text = m.baseStats.speed.ToString();*/
         HP.text = m.baseStats.hp.ToString();
         MaleRatioLabel.text = m.maleRatio.ToString();
     }
@@ -104,9 +104,9 @@ public class DatabaseManager : MonoBehaviour
                 hp = int.Parse(HP.text),
                 atk = int.Parse(Atk.text),
                 def = int.Parse(Def.text),
-                spAtk = int.Parse(SpAtk.text),
+                /*spAtk = int.Parse(SpAtk.text),
                 spDef = int.Parse(SpDef.text),
-                speed = int.Parse(Speed.text)
+                speed = int.Parse(Speed.text)*/
             },
             catchRate = int.Parse(CatchRate.text),
             experienceRate = int.Parse(ExpRate.text),
