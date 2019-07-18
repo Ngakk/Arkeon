@@ -25,18 +25,12 @@ public class AttackManager : MonoBehaviour
     public InputField EffectId;
     #endregion
 
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        string filePath = "attaks.json".Replace(".json", "");
-        TextAsset ArchivoTarget = Resources.Load<TextAsset>(filePath);
-        string elJson = ArchivoTarget.text;
-
-        allAttacks = new List<AttackBase>();
-
-        allAttacks = JsonConvert.DeserializeObject<List<AttackBase>>(elJson);
-
+        allAttacks = DBAccess.LoadAttacks();
         
         if (allAttacks == null)
         {
@@ -98,23 +92,15 @@ public class AttackManager : MonoBehaviour
     {
         currAttack = ScreenToObj();
         allAttacks[AttacksIndex] = currAttack;
-        Save();
+        DBAccess.UpdateAllAttacks(allAttacks);
     }
 
     public void SaveNewPoke()
     {
         AttacksIndex = allAttacks.Count + 1;
         AttackBase newMonster = ScreenToObj(AttacksIndex);
-        Number.text = "Number: " + newMonster.id.ToString();
+        Number.text = "Number: " + DBAccess.AddNewAttack(newMonster);
         allAttacks.Add(newMonster);
-
-        Save();
-    }
-
-    private void Save()
-    {
-        string json = JsonConvert.SerializeObject(allAttacks);
-        File.WriteAllText("Assets/Resources/attaks.json", json);
     }
 
     public void PrevPoke()
