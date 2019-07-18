@@ -379,6 +379,7 @@ public class BattleMenu_Main : MonoBehaviour
     {
         // End Turn
         Debug.Log("Ended Turn");
+        ManagerStaticBattle.battleManager.ChangeTurns();
     }
 
     public void Wait()
