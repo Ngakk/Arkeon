@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbf169e71dcc954da3ca32486176ece, type: 3}
   m_Name: Earth
   m_EditorClassIdentifier: 
+  db_id: 0
+  sprite: {fileID: 21300000, guid: 532958c22557f614690e1d39f2bd8c3c, type: 3}
   defeatedBy:
   - {fileID: 11400000, guid: 8a161614631ac9d458e9d3e9607c1f09, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee180513b724e594e919f0acc709d5ce, type: 3}
   m_Name: LowHeal
   m_EditorClassIdentifier: 
-  db_id: 0
+  db_id: 151
   glyph: {fileID: 0}
   myName: Lesser Heal
   description: Does a lesser heal
@@ -21,6 +21,5 @@ MonoBehaviour:
   accuaracy: 100
   type: {fileID: 11400000, guid: a4c97200caf8eb0449b94217efcbf0b3, type: 2}
   isPhysical: 0
-  canTargetEnemy: 0
-  canTargetAlly: 1
+  targetType: 3
   animation: 3

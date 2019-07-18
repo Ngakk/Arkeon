@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   db_id: 0
   originalName: Squirtle
-  description: 
+  description: description
   modelPrefab: {fileID: 3759170950674461054, guid: f22f7b24d4d1bde4d83702a87ac14c03,
     type: 3}

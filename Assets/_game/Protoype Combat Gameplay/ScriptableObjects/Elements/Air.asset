@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbf169e71dcc954da3ca32486176ece, type: 3}
   m_Name: Air
   m_EditorClassIdentifier: 
+  db_id: 0
+  sprite: {fileID: 21300000, guid: 535290aa7946f8c4dae576fd5aab18f6, type: 3}
   defeatedBy:
   - {fileID: 11400000, guid: 708fc30a0b6970145bff853c9a3885c5, type: 2}

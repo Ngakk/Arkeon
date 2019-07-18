@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   db_id: 0
   originalName: Chikorita
-  description: 
+  description: description
   modelPrefab: {fileID: 3759170950674461054, guid: 19e79ea8af6f68a4aa5786a51727c236,
     type: 3}

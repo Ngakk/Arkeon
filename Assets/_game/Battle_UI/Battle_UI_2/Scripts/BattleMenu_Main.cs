@@ -34,6 +34,7 @@ public class BattleMenu_Main : MonoBehaviour
     private MENUSTATES currentMenuState = MENUSTATES.SMN;
     private MENUSTATES previousMenuState = MENUSTATES.SMN;
     private ArkeonInstance selectedArkeon;
+    private int selectedArkeonOutId;
     private ArkeonAttack selectedAttack = null;
     public string[] itemNames;
     public Sprite itmImg;
@@ -67,6 +68,10 @@ public class BattleMenu_Main : MonoBehaviour
         else if (currentMenuState == MENUSTATES.ATK)
         {
             SelectSummonedArkeon(_ark);
+        }
+        else if (currentMenuState == MENUSTATES.TARGETS)
+        {
+            SelectTarget(_ark);
         }
     }
 
@@ -217,7 +222,6 @@ public class BattleMenu_Main : MonoBehaviour
             {
                 GameObject trg = Instantiate(ark_pfb, allyTargetsPanel.transform);
                 trg.GetComponent<BattleMenu_ArkCard>().SetAllData(_allyTargets[i].arkeon.myInstance);
-                trg.GetComponent<Button>().onClick.AddListener(delegate { SelectTarget(trg.GetComponent<BattleMenu_ArkCard>(), _isAttack); });
                 trg.GetComponent<BattleMenu_ArkCard>().arkeonOutId = i;
             }
         }
@@ -229,7 +233,6 @@ public class BattleMenu_Main : MonoBehaviour
             {
                 GameObject trg = Instantiate(ark_pfb, opptTargetsPanel.transform);
                 trg.GetComponent<BattleMenu_ArkCard>().SetAllData(_opptTargets[i].arkeon.myInstance);
-                trg.GetComponent<Button>().onClick.AddListener(delegate { SelectTarget(trg.GetComponent<BattleMenu_ArkCard>(), _isAttack); });
                 trg.GetComponent<BattleMenu_ArkCard>().arkeonOutId = i;
             }
         }
@@ -237,21 +240,13 @@ public class BattleMenu_Main : MonoBehaviour
 
     public void SkipTargetSelection()
     {
+        player.CommandNoShield();
         SetActivePanel((int)previousMenuState);
     }
 
-    public void SelectTarget(BattleMenu_ArkCard _target, bool _isAttack)
+    public void SelectTarget(BattleMenu_ArkCard _target)
     {
-        if (_isAttack)
-        {
-            Debug.Log(selectedArkeon.myName + " used " + selectedAttack.myName + " on " + _target.arkeonInstanceSO.myName);
-            //player.CommandArkeonAttack(null, selectedAttack.db_id);
-        }
-        else
-        {
-            Debug.Log(_target.gameObject.name + " selected as target");
-            player.CommandArkeonShield(_target.arkeonOutId);
-        } 
+        player.CommandArkeonShield(_target.arkeonOutId);
     }
 
     public void SelectSummonedArkeon(BattleMenu_ArkCard _ark)
@@ -282,6 +277,7 @@ public class BattleMenu_Main : MonoBehaviour
 
         player.ChooseAttacker(_ark.arkeonOutId);
         selectedArkeon = _ark.arkeonInstanceSO;
+        selectedArkeonOutId = _ark.arkeonOutId;
         SetActivePanel((int)MENUSTATES.ARKEONCMD);
         LoadArkeonAttacks();
     }
@@ -313,31 +309,44 @@ public class BattleMenu_Main : MonoBehaviour
         // Select Attack from current selected Arkeon
         if (currentMenuState == MENUSTATES.ARKEONCMD)
         {
+            int atkId = -1;
+
             for (int i = 0; i < selectedArkeon.attacks.Count; i++)
             {
                 if (selectedArkeon.attacks[i].db_id == _atkId)
+                {
                     selectedAttack = selectedArkeon.attacks[i];
+                    atkId = i;
+                }
             }
 
             if (selectedAttack != null)
             {
-                switch (selectedAttack.targetType)
+                if (player.CommandArkeonAttack(player.arkeonsOut[selectedArkeonOutId], atkId))
                 {
-                    case AttackTargets.SELF:
-                        Debug.Log(selectedArkeon.myName + " used " + selectedAttack.myName + " on itself!");
-                        break;
-                    case AttackTargets.NON_TARGETED_ENEMY:
-                        Debug.Log(selectedArkeon.myName + " used " + selectedAttack.myName + "!");
-                        break;
-                    case AttackTargets.TARGETED_ENEMY:
-                        LoadTargetArkeons(null, enemy.arkeonsOut, true);
-                        break;
-                    case AttackTargets.TARGETED_ALLY:
-                        LoadTargetArkeons(player.arkeonsOut, null, true);
-                        break;
-                    case AttackTargets.TARGETED_ALLY_OR_ENEMY:
-                        LoadTargetArkeons(player.arkeonsOut, enemy.arkeonsOut, true);
-                        break;
+                    switch (selectedAttack.targetType)
+                    {
+                        case AttackTargets.SELF:
+                            Debug.Log(selectedArkeon.myName + " used " + selectedAttack.myName + " on itself!");
+                            player.CommandArkeonShield(selectedArkeonOutId);
+                            SetActivePanel((int)MENUSTATES.ATK);
+                            break;
+                        case AttackTargets.NON_TARGETED_ENEMY:
+                            Debug.Log(selectedArkeon.myName + " used " + selectedAttack.myName + "!");
+                            break;
+                        case AttackTargets.TARGETED_ENEMY:
+                            LoadTargetArkeons(null, enemy.arkeonsOut, true);
+                            break;
+                        case AttackTargets.TARGETED_ALLY:
+                            LoadTargetArkeons(player.arkeonsOut, null, true);
+                            break;
+                        case AttackTargets.TARGETED_ALLY_OR_ENEMY:
+                            LoadTargetArkeons(player.arkeonsOut, enemy.arkeonsOut, true);
+                            break;
+                    }
+                } else
+                {
+                    Debug.Log("Invalid Attack");
                 }
             }
         }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a963a86fbc22dda4896ff646196d2cbe, type: 3}
   m_Name: CyndaquilInstance
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 21300000, guid: cb9bfe7cd975cb247b0bc0d79fbdfc29, type: 3}
   myName: Cyndaquil
   currentHp: 20
   stats:

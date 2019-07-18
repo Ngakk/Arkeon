@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbf169e71dcc954da3ca32486176ece, type: 3}
   m_Name: Fire
   m_EditorClassIdentifier: 
+  db_id: 0
+  sprite: {fileID: 21300000, guid: f1bc771bc63672841b5bde24b00d01d2, type: 3}
   defeatedBy:
   - {fileID: 11400000, guid: 608c20ff47a9f704fa1d04f338c8900b, type: 2}
