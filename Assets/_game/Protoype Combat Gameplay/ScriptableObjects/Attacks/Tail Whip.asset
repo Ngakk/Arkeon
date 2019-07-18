@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdceef51f0b5f794bb57d9c0b584c3d1, type: 3}
+  m_Name: Tail Whip
+  m_EditorClassIdentifier: 
+  db_id: 0
+  glyph: {fileID: 0}
+  myName: Tail Whip
+  description: Decreases defense on spell's targeted enemy
+  power: 0
+  cost: 2
+  accuaracy: 100
+  type: {fileID: 11400000, guid: 608c20ff47a9f704fa1d04f338c8900b, type: 2}
+  isPhysical: 0
+  targetType: 2
+  animation: 3
+  value: -2

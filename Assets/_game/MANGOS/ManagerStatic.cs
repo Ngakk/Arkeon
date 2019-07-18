@@ -25,12 +25,14 @@ namespace Mangos
     //ESTE SE ENCARGARA DE MANTENER A LOS DEMAS MANAGER COMUNICADOS ENTRE ELLOS
     public static class ManagerStatic
 	{
-        public static float GeneralVolumen = 95.0f;
+        public static float generalVolume = 95.0f;
 		public static ManagerInput inputManager;
 		public static ManagerApp appManager;
 		public static ManagerScene sceneManager;
         public static ManagerAudio audioManager;
         public static ManagerGameState gameStateManager;
         public static ManagerUI uiManager;
-	}
+        //public static ArkeonAttackEffectList arkeonAttackEffectList;
+
+    }
 }

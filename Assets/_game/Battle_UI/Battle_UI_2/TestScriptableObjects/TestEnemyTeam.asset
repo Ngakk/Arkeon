@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347e7dc9a1706294398b142735701e3b, type: 3}
+  m_Name: TestEnemyTeam
+  m_EditorClassIdentifier: 
+  lightBook:
+  - {fileID: 11400000, guid: 2e8553bee4af0fa429a1b4adb8757f33, type: 2}
+  - {fileID: 11400000, guid: e5fc123fe8ed0f64f976888c9dd4a747, type: 2}
+  - {fileID: 11400000, guid: 48c2374c55dc6f245a119915ab147139, type: 2}
+  darkBook:
+  - {fileID: 11400000, guid: a0d0c49b61038a04788c5dc39f42bd82, type: 2}
+  natureBook:
+  - {fileID: 11400000, guid: d3beb7784f55f234784f06d718dc5a2c, type: 2}
+  - {fileID: 11400000, guid: d1734640c5c430042b8b705412783c9d, type: 2}

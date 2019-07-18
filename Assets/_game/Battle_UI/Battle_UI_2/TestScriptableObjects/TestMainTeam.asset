@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 347e7dc9a1706294398b142735701e3b, type: 3}
+  m_Name: TestMainTeam
+  m_EditorClassIdentifier: 
+  lightBook:
+  - {fileID: 11400000, guid: d1734640c5c430042b8b705412783c9d, type: 2}
+  - {fileID: 11400000, guid: 66f46a986d7d19842a6dcf645ab6b4a3, type: 2}
+  darkBook:
+  - {fileID: 11400000, guid: a0d0c49b61038a04788c5dc39f42bd82, type: 2}
+  - {fileID: 11400000, guid: 54b83c35dd0d4654897dea1a80492d4d, type: 2}
+  natureBook:
+  - {fileID: 11400000, guid: d3beb7784f55f234784f06d718dc5a2c, type: 2}
+  - {fileID: 11400000, guid: 8f283ed0ae4a92b4e9e631b464389405, type: 2}
+  - {fileID: 11400000, guid: d802e09c55f4f3d438cf9c5627f5329c, type: 2}
