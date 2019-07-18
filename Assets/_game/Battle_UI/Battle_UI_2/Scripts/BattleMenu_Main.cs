@@ -12,7 +12,7 @@ public class BattleMenu_Main : MonoBehaviour
         SMN = 0,
         ATK = 1,
         ITM = 2,
-        RUN = 3,
+        END = 3,
         BOOKA = 4,
         BOOKB = 5,
         BOOKC = 6,
@@ -106,6 +106,10 @@ public class BattleMenu_Main : MonoBehaviour
                     mainOptions[i].color = Color.black;
                     if (_index == i)
                         mainOptions[_index].color = activeMenuColor;
+                }
+                if (_index == 3)
+                {
+                    End();
                 }
             } 
 
@@ -371,10 +375,16 @@ public class BattleMenu_Main : MonoBehaviour
             Debug.Log("Selected item #" + _itemId);
     }
 
-    public void Run()
+    public void End()
     {
-        // Run form battle
-        Debug.Log("Ran Away");
+        // End Turn
+        Debug.Log("Ended Turn");
+    }
+
+    public void Wait()
+    {
+        // Wait for opponent
+        Debug.Log("Waiting for Opponent");
     }
 
     void Start()
