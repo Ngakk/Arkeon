@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aba1afd98458944a9c9d51cf9d7c9b2, type: 3}
   m_Name: Scratch
   m_EditorClassIdentifier: 
-  db_id: 0
+  db_id: 153
   glyph: {fileID: 0}
   myName: Scratch
   description: Arkeon scratches the enemy

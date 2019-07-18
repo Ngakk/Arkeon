@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee180513b724e594e919f0acc709d5ce, type: 3}
   m_Name: Medium Heal
   m_EditorClassIdentifier: 
-  db_id: 0
+  db_id: 152
   glyph: {fileID: 0}
   myName: Heal
   description: Does a normal heal

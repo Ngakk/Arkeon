@@ -12,5 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecbf169e71dcc954da3ca32486176ece, type: 3}
   m_Name: Dark
   m_EditorClassIdentifier: 
+  db_id: 0
+  sprite: {fileID: 21300002, guid: 8920b9f3c7f28864fac1a1d442bb3d40, type: 3}
   defeatedBy:
   - {fileID: 11400000, guid: a4c97200caf8eb0449b94217efcbf0b3, type: 2}

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdceef51f0b5f794bb57d9c0b584c3d1, type: 3}
   m_Name: Harden
   m_EditorClassIdentifier: 
-  db_id: 0
+  db_id: 150
   glyph: {fileID: 0}
   myName: Harden
   description: Rises the caster's defense

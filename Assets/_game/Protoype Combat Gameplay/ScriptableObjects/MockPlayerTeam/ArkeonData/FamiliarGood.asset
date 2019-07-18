@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ab6396912eb4140b81bc43a7da9f84, type: 3}
   m_Name: FamiliarGood
   m_EditorClassIdentifier: 
+  db_id: 0
   originalName: Familiar
+  description: description
   modelPrefab: {fileID: 3759170950674461054, guid: 35ee23fe0391e7041b58694f002d64d7,
     type: 3}
