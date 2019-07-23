@@ -78,7 +78,6 @@ public class BattleOpponentBehaviour : MonoBehaviour
                     break;
             }
         }
-        
     }
 
     public void SelectTarget()
@@ -94,7 +93,7 @@ public class BattleOpponentBehaviour : MonoBehaviour
 
     public void Wait()
     {
-        todo
+        //todo
         // Wait for player action
     }
 

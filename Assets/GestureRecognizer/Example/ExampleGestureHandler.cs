@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using GestureRecognizer;
 using System.Linq;
+using ArkeonBattle;
 
 public class ExampleGestureHandler : MonoBehaviour {
 
@@ -12,6 +13,8 @@ public class ExampleGestureHandler : MonoBehaviour {
 	public Transform referenceRoot;
 
 	GesturePatternDraw[] references;
+
+    public BattleMenu_Main glyphProcessor;
 
 	void Start () {
 		references = referenceRoot.GetComponentsInChildren<GesturePatternDraw> ();
@@ -27,8 +30,10 @@ public class ExampleGestureHandler : MonoBehaviour {
 		StopAllCoroutines ();
 		ShowAll ();
 		if (result != RecognitionResult.Empty) {
-			textResult.text = result.gesture.name + "\n" + Mathf.RoundToInt (result.score.score * 100) + "%";
+			textResult.text = result.gesture.id + "\n" + Mathf.RoundToInt (result.score.score * 100) + "%";
 			StartCoroutine (Blink (result.gesture.id));
+            glyphProcessor.ProcessGlyph(int.Parse(result.gesture.id));
+
 		} else {
 			textResult.text = "?";
 		}

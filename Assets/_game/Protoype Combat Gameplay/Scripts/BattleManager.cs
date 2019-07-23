@@ -112,7 +112,7 @@ namespace ArkeonBattle
             return false;
             
         }
-        todo //hacer que deveras se mueran los familiares
+        //todo //hacer que deveras se mueran los familiares
         public void StartBattleAvA()
         {
             state = State.BATTLING;
