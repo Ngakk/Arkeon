@@ -37,15 +37,7 @@ public class DatabaseManager : MonoBehaviour
         MaleRatio.minValue = 0; MaleRatio.maxValue = 100;
         Learnset.characterLimit = 0;
 
-        //Cargo el archivo Items.json desde Resources
-        string filePath = "pokes.json".Replace(".json", "");
-        TextAsset ArchivoTarget = Resources.Load<TextAsset>(filePath);
-        string elJson = ArchivoTarget.text;
-        Debug.Log(elJson);
-
-        allMonsters = new List<MonsterBase>();
-
-        allMonsters = JsonConvert.DeserializeObject<List<MonsterBase>>(elJson);
+        allMonsters = DBAccess.LoadArkeons();
 
 
         Debug.Log(allMonsters.ToString());
@@ -122,7 +114,7 @@ public class DatabaseManager : MonoBehaviour
     {
         currMonster = ScreenToObj();
         allMonsters[MonsterIndex] = currMonster;
-        Save();
+        DBAccess.UpdateAllArkeons(allMonsters);
     }
 
     public void UpdateMaleRatio()
@@ -135,16 +127,8 @@ public class DatabaseManager : MonoBehaviour
     {
         MonsterIndex = allMonsters.Count+1;
         MonsterBase newMonster = ScreenToObj(MonsterIndex);
-        Number.text = "Number: " + newMonster.number.ToString();
+        Number.text = "Number: " + DBAccess.AddNewArkeon(newMonster, false);
         allMonsters.Add(newMonster);
-
-        Save();
-    }
-
-    private void Save()
-    {
-        string json = JsonConvert.SerializeObject(allMonsters);
-        File.WriteAllText("Assets/Resources/pokes.json", json);
     }
 
     public void PrevPoke()
@@ -155,4 +139,6 @@ public class DatabaseManager : MonoBehaviour
             SetOnScreen(currMonster);
         }
     }
+
+    
 }
