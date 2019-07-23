@@ -94,7 +94,6 @@ public class BattleOpponentBehaviour : MonoBehaviour
 
     public void Wait()
     {
-        todo
         // Wait for player action
     }
 

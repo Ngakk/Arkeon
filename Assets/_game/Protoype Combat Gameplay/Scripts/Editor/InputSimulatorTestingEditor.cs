@@ -24,7 +24,7 @@ namespace ArkeonBattle
 
         int allyChosen = 0, enemyChosen = 0;
         bool targetAlly, targetEnemy;
-        bool returnToTurn = false;
+        bool returnToTurn1 = false, returnToTurn2 = false;
 
         public override void OnInspectorGUI()
         {
@@ -37,13 +37,13 @@ namespace ArkeonBattle
             EditorGUILayout.LabelField("HP: ", myScript.player.currentHp.ToString());
             EditorGUILayout.LabelField("MP: ", myScript.player.currentMp.ToString());
 
-            CharacterOptions(myScript.player, ref allyState, ref enemyState, ref allyChosen, myScript.enemy, ref targetAlly, ref targetEnemy);
+            CharacterOptions(myScript.player, ref allyState, ref enemyState, ref allyChosen, myScript.enemy, ref targetAlly, ref targetEnemy, ref returnToTurn1, ref returnToTurn2);
 
             EditorGUILayout.LabelField("Enemy options", EditorStyles.boldLabel);
             EditorGUILayout.LabelField("HP: ", myScript.enemy.currentHp.ToString());
             EditorGUILayout.LabelField("MP: ", myScript.enemy.currentMp.ToString());
             
-            CharacterOptions(myScript.enemy, ref enemyState, ref allyState, ref enemyChosen, myScript.player, ref targetAlly, ref targetEnemy);
+            CharacterOptions(myScript.enemy, ref enemyState, ref allyState, ref enemyChosen, myScript.player, ref targetAlly, ref targetEnemy, ref returnToTurn2, ref returnToTurn1);
 
             //EditorGUI.DrawRect(new Rect(50, 500, 100, 70), Color.green);
 
@@ -51,7 +51,7 @@ namespace ArkeonBattle
             CharacterTeam(myScript.enemy);
         }
 
-        void CharacterOptions(PlayerCharacterBattle _chara, ref State _state, ref State _enemyState, ref int _chosen, PlayerCharacterBattle _enemy, ref bool _targetAlly, ref bool _targetEnemy)
+        void CharacterOptions(PlayerCharacterBattle _chara, ref State _state, ref State _enemyState, ref int _chosen, PlayerCharacterBattle _enemy, ref bool _targetAlly, ref bool _targetEnemy, ref bool _returnToTurn1, ref bool _returnToTurn2)
         {
             switch (_state)
             {
@@ -142,7 +142,7 @@ namespace ArkeonBattle
                                         _state = State.WAITING;
                                         _enemyState = State.SHIELDING;
 
-                                        returnToTurn = true;
+                                        _returnToTurn1 = true;
 
                                         _targetAlly = true;
                                         _targetEnemy = false;
@@ -150,7 +150,7 @@ namespace ArkeonBattle
                                     case AttackTargets.TARGETED_ENEMY:
                                         _state = State.SHIELDING;
 
-                                        returnToTurn = true;
+                                        _returnToTurn1 = false;
 
                                         _targetAlly = false;
                                         _targetEnemy = true;
@@ -158,7 +158,7 @@ namespace ArkeonBattle
                                     case AttackTargets.TARGETED_ALLY:
                                         _state = State.SHIELDING;
 
-                                        returnToTurn = true;
+                                        _returnToTurn1 = true;
 
                                         _targetAlly = false;
                                         _targetEnemy = true;
@@ -166,29 +166,13 @@ namespace ArkeonBattle
                                     case AttackTargets.TARGETED_ALLY_OR_ENEMY:
                                         _state = State.SHIELDING;
 
-                                        returnToTurn = true;
+                                        _returnToTurn1 = true;
+                                        _returnToTurn2 = false;
 
                                         _targetAlly = true;
                                         _targetEnemy = true;
                                         break;
                                 }
-
-                                /*if (!status.arkeon.myInstance.attacks[i].canTargetEnemy && !status.arkeon.myInstance.attacks[i].canTargetAlly)
-                                {
-                                    _state = State.WAITING;
-                                    _enemyState = State.SHIELDING;
-
-                                    _targetAlly = !status.arkeon.myInstance.attacks[i].canTargetAlly;
-                                    _targetEnemy = status.arkeon.myInstance.attacks[i].canTargetEnemy;
-                                }
-                                else
-                                {
-                                    _state = State.SHIELDING;
-                                    returnToTurn = true;
-
-                                    _targetAlly = status.arkeon.myInstance.attacks[i].canTargetAlly;
-                                    _targetEnemy = status.arkeon.myInstance.attacks[i].canTargetEnemy;
-                                }*/
                             }
                             else
                             {
@@ -216,14 +200,14 @@ namespace ArkeonBattle
                             {
                                 if (_chara.CommandArkeonShield(i))
                                 {
-                                    if (!returnToTurn)
+                                    if (!_returnToTurn1)
                                     {
                                         _state = State.NOT_TURN;
                                     }
                                     else
                                     {
                                         _state = State.TURN;
-                                        returnToTurn = false;
+                                        _returnToTurn1 = false;
                                     }
                                 }
                             }
@@ -232,14 +216,14 @@ namespace ArkeonBattle
                         {
                             if (_chara.CommandFamiliarShield())
                             {
-                                if (!returnToTurn)
+                                if (!_returnToTurn1)
                                 {
                                     _state = State.NOT_TURN;
                                 }
                                 else
                                 {
                                     _state = State.TURN;
-                                    returnToTurn = false;
+                                    _returnToTurn1 = false;
                                 }
                             }
                         }
@@ -256,14 +240,14 @@ namespace ArkeonBattle
                             {
                                 if (_enemy.CommandArkeonShield(i))
                                 {
-                                    if (!returnToTurn)
+                                    if (!_returnToTurn1)
                                     {
                                         _state = State.NOT_TURN;
                                     }
                                     else
                                     {
                                         _state = State.TURN;
-                                        returnToTurn = false;
+                                        _returnToTurn1 = false;
                                     }
                                 }
                             }
@@ -272,20 +256,20 @@ namespace ArkeonBattle
                         {
                             if (_enemy.CommandFamiliarShield())
                             {
-                                if (!returnToTurn)
+                                if (!_returnToTurn1)
                                 {
                                     _state = State.NOT_TURN;
                                 }
                                 else
                                 {
                                     _state = State.TURN;
-                                    returnToTurn = false;
+                                    _returnToTurn1 = false;
                                 }
                             }
                         }
                     }
 
-                    if (!returnToTurn)
+                    if (!_returnToTurn1)
                     {
                         GUILayout.Label("Other options: ");
 
@@ -293,14 +277,14 @@ namespace ArkeonBattle
                         {
                             if (_chara.CommandNoShield())
                             {
-                                if (!returnToTurn)
+                                if (!_returnToTurn1)
                                 {
                                     _state = State.NOT_TURN;
                                 }
                                 else
                                 {
                                     _state = State.TURN;
-                                    returnToTurn = false;
+                                    _returnToTurn1 = false;
                                 }
                             }
                         }
@@ -319,7 +303,7 @@ namespace ArkeonBattle
                     {
                         if(GUILayout.Button(_chara.inventory.items[i].item.name))
                         {
-                            returnToTurn = true;
+                            _returnToTurn1 = true;
                             _chara.UseItem(i);
                             _state = State.SHIELDING;
                         }
