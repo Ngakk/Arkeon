@@ -15,6 +15,8 @@ namespace Mangos
     /// [3] Transición de escene desde la vista de Jugador a Combate.
     /// [4] Vista al enemigo y sus invocaciones.
     /// [5] Transición de escena desde la vista de Combate a Enemigo.
+    /// [6] Vista de lado del enemigo
+    /// [7] Vista de lado del jugador
     /// </summary>
 
     public class CombatCameraSystem : MonoBehaviour
@@ -22,10 +24,6 @@ namespace Mangos
         public List<PlayableDirector> playableDirectors;
         public GameObject enemy;
         public GameObject player;
-        public GameObject invocationPos1;
-        public GameObject invocationPos2;
-        public GameObject invocationPos3;
-        public GameObject familiar;
 
         public CinemachineVirtualCamera[] CM_VCamerasToPlayer;
         public CinemachineVirtualCamera[] CM_VCamerasToEnemy;
@@ -78,6 +76,18 @@ namespace Mangos
             //StartCoroutine("FinishCombatViewFromPlayer");
         }
 
+        public void ChangeViewToTPPlayer()
+        {
+            //Se pone la cámara en tercera persona del lado del jugador
+            playableDirectors[7].Play();
+        }
+
+        public void ChangeViewToTPEnemy()
+        {
+            //Se pone la cámara en tercera persona del lado del enemigo
+            playableDirectors[6].Play();
+        }
+
         //Debajo de esta sección, son métodos para redirigir el focus de las cámaras.
 
         public void FocusEnemy()
@@ -93,38 +103,6 @@ namespace Mangos
             for (int i = 0; i < CM_VCamerasToPlayer.Length; i++)
             {
                 CM_VCamerasToPlayer[i].LookAt = player.transform;
-            }
-        }
-
-        public void FocusInv1()
-        {
-            for (int i = 0; i < CM_VCamerasToPlayer.Length; i++)
-            {
-                CM_VCamerasToPlayer[i].LookAt = invocationPos1.transform;
-            }
-        }
-
-        public void FocusInv2()
-        {
-            for (int i = 0; i < CM_VCamerasToPlayer.Length; i++)
-            {
-                CM_VCamerasToPlayer[i].LookAt = invocationPos2.transform;
-            }
-        }
-
-        public void FocusInv3()
-        {
-            for (int i = 0; i < CM_VCamerasToPlayer.Length; i++)
-            {
-                CM_VCamerasToPlayer[i].LookAt = invocationPos3.transform;
-            }
-        }
-
-        public void FocusFamiliar()
-        {
-            for (int i = 0; i < CM_VCamerasToPlayer.Length; i++)
-            {
-                CM_VCamerasToPlayer[i].LookAt = familiar.transform;
             }
         }
 
