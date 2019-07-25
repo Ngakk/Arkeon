@@ -172,7 +172,8 @@ namespace GestureRecognizer {
 						data = sizedData;
 						UpdateLines ();
 					}
-                    ClearLines();
+					ClearLines();
+					UpdateLines();
 					break;
 				} else {
 					OnRecognize.Invoke (RecognitionResult.Empty);
