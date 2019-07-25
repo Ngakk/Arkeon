@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ab6396912eb4140b81bc43a7da9f84, type: 3}
+  m_Name: MewTwo
+  m_EditorClassIdentifier: 
+  db_id: 0
+  originalName: MewTwo
+  description: "Fue creado por un cient\xEDfico tras a\xF1os de horribles experimentos
+    de ingenier\xEDa gen\xE9tica."
+  modelPrefab: {fileID: 3759170950674461054, guid: f22f7b24d4d1bde4d83702a87ac14c03,
+    type: 3}

@@ -14,17 +14,13 @@ public class ArkeonDataEditor : Editor
 
         ArkeonData s = (ArkeonData)target;
 
-        /*showStats = EditorGUILayout.Foldout(showStats, "Base stats:");
+        showStats = EditorGUILayout.Foldout(showStats, "Base stats:");
         if(showStats)
         {
-            EditorGUILayout.PrefixLabel("HP");
-            s.baseStats.hp = EditorGUILayout.IntField(s.baseStats.hp);
-            EditorGUILayout.PrefixLabel("ATK");
-            s.baseStats.atk = EditorGUILayout.IntField(s.baseStats.atk);
-            EditorGUILayout.PrefixLabel("DEF");
-            s.baseStats.def = EditorGUILayout.IntField(s.baseStats.def);
-            EditorGUILayout.PrefixLabel("Cost");
-            s.baseStats.cost = EditorGUILayout.IntField(s.baseStats.cost);
-        }*/
+            s.baseStats.hp = EditorGUILayout.IntField("HP:", s.baseStats.hp);
+            s.baseStats.atk = EditorGUILayout.IntField("ATK:", s.baseStats.atk);
+            s.baseStats.def = EditorGUILayout.IntField("DEF:", s.baseStats.def);
+            s.baseStats.cost = EditorGUILayout.IntField("COST:", s.baseStats.cost);
+        }
     }
 }
