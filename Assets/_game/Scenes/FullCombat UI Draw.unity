@@ -2706,16 +2706,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.39179057, g: 0.23282307, b: 0.4528302, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300028, guid: 9add7cac8f8034243af077bcfafc94cd, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -4630,16 +4630,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.07058824, g: 0.07058824, b: 0.07058824, a: 1}
+  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300028, guid: 9add7cac8f8034243af077bcfafc94cd, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -6324,7 +6324,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 6c752484a8d00444fa1673c89c4fe062, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9add7cac8f8034243af077bcfafc94cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -7518,16 +7518,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.07058824, g: 0.07058824, b: 0.07058824, a: 1}
+  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300028, guid: 9add7cac8f8034243af077bcfafc94cd, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -7684,16 +7684,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.07058824, g: 0.07058824, b: 0.07058824, a: 1}
+  m_Color: {r: 0.4528302, g: 0.4528302, b: 0.4528302, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300028, guid: 9add7cac8f8034243af077bcfafc94cd, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -11692,7 +11692,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 9682afc849118194585d226c5fe8695c, type: 3}
+  m_Sprite: {fileID: 21300006, guid: 9add7cac8f8034243af077bcfafc94cd, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -17596,16 +17596,24 @@ MonoBehaviour:
   UseMargins: 0
   Margin: {x: 0, y: 0}
   Points:
-  - {x: 0.25373134, y: 0.74626863}
-  - {x: 0.24875621, y: 0.2636816}
-  - {x: 0.24875621, y: 0.2636816}
-  - {x: 0.74626863, y: 0.25870645}
-  - {x: 0.74626863, y: 0.25870645}
-  - {x: 0.75124377, y: 0.7661692}
-  - {x: 0.2835821, y: 0.73134327}
-  - {x: 0.71144277, y: 0.2935323}
-  - {x: 0.2885572, y: 0.3034826}
-  - {x: 0.72139305, y: 0.76119405}
+  - {x: 0.12437811, y: 0.75124377}
+  - {x: 0.49751243, y: 0.2636816}
+  - {x: 0.49751243, y: 0.2636816}
+  - {x: 0.74129355, y: 0.26865673}
+  - {x: 0.74129355, y: 0.26865673}
+  - {x: 0.8756219, y: 0.39303482}
+  - {x: 0.8756219, y: 0.39303482}
+  - {x: 0.880597, y: 0.57213926}
+  - {x: 0.880597, y: 0.57213926}
+  - {x: 0.74129355, y: 0.6965174}
+  - {x: 0.74129355, y: 0.6965174}
+  - {x: 0.49751243, y: 0.6965174}
+  - {x: 0.49751243, y: 0.6965174}
+  - {x: 0.3482587, y: 0.5174129}
+  - {x: 0.3482587, y: 0.5174129}
+  - {x: 0.50248754, y: 0.33830845}
+  - {x: 0.50248754, y: 0.33830845}
+  - {x: 0.6268657, y: 0.48756218}
   relativeSize: 1
   LineList: 1
   LineCaps: 1
@@ -17688,10 +17696,14 @@ MonoBehaviour:
   UseMargins: 0
   Margin: {x: 0, y: 0}
   Points:
-  - {x: 0.8507463, y: 0.38805968}
-  - {x: 0.6467662, y: 0.25870645}
-  - {x: 0.6467662, y: 0.25870645}
-  - {x: 0.12437811, y: 0.920398}
+  - {x: 0.12935324, y: 0.14925373}
+  - {x: 0.50248754, y: 0.880597}
+  - {x: 0.50248754, y: 0.880597}
+  - {x: 0.75124377, y: 0.12935323}
+  - {x: 0.75124377, y: 0.12935323}
+  - {x: 0.24875621, y: 0.49253732}
+  - {x: 0.24875621, y: 0.49253732}
+  - {x: 0.6766169, y: 0.49253732}
   relativeSize: 1
   LineList: 1
   LineCaps: 1

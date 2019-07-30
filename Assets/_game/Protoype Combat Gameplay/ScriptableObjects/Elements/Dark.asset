@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Dark
   m_EditorClassIdentifier: 
   db_id: 0
-  sprite: {fileID: 21300002, guid: 8920b9f3c7f28864fac1a1d442bb3d40, type: 3}
+  sprite: {fileID: 21300022, guid: 9add7cac8f8034243af077bcfafc94cd, type: 3}
   defeatedBy:
   - {fileID: 11400000, guid: a4c97200caf8eb0449b94217efcbf0b3, type: 2}
