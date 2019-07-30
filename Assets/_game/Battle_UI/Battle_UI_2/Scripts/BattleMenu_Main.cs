@@ -50,6 +50,7 @@ public class BattleMenu_Main : MonoBehaviour
 
     public void ProcessGlyph(int _glyphId)
     {
+        Debug.Log("Processing glyph: " + _glyphId);
         if (_glyphId >= 0 && _glyphId < 10)
         {
             SetActivePanel(_glyphId); 

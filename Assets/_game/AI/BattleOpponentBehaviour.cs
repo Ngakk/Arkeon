@@ -78,7 +78,6 @@ public class BattleOpponentBehaviour : MonoBehaviour
                     break;
             }
         }
-        
     }
 
     public void SelectTarget()
