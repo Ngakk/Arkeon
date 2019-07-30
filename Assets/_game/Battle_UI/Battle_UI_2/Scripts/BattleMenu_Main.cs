@@ -53,7 +53,7 @@ public class BattleMenu_Main : MonoBehaviour
         Debug.Log("Processing glyph: " + _glyphId);
         if (_glyphId >= 0 && _glyphId < 10)
         {
-            SetActivePanel(_glyphId); 
+            SetActivePanel(_glyphId);
         } else if (_glyphId >= 100)
         {
             SelectAttack(_glyphId);
@@ -318,7 +318,7 @@ public class BattleMenu_Main : MonoBehaviour
 
             for (int i = 0; i < selectedArkeon.attacks.Count; i++)
             {
-                if (selectedArkeon.attacks[i].db_id == _atkId)
+                if (int.Parse(selectedArkeon.attacks[i].pattern.id) == _atkId)
                 {
                     selectedAttack = selectedArkeon.attacks[i];
                     atkId = i;

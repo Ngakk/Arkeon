@@ -140,7 +140,6 @@ namespace GestureRecognizer
             callback.Invoke(result);
         }
 
-
         private GestureData NormalizeData(GestureData data, bool normalizeScale)
         {
             if (normalizeScale)
