@@ -37,6 +37,7 @@ namespace ArkeonBattle
         public ArkeonTeam arkeonTeam;
         public Inventory inventory;
         public ArkeonInstance familiar;
+        public Mangos.GameEvent invokeCam, teamCam;
         [Header("Stats")]
         public ArkeonStats stats;
         public ArkeonStats inBattleModifiers;
@@ -65,6 +66,7 @@ namespace ArkeonBattle
         public void OnTurnStart()
         {
             currentMp = Mathf.Min(stats.maxMp, currentMp + 5);
+            teamCam.Raise();
         }
 
         public bool InvokeFamiliar()
@@ -114,6 +116,8 @@ namespace ArkeonBattle
             Transform point = ManagerStaticBattle.battleManager.arenaPointReference.GetInvokePoint(!enemySide, space); //Obtengo la posición para el arkeon
 
             GameObject go = Instantiate(arkeonTeam[_arkeonTeamId].arkeonData.modelPrefab, point.position, point.rotation); //Lo Invoco
+
+            invokeCam.Raise();
 
             //Setup de arkeon
             if (!go.GetComponent<ArkeonInBattle>())

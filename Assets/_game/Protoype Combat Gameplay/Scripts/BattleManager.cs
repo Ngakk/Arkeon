@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Mangos;
 
 namespace ArkeonBattle
 {
@@ -16,6 +16,8 @@ namespace ArkeonBattle
             DEFENDER_SET,
             BATTLING
         }
+
+        public GameEvent combatCam; 
 
         [Header("Setup en editor")]
         public ArenaPointReference arenaPointReference;
@@ -119,6 +121,8 @@ namespace ArkeonBattle
 
             Debug.Log(defender);
 
+            combatCam.Raise();
+
             attack.PreBattle(attacker, defender);
             attacker.AttackStart(attack, defender, OnHitAvA);
         }
@@ -126,6 +130,8 @@ namespace ArkeonBattle
         public void StartBattleAvP()
         {
             state = State.BATTLING;
+
+            combatCam.Raise();
 
             attack.PreBattle(attacker, characterDefender);
             attacker.AttackStart(attack, characterDefender, OnHitAvP);
