@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdceef51f0b5f794bb57d9c0b584c3d1, type: 3}
   m_Name: Harden
   m_EditorClassIdentifier: 
-  db_id: 150
-  glyph: {fileID: 0}
+  pattern: {fileID: 11400000, guid: f87ad79bd23f35d488511c0c80b24f18, type: 2}
   myName: Harden
   description: Rises the caster's defense
   power: 0
@@ -23,4 +22,6 @@ MonoBehaviour:
   isPhysical: 1
   targetType: 0
   animation: 0
+  db_id: 150
+  glyph: {fileID: 0}
   value: 2

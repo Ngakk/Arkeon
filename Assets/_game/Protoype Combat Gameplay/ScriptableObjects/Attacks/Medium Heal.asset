@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee180513b724e594e919f0acc709d5ce, type: 3}
   m_Name: Medium Heal
   m_EditorClassIdentifier: 
-  db_id: 152
-  glyph: {fileID: 0}
+  pattern: {fileID: 11400000, guid: cf44260501d5e364c9104608a7b104bb, type: 2}
   myName: Heal
   description: Does a normal heal
   power: 6
@@ -23,3 +22,5 @@ MonoBehaviour:
   isPhysical: 0
   targetType: 3
   animation: 3
+  db_id: 152
+  glyph: {fileID: 0}

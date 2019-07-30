@@ -10,5 +10,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a6bfd0fbe5ad0a4f8117dfe9adac451, type: 3}
-  m_Name: EnemyView
+  m_Name: PlayerBattleView
   m_EditorClassIdentifier: 

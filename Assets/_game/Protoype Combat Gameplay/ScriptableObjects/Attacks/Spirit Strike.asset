@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aba1afd98458944a9c9d51cf9d7c9b2, type: 3}
   m_Name: Spirit Strike
   m_EditorClassIdentifier: 
-  db_id: 154
-  glyph: {fileID: 0}
+  pattern: {fileID: 11400000, guid: 3b0641adb90a05b4f873dbafc8048e57, type: 2}
   myName: Spirit Strike
   description: Lands a spirit strike on the enemy
   power: 30
@@ -23,3 +22,5 @@ MonoBehaviour:
   isPhysical: 0
   targetType: 0
   animation: 2
+  db_id: 154
+  glyph: {fileID: 0}

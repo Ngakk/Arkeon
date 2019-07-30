@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3aba1afd98458944a9c9d51cf9d7c9b2, type: 3}
   m_Name: Scratch
   m_EditorClassIdentifier: 
-  db_id: 153
-  glyph: {fileID: 0}
+  pattern: {fileID: 11400000, guid: 66734b0ac2558cc478c6300bf2dee47f, type: 2}
   myName: Scratch
   description: Arkeon scratches the enemy
   power: 45
@@ -23,3 +22,5 @@ MonoBehaviour:
   isPhysical: 1
   targetType: 1
   animation: 1
+  db_id: 153
+  glyph: {fileID: 0}

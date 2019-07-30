@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdceef51f0b5f794bb57d9c0b584c3d1, type: 3}
   m_Name: Tail Whip
   m_EditorClassIdentifier: 
-  db_id: 156
-  glyph: {fileID: 0}
+  pattern: {fileID: 11400000, guid: a42236edb4e0e93498dbadefcdc98fe3, type: 2}
   myName: Tail Whip
   description: Decreases defense on spell's targeted enemy
   power: 0
@@ -23,4 +22,6 @@ MonoBehaviour:
   isPhysical: 0
   targetType: 2
   animation: 3
+  db_id: 156
+  glyph: {fileID: 0}
   value: -2

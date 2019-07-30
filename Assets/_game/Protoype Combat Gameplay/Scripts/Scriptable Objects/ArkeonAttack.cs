@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GestureRecognizer;
 
 namespace ArkeonBattle
 {
@@ -31,9 +32,8 @@ namespace ArkeonBattle
 
     //[CreateAssetMenu(fileName = "BaseAttack", menuName = "Arkeon Creature/Arkeon Attacks/Base Attack", order = 3)]
     public class ArkeonAttack : ScriptableObject
-    {
-        public int db_id;
-        public Sprite glyph;
+    {        
+        public GesturePattern pattern;
         public string myName;
         public string description;
         public int power;
@@ -43,6 +43,10 @@ namespace ArkeonBattle
         public bool isPhysical;
         public AttackTargets targetType;
         public AttackAnimations animation;
+
+        [Header("Deprecated")]
+        public int db_id;
+        public Sprite glyph;
 
         /// <summary>
         /// Que hacer antes del golpe, si se cambian stats.

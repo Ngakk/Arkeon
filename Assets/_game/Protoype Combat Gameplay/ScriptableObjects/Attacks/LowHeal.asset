@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee180513b724e594e919f0acc709d5ce, type: 3}
   m_Name: LowHeal
   m_EditorClassIdentifier: 
-  db_id: 151
-  glyph: {fileID: 0}
+  pattern: {fileID: 11400000, guid: d087b86ff46be26488d813f757371632, type: 2}
   myName: Lesser Heal
   description: Does a lesser heal
   power: 3
@@ -23,3 +22,5 @@ MonoBehaviour:
   isPhysical: 0
   targetType: 3
   animation: 3
+  db_id: 151
+  glyph: {fileID: 0}
